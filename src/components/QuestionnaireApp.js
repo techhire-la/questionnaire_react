@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 
 
-class App extends React.Component {
+class QuestionnaireApp extends React.Component {
 
 
 
@@ -13,7 +13,7 @@ render() {
     return (
 
         <div>
-            <h1>Your App is here</h1>
+            <h1>Your QuestionnaireApp is here</h1>
         </div>
 
         );
@@ -21,4 +21,4 @@ render() {
 }
 
 
-export default App;
+export default QuestionnaireApp;
