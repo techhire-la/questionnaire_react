@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { Button } from 'semantic-ui-react'
+import { Link, NavLink} from 'react-router-dom'
 
 
 class QuestionnaireApp extends React.Component {
@@ -24,9 +25,20 @@ render() {
 
         <div>
             <h1>Your QuestionnaireApp is here</h1>
-            <button>Form</button>
+
+            <Link to="/form">
+                <Button>
+                    <p>Form</p>
+                </Button>
+            </Link>
+
             ||
-            <button>Catalogue</button>
+
+            <Link to="/catalogue">
+                <Button>
+                    <p>Catalogue</p>
+                </Button>
+            </Link>
 
         </div>
 
@@ -36,3 +48,7 @@ render() {
 
 
 export default QuestionnaireApp;
+
+
+
+// <Button style={myStyle}>
