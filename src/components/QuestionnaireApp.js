@@ -11,15 +11,15 @@ class QuestionnaireApp extends React.Component {
 
 render() {
 
-    let showNew = ""
-    let showAll = ""
-    if(this.props.toggle){
-        showNew = {display: 'none' }
-        showAll = {display: 'block' }
-    }else{
-        showNew = {display: 'block' }
-        showAll = {display: 'none' }
-    }
+    // let showNew = ""
+    // let showAll = ""
+    // if(this.props.toggle){
+    //     showNew = {display: 'none' }
+    //     showAll = {display: 'block' }
+    // }else{
+    //     showNew = {display: 'block' }
+    //     showAll = {display: 'none' }
+    // }
 
     return (
 
