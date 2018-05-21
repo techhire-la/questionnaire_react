@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import QuestionnaireApp from './components/QuestionnaireApp.js';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import AppRouter from "./routes/AppRouter"
 
-ReactDOM.render(<QuestionnaireApp/>, document.getElementById('app'));
+ReactDOM.render(<AppRouter/>, document.getElementById('app'));
