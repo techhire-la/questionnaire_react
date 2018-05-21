@@ -5,9 +5,9 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 import Header from "../components/Header";
 import QuestionnaireApp from '../components/QuestionnaireApp';
 import FilterForm from '../components/FilterForm';
-import Catalogue from '../components/EditExpensePage';
-import NotFoundPage from '../components/NotFoundPage';
-
+import Catalogue from '../components/Catalogue';
+// import NotFoundPage from '../components/NotFoundPage';
+//<Route component={NotFoundPage} />
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -17,7 +17,6 @@ const AppRouter = () => (
                 <Route path="/" component={QuestionnaireApp} exact={true}/>
                     <Route path="/form" component={FilterForm} />
                     <Route path="/catalogue" component={Catalogue} />
-                    <Route component={NotFoundPage} />
                 </Switch>
         </div>
     </BrowserRouter>
