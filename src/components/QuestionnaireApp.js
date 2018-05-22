@@ -27,7 +27,7 @@ render() {
             <h1>Your QuestionnaireApp is here</h1>
 
             <Link to="/form">
-                <Button>
+                <Button secondary>
                     <p>Form</p>
                 </Button>
             </Link>
@@ -35,7 +35,7 @@ render() {
             ||
 
             <Link to="/catalogue">
-                <Button>
+                <Button primary>
                     <p>Catalogue</p>
                 </Button>
             </Link>
