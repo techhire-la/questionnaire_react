@@ -32,7 +32,7 @@ render() {
                 </Button>
             </Link>
 
-            ||
+
 
             <Link to="/catalogue">
                 <Button primary>
