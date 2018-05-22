@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Grid, Header } from 'semantic-ui-react'
 
 
 
@@ -28,7 +29,22 @@ class FilterForm extends React.Component {
                 <h3>Your FilterForm is here</h3>
                 <p>Red Text</p>
 
+                <Grid>
+                    <Grid.Column only='computer' computer={5}>
+                        <Header>Articles</Header>
+                    </Grid.Column>
+                        <Grid.Column mobile={16} tablet={8} computer={5}>
+                        <p> Thing 2 </p>
+                    </Grid.Column>
 
+                    <Grid.Column mobile={16} tablet={8} computer={5}>
+                        <p>thing 1</p>
+                     </Grid.Column>
+
+                    <Grid.Column only='mobile tablet' mobile={16} tablet={16}>
+                        <Header>Articles</Header>
+                    </Grid.Column>
+                </Grid>
 
 
             </div>
