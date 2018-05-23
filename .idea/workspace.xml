@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f7d034-109a-4db1-a8a5-d2b8e04fe83b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bundle.js" afterPath="$PROJECT_DIR$/public/bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/FilterForm.js" afterPath="$PROJECT_DIR$/src/components/FilterForm.js" />
     </list>
     <ignored path="questionnaire_react.iws" />
@@ -76,14 +74,10 @@
       <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="218">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="3" selection-end-line="172" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1527113947000" expanded="true" signature="5084:5552" ph="..." />
-                <marker date="1527113947000" expanded="true" signature="5147:5232" ph="..." />
-                <marker date="1527113947000" expanded="true" signature="5306:5382" ph="..." />
-                <marker date="1527113947000" expanded="true" signature="5453:5528" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,9 +123,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="633" />
+    <option name="x" value="278" />
     <option name="y" value="23" />
-    <option name="width" value="792" />
+    <option name="width" value="1147" />
     <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -356,12 +350,12 @@
       <workItem from="1526681536045" duration="3503000" />
       <workItem from="1526775285313" duration="33000" />
       <workItem from="1526921850686" duration="5904000" />
-      <workItem from="1526942640938" duration="22996000" />
+      <workItem from="1526942640938" duration="23239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32436000" />
+    <option name="totallyTimeSpent" value="32679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,10 +367,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="633" y="23" width="792" height="830" extended-state="0" />
+    <frame x="278" y="23" width="1147" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25551233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17495559" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -473,10 +467,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1527113947000" expanded="true" signature="5084:5552" ph="..." />
-            <marker date="1527113947000" expanded="true" signature="5147:5232" ph="..." />
-            <marker date="1527113947000" expanded="true" signature="5306:5382" ph="..." />
-            <marker date="1527113947000" expanded="true" signature="5453:5528" ph="..." />
           </folding>
         </state>
       </provider>
@@ -707,14 +697,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        <state relative-caret-position="218">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="3" selection-end-line="172" selection-end-column="10" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1527113947000" expanded="true" signature="5084:5552" ph="..." />
-            <marker date="1527113947000" expanded="true" signature="5147:5232" ph="..." />
-            <marker date="1527113947000" expanded="true" signature="5306:5382" ph="..." />
-            <marker date="1527113947000" expanded="true" signature="5453:5528" ph="..." />
           </folding>
         </state>
       </provider>

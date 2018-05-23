@@ -14,26 +14,14 @@ class FilterForm extends React.Component {
     //add expression to clear kids age if No is selected
     handleChildrenChange = (e, { value }) => this.setState({ kids: value })
 
-    // handleAgeChange = (e, { value }) => this.setState({ kidsAge: value })
-    // if value exists in the array, pop it
-    // else push to the array
 
     handleAgeChange = (e, {value}) => {
-        // console.log("clicked")
-
-
-        // console.log(value)
-
-        console.log("~~~~~~ State before Loop: " + this.state.kidsAge + "~~~~~~~~~~")
-
-        // var matchIndex = ""
 
         var matchIndex = undefined
 
         for(var i = 0 ; i <= this.state.kidsAge.length ; i++) {
-            console.log("######### for loop ##########")
-            var array = this.state.kidsAge
 
+            var array = this.state.kidsAge
 
             if (value === array[i]) {
                 console.log("value " + value + " is being compared to array element " + array[i] )
@@ -41,28 +29,15 @@ class FilterForm extends React.Component {
                 console.log("Index value saved as " + matchIndex )
             }
 
-            console.log("MatchIndex in for after if: " + matchIndex)
-
         }
-        console.log("------------after for loop-------------")
-        console.log("Value: " + value)
-        console.log("matchIndex: " + matchIndex);
+
         if ((matchIndex != undefined ) && (matchIndex > -1)) {
-
-            console.log("****** ******* Entering the Splicer ****** ******* ")
-
             array.splice(matchIndex, 1);
-            console.log("Array after splice: " + array)
             this.setState({ kidsAge: array })
             console.log("State after splice: " + this.state.kidsAge)
 
 
         } else {
-
-            console.log("%%%%%%%%%% Entering the PUSHER %%%%%%%%%%%%")
-            console.log("matchIndex in PUSHER: " + matchIndex);
-
-
             array.push( value )
             console.log("Array with new pushed value: " + array)
             this.setState({ kidsAge: array })
@@ -84,10 +59,6 @@ class FilterForm extends React.Component {
         return (
 
             <div className="ui filterContainer">
-
-
-                <h3>Your FilterForm is here</h3>
-                <p>Red Text</p>
 
                 <Form>
                     <Form.Field>
@@ -143,23 +114,6 @@ class FilterForm extends React.Component {
                 </Form>
 
 
-
-    --------------------------------------
-
-                <Grid>
-                    <Grid.Column only='computer' computer={5}>
-                        <Header>Articles</Header>
-                    </Grid.Column>
-                        <Grid.Column mobile={16} tablet={8} computer={5}>
-                        <p> Thing 2 </p>
-                    </Grid.Column>
-
-                    <Grid.Column mobile={16} tablet={8} computer={5}>
-                        <p>thing 1</p>
-                     </Grid.Column>
-                </Grid>
-
-
             </div>
 
         );
@@ -199,3 +153,17 @@ export default FilterForm;
 //     this.setState({ kidsAge: array })
 //     console.log(this.state.kidsAge)
 // }
+
+
+// <Grid>
+// <Grid.Column only='computer' computer={5}>
+//     <Header>Articles</Header>
+//     </Grid.Column>
+//     <Grid.Column mobile={16} tablet={8} computer={5}>
+//     <p> Thing 2 </p>
+// </Grid.Column>
+//
+// <Grid.Column mobile={16} tablet={8} computer={5}>
+//     <p>thing 1</p>
+// </Grid.Column>
+// </Grid>
