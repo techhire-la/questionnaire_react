@@ -10,8 +10,10 @@ class FilterForm extends React.Component {
         kids: "",
         kidsAge: [],
         working: undefined,
+        childrenOfWorkingAge: undefined,
         housingHardships: undefined,
-        financialHardships: undefined
+        financialHardships: undefined,
+
     }
 
 
@@ -49,7 +51,10 @@ class FilterForm extends React.Component {
 
     }
 
+    handleChildrenOfWorkingAge = (e, { value }) => this.setState({ childrenOfWorkingAge: value })
+
     handleWorkingChange = (e, { value }) => this.setState({ working: value })
+
 
 
     handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value })
@@ -98,25 +103,50 @@ class FilterForm extends React.Component {
                             onChange={this.handleChildrenChange}
                         />
                     </Form.Field>
+                </Form>
 
                         <div style={showKids} className="push-right">
 
 
                             <h3>Do you have children in the ages of:</h3>
+                            <Form>
+                                <Form.Field>
+                                    <Checkbox label={{ children: '0-1' }} value='0-1' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '1-3' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '4-5' }} value='4-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '5-10' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '10-14' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '14-18' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '18-25' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                </Form.Field>
+                            </Form>
 
-                            <Form.Field>
-                                <Checkbox label={{ children: '0-1' }} value='0-1' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                <Checkbox label={{ children: '1-3' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                <Checkbox label={{ children: '4-5' }} value='4-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                <Checkbox label={{ children: '5-10' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                <Checkbox label={{ children: '10-14' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                <Checkbox label={{ children: '14-18' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                <Checkbox label={{ children: '18-25' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                            </Form.Field>
+                            <h3>Do you have children that are of working age, That are not currently working?</h3>
+                            <Form>
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={this.state.childrenOfWorkingAge === 'true'}
+                                        onChange={this.handleChildrenOfWorkingAge}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={this.state.childrenOfWorkingAge === 'false'}
+                                        onChange={this.handleChildrenOfWorkingAge}
+                                    />
+                                </Form.Field>
+                            </Form>
 
                         </div>
 
-                </Form>
+
 
                     <h3>Question 2</h3>
                 <Form>
