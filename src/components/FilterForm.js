@@ -269,6 +269,8 @@ class FilterForm extends React.Component {
                 </Form>
 
                     <div style={showWorking} className="push-right">
+
+                        <h3>What is your hightest level of Education</h3>
                         <Form>
                             <Form.Field>
                                 <Radio
@@ -280,10 +282,72 @@ class FilterForm extends React.Component {
                                 />
                             </Form.Field>
                         </Form>
-                    </div>
+
+                        <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='Some College'
+                                    name='radioGroup'
+                                    value='Some College'
+                                    checked={this.state.levelOfEducation === 'Some College'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                        <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='AA'
+                                    name='radioGroup'
+                                    value='AA'
+                                    checked={this.state.levelOfEducation === 'AA'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                        <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='BA or Higher'
+                                    name='radioGroup'
+                                    value='BA or Higher'
+                                    checked={this.state.levelOfEducation === 'BA or Higher'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+                        </Form>
 
 
+                        <Form>
+                            <Form.Field className="large">
+                                <h3>Are you and/or someone in your family a veteran</h3>
+                            </Form.Field>
 
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.veteran === 'true'}
+                                    onChange={this.handleVeteran}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.veteran === 'false'}
+                                    onChange={this.handleVeteran}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+                </div>
 
                 <h3>Question 3</h3>
                 <Form>
