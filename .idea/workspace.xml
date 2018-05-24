@@ -63,8 +63,8 @@
       <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="146" column="30" selection-start-line="146" selection-start-column="30" selection-end-line="146" selection-end-column="30" />
+            <state relative-caret-position="360">
+              <caret line="205" column="45" selection-start-line="205" selection-start-column="45" selection-end-line="205" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -340,12 +340,12 @@
       <workItem from="1526775285313" duration="33000" />
       <workItem from="1526921850686" duration="5904000" />
       <workItem from="1526942640938" duration="23239000" />
-      <workItem from="1527120500358" duration="6770000" />
+      <workItem from="1527120500358" duration="7820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39449000" />
+    <option name="totallyTimeSpent" value="40499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -739,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="146" column="30" selection-start-line="146" selection-start-column="30" selection-end-line="146" selection-end-column="30" />
+        <state relative-caret-position="360">
+          <caret line="205" column="45" selection-start-line="205" selection-start-column="45" selection-end-line="205" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

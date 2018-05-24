@@ -11,15 +11,17 @@ class FilterForm extends React.Component {
         kidsAge: [],
         working: undefined,
         childrenOfWorkingAge: undefined,
+        childrenOfCollegeAge: undefined,
+        childrenInJusticeSystem: undefined,
         housingHardships: undefined,
-        financialHardships: undefined,
+        financialHardships: undefined
 
     }
 
-
+    // Question 1
     handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [] })}
 
-
+    //Question 1.1
     handleAgeChange = (e, {value}) => {
 
         var matchIndex = undefined
@@ -51,16 +53,27 @@ class FilterForm extends React.Component {
 
     }
 
+    //Question 1.2
     handleChildrenOfWorkingAge = (e, { value }) => this.setState({ childrenOfWorkingAge: value })
 
+    //Question 1.3
+    handleChildrenOfCollegeAge = (e, { value }) => this.setState({ childrenOfCollegeAge: value })
+
+    //Question 1.4
+    handleChildrenInJusticeSystem = (e, { value }) => this.setState({ childrenInJusticeSystem: value })
+
+    //Question 2
     handleWorkingChange = (e, { value }) => this.setState({ working: value })
 
 
-
+    //Question 3
     handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value })
 
 
+    //Question 4
     handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
+
+
 
     render() {
 
@@ -143,6 +156,59 @@ class FilterForm extends React.Component {
                                     />
                                 </Form.Field>
                             </Form>
+
+
+                            <h3>Do you have children of college age, planning or going to college?</h3>
+                            <Form>
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={this.state.childrenOfCollegeAge === 'true'}
+                                        onChange={this.handleChildrenOfCollegeAge}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={this.state.childrenOfCollegeAge === 'false'}
+                                        onChange={this.handleChildrenOfCollegeAge}
+                                    />
+                                </Form.Field>
+                            </Form>
+
+
+
+                            <h3>Do you have any children involved in the Juvenile Justice System?</h3>
+                            <Form>
+                                    <Form.Field>
+                                        <Radio
+                                            label='Yes'
+                                            name='radioGroup'
+                                            value='true'
+                                            checked={this.state.childrenInJusticeSystem === 'true'}
+                                            onChange={this.handleChildrenInJusticeSystem}
+                                        />
+                                    </Form.Field>
+
+                                    <Form.Field>
+                                        <Radio
+                                            label='No'
+                                            name='radioGroup'
+                                            value='false'
+                                            checked={this.state.childrenInJusticeSystem === 'false'}
+                                            onChange={this.handleChildrenInJusticeSystem}
+                                        />
+                                </Form.Field>
+                            </Form>
+
+
+
+
 
                         </div>
 
