@@ -19,7 +19,7 @@ class FilterForm extends React.Component {
     }
 
     // Question 1
-    handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [] })}
+    handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [], childrenOfWorkingAge: undefined, childrenOfCollegeAge: undefined, childrenInJusticeSystem: undefined })}
 
     //Question 1.1
     handleAgeChange = (e, {value}) => {
