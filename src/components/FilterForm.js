@@ -7,12 +7,18 @@ import { Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
 class FilterForm extends React.Component {
 
     state = {
-        kids: "",
+        kids: undefined,
         kidsAge: [],
-        working: undefined,
         childrenOfWorkingAge: undefined,
         childrenOfCollegeAge: undefined,
         childrenInJusticeSystem: undefined,
+
+        working: undefined,
+        levelOfEducation: undefined,
+        veteran: undefined,
+        interestedInTraining: undefined,
+        othersJobless: undefined,
+
         housingHardships: undefined,
         financialHardships: undefined
 
@@ -62,8 +68,22 @@ class FilterForm extends React.Component {
     //Question 1.4
     handleChildrenInJusticeSystem = (e, { value }) => this.setState({ childrenInJusticeSystem: value })
 
+
     //Question 2
-    handleWorkingChange = (e, { value }) => this.setState({ working: value })
+    // handleWorkingChange = (e, { value }) => this.setState({ working: value })
+    handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })}
+
+    //Question 2.1
+    handleLevelOfEducation = (e, { value }) => this.setState({ levelOfEducation: value })
+
+    //Question 2.2
+    handleVeteran = (e, { value }) => this.setState({ veteran: value })
+
+    //Question 2.3
+    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value })
+
+    //Question 2.4
+    handleOthersJobless = (e, { value }) => this.setState({ othersJobless: value })
 
 
     //Question 3
@@ -77,6 +97,7 @@ class FilterForm extends React.Component {
 
     render() {
 
+        //Question 1
         let showKids = ""
         let checkStatus = false
         if(this.state.kids === 'true'){
@@ -85,6 +106,14 @@ class FilterForm extends React.Component {
         }else{
             showKids = {display: 'none' }
             let checkStatus = false
+        }
+
+        //Question 2
+        let showWorking = ""
+        if(this.state.working === 'false'){
+            showWorking = {display: 'block' }
+        }else{
+            showWorking = {display: 'none' }
         }
 
         return (
@@ -205,16 +234,11 @@ class FilterForm extends React.Component {
                                         />
                                 </Form.Field>
                             </Form>
-
-
-
-
-
                         </div>
 
 
 
-                    <h3>Question 2</h3>
+                <h3>Question 2</h3>
                 <Form>
 
                     <Form.Field className="large">
@@ -243,6 +267,20 @@ class FilterForm extends React.Component {
                     </Form.Field>
 
                 </Form>
+
+                    <div style={showWorking} className="push-right">
+                        <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='Highschool/GED'
+                                    name='radioGroup'
+                                    value='Highschool/GED'
+                                    checked={this.state.levelOfEducation === 'Highschool/GED'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+                        </Form>
+                    </div>
 
 
 
