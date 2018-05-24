@@ -14,8 +14,6 @@ class FilterForm extends React.Component {
         financialHardships: undefined
     }
 
-    //add expression to clear kids age if No is selected
-    // handleChildrenChange = (e, { value }) => this.setState({ kids: value })
 
     handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [] })}
 
@@ -78,7 +76,7 @@ class FilterForm extends React.Component {
                 <Form>
                     <Form.Field className="large">
                         <h3>Do you have any children?</h3>
-                        Selected value: <b>{this.state.kids}</b>
+
                     </Form.Field>
 
                     <Form.Field>
@@ -101,16 +99,19 @@ class FilterForm extends React.Component {
                         />
                     </Form.Field>
 
-                        <div style={showKids}>
+                        <div style={showKids} className="push-right">
+
+
+                            <h3>Do you have children in the ages of:</h3>
 
                             <Form.Field>
-                                <Checkbox label={{ children: '0-1' }} value='0-1' onChange={this.handleAgeChange} checked={checkStatus}/>
-                                <Checkbox label={{ children: '1-3' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus}/>
-                                <Checkbox label={{ children: '4-5' }} value='4-5' onChange={this.handleAgeChange} checked={checkStatus}/>
-                                <Checkbox label={{ children: '5-10' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus}/>
-                                <Checkbox label={{ children: '10-14' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus}/>
-                                <Checkbox label={{ children: '14-18' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus}/>
-                                <Checkbox label={{ children: '18-25' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus}/>
+                                <Checkbox label={{ children: '0-1' }} value='0-1' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                <Checkbox label={{ children: '1-3' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                <Checkbox label={{ children: '4-5' }} value='4-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                <Checkbox label={{ children: '5-10' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                <Checkbox label={{ children: '10-14' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                <Checkbox label={{ children: '14-18' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                <Checkbox label={{ children: '18-25' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
                             </Form.Field>
 
                         </div>
@@ -122,7 +123,7 @@ class FilterForm extends React.Component {
 
                     <Form.Field className="large">
                         <h3>Are you currently working?</h3>
-                        Selected value: <b>{this.state.working}</b>
+
                     </Form.Field>
 
                     <Form.Field>
@@ -154,7 +155,6 @@ class FilterForm extends React.Component {
                 <Form>
                     <Form.Field className="large">
                         <h3>Are you facing Housing Hardships?</h3>
-                        Selected value: <b>{this.state.housingHardships}</b>
                     </Form.Field>
 
                     <Form.Field>
@@ -184,7 +184,6 @@ class FilterForm extends React.Component {
                 <Form>
                     <Form.Field className="large">
                         <h3>Are you facing Financial Hardships?</h3>
-                        Selected value: <b>{this.state.financialHardships}</b>
                     </Form.Field>
 
                     <Form.Field>

@@ -24,10 +24,10 @@ render() {
     return (
 
         <div>
-            <h1>Your QuestionnaireApp is here</h1>
+
 
             <Link to="/form">
-                <Button secondary>
+                <Button secondary size='massive'>
                     <p>Form</p>
                 </Button>
             </Link>
@@ -35,7 +35,7 @@ render() {
 
 
             <Link to="/catalogue">
-                <Button primary>
+                <Button primary size='massive'>
                     <p>Catalogue</p>
                 </Button>
             </Link>
