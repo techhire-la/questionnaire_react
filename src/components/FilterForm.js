@@ -8,8 +8,14 @@ class FilterForm extends React.Component {
 
     state = {
         kids: "",
-        kidsAge: []
+        kidsAge: [],
+        working: undefined,
+        housingHardships: undefined,
+        financialHardships: undefined
     }
+
+    //add expression to clear kids age if No is selected
+    // handleChildrenChange = (e, { value }) => this.setState({ kids: value })
 
     handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [] })}
 
@@ -45,6 +51,14 @@ class FilterForm extends React.Component {
 
     }
 
+    handleWorkingChange = (e, { value }) => this.setState({ working: value })
+
+
+    handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value })
+
+
+    handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
+
     render() {
 
         let showKids = ""
@@ -63,7 +77,7 @@ class FilterForm extends React.Component {
 
                 <Form>
                     <Form.Field className="large">
-                        Do you have any children?
+                        <h3>Do you have any children?</h3>
                         Selected value: <b>{this.state.kids}</b>
                     </Form.Field>
 
@@ -100,6 +114,98 @@ class FilterForm extends React.Component {
                             </Form.Field>
 
                         </div>
+
+                </Form>
+
+                    <h3>Question 2</h3>
+                <Form>
+
+                    <Form.Field className="large">
+                        <h3>Are you currently working?</h3>
+                        Selected value: <b>{this.state.working}</b>
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Yes'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.state.working === 'true'}
+                            onChange={this.handleWorkingChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='No'
+                            name='radioGroup'
+                            value='false'
+                            checked={this.state.working === 'false'}
+                            onChange={this.handleWorkingChange}
+                        />
+                    </Form.Field>
+
+                </Form>
+
+
+
+
+                <h3>Question 3</h3>
+                <Form>
+                    <Form.Field className="large">
+                        <h3>Are you facing Housing Hardships?</h3>
+                        Selected value: <b>{this.state.housingHardships}</b>
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Yes'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.state.housingHardships === 'true'}
+                            onChange={this.handleHousingHardshipsChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='No'
+                            name='radioGroup'
+                            value='false'
+                            checked={this.state.housingHardships === 'false'}
+                            onChange={this.handleHousingHardshipsChange}
+                        />
+                    </Form.Field>
+
+                </Form>
+
+
+                <h3>Question 4</h3>
+                <Form>
+                    <Form.Field className="large">
+                        <h3>Are you facing Financial Hardships?</h3>
+                        Selected value: <b>{this.state.financialHardships}</b>
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Yes'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.state.financialHardships === 'true'}
+                            onChange={this.handleFinancialHardshipsChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='No'
+                            name='radioGroup'
+                            value='false'
+                            checked={this.state.financialHardships === 'false'}
+                            onChange={this.handleFinancialHardshipsChange}
+                        />
+                    </Form.Field>
 
                 </Form>
 
