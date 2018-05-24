@@ -270,7 +270,10 @@ class FilterForm extends React.Component {
 
                     <div style={showWorking} className="push-right">
 
+
                         <h3>What is your hightest level of Education</h3>
+
+
                         <Form>
                             <Form.Field>
                                 <Radio
@@ -281,9 +284,7 @@ class FilterForm extends React.Component {
                                     onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
-                        </Form>
 
-                        <Form>
                             <Form.Field>
                                 <Radio
                                     label='Some College'
@@ -293,9 +294,7 @@ class FilterForm extends React.Component {
                                     onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
-                        </Form>
 
-                        <Form>
                             <Form.Field>
                                 <Radio
                                     label='AA'
@@ -305,9 +304,7 @@ class FilterForm extends React.Component {
                                     onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
-                        </Form>
 
-                        <Form>
                             <Form.Field>
                                 <Radio
                                     label='BA or Higher'
@@ -320,10 +317,8 @@ class FilterForm extends React.Component {
                         </Form>
 
 
+                        <h3>Are you and/or someone in your family a veteran</h3>
                         <Form>
-                            <Form.Field className="large">
-                                <h3>Are you and/or someone in your family a veteran</h3>
-                            </Form.Field>
 
                             <Form.Field>
                                 <Radio
@@ -347,11 +342,62 @@ class FilterForm extends React.Component {
 
                         </Form>
 
+
+                    <h3>Are you interested in receiving Training?</h3>
+                    <Form>
+
+                        <Form.Field>
+                            <Radio
+                                label='Yes'
+                                name='radioGroup'
+                                value='true'
+                                checked={this.state.interestedInTraining === 'true'}
+                                onChange={this.handleInterestedInTraining}
+                            />
+                        </Form.Field>
+
+                        <Form.Field>
+                            <Radio
+                                label='No'
+                                name='radioGroup'
+                                value='false'
+                                checked={this.state.interestedInTraining === 'false'}
+                                onChange={this.handleInterestedInTraining}
+                            />
+                        </Form.Field>
+
+                    </Form>
+
+
+                    <h3> Is there anyone else in the household jobless? </h3>
+                    <Form>
+                        <Form.Field>
+                            <Radio
+                                label='Yes'
+                                name='radioGroup'
+                                value='true'
+                                checked={this.state.othersJobless === 'true'}
+                                onChange={this.handleOthersJobless}
+                            />
+                        </Form.Field>
+
+                        <Form.Field>
+                            <Radio
+                                label='No'
+                                name='radioGroup'
+                                value='false'
+                                checked={this.state.othersJobless === 'false'}
+                                onChange={this.handleOthersJobless}
+                            />
+                        </Form.Field>
+
+                    </Form>
+
                 </div>
 
                 <h3>Question 3</h3>
                 <Form>
-                    <Form.Field className="large">
+                    <Form.Field className="">
                         <h3>Are you facing Housing Hardships?</h3>
                     </Form.Field>
 
