@@ -21,7 +21,6 @@ class FilterForm extends React.Component {
 
         housingHardships: undefined,
         financialHardships: undefined
-
     }
 
     // Question 1
