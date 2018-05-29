@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f7d034-109a-4db1-a8a5-d2b8e04fe83b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/FilterForm.js" afterPath="$PROJECT_DIR$/src/components/FilterForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/contacts.json" afterPath="$PROJECT_DIR$/src/contacts.json" />
     </list>
     <ignored path="questionnaire_react.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,8 +92,8 @@
       <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="294" column="40" selection-start-line="294" selection-start-column="40" selection-end-line="294" selection-end-column="40" />
+            <state relative-caret-position="555">
+              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -386,12 +385,12 @@
       <workItem from="1526775285313" duration="33000" />
       <workItem from="1526921850686" duration="5904000" />
       <workItem from="1526942640938" duration="23239000" />
-      <workItem from="1527120500358" duration="21576000" />
+      <workItem from="1527120500358" duration="22511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54255000" />
+    <option name="totallyTimeSpent" value="55190000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -787,8 +786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="294" column="40" selection-start-line="294" selection-start-column="40" selection-end-line="294" selection-end-column="40" />
+        <state relative-caret-position="555">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

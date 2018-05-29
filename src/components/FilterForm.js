@@ -22,6 +22,7 @@ class FilterForm extends React.Component {
         housingHardships: undefined,
         financialHardships: undefined,
 
+        disability: undefined,
         LGBTQIA: undefined,
         zip: undefined
     }
@@ -96,6 +97,9 @@ class FilterForm extends React.Component {
     handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
 
     //Question 5
+    handleDisabilityChange = (e, { value }) => this.setState({ disability: value })
+
+    //Question 6
     handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value })
 
 
@@ -469,6 +473,47 @@ class FilterForm extends React.Component {
 
                 </Form>
 
+
+
+
+
+                <h3>Question 5</h3>
+                <Form>
+                    <Form.Field>
+                        <h3>Do you or any of the adults in your immediate family have a disability</h3>
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Yes'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.state.disability === 'true'}
+                            onChange={this.handleDisabilityChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='No'
+                            name='radioGroup'
+                            value='false'
+                            checked={this.state.disability === 'false'}
+                            onChange={this.handleDisabilityChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Prefer not to disclose'
+                            name='radioGroup'
+                            value='Prefer not to disclose'
+                            checked={this.state.disability === 'Prefer not to disclose'}
+                            onChange={this.handleDisabilityChange}
+                        />
+                    </Form.Field>
+
+                </Form>
 
                 <h3>Question 5</h3>
                 <Form>
