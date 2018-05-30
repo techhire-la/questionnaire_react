@@ -25,6 +25,8 @@ class FilterForm extends React.Component {
         financialHardships: undefined,
 
         adultWithDisability: undefined,
+        seniorCitizen: undefined,
+        teacher: undefined,
         LGBTQIA: undefined,
         zip: undefined
     }
@@ -104,11 +106,18 @@ class FilterForm extends React.Component {
     //Question 4
     handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
 
-    //Question 6
+    //Question 5
     // handleAdultDisabilityChange = (e, { value }) => {(value === 'Prefer not to disclose') ? this.setState({ adultWithDisability: undefined }) : this.setState({ adultWithDisability: value})}
     handleAdultDisabilityChange = (e, { value }) => this.setState({ adultWithDisability: value })
 
+    //Question 6
+    handleSeniorCitizenChange = (e, { value }) => this.setState({ seniorCitizen: value })
+
+
     //Question 7
+    handleTeacherChange = (e, { value }) => this.setState({ teacher: value })
+
+    //Question 8
     handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value })
 
 
@@ -299,6 +308,17 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='false'
                                     checked={this.state.childrenWithDisabilties === 'false'}
+                                    onChange={this.handleChildrenWithDisabilties}
+                                />
+                            </Form.Field>
+
+
+                            <Form.Field>
+                                <Radio
+                                    label='Prefer not to disclose'
+                                    name='radioGroup'
+                                    value='Prefer not to disclose'
+                                    checked={this.state.childrenWithDisabilties === 'Prefer not to disclose'}
                                     onChange={this.handleChildrenWithDisabilties}
                                 />
                             </Form.Field>
@@ -532,9 +552,6 @@ class FilterForm extends React.Component {
                 </Form>
 
 
-
-
-
                 <h3>Question 5</h3>
                 <Form>
                     <Form.Field>
@@ -573,7 +590,68 @@ class FilterForm extends React.Component {
 
                 </Form>
 
-                <h3>Question 5</h3>
+
+                <h3>Question 6</h3>
+                <Form>
+
+                    <Form.Field>
+                        <h3>Are you or someone in your immediate family a senior citizen?</h3>
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Yes'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.state.seniorCitizen === 'true'}
+                            onChange={this.handleSeniorCitizenChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='No'
+                            name='radioGroup'
+                            value='false'
+                            checked={this.state.seniorCitizen === 'false'}
+                            onChange={this.handleSeniorCitizenChange}
+                        />
+                    </Form.Field>
+
+                </Form>
+
+
+                <h3>Question 7</h3>
+                <Form>
+
+                    <Form.Field>
+                    <h3>Are you or someone in your immediate family a teacher?</h3>
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='Yes'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.state.teacher === 'true'}
+                            onChange={this.handleTeacherChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='No'
+                            name='radioGroup'
+                            value='false'
+                            checked={this.state.teacher === 'false'}
+                            onChange={this.handleTeacherChange}
+                        />
+                    </Form.Field>
+
+                </Form>
+
+
+                <h3>Question 8</h3>
                 <Form>
                     <Form.Field>
                         <h3>Would you like to include organizations that offer services to the LGBTQIA community</h3>
