@@ -24,7 +24,7 @@ class FilterForm extends React.Component {
         housingHardships: undefined,
         financialHardships: undefined,
 
-        disability: undefined,
+        adultWithDisability: undefined,
         LGBTQIA: undefined,
         zip: undefined
     }
@@ -105,8 +105,8 @@ class FilterForm extends React.Component {
     handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
 
     //Question 6
-    // handleDisabilityChange = (e, { value }) => {(value === 'Prefer not to disclose') ? this.setState({ disability: undefined }) : this.setState({ disability: value})}
-    handleDisabilityChange = (e, { value }) => this.setState({ disability: value })
+    // handleAdultDisabilityChange = (e, { value }) => {(value === 'Prefer not to disclose') ? this.setState({ adultWithDisability: undefined }) : this.setState({ adultWithDisability: value})}
+    handleAdultDisabilityChange = (e, { value }) => this.setState({ adultWithDisability: value })
 
     //Question 7
     handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value })
@@ -546,8 +546,8 @@ class FilterForm extends React.Component {
                             label='Yes'
                             name='radioGroup'
                             value='true'
-                            checked={this.state.disability === 'true'}
-                            onChange={this.handleDisabilityChange}
+                            checked={this.state.adultWithDisability === 'true'}
+                            onChange={this.handleAdultDisabilityChange}
                         />
                     </Form.Field>
 
@@ -556,8 +556,8 @@ class FilterForm extends React.Component {
                             label='No'
                             name='radioGroup'
                             value='false'
-                            checked={this.state.disability === 'false'}
-                            onChange={this.handleDisabilityChange}
+                            checked={this.state.adultWithDisability === 'false'}
+                            onChange={this.handleAdultDisabilityChange}
                         />
                     </Form.Field>
 
@@ -566,8 +566,8 @@ class FilterForm extends React.Component {
                             label='Prefer not to disclose'
                             name='radioGroup'
                             value='Prefer not to disclose'
-                            checked={this.state.disability === 'Prefer not to disclose'}
-                            onChange={this.handleDisabilityChange}
+                            checked={this.state.adultWithDisability === 'Prefer not to disclose'}
+                            onChange={this.handleAdultDisabilityChange}
                         />
                     </Form.Field>
 
