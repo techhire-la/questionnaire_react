@@ -12,6 +12,8 @@ class FilterForm extends React.Component {
         childrenOfWorkingAge: undefined,
         childrenOfCollegeAge: undefined,
         childrenInJusticeSystem: undefined,
+        childrenInFosterCare: undefined,
+        childrenWithDisabilties: undefined,
 
         working: undefined,
         levelOfEducation: undefined,
@@ -88,6 +90,12 @@ class FilterForm extends React.Component {
     //Question 2.4
     handleOthersJobless = (e, { value }) => this.setState({ othersJobless: value })
 
+    //Question 2.5
+    handleChildrenInFosterCare = (e, { value }) => this.setState({ childrenInFosterCare: value })
+
+    //Question 2.6
+    handleChildrenWithDisabilties = (e, { value }) => this.setState({ childrenWithDisabilties: value })
+
 
     //Question 3
     handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value })
@@ -96,10 +104,11 @@ class FilterForm extends React.Component {
     //Question 4
     handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
 
-    //Question 5
+    //Question 6
+    // handleDisabilityChange = (e, { value }) => {(value === 'Prefer not to disclose') ? this.setState({ disability: undefined }) : this.setState({ disability: value})}
     handleDisabilityChange = (e, { value }) => this.setState({ disability: value })
 
-    //Question 6
+    //Question 7
     handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value })
 
 
@@ -244,8 +253,58 @@ class FilterForm extends React.Component {
                                         />
                                 </Form.Field>
                             </Form>
-                        </div>
 
+
+                        <h3>Do you have any children involved in the Foster Care System?</h3>
+                        <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.childrenInFosterCare === 'true'}
+                                    onChange={this.handleChildrenInFosterCare}
+                                />
+
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.childrenInFosterCare === 'false'}
+                                    onChange={this.handleChildrenInFosterCare}
+                                />
+                            </Form.Field>
+                        </Form>
+
+
+                        <h3>Do you have any children with disabilities?</h3>
+                        <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.childrenWithDisabilties === 'true'}
+                                    onChange={this.handleChildrenWithDisabilties}
+                                />
+
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.childrenWithDisabilties === 'false'}
+                                    onChange={this.handleChildrenWithDisabilties}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                    </div>
 
 
                 <h3>Question 2</h3>
@@ -282,7 +341,6 @@ class FilterForm extends React.Component {
 
 
                         <h3>What is your highest level of Education</h3>
-
 
                         <Form>
 
@@ -414,7 +472,7 @@ class FilterForm extends React.Component {
 
                     </Form>
 
-                </div>
+                // </div>
 
                 <h3>Question 3</h3>
                 <Form>
