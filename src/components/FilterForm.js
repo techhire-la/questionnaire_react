@@ -159,7 +159,7 @@ class FilterForm extends React.Component {
 
                     <Form.Field>
                         <Radio
-                            label='10-14'
+                            label='10-14 (Middle School)'
                             name='radioGroup'
                             value='10-14'
                             checked={this.state.clientAge === '10-14'}
@@ -169,7 +169,7 @@ class FilterForm extends React.Component {
 
                     <Form.Field>
                         <Radio
-                            label='14-18'
+                            label='14-18 (High School)'
                             name='radioGroup'
                             value='14-18'
                             checked={this.state.clientAge === '14-18'}
@@ -180,7 +180,7 @@ class FilterForm extends React.Component {
 
                     <Form.Field>
                         <Radio
-                            label='18-65'
+                            label='18-65 (Adult)'
                             name='radioGroup'
                             value='18-65'
                             checked={this.state.clientAge === '18-65'}
@@ -224,13 +224,15 @@ class FilterForm extends React.Component {
                             <h3>Do you have children in the ages of:</h3>
                             <Form>
                                 <Form.Field>
-                                    <Checkbox label={{ children: '0-1' }} value='0-1' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
-                                    <Checkbox label={{ children: '1-3' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                    <Checkbox label={{ children: '4-5' }} value='4-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                    <Checkbox label={{ children: '5-10' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                    <Checkbox label={{ children: '10-14' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                    <Checkbox label={{ children: '14-18' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                    <Checkbox label={{ children: '18-25' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '1-3 (Infants + Toddlers)' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
+                                    <Checkbox label={{ children: '3-5 (Preschool + Kindergarten)' }} value='3-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '5-10 (Elementary School)' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Checkbox label={{ children: '10-14 (Middle School)' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
+                                    <Checkbox label={{ children: '14-18 (Highschool)' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                    <Checkbox label={{ children: '18-25 (Adults)' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-right"/>
                                 </Form.Field>
                             </Form>
 
