@@ -202,7 +202,7 @@ class FilterForm extends React.Component {
                             label='Yes'
                             name='radioGroup'
                             value='true'
-                            checked={this.state.clientAge === 'true'}
+                            checked={this.state.kids === 'true'}
                             onChange={this.handleChildrenChange}
                         />
                     </Form.Field>

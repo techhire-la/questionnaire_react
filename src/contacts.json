@@ -1,3 +1,6 @@
+// may need to make certain arrangements to parse through clientAge
+// check to see if it is an array or an string first
+
 {
     "contacts": [{
             "name": "Bridge To Coding",
@@ -6,7 +9,7 @@
             "zip": [90006],
             "phonenumber": "323.546.8071",
             "email": "lsimpson@ypiusa.org",
-
+            "clientAge": "18-15"
             "kids": 'true',
             "kidsAge": ['18-25']
         },
@@ -100,7 +103,7 @@
             "phonenumber": "213.893.8067",
             "email": "ehs@ypiusa.org",
             "kids": 'true',
-            "kidsAge": ['1-3']
+            "kidsAge": ['0-1','1-3']
         },
 
         {
@@ -254,6 +257,9 @@
             "housingHardships": undefined,
             "financialHardships": undefined
         },
+
+        //DERP possibly on age of clients
+
         {
             "name": "Girls & Gangs",
             "age": "14 to 65",
@@ -261,20 +267,13 @@
             "zip": [],
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-//            "childrenOfWorkingAge": undefined,
-//            "childrenOfCollegeAge": undefined,
-//            "childrenInJusticeSystem": undefined,
-//            "working": undefined,
-//            "levelOfEducation": undefined,
-//            "veteran": undefined,
-//            "interestedInTraining": undefined,
-//            "othersJobless": undefined,
-//            "housingHardships": undefined,
-//            "financialHardships": undefined,
+            'clientAge': ["14-18", '18-65'],
+            "kids": 'true',
+            "kidsAge": ['14-18', '18-25'],
+            "housingHardships" : "true",
             "childrenWithDisabilties": "true",
-            "adultWithDisability": "true"
+            "adultWithDisability": "true",
+            "LGBTQIA": 'true'
         },
         {
             "name": "Hollywood FamilySource Center (HFSC)",
@@ -283,18 +282,10 @@
             "zip": [90028, 90029, 90038],
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "kids": 'true',
+            "kidsAge": ['0-1','1-3'],
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "Latinos in Finance (LIF)",
@@ -303,18 +294,8 @@
             "zip": [""],
             "phonenumber": "818.492.4065",
             "email": "mnemececk@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "Los Angeles Promise Corps",
@@ -343,18 +324,8 @@
             "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
             "phonenumber": "213.688.2802",
             "email": "lapn@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-//            "childrenOfWorkingAge": undefined,
-//            "childrenOfCollegeAge": undefined,
-//            "childrenInJusticeSystem": undefined,
-//            "working": undefined,
-//            "levelOfEducation": undefined,
-//            "veteran": undefined,
-//            "interestedInTraining": undefined,
-//            "othersJobless": undefined,
-//            "housingHardships": undefined,
-//            "financialHardships": undefined
+            "kids": 'true',
+            "kidsAge": ['0-1','1-3'],
             'teacher': 'true'
         },
         {
@@ -452,18 +423,8 @@
             "zip": [91331, 91340],
             "phonenumber": "818.302.3237",
             "email": "bdelgado@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "TechHire",
@@ -472,18 +433,8 @@
             "zip": [""],
             "phonenumber": "213.673.5952",
             "email": "techhire@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "Veterans Now (VN)",
@@ -492,18 +443,8 @@
             "zip": [""],
             "phonenumber": "818.492.4065",
             "email": "tflynn@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "Workforce Innovation and Opportunity Act (WIOA)",
@@ -512,18 +453,8 @@
             "zip": [""],
             "phonenumber": "818.492.4065",
             "email": "",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "YouthBuild (YB)",
@@ -532,18 +463,8 @@
             "zip": [91340, 91342, 91331, 91353, 91401],
             "phonenumber": "818.302.3258",
             "email": "vgarcia@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "YouthSource Center (YSC)",
@@ -552,18 +473,8 @@
             "zip": [""],
             "phonenumber": "818.573.9030",
             "email": "jhernandez@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         },
         {
             "name": "YouthWorks",
@@ -572,18 +483,8 @@
             "zip": [""],
             "phonenumber": "213.797.4858",
             "email": "mhernandez@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true"
         }
     ]
 }
