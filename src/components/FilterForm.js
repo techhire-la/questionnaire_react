@@ -7,6 +7,7 @@ import { Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
 class FilterForm extends React.Component {
 
     state = {
+        clientAge: undefined,
         kids: undefined,
         kidsAge: [],
         childrenOfWorkingAge: undefined,
@@ -30,6 +31,10 @@ class FilterForm extends React.Component {
         LGBTQIA: undefined,
         zip: undefined
     }
+
+    // Question 0
+    handleClientAgeChange = (e, { value }) => this.setState({ clientAge: value })
+
 
     // Question 1
     handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [], childrenOfWorkingAge: undefined, childrenOfCollegeAge: undefined, childrenInJusticeSystem: undefined })}
@@ -147,9 +152,47 @@ class FilterForm extends React.Component {
 
             <div className="ui filterContainer">
 
+                <h3>Question 0</h3>
+                <Form>
+
+                    <h3>What is your age?</h3>
+
+                    <Form.Field>
+                        <Radio
+                            label='10-14'
+                            name='radioGroup'
+                            value='10-14'
+                            checked={this.state.clientAge === '10-14'}
+                            onChange={this.handleClientAgeChange}
+                        />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <Radio
+                            label='14-18'
+                            name='radioGroup'
+                            value='14-18'
+                            checked={this.state.clientAge === '14-18'}
+                            onChange={this.handleClientAgeChange}
+                        />
+                    </Form.Field>
+
+
+                    <Form.Field>
+                        <Radio
+                            label='18-65'
+                            name='radioGroup'
+                            value='18-65'
+                            checked={this.state.clientAge === '18-65'}
+                            onChange={this.handleClientAgeChange}
+                        />
+                    </Form.Field>
+
+                </Form>
+
                 <h3>Question 1</h3>
                 <Form>
-                    <Form.Field className="large">
+                    <Form.Field>
                         <h3>Do you have any children?</h3>
 
                     </Form.Field>
@@ -159,7 +202,7 @@ class FilterForm extends React.Component {
                             label='Yes'
                             name='radioGroup'
                             value='true'
-                            checked={this.state.kids === 'true'}
+                            checked={this.state.clientAge === 'true'}
                             onChange={this.handleChildrenChange}
                         />
                     </Form.Field>
@@ -492,7 +535,7 @@ class FilterForm extends React.Component {
 
                     </Form>
 
-                // </div>
+                </div>
 
                 <h3>Question 3</h3>
                 <Form>
