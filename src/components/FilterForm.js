@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Input, Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
+import { Input, Button, Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
 
 
 
@@ -125,6 +125,11 @@ class FilterForm extends React.Component {
     //Question 8
     handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value })
 
+
+    //Zip Code and Submit
+
+    handleZipChange = (e, { value }) => this.setState({ zip: value })
+    // handleSubmit = {}
 
 
     render() {
@@ -726,9 +731,16 @@ class FilterForm extends React.Component {
 
                 <br/>
 
-                <Input label='  Zip  ' placeholder='please enter a 6 digit zip code' />
+                <Input label='  Zip  ' placeholder='please enter a 6 digit zip code' onChange={this.handleZipChange} />
 
-            </div>
+                <br/>
+                <br/>
+
+                <Button basic color='black' onSubmit={this.handleSubmit}> Submit </Button>
+
+
+
+    </div>
 
         );
     }
