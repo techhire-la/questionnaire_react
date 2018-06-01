@@ -128,8 +128,40 @@ class FilterForm extends React.Component {
 
     //Zip Code and Submit
 
-    handleZipChange = (e, { value }) => this.setState({ zip: value })
-    // handleSubmit = {}
+    handleZipChange = (e, { value }) => this.setState({ zip: parseInt(value) })
+
+    handleZipValidation = (zip) => {
+
+        if(zip.toString().length !== 5) {
+            alert('Zip Code must be 5 digits')
+        }
+
+        if( !(Number.isInteger(zip)) ){
+            alert('Zip Code must be numbers only')
+        }
+
+        if (zip.toString().length === 5 && Number.isInteger(zip)) {
+            console.log("Zip Validated!")
+        }
+
+    }
+
+
+    handleSubmit = () => {
+
+        console.log("in handle submit");
+
+        this.handleZipValidation(this.state.zip);
+
+        console.log("After Zip Validation");
+
+
+    }
+
+
+    // handleSubmit
+
+    // handleSubmit = ()
 
 
     render() {
@@ -736,11 +768,11 @@ class FilterForm extends React.Component {
                 <br/>
                 <br/>
 
-                <Button basic color='black' onSubmit={this.handleSubmit}> Submit </Button>
+                <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
 
 
 
-    </div>
+            </div>
 
         );
     }
