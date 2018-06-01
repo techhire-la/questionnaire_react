@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
+import { Input, Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
 
 
 
@@ -723,6 +723,10 @@ class FilterForm extends React.Component {
                     </Form.Field>
 
                 </Form>
+
+                <br/>
+
+                <Input label='  Zip  ' placeholder='please enter a 6 digit zip code' />
 
             </div>
 

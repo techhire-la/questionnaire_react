@@ -1,5 +1,5 @@
 // may need to make certain arrangements to parse through clientAge
-// check to see if it is an array or an string first
+// clientAge will be an array
 
 {
     "contacts": [{
@@ -9,7 +9,7 @@
             "zip": [90006],
             "phonenumber": "323.546.8071",
             "email": "lsimpson@ypiusa.org",
-            "clientAge": "18-15"
+            "clientAge": ["18-15"],
             "kids": 'true',
             "kidsAge": ['18-25']
         },
@@ -34,8 +34,9 @@
             "zip": [90028, 90038, 90020],
             "phonenumber": "213.893.8050",
             "email": "abonilla@ypiusa.org",
+            "clientAge": ['10-14', '14-18'],
             "kids": "true",
-            "kidsAge": ['4-5', '5-10', '10-14', '14-18']
+            "kidsAge": ['3-5', '5-10', '10-14', '14-18']
 
         },
 
@@ -53,21 +54,12 @@
         {
             "name": "College and Career LAPN",
             "age": "14 to 24",
-            "group": [
-                "College",
-                "Career"
-            ],
-            "zip": [
-                91331,
-                90028
-            ],
+            "group": ["College", "Career"],
+            "zip": [91331, 90028 ],
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
             "kids": 'true',
-            "kidsAge": [
-                '14-18',
-                '18-25'
-            ]
+            "kidsAge": ['14-18', '18-25']
         },
 
         {
@@ -77,8 +69,9 @@
             "zip": [91331],
             "phonenumber": "818.302.3222",
             "email": "jcortez@ypiusa.org",
+            "clientAge": ['10-14','14-18'],
             "kids": 'true',
-            "kidsAge": ['18-25'],
+            "kidsAge": ['10-14','14-18'],
 
         },
 
@@ -143,18 +136,10 @@
             "group": ["College", "Career"],
             "zip": [""],
             "email": "exl@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "clientAge": ['10-14', '14-18', "18-65"],
+            "kids": 'true',
+            "kidsAge": ['3-5', '5-10', '10-14', '14-18', "18-25"],
+
         },
         {
             "name": "Face Forward (FF)",
@@ -224,18 +209,9 @@
             "zip": [91340, 91331, 91402, 91343, 91342],
             "phonenumber": "818.964.1085",
             "email": "nwu@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "clientAge": ["10-14", "14-18"],
+            "kids": 'true',
+            "kidsAge": ["10-14", "14-18"]
         },
         {
             "name": "Gang Reduction & Youth Development (GRYD)",
@@ -244,18 +220,9 @@
             "zip": [90029, 90028],
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "clientAge": ["10-14"],
+            "kids": 'true',
+            "kidsAge": ["10-14"]
         },
 
         //DERP possibly on age of clients
@@ -282,10 +249,17 @@
             "zip": [90028, 90029, 90038],
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
+            "clientAge": ["10-14", "14-18", "18-65"],
             "kids": 'true',
-            "kidsAge": ['1-3'],
+            "kidsAge": ['1-3', '3-5', '5-10', "10-14", "14-18", "18-25"],
+            "working": "false",
+            "levelOfEducation": "BA or Higher",
             "childrenWithDisabilties": "true",
-            "adultWithDisability": "true"
+            "adultWithDisability": "true",
+            "housingHardships": "true",
+            "seniorCitizen": "true",
+            "veteran": "true",
+            "LGBTQIA": "true"
         },
         {
             "name": "Latinos in Finance (LIF)",
@@ -297,6 +271,7 @@
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true"
         },
+
         {
             "name": "Los Angeles Promise Corps",
             "age": "5 to 18",
@@ -304,19 +279,10 @@
             "zip": [91340, 91342, 91331, 90029, 90038, 90028],
             "phonenumber": "818.302.3235",
             "email": "erica.jaramillo@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "kids": "true",
+            "kidsAge": ['5-10']
         },
+
         {  
             "name": "The Los Angeles Promise Neighborhood (LAPN)",
             "age": "1 to 18",
@@ -325,9 +291,11 @@
             "phonenumber": "213.688.2802",
             "email": "lapn@ypiusa.org",
             "kids": 'true',
-            "kidsAge": ['1-3'],
+            "kidsAge": ['1-3', '3-5', '5-10'],
             'teacher': 'true'
         },
+
+        //DERP multiple client ages
         {
             "name": "Los Angeles Promise Zone Full Service Community Schools (PZ FSCS)",
             "age": "3 to 18",
@@ -335,18 +303,9 @@
             "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
             "phonenumber": "818.899.5550",
             "email": "Lcarbajo@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "clientAge": ['10-14', '14-18'],
+            "kids": 'true',
+            "kidsAge": ['3-5', '5-10', '10-14', '14-18']
         },
         {
             "name": "Los Angeles Promise Zone’s Pathways to Justice Careers (LAPZ PJC)",
@@ -383,19 +342,10 @@
             "zip": [90028, 90029, 90020],
             "phonenumber": "323.940.4187",
             "email": "sbolton@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "kids": 'true',
+            "kidsAge": ['3-5', '5-10']
         },
+
         {
             "name": "Promise Scholars",
             "age": "14 to 18",
@@ -423,6 +373,8 @@
             "zip": [91331, 91340],
             "phonenumber": "818.302.3237",
             "email": "bdelgado@ypiusa.org",
+            "kids": 'true',
+            "kidsAge": ['5-10'],
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true"
         },
