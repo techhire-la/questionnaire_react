@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import catalogueData from "./contacts2.json";
-import catalogueData from "../api/contacts2.json";
+import catalogueData from "../api/contacts.json";
 
 var $ = require ('jquery')
 
