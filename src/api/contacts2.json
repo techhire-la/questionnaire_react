@@ -1,0 +1,266 @@
+{
+    "contacts": [{
+            "name": "Bridge To Coding",
+            "age": "18 to 25",
+            "group": ["High school", "College", "Career"],
+            "zip": [90006],
+            "phonenumber": "323.546.8071",
+            "email": "lsimpson@ypiusa.org"
+        },
+        {
+            "name": "California Earned Income Tax Credit (CalEITC)",
+            "age": "18 to 25",
+            "group": ["College", "Career"],
+            "zip": [""],
+            "phonenumber": "213.673.5952",
+            "email": "joanna.co@ypiusa.org"
+        },
+        {
+            "name": "Champions for Change",
+            "age": "3 to 18",
+            "group": ["Cradle", "Elementary", "Middle school", "High School", "College"],
+            "zip": [90028, 90038, 90020],
+            "phonenumber": "213.893.8050",
+            "email": "abonilla@ypiusa.org"
+        },
+        {
+            "name": "CNCS Promise Zone AmeriCorps",
+            "age": "14 to 18",
+            "group": ["High School"],
+            "zip": [90028, 90026, 90057],
+            "phonenumber": "818.899.5550",
+            "email": "cperez@ypiusa.org"
+        },
+        {
+            "name": "College and Career LAPN",
+            "age": "14 to 24",
+            "group": ["College", "Career"],
+            "zip": [91331, 90028],
+            "phonenumber": "818.899.5550",
+            "email": "cperez@ypiusa.org"
+        },
+        {
+            "name": "Community Impact Arts (CIA)",
+            "age": "10 to 18",
+            "group": ["Middle school", "High School"],
+            "zip": [91331],
+            "phonenumber": "818.302.3222",
+            "email": "jcortez@ypiusa.org"
+        },
+        {
+            "name": "Day Laborer Resource Program",
+            "age": "18 and over",
+            "group": ["Career"],
+            "zip": [91605, 91606, 91405, 91406, 91343, 91402],
+            "phonenumber": "818.255.3127",
+            "email": "jmunoz@ypiusa.org"
+        },
+        {
+            "name": "Early Head Start (EHS)",
+            "age": "1 to 3",
+            "group": ["Cradle"],
+            "zip": [90004, 90027, 90028, 90029, 90031, 90032, 90038, 90065],
+            "phonenumber": "213.893.8067",
+            "email": "ehs@ypiusa.org"
+        },
+        {
+            "name": "Educational Opportunity Centers (EOC)",
+            "age": "14 to 18",
+            "group": "14 to 18",
+            "zip": [91331, 91340],
+            "phonenumber": "818.899.5550",
+            "email": "cperez@ypiusa.org"
+        },
+        {
+            "name": "EmployUp",
+            "age": "18 to 24",
+            "group": ["Career"],
+            "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
+            "phonenumber": "818.573.9002",
+            "email": "maguilar@ypiusa.org"
+        },
+        {
+            "name": "Expanded Learning (EXL)",
+            "age": "3 to 24",
+            "group": ["College", "Career"],
+            "zip": [""],
+            "email": "exl@ypiusa.org"
+        },
+        {
+            "name": "Face Forward (FF)",
+            "age": "14 to 35",
+            "group": ["College", "Career", "Families", "Homelessness", "LGTBQIA", "Parents", "Teachers"],
+            "zip": [""],
+            "phonenumber": "213.797.4858",
+            "email": "rrenteria@ypiusa.org"
+        },
+        {
+            "name": "Financial Empowerment",
+            "age": "18 to 65",
+            "group": "College, Career",
+            "zip": [],
+            "phonenumber": "323.940.4189",
+            "email": "mnemececk@ypiusa.org"
+        },
+        {
+            "name": "Food Insecurity Nutrition Incentive (FINI)",
+            "age": "18 to 65",
+            "group": ["Career", "Families"],
+            "zip": [90028, 90038, 90020],
+            "phonenumber": "818.573.7617",
+            "email": "ahernandez@ypiusa.org"
+        },
+        {
+            "name": "Gaining Early Awareness and Readiness for Undergraduate Programs (GEAR UP)",
+            "age": "10 to 18",
+            "group": ["College", "Middle School", "High School", "Career"],
+            "zip": [91340, 91331, 91402, 91343, 91342],
+            "phonenumber": "818.964.1085",
+            "email": "nwu@ypiusa.org"
+        },
+        {
+            "name": "Gang Reduction & Youth Development (GRYD)",
+            "age": "10 to 14",
+            "group": ["Middle School", "Families"],
+            "zip": [90029, 90028],
+            "phonenumber": "323.836.0055",
+            "email": "hfsc@ypiusa.org"
+        },
+        {
+            "name": "Girls & Gangs",
+            "age": "14 to 65",
+            "group": ["College", "Women", "Homeless", "LGBTQIA", "Parents"],
+            "zip": [],
+            "phonenumber": "818.573.9002",
+            "email": "maguilar@ypiusa.org"
+        },
+        {
+            "name": "Hollywood FamilySource Center (HFSC)",
+            "age": "1 to 65",
+            "group": ["Infants", "Toddlers", "Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "College", "Adults", "Higher Education",  "Young Adults", "Businesses", "Citizens", "Disabled" ,"Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
+            "zip": [90028, 90029, 90038],
+            "phonenumber": "323.836.0055",
+            "email": "hfsc@ypiusa.org"
+        },
+        {
+            "name": "Latinos in Finance (LIF)",
+            "age": "18 to 65",
+            "group": ["College, Adults, Disabled,Homeless, LGTBQIA, Veterans"],
+            "zip": [""],
+            "phonenumber": "818.492.4065",
+            "email": "mnemececk@ypiusa.org"
+        },
+        {
+            "name": "Los Angeles Promise Corps",
+            "age": "5 to 18",
+            "group": ["College", "Career", "Elementary School", "Middle School", "High School"],
+            "zip": [91340, 91342, 91331, 90029, 90038, 90028],
+            "phonenumber": "818.302.3235",
+            "email": "erica.jaramillo@ypiusa.org"
+        },
+        {  
+            "name": "The Los Angeles Promise Neighborhood (LAPN)",
+            "age": "1 to 18",
+            "group": ["College", "Career", "Elementary School", "Middle School", "High School"],
+            "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
+            "phonenumber": "213.688.2802",
+            "email": "lapn@ypiusa.org"
+        },
+        {
+            "name": "Los Angeles Promise Zone Full Service Community Schools (PZ FSCS)",
+            "age": "3 to 18",
+            "group": ["Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "Families", "Parents"],
+            "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
+            "phonenumber": "818.899.5550",
+            "email": "Lcarbajo@ypiusa.org"
+        },
+        {
+            "name": "Los Angeles Promise Zone’s Pathways to Justice Careers (LAPZ PJC)",
+            "age": "14 to 22",
+            "group": ["High School", "College", "Career"],
+            "zip": [90068, 90010, 90005, 90057, 90020, 90005, 90038, 90028, 90006, 90027, 90004, 90029],
+            "phonenumber": "323.978.1578",
+            "email": "kkirkpatrick@ypiusa.org"
+        },
+        {
+            "name": "MakerSpace",
+            "age": "10 to 14",
+            "group": ["Middle School, College"],
+            "zip": [91340],
+            "phonenumber": "818.899.5550",
+            "email": "gortiz@ypiusa.org"
+        },
+        {
+            "name": "Promise of Wellness",
+            "age": "3 to 35",
+            "group": ["Infants", "Toddlers", "Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "College", "Adults" , "Higher Education", "Young Adults", "Businesses", "Citizens", "Disabled" ,"Families" , "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
+            "zip": [90028, 90029, 90020],
+            "phonenumber": "323.940.4187",
+            "email": "sbolton@ypiusa.org"
+        },
+        {
+            "name": "Promise Scholars",
+            "age": "14 to 18",
+            "group": ["High School"],
+            "zip": [90028],
+            "phonenumber": "818.899.8550",
+            "email": "cperez@ypiusa.org"
+        },
+        {
+            "name": "The San Fernanno Gardens Community Center",
+            "age": "10 to 65",
+            "group": ["Middle School", "High School", "College", "Adults" , "Higher Education",  "Young Adults" , "Businesses", "Citizens", "Disabled" ,"Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
+            "zip": [91331, 91340],
+            "phonenumber": "818.302.3237",
+            "email": "bdelgado@ypiusa.org"
+        },
+        {
+            "name": "TechHire",
+            "age": "18 to 65",
+            "group": ["College", "Career", "Disabled", "Veterans"],
+            "zip": [""],
+            "phonenumber": "213.673.5952",
+            "email": "techhire@ypiusa.org"
+        },
+        {
+            "name": "Veterans Now (VN)",
+            "age": "18 to 65",
+            "group": ["College", "Career", "Homeless", "Disabled", "Veterans"],
+            "zip": [""],
+            "phonenumber": "818.492.4065",
+            "email": "tflynn@ypiusa.org"
+        },
+        {
+            "name": "Workforce Innovation and Opportunity Act (WIOA)",
+            "age": "18 to 65",
+            "group": ["College", "Career", "Businesses", "Homeless", "Disabled", "Veterans"],
+            "zip": [""],
+            "phonenumber": "818.492.4065",
+            "email": ""
+        },
+        {
+            "name": "YouthBuild (YB)",
+            "age": "18 to 24",
+            "group": ["College", "Career"],
+            "zip": [91340, 91342, 91331, 91353, 91401],
+            "phonenumber": "818.302.3258",
+            "email": "vgarcia@ypiusa.org"
+        },
+        {
+            "name": "YouthSource Center (YSC)",
+            "age": "16 to 24",
+            "group": ["College", "Career", "Homeless", "Parents", "LGBTQIA", "Foster Involved"],
+            "zip": [""],
+            "phonenumber": "818.573.9030",
+            "email": "jhernandez@ypiusa.org"
+        },
+        {
+            "name": "YouthWorks",
+            "age": "14 to 24",
+            "group": ["Middle School", "High School", "College", "Homeless", "LGBTQIA"],
+            "zip": [""],
+            "phonenumber": "213.797.4858",
+            "email": "mhernandez@ypiusa.org"
+        }
+    ]
+}

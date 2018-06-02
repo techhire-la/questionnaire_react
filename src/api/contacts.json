@@ -1,7 +1,6 @@
 // may need to make certain arrangements to parse through clientAge
 // clientAge will be an array
-
-{
+module.exports =  ({
     "contacts": [{
             "name": "Bridge To Coding",
             "age": "18 to 25",
@@ -10,11 +9,10 @@
             "phonenumber": "323.546.8071",
             "email": "lsimpson@ypiusa.org",
             "clientAge": ["18-15"],
-            "kids": 'true',
-            "kidsAge": ['18-25']
+            "kids": "true",
+            "kidsAge": ["18-25"]
         },
 
-        //Clarify what College and Career means --- DERP  -- Working || Financial Harships
         {
             "name": "California Earned Income Tax Credit (CalEITC)",
             "age": "18 to 25",
@@ -22,9 +20,8 @@
             "zip": [""],
             "phonenumber": "213.673.5952",
             "email": "joanna.co@ypiusa.org",
-
-            "working": 'true',
-            "financialHardships": 'true',
+            "working": "true",
+            "financialHardships": "true"
         },
 
         {
@@ -34,9 +31,9 @@
             "zip": [90028, 90038, 90020],
             "phonenumber": "213.893.8050",
             "email": "abonilla@ypiusa.org",
-            "clientAge": ['10-14', '14-18'],
+            "clientAge": ["10-14", "14-18"],
             "kids": "true",
-            "kidsAge": ['3-5', '5-10', '10-14', '14-18']
+            "kidsAge": ["3-5", "5-10", "10-14", "14-18"]
 
         },
 
@@ -47,19 +44,19 @@
             "zip": [90028, 90026, 90057],
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['14-18']
+            "kids": "true",
+            "kidsAge": ["14-18"]
         },
 
         {
             "name": "College and Career LAPN",
             "age": "14 to 24",
             "group": ["College", "Career"],
-            "zip": [91331, 90028 ],
+            "zip": [91331, 90028],
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['14-18', '18-25']
+            "kids": "true",
+            "kidsAge": ["14-18", "18-25"]
         },
 
         {
@@ -69,13 +66,13 @@
             "zip": [91331],
             "phonenumber": "818.302.3222",
             "email": "jcortez@ypiusa.org",
-            "clientAge": ['10-14','14-18'],
-            "kids": 'true',
-            "kidsAge": ['10-14','14-18'],
+            "clientAge": ["10-14", "14-18"],
+            "kids": "true",
+            "kidsAge": ["10-14", "14-18"]
 
         },
 
-        // DERP
+
         {
             "name": "Day Laborer Resource Program",
             "age": "18 and over",
@@ -83,9 +80,8 @@
             "zip": [91605, 91606, 91405, 91406, 91343, 91402],
             "phonenumber": "818.255.3127",
             "email": "jmunoz@ypiusa.org",
-
-            "working": 'true',
-            "othersJobless": 'true' //possible DERP in the system
+            "working": "true",
+            "othersJobless": "true"
         },
 
         {
@@ -95,8 +91,8 @@
             "zip": [90004, 90027, 90028, 90029, 90031, 90032, 90038, 90065],
             "phonenumber": "213.893.8067",
             "email": "ehs@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['1-3']
+            "kids": "true",
+            "kidsAge": ["1-3"]
         },
 
         {
@@ -106,11 +102,11 @@
             "zip": [91331, 91340],
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['14-18']
+            "kids": "true",
+            "kidsAge": ["14-18"]
         },
 
-            //DERP
+
         {
             "name": "EmployUp",
             "age": "18 to 24",
@@ -118,16 +114,16 @@
             "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['18-25'],
-            "childrenOfWorkingAge": 'true',
-            "childrenOfCollegeAge": 'true',
-            "childrenInJusticeSystem": 'true',
-            "interestedInTraining": 'true',
-            "othersJobless": 'true',
-            "housingHardships": 'true',
-            "financialHardships": 'true',
-            "LGBTQIA": 'true'
+            "kids": "true",
+            "kidsAge": ["18-25"],
+            "childrenOfWorkingAge": "true",
+            "childrenOfCollegeAge": "true",
+            "childrenInJusticeSystem": "true",
+            "interestedInTraining": "true",
+            "othersJobless": "true",
+            "housingHardships": "true",
+            "financialHardships": "true",
+            "LGBTQIA": "true"
         },
 
         {
@@ -136,9 +132,9 @@
             "group": ["College", "Career"],
             "zip": [""],
             "email": "exl@ypiusa.org",
-            "clientAge": ['10-14', '14-18', "18-65"],
-            "kids": 'true',
-            "kidsAge": ['3-5', '5-10', '10-14', '14-18', "18-25"],
+            "clientAge": ["10-14", "14-18", "18-65"],
+            "kids": "true",
+            "kidsAge": ["3-5", "5-10", "10-14", "14-18", "18-25"]
 
         },
         {
@@ -148,19 +144,7 @@
             "zip": [""],
             "phonenumber": "213.797.4858",
             "email": "rrenteria@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-//            "childrenOfWorkingAge": undefined,
-//            "childrenOfCollegeAge": undefined,
-//            "childrenInJusticeSystem": undefined,
-//            "working": undefined,
-//            "levelOfEducation": undefined,
-//            "veteran": undefined,
-//            "interestedInTraining": undefined,
-//            "othersJobless": undefined,
-//            "housingHardships": undefined,
-//            "financialHardships": undefined,
-            'teacher': 'true'
+            "teacher": "true"
         },
         {
             "name": "Financial Empowerment",
@@ -168,19 +152,7 @@
             "group": "College, Career",
             "zip": [],
             "phonenumber": "323.940.4189",
-            "email": "mnemececk@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "email": "mnemececk@ypiusa.org"
         },
         {
             "name": "Food Insecurity Nutrition Incentive (FINI)",
@@ -188,19 +160,7 @@
             "group": ["Career", "Families"],
             "zip": [90028, 90038, 90020],
             "phonenumber": "818.573.7617",
-            "email": "ahernandez@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "email": "ahernandez@ypiusa.org"
         },
         {
             "name": "Gaining Early Awareness and Readiness for Undergraduate Programs (GEAR UP)",
@@ -210,7 +170,7 @@
             "phonenumber": "818.964.1085",
             "email": "nwu@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": 'true',
+            "kids": "true",
             "kidsAge": ["10-14", "14-18"]
         },
         {
@@ -221,11 +181,10 @@
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
             "clientAge": ["10-14"],
-            "kids": 'true',
+            "kids": "true",
             "kidsAge": ["10-14"]
         },
 
-        //DERP possibly on age of clients
 
         {
             "name": "Girls & Gangs",
@@ -234,24 +193,25 @@
             "zip": [],
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
-            'clientAge': ["14-18", '18-65'],
-            "kids": 'true',
-            "kidsAge": ['14-18', '18-25'],
-            "housingHardships" : "true",
+            "clientAge": ["14-18", "18-65"],
+            "kids": "true",
+            "kidsAge": ["14-18", "18-25"],
+            "housingHardships": "true",
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
-            "LGBTQIA": 'true'
+            "LGBTQIA": "true"
         },
+
         {
             "name": "Hollywood FamilySource Center (HFSC)",
             "age": "1 to 65",
-            "group": ["Infants", "Toddlers", "Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "College", "Adults", "Higher Education",  "Young Adults", "Businesses", "Citizens", "Disabled" ,"Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
+            "group": ["Infants", "Toddlers", "Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "College", "Adults", "Higher Education", "Young Adults", "Businesses", "Citizens", "Disabled", "Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
             "zip": [90028, 90029, 90038],
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": 'true',
-            "kidsAge": ['1-3', '3-5', '5-10', "10-14", "14-18", "18-25"],
+            "kids": "true",
+            "kidsAge": ["1-3", "3-5", "5-10", "10-14", "14-18", "18-25"],
             "working": "false",
             "levelOfEducation": "BA or Higher",
             "childrenWithDisabilties": "true",
@@ -261,15 +221,16 @@
             "veteran": "true",
             "LGBTQIA": "true"
         },
+
         {
-            "name": "Latinos in Finance (LIF)",
-            "age": "18 to 65",
-            "group": ["College, Adults, Disabled,Homeless, LGTBQIA, Veterans"],
-            "zip": [""],
-            "phonenumber": "818.492.4065",
-            "email": "mnemececk@ypiusa.org",
-            "childrenWithDisabilties": "true",
-            "adultWithDisability": "true"
+        "name": "Latinos in Finance (LIF)",
+        "age": "18 to 65",
+        "group": ["College, Adults, Disabled,Homeless, LGTBQIA, Veterans"],
+        "zip": [""],
+        "phonenumber": "818.492.4065",
+        "email": "mnemececk@ypiusa.org",
+        "childrenWithDisabilties": "true",
+        "adultWithDisability": "true"
         },
 
         {
@@ -280,22 +241,21 @@
             "phonenumber": "818.302.3235",
             "email": "erica.jaramillo@ypiusa.org",
             "kids": "true",
-            "kidsAge": ['5-10']
+            "kidsAge": ["5-10"]
         },
 
-        {  
+        {
             "name": "The Los Angeles Promise Neighborhood (LAPN)",
             "age": "1 to 18",
             "group": ["College", "Career", "Elementary School", "Middle School", "High School"],
             "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
             "phonenumber": "213.688.2802",
             "email": "lapn@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['1-3', '3-5', '5-10'],
-            'teacher': 'true'
+            "kids": "true",
+            "kidsAge": ["1-3", "3-5", "5-10"],
+            "teacher": "true"
         },
 
-        //DERP multiple client ages
         {
             "name": "Los Angeles Promise Zone Full Service Community Schools (PZ FSCS)",
             "age": "3 to 18",
@@ -303,30 +263,20 @@
             "zip": [90038, 90006, 90017, 91331, 91342, 91340, 90028, 90029],
             "phonenumber": "818.899.5550",
             "email": "Lcarbajo@ypiusa.org",
-            "clientAge": ['10-14', '14-18'],
-            "kids": 'true',
-            "kidsAge": ['3-5', '5-10', '10-14', '14-18']
+            "clientAge": ["10-14", "14-18"],
+            "kids": "true",
+            "kidsAge": ["3-5", "5-10", "10-14", "14-18"]
         },
+
         {
             "name": "Los Angeles Promise Zone’s Pathways to Justice Careers (LAPZ PJC)",
             "age": "14 to 22",
             "group": ["High School", "College", "Career"],
             "zip": [90068, 90010, 90005, 90057, 90020, 90005, 90038, 90028, 90006, 90027, 90004, 90029],
             "phonenumber": "323.978.1578",
-            "email": "kkirkpatrick@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "email": "kkirkpatrick@ypiusa.org"
         },
+
         {
             "name": "MakerSpace",
             "age": "10 to 14",
@@ -335,15 +285,16 @@
             "phonenumber": "818.899.5550",
             "email": "gortiz@ypiusa.org"
         },
+
         {
             "name": "Promise of Wellness",
             "age": "3 to 35",
-            "group": ["Infants", "Toddlers", "Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "College", "Adults" , "Higher Education", "Young Adults", "Businesses", "Citizens", "Disabled" ,"Families" , "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
+            "group": ["Infants", "Toddlers", "Preschool", "Kindergarten", "Elementary School", "Middle School", "High School", "College", "Adults", "Higher Education", "Young Adults", "Businesses", "Citizens", "Disabled", "Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
             "zip": [90028, 90029, 90020],
             "phonenumber": "323.940.4187",
             "email": "sbolton@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['3-5', '5-10']
+            "kids": "true",
+            "kidsAge": ["3-5", "5-10"]
         },
 
         {
@@ -352,29 +303,17 @@
             "group": ["High School"],
             "zip": [90028],
             "phonenumber": "818.899.8550",
-            "email": "cperez@ypiusa.org",
-            "kids": undefined,
-            "kidsAge": [],
-            "childrenOfWorkingAge": undefined,
-            "childrenOfCollegeAge": undefined,
-            "childrenInJusticeSystem": undefined,
-            "working": undefined,
-            "levelOfEducation": undefined,
-            "veteran": undefined,
-            "interestedInTraining": undefined,
-            "othersJobless": undefined,
-            "housingHardships": undefined,
-            "financialHardships": undefined
+            "email": "cperez@ypiusa.org"
         },
         {
             "name": "The San Fernanno Gardens Community Center",
             "age": "10 to 65",
-            "group": ["Middle School", "High School", "College", "Adults" , "Higher Education",  "Young Adults" , "Businesses", "Citizens", "Disabled" ,"Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
+            "group": ["Middle School", "High School", "College", "Adults", "Higher Education", "Young Adults", "Businesses", "Citizens", "Disabled", "Families", "The General Public", "Homeless", "LGTBQIA", "Parents", "Senior Citizens", "Veterans"],
             "zip": [91331, 91340],
             "phonenumber": "818.302.3237",
             "email": "bdelgado@ypiusa.org",
-            "kids": 'true',
-            "kidsAge": ['5-10'],
+            "kids": "true",
+            "kidsAge": ["5-10"],
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true"
         },
@@ -439,4 +378,4 @@
             "adultWithDisability": "true"
         }
     ]
-}
+})
