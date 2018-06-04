@@ -10,16 +10,13 @@ var $ = require ('jquery')
 class Catalogue extends React.Component {
 
     state = {
-        color: 'blue',
-        services: []
+        programs: []
     }
 
     componentDidMount = () => {
-        // $.getJSON('/api/contacts.json', (response) => {this.setState({services: response})})
-        // // $.getJSON('./contacts2.json', (response) => {this.setState({services: response})})
 
         this.setState({ services: catalogueData})
-        console.log(this.state.services)
+        console.log(this.state.programs)
         // for(var i = 0; i < catalogueData.length; i++) {
         //
         //     var obj = catalogueData[i];
@@ -33,7 +30,6 @@ class Catalogue extends React.Component {
     render() {
 
         console.log(this.state.services)
-        console.log(this.state.color)
 
         return (
 
