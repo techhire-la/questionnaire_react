@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import catalogueData from "./contacts2.json";
 import catalogueData from "../api/contacts.json";
 
-var $ = require ('jquery')
 
-// const services = "./api/contacts"
 class Catalogue extends React.Component {
 
     state = {
@@ -15,14 +12,16 @@ class Catalogue extends React.Component {
 
     componentDidMount = () => {
 
-        this.setState({ services: catalogueData})
+        this.setState({ programs: catalogueData})
         console.log(this.state.programs)
+
         // for(var i = 0; i < catalogueData.length; i++) {
         //
         //     var obj = catalogueData[i];
         //
         //     console.log("Name: " + obj.name + ", " + obj.zip);
         // }
+
     }
 
 
