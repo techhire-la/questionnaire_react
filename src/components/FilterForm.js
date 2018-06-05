@@ -70,7 +70,7 @@ class FilterForm extends React.Component {
             console.log("State after push: " + this.state.kidsAge)
         }
 
-    }
+    };
 
     //Question 1.2
     handleChildrenOfWorkingAge = (e, { value }) => this.setState({ childrenOfWorkingAge: value });
@@ -182,6 +182,7 @@ class FilterForm extends React.Component {
         let checkStatus = false
         if(this.state.kids === 'true'){
             showKids = {display: 'block' };
+            //clears the state
             checkStatus = undefined
         }else{
             showKids = {display: 'none' };
