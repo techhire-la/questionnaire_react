@@ -50,7 +50,7 @@ class Catalogue extends React.Component {
 
         return (
 
-                <div className="">
+                <div className="ui filterContainer">
 
                     <div className="">
                         {

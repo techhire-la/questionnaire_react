@@ -7,7 +7,10 @@ const Program = (props) => (
 
     <div className="">
         <p className=""> ({props.count}) {props.programName} | {props.programEmail} | {props.programPhone} </p>
+
+        <hr/>
     </div>
+
 
 );
 
