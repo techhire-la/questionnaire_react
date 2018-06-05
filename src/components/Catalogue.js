@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Program from './Program';
-import { Image, Item } from 'semantic-ui-react'
+import { Image, Item, Responsive, Segment } from 'semantic-ui-react'
 
 import catalogueData from "../api/contacts.json";
 
 
 class Catalogue extends React.Component {
 
-// > programs.contacts[i].name
-//     'YouthWorks'
-// > programs.contacts[i].email
-//     'mhernandez@ypiusa.org'
-// > programs.contacts[i].phone
 
     state = {
         programs: []
@@ -32,13 +27,6 @@ class Catalogue extends React.Component {
 
     }
 
-    // setInitialState = () => {
-    //
-    //     this.setState({ programs: catalogueData})
-    //     console.log(this.state.programs)
-    //
-    // }
-
 
 
     render() {
@@ -51,21 +39,26 @@ class Catalogue extends React.Component {
 
         return (
 
-                <div className="ui filterContainer">
+                <div className="ui filterContainer catalogue_items">
 
-                    <Item.Group>
-                        {
-                            programs.map((program, index) => (
-                                <Program
-                                    key={index}
-                                    programName={program.name}
-                                    programEmail={program.email}
-                                    programPhone={program.phonenumber}
-                                    count={index + 1}
-                                />
-                            ))
-                        }
-                    </Item.Group>
+                    <Segment.Group>
+
+                        <Item.Group>
+                            {
+                                programs.map((program, index) => (
+                                    <Program
+                                        key={index}
+                                        programName={program.name}
+                                        programEmail={program.email}
+                                        programPhone={program.phonenumber}
+                                        count={index + 1}
+                                    />
+                                ))
+                            }
+                        </Item.Group>
+
+                    </Segment.Group>
+
 
 
                 </div>

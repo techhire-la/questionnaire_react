@@ -1,0 +1,57 @@
+.nav_header {
+  background: cornflowerblue;
+  color: white;
+  margin-bottom: $m-size;
+  padding: $m-size 0; //1.6 above and below
+}
+
+//BEM block element modifier (naming convention)
+.header__title {
+  font-size: $l-size;
+  margin: 0;
+
+}
+
+.header__subtitle{
+  color: ghostwhite;
+  font-size: $m-size;
+  font-weight: 500;
+  margin: 0;
+}
+
+.header__container {
+  max-width: 60rem; // defaults to max which is 70rem's
+  //this below isn't working
+  margin: 0 auto;  // 0 > Top and bottom & auto sets margin left and right by giving them 5rems on either side
+  //so I've manually set the values
+  //margin: 0 5rem;
+  padding: 0 $m-size;
+
+}
+
+
+//.header {
+//  background: $off-black;
+//  color: white;
+//  margin-bottom: $xl-size;
+//  padding: $m-size 0;
+//}
+//
+//.header__title {
+//  font-size: $l-size;
+//  margin: 0;
+//}
+//
+//.header__subtitle {
+//  color: $off-white;
+//  font-size: $m-size;
+//  font-weight: 500;
+//  margin: 0;
+//}
+
+
+@media(min-width: $desktop-breakpoint) {
+  .header {
+    margin-bottom: $xl-size;
+  }
+}

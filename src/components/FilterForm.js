@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Input, Button, Grid, Header, Form, Radio, Checkbox } from 'semantic-ui-react'
+import { Input, Button, Grid, Header, Form, Radio, Checkbox, Responsive, Segment } from 'semantic-ui-react'
 
 
 
@@ -33,11 +33,11 @@ class FilterForm extends React.Component {
     }
 
     // Question 0
-    handleClientAgeChange = (e, { value }) => this.setState({ clientAge: value })
+    handleClientAgeChange = (e, { value }) => this.setState({ clientAge: value });
 
 
     // Question 1
-    handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [], childrenOfWorkingAge: undefined, childrenOfCollegeAge: undefined, childrenInJusticeSystem: undefined })}
+    handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [], childrenOfWorkingAge: undefined, childrenOfCollegeAge: undefined, childrenInJusticeSystem: undefined })};
 
     //Question 1.1
     handleAgeChange = (e, {value}) => {
@@ -49,7 +49,7 @@ class FilterForm extends React.Component {
             var array = this.state.kidsAge
 
             if (value === array[i]) {
-                console.log("value " + value + " is being compared to array element " + array[i] )
+                console.log("value " + value + " is being compared to array element " + array[i] );
                 matchIndex = array.indexOf(value);
                 console.log("Index value saved as " + matchIndex )
             }
@@ -58,93 +58,106 @@ class FilterForm extends React.Component {
 
         if ((matchIndex != undefined ) && (matchIndex > -1)) {
             array.splice(matchIndex, 1);
-            this.setState({ kidsAge: array })
+            this.setState({ kidsAge: array });
             console.log("State after splice: " + this.state.kidsAge)
 
 
         } else {
             array.push( value )
-            console.log("Array with new pushed value: " + array)
-            this.setState({ kidsAge: array })
+            console.log("Array with new pushed value: " + array);
+            this.setState({ kidsAge: array });
             console.log("State after push: " + this.state.kidsAge)
         }
 
     }
 
     //Question 1.2
-    handleChildrenOfWorkingAge = (e, { value }) => this.setState({ childrenOfWorkingAge: value })
+    handleChildrenOfWorkingAge = (e, { value }) => this.setState({ childrenOfWorkingAge: value });
 
     //Question 1.3
-    handleChildrenOfCollegeAge = (e, { value }) => this.setState({ childrenOfCollegeAge: value })
+    handleChildrenOfCollegeAge = (e, { value }) => this.setState({ childrenOfCollegeAge: value });
 
     //Question 1.4
-    handleChildrenInJusticeSystem = (e, { value }) => this.setState({ childrenInJusticeSystem: value })
+    handleChildrenInJusticeSystem = (e, { value }) => this.setState({ childrenInJusticeSystem: value });
 
 
     //Question 2
     // handleWorkingChange = (e, { value }) => this.setState({ working: value })
-    handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })}
+    handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
 
     //Question 2.1
-    handleLevelOfEducation = (e, { value }) => this.setState({ levelOfEducation: value })
+    handleLevelOfEducation = (e, { value }) => this.setState({ levelOfEducation: value });
 
     //Question 2.2
-    handleVeteran = (e, { value }) => this.setState({ veteran: value })
+    handleVeteran = (e, { value }) => this.setState({ veteran: value });
 
     //Question 2.3
-    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value })
+    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value });
 
     //Question 2.4
-    handleOthersJobless = (e, { value }) => this.setState({ othersJobless: value })
+    handleOthersJobless = (e, { value }) => this.setState({ othersJobless: value });
 
     //Question 2.5
-    handleChildrenInFosterCare = (e, { value }) => this.setState({ childrenInFosterCare: value })
+    handleChildrenInFosterCare = (e, { value }) => this.setState({ childrenInFosterCare: value });
 
     //Question 2.6
-    handleChildrenWithDisabilties = (e, { value }) => this.setState({ childrenWithDisabilties: value })
+    handleChildrenWithDisabilties = (e, { value }) => this.setState({ childrenWithDisabilties: value });
 
 
     //Question 3
-    handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value })
+    handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value });
 
 
     //Question 4
-    handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value })
+    handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value });
 
     //Question 5
     // handleAdultDisabilityChange = (e, { value }) => {(value === 'Prefer not to disclose') ? this.setState({ adultWithDisability: undefined }) : this.setState({ adultWithDisability: value})}
-    handleAdultDisabilityChange = (e, { value }) => this.setState({ adultWithDisability: value })
+    handleAdultDisabilityChange = (e, { value }) => this.setState({ adultWithDisability: value });
 
     //Question 6
-    handleSeniorCitizenChange = (e, { value }) => this.setState({ seniorCitizen: value })
+    handleSeniorCitizenChange = (e, { value }) => this.setState({ seniorCitizen: value });
 
 
     //Question 7
-    handleTeacherChange = (e, { value }) => this.setState({ teacher: value })
+    handleTeacherChange = (e, { value }) => this.setState({ teacher: value });
 
     //Question 8
-    handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value })
+    handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value });
 
 
-    //Zip Code and Submit
+    /////////////////////////////////////////////////////////////////////////////
+    ///////////// Zip Code and Submit ///////////////////////////////////////////
 
-    handleZipChange = (e, { value }) => this.setState({ zip: parseInt(value) })
+    handleZipChange = (e, { value }) => this.setState({ zip: parseInt(value) });
+
 
     handleZipValidation = (zip) => {
+
+
+        console.log(zip) //DOES NOT WORK FOR ZIPS STARTING WITH ZEROS
+
+        var zipAsInt = parseInt(zip)
 
         if(zip.toString().length !== 5) {
             alert('Zip Code must be 5 digits')
         }
 
-        if( !(Number.isInteger(zip)) ){
+        if( !(Number.isInteger(zipAsInt)) ){
             alert('Zip Code must be numbers only')
         }
 
-        if (zip.toString().length === 5 && Number.isInteger(zip)) {
+        // if( !(/^\d{5}(-\d{4})?$/.test(zip))) ){
+        //     alert('Zip Code must be numbers only')
+        // }
+
+        if (zip.toString().length === 5 && Number.isInteger(zipAsInt)) {
             console.log("Zip Validated!")
+            // this.setState({ zip: parseInt(zip) })
+            this.setState({zip: parseInt(zip)})
         }
 
-    }
+    };
 
 
     handleSubmit = () => {
@@ -155,30 +168,27 @@ class FilterForm extends React.Component {
 
         console.log("After Zip Validation");
 
+    };
 
-    }
-
-
-    // handleSubmit
-
-    // handleSubmit = ()
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
 
 
     render() {
 
         //Question 1
-        let showKids = ""
+        let showKids = "";
         let checkStatus = false
         if(this.state.kids === 'true'){
-            showKids = {display: 'block' }
+            showKids = {display: 'block' };
             checkStatus = undefined
         }else{
-            showKids = {display: 'none' }
+            showKids = {display: 'none' };
             let checkStatus = false
         }
 
         //Question 2
-        let showWorking = ""
+        let showWorking = "";
         if(this.state.working === 'false'){
             showWorking = {display: 'block' }
         }else{
@@ -187,7 +197,7 @@ class FilterForm extends React.Component {
 
         return (
 
-            <div className="ui filterContainer">
+            <div className="ui filterContainer" >
 
                 <h3>Question 0</h3>
                 <Form>
@@ -763,7 +773,7 @@ class FilterForm extends React.Component {
 
                 <br/>
 
-                <Input label='  Zip  ' placeholder='please enter a 6 digit zip code' onChange={this.handleZipChange} />
+                <Input label='  Zip  ' placeholder='please enter a 5 digit zip code' onChange={this.handleZipChange} />
 
                 <br/>
                 <br/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'semantic-ui-react'
+import { Button, Responsive, Segment } from 'semantic-ui-react'
 import { Link, NavLink} from 'react-router-dom'
 
 
@@ -26,19 +26,22 @@ render() {
         <div className="ui filterContainer">
 
 
-            <Link to="/form">
-                <Button secondary size='massive'>
-                    <p>Form</p>
-                </Button>
-            </Link>
+            <div className="center">
+                <Link to="/form">
+                    <Button secondary size='massive'>
+                        <p>Form</p>
+                    </Button>
+                </Link>
 
 
 
-            <Link to="/catalogue">
-                <Button primary size='massive'>
-                    <p>Catalogue</p>
-                </Button>
-            </Link>
+                <Link to="/catalogue">
+                    <Button primary size='massive'>
+                        <p>Catalogue</p>
+                    </Button>
+                </Link>
+            </div>
+
 
         </div>
 
