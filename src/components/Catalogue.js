@@ -31,9 +31,9 @@ class Catalogue extends React.Component {
 
     render() {
 
-        console.log(this.state.programs);
+        // console.log(this.state.programs);
         var programs = this.state.programs.contacts;
-        console.log("programs: " + programs);
+        // console.log("programs: " + programs);
         // debugger
 
 
