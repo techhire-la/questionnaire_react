@@ -23,7 +23,7 @@ render() {
 
     return (
 
-        <div>
+        <div className="ui filterContainer">
 
 
             <Link to="/form">

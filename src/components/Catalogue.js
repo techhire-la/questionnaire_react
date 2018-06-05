@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Program from './Program';
+import { Image, Item } from 'semantic-ui-react'
 
 import catalogueData from "../api/contacts.json";
 
@@ -31,12 +32,12 @@ class Catalogue extends React.Component {
 
     }
 
-    setInitialState = () => {
-
-        this.setState({ programs: catalogueData})
-        console.log(this.state.programs)
-
-    }
+    // setInitialState = () => {
+    //
+    //     this.setState({ programs: catalogueData})
+    //     console.log(this.state.programs)
+    //
+    // }
 
 
 
@@ -52,19 +53,19 @@ class Catalogue extends React.Component {
 
                 <div className="ui filterContainer">
 
-                    <div className="">
+                    <Item.Group>
                         {
                             programs.map((program, index) => (
                                 <Program
                                     key={index}
                                     programName={program.name}
                                     programEmail={program.email}
-                                    programPhone={program.phone}
+                                    programPhone={program.phonenumber}
                                     count={index + 1}
                                 />
                             ))
                         }
-                    </div>
+                    </Item.Group>
 
 
                 </div>
