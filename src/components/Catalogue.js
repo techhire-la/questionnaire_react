@@ -95,9 +95,9 @@ class Catalogue extends React.Component {
         var emaillist = document.getElementById("emaillist").value;
 
         formData = {
-            'service_id': 'default_service',
-            'template_id': 'email_blast',
-            'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'//,
+            "service_id": "default_service",
+            "template_id": "email_blast",
+            "user_id": "user_NT8KduLVWnsRhOfMwJEB8"//,
             // 'firstname': firstname,
             // 'lastname': lastname,
             // 'phonenumber': phonenumber,
@@ -105,7 +105,21 @@ class Catalogue extends React.Component {
             // 'emaillist': emaillist
         };
 
+        // emailjs.sendForm('contact_service', 'contact_form', this);
+
+
+
+        var dataForm = {
+            "firstname": firstname,
+            "lastname": lastname,
+            "phonenumber": phonenumber,
+            "senderemail": senderemail,
+            "emailto": emaillist
+        }
+
         console.log("formData: " + formData);
+
+        console.log("dataForm: " + dataForm)
 
         // data: {
         //     'service_id': 'default_service',
@@ -113,19 +127,36 @@ class Catalogue extends React.Component {
         //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
         // },
 
-        $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-            type: 'POST',
-            data: formData,
 
-            contentType: false, // auto-detection
-            processData: false // no need to parse formData to string
-        }).done(function() {
-            alert('Your mail is sent!');
+        //simple way /////////////////////////////////////////////////////////////
+        emailjs.send("default_service", "email_blast", dataForm)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
 
-        }).fail(function(error) {
-            console.log('Oops... ' + JSON.stringify(error.responseText));
-            alert('Oops... ' + JSON.stringify(error));
-        });
+        //slightly less simple way /////////////////////////////////////////////////////////////
+        // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
+        //     console.log('SUCCESS!', response.status, response.text);
+        // }, function(error) {
+        //     console.log('FAILED...', error);
+        // });
+
+        // API way /////////////////////////////////////////////////////////////
+        // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+        //     type: 'POST',
+        //     data: formData,
+        //
+        //     contentType: false, // auto-detection
+        //     processData: false // no need to parse formData to string
+        // }).done(function() {
+        //     alert('Your mail is sent!');
+        //
+        // }).fail(function(error) {
+        //     console.log('Oops... ' + JSON.stringify(error.responseText));
+        //     alert('Oops... ' + JSON.stringify(error));
+        // });
 
 
 

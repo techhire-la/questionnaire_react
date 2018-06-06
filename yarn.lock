@@ -1581,6 +1581,12 @@ emailjs-base64@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/emailjs-base64/-/emailjs-base64-1.1.4.tgz#392fa38cb6aa35dccd3af3637ffc14c1c7ce9612"
 
+emailjs-com@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/emailjs-com/-/emailjs-com-2.1.1.tgz#624d7e5fde226ca32fee83bd2453ca108efe51ba"
+  dependencies:
+    promise-polyfill "7.1.0"
+
 emailjs-mime-codec@^2.0.5:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/emailjs-mime-codec/-/emailjs-mime-codec-2.0.7.tgz#501341be3e322457ae10ed4cfe1c5c0ca1f1adf7"
@@ -3557,6 +3563,10 @@ process-nextick-args@~1.0.6:
 process@^0.11.0:
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+
+promise-polyfill@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-7.1.0.tgz#4d749485b44577c14137591c6f36e5d7e2dd3378"
 
 promise@^7.1.1:
   version "7.3.1"
