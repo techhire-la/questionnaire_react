@@ -245,4 +245,3 @@ class Catalogue extends React.Component {
 export default Catalogue;
 
 
-// senderemail id=inputEmail4
