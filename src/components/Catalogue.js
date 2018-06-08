@@ -68,22 +68,95 @@ class Catalogue extends React.Component {
         event.preventDefault(); // prevent reload
         console.log("handleEmail");
 
-        var formData = new FormData(this);
+        debugger
+
+        var searchIDs = $("input[type='checkbox']:checked").map(function () {
+            return $(this).val();
+        }).get(); // <----
+        console.log("SEARCH ID's: " + searchIDs);
+        console.log("EmailList Value " + document.getElementById("emaillist").value)
+        document.getElementById("emaillist").value = searchIDs;
+
+        var that = document.getElementById('email')
+        console.log("that: " + that)
+
+        // var formData = new FormData(this);
+        var formData = new FormData(that);
+
         formData.append('service_id', 'default_service');
         formData.append('template_id', 'email_blast');
-        formData.append('user_id', EMAIL_JS_USER_ID);
+        formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
+        // formData.append('user_id', EMAIL_JS_USER_ID);
 
-        $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-            type: 'POST',
-            data: formData,
-            contentType: false, // auto-detection
-            processData: false // no need to parse formData to string
-        }).done(function() {
-            alert('Your mail is sent!');
+        var firstname = document.getElementById("firstname").value;
+        var lastname = document.getElementById("lastname").value;
+        var phonenumber = document.getElementById("phonenumber").value;
+        var senderemail = document.getElementById("senderemail").value;
+        var emaillist = document.getElementById("emaillist").value;
 
-        }).fail(function(error) {
-            alert('Oops... ' + JSON.stringify(error));
-        });
+        formData = {
+            "service_id": "default_service",
+            "template_id": "email_blast",
+            "user_id": "user_NT8KduLVWnsRhOfMwJEB8"//,
+            // 'firstname': firstname,
+            // 'lastname': lastname,
+            // 'phonenumber': phonenumber,
+            // 'senderemail': senderemail,
+            // 'emaillist': emaillist
+        };
+
+        // emailjs.sendForm('contact_service', 'contact_form', this);
+
+
+
+        var dataForm = {
+            "firstname": firstname,
+            "lastname": lastname,
+            "phonenumber": phonenumber,
+            "senderemail": senderemail,
+            "emailto": emaillist
+        }
+
+        console.log("formData: " + formData);
+
+        console.log("dataForm: " + dataForm)
+
+        // data: {
+        //     'service_id': 'default_service',
+        //     'template_id': 'email_blast',
+        //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
+        // },
+
+
+        //simple way /////////////////////////////////////////////////////////////
+        emailjs.send("default_service", "email_blast", dataForm)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+
+        //slightly less simple way /////////////////////////////////////////////////////////////
+        // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
+        //     console.log('SUCCESS!', response.status, response.text);
+        // }, function(error) {
+        //     console.log('FAILED...', error);
+        // });
+
+        // API way /////////////////////////////////////////////////////////////
+        // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+        //     type: 'POST',
+        //     data: formData,
+        //
+        //     contentType: false, // auto-detection
+        //     processData: false // no need to parse formData to string
+        // }).done(function() {
+        //     alert('Your mail is sent!');
+        //
+        // }).fail(function(error) {
+        //     console.log('Oops... ' + JSON.stringify(error.responseText));
+        //     alert('Oops... ' + JSON.stringify(error));
+        // });
 
 
 
@@ -124,36 +197,44 @@ class Catalogue extends React.Component {
                     </Segment.Group>
 
 
-                    <div className="form-row">
 
-                        <div className="form-group col-md-6">
-                            <input type="text" className="form-control" placeholder="First name" name="firstname"/>
+                    <form id="email" method="POST">
+                        <div id="resultstest">
+                            <table className="table table-hover table-dark table-responsive" id="#message">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="form-row">
+
+                            <div className="form-group col-md-6">
+                                <input id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
+                            </div>
+
+                            <div className="form-group col-md-6" name="lastname">
+                                <input id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
+                            </div>
+
                         </div>
 
-                        <div className="form-group col-md-6" name="lastname">
-                            <input type="text" className="form-control" placeholder="Last name" name="lastname"/>
+
+                        <div className="form-row">
+                            <div className="form-group col-md-8">
+                                <input  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
+                            </div>
+                            <div className="form-group col-md-4">
+                                <input id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
+                            </div>
                         </div>
 
-                    </div>
-
-
-                    <div className="form-row">
-                        <div className="form-group col-md-8">
-                            <input type="email" className="form-control" id="inputEmail4" placeholder="Email" name="senderemail"/>
+                        <div className="form-row">
+                            <input id="emaillist" type="email" className="form-control" placeholder="Email to 'CC'" name="emailto" value={this.state.emails}/>
                         </div>
-                        <div className="form-group col-md-4">
-                            <input type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
-                        </div>
-                    </div>
-
-                    <div className="form-row">
-                        <input id="emaillist" type="email" className="form-control" placeholder="Email to 'CC'" name="emailto" value={this.state.emails}/>
-                    </div>
 
 
-                    <Button basic color='black' onClick={this.handleEmail}> Submit </Button>
+                        <Button basic color='black' onClick={this.handleEmail}> Submit </Button>
 
-
+                    </form>
                 </div>
 
             );
@@ -162,3 +243,5 @@ class Catalogue extends React.Component {
 
 
 export default Catalogue;
+
+
