@@ -140,7 +140,11 @@ class FilterForm extends React.Component {
 
         var zipAsInt = parseInt(zip)
 
-        if(zip.toString().length !== 5) {
+        if(zip === undefined  ||  zip === NaN) {
+            alert(' Please Enter A Zip Code')
+        }
+
+        if(zip != undefined && zip.toString().length !== 5) {
             alert('Zip Code must be 5 digits')
         }
 
@@ -152,7 +156,7 @@ class FilterForm extends React.Component {
         //     alert('Zip Code must be numbers only')
         // }
 
-        if (zip.toString().length === 5 && Number.isInteger(zipAsInt)) {
+        if (zip != undefined && zip.toString().length === 5 && Number.isInteger(zipAsInt)) {
             console.log("Zip Validated!")
             // this.setState({ zip: parseInt(zip) })
             this.setState({zip: parseInt(zip)})
@@ -176,6 +180,7 @@ class FilterForm extends React.Component {
 
 
     render() {
+
 
         //Question 1
         let showKids = "";

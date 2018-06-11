@@ -232,17 +232,17 @@
         },
 
         {
-        "name": "Latinos in Finance (LIF)",
-        "age": "18 to 65",
-        "group": ["College, Adults, Disabled,Homeless, LGTBQIA, Veterans"],
-        "zip": [""],
-        "phonenumber": "818.492.4065",
-        "email": "mnemececk@ypiusa.org",
-        "childrenWithDisabilties": "true",
-        "adultWithDisability": "true",
-        "housingHardships": "true",
-        "veteran": "true",
-        "LGBTQIA": "true"
+            "name": "Latinos in Finance (LIF)",
+            "age": "18 to 65",
+            "group": ["College, Adults, Disabled,Homeless, LGTBQIA, Veterans"],
+            "zip": [""],
+            "phonenumber": "818.492.4065",
+            "email": "mnemececk@ypiusa.org",
+            "childrenWithDisabilties": "true",
+            "adultWithDisability": "true",
+            "housingHardships": "true",
+            "veteran": "true",
+            "LGBTQIA": "true"
         },
 
         {
