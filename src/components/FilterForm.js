@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Catalogue from './Catalogue';
 import { Input, Button, Grid, Header, Form, Radio, Checkbox, Responsive, Segment } from 'semantic-ui-react'
 
 import $ from 'jquery';
@@ -250,6 +251,8 @@ class FilterForm extends React.Component {
         }
 
         return (
+
+        <div>
 
             <div className="ui filterContainer" >
 
@@ -823,6 +826,9 @@ class FilterForm extends React.Component {
                         />
                     </Form.Field>
 
+
+
+
                 </Form>
 
                 <br/>
@@ -836,7 +842,21 @@ class FilterForm extends React.Component {
 
 
 
+
             </div>
+
+
+            <Catalogue
+                truthyArray={this.state.truthyArray}
+                clientAge: {this.state.clientAge}
+                kidsAge={this.state.kidsAge}
+                levelOfEducation = {this.state.levelOfEducation}
+            />
+
+
+
+
+        </div>
 
         );
     }
