@@ -30,7 +30,9 @@ class FilterForm extends React.Component {
         seniorCitizen: undefined,
         teacher: undefined,
         LGBTQIA: undefined,
-        zip: undefined
+        zip: undefined,
+
+        truthyArray:[]
     }
 
     // Question 0
@@ -43,11 +45,11 @@ class FilterForm extends React.Component {
     //Question 1.1
     handleAgeChange = (e, {value}) => {
 
-        var matchIndex = undefined
+        var matchIndex = undefined;
 
         for(var i = 0 ; i <= this.state.kidsAge.length ; i++) {
 
-            var array = this.state.kidsAge
+            var array = this.state.kidsAge;
 
             if (value === array[i]) {
                 console.log("value " + value + " is being compared to array element " + array[i] );
@@ -165,6 +167,49 @@ class FilterForm extends React.Component {
     };
 
 
+    handleTruthyArray = () => {
+        // truthyArray
+        var arrayOfTruth = [];
+
+        var formState = this.state;
+        for (var key in formState) {
+            if (formState.hasOwnProperty(key) && formState[key] === "true") {
+                // console.log("formState value: " + formState[key]);
+                arrayOfTruth.push(key)
+                // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+            }
+        }
+
+
+
+        // console.log("state: " + this.state)
+
+                // kidsAge: [],
+            //     childrenOfWorkingAge: undefined,
+            //     childrenOfCollegeAge: undefined,
+            //     childrenInJusticeSystem: undefined,
+            //     childrenInFosterCare: undefined,
+            //     childrenWithDisabilties: undefined,
+            //
+            // working: undefined,
+            //     levelOfEducation: undefined,
+            //     veteran: undefined,
+            //     interestedInTraining: undefined,
+            //     othersJobless: undefined,
+            //
+            // housingHardships: undefined,
+            // financialHardships: undefined,
+            //
+            // adultWithDisability: undefined,
+            // seniorCitizen: undefined,
+            // teacher: undefined,
+            // LGBTQIA: undefined,
+            //
+
+
+    }
+
+
     handleSubmit = () => {
 
         console.log("in handle submit");
@@ -172,6 +217,8 @@ class FilterForm extends React.Component {
         this.handleZipValidation(this.state.zip);
 
         console.log("After Zip Validation");
+
+        this.handleTruthyArray();
 
     };
 
