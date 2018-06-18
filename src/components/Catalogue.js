@@ -37,13 +37,13 @@ class Catalogue extends React.Component {
     };
 
     // componentDidUpdate = (props) => {
-    componentWillReceiveProps = (props) => {
+    componentWillReceiveProps = (newProps) => {
         // this.setState({ willReceive: this.props.truthyArray})
 
         // console.log("Will Receive: " + this.state.willReceive)
         debugger
         var filteredProgramArray = [];
-        this.setState({ willReceive: props.truthyArray});
+        this.setState({ willReceive: newProps.truthyArray});
 
 
         // if (props.truthyArray !== this.state.willReceive) {
@@ -59,7 +59,7 @@ class Catalogue extends React.Component {
         // console.log(catalogueData)
 
         // if(this.props.truthyArray === []) {
-        if(this.props.truthyArray .length !== 0) {
+        if(this.props.truthyArray.length !== 0) {
         // if(this.state.willReceive.length !== 0) {
 
             // console.log("this.props.truthyArray: " + this.props.truthyArray);
@@ -74,7 +74,9 @@ class Catalogue extends React.Component {
                 for (var key in contacts[i]) {
                     ///////////// working may need to be false /////////////////////////
                     if (contacts[i].hasOwnProperty(key)) {
+
                         // console.log("formState value: " + formState[key]);
+
                         filteredProgramArray.push(contacts[i])
                         // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
                     }
