@@ -49,7 +49,7 @@
       <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="701">
+            <state relative-caret-position="881">
               <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -61,8 +61,8 @@
       <file leaf-file-name="Catalogue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Catalogue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="-135">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -109,8 +109,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="221" />
-    <option name="y" value="24" />
+    <option name="y" value="23" />
     <option name="width" value="958" />
     <option name="height" value="831" />
   </component>
@@ -362,12 +361,12 @@
       <workItem from="1528170704309" duration="22772000" />
       <workItem from="1528322069389" duration="5241000" />
       <workItem from="1528488982662" duration="549000" />
-      <workItem from="1528820477516" duration="16500000" />
+      <workItem from="1528820477516" duration="19296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168828000" />
+    <option name="totallyTimeSpent" value="171624000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,7 +378,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="221" y="24" width="958" height="831" extended-state="0" />
+    <frame x="0" y="23" width="958" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23265742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -789,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
+        <state relative-caret-position="881">
           <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -799,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Catalogue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="-135">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

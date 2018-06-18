@@ -13,9 +13,11 @@ class Catalogue extends React.Component {
         programs: [],
         emails: [],
         willReceive: []
-    }
+    };
 
     componentWillMount = () => {
+
+        // console.log(catalogueData.length)
 
         this.setState({ programs: catalogueData});
 
@@ -32,8 +34,9 @@ class Catalogue extends React.Component {
 
         console.log("This is the receive truthy array function " + this.props.truthyArray);
 
-    }
+    };
 
+    // componentDidUpdate = (props) => {
     componentWillReceiveProps = (props) => {
         // this.setState({ willReceive: this.props.truthyArray})
 
@@ -41,6 +44,12 @@ class Catalogue extends React.Component {
         debugger
         var filteredProgramArray = [];
         this.setState({ willReceive: props.truthyArray});
+
+
+        // if (props.truthyArray !== this.state.willReceive) {
+        //     this.setState({value: props.willReceive})
+        // }
+
 
         // console.log("propsBoi: " + props.truthyArray)
 
@@ -50,7 +59,8 @@ class Catalogue extends React.Component {
         // console.log(catalogueData)
 
         // if(this.props.truthyArray === []) {
-        if(this.state.willReceive.length !== 0) {
+        if(this.props.truthyArray .length !== 0) {
+        // if(this.state.willReceive.length !== 0) {
 
             // console.log("this.props.truthyArray: " + this.props.truthyArray);
 
