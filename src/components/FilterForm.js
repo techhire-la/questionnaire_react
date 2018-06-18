@@ -33,7 +33,7 @@ class FilterForm extends React.Component {
         LGBTQIA: undefined,
         zip: undefined,
 
-        truthyArray:[]
+        truthyArray: []
     }
 
     // Question 0
@@ -181,31 +181,7 @@ class FilterForm extends React.Component {
             }
         }
 
-
-
-        // console.log("state: " + this.state)
-
-                // kidsAge: [],
-            //     childrenOfWorkingAge: undefined,
-            //     childrenOfCollegeAge: undefined,
-            //     childrenInJusticeSystem: undefined,
-            //     childrenInFosterCare: undefined,
-            //     childrenWithDisabilties: undefined,
-            //
-            // working: undefined,
-            //     levelOfEducation: undefined,
-            //     veteran: undefined,
-            //     interestedInTraining: undefined,
-            //     othersJobless: undefined,
-            //
-            // housingHardships: undefined,
-            // financialHardships: undefined,
-            //
-            // adultWithDisability: undefined,
-            // seniorCitizen: undefined,
-            // teacher: undefined,
-            // LGBTQIA: undefined,
-            //
+        this.setState({ truthyArray: arrayOfTruth })
 
 
     }
@@ -213,7 +189,7 @@ class FilterForm extends React.Component {
 
     handleSubmit = () => {
 
-        console.log("in handle submit");
+        // console.log("in handle submit");
 
         this.handleZipValidation(this.state.zip);
 
@@ -228,6 +204,13 @@ class FilterForm extends React.Component {
 
 
     render() {
+
+        var truthyArray = this.state.truthyArray
+
+        // console.log("Here's Filter Form's truthyArray: " + truthyArray)
+        var clientAge = this.state.clientAge
+        var kidsAge= this.state.kidsAge
+        var levelOfEducation = this.state.levelOfEducation
 
 
         //Question 1
@@ -847,10 +830,10 @@ class FilterForm extends React.Component {
 
 
             <Catalogue
-                truthyArray={this.state.truthyArray}
-                clientAge: {this.state.clientAge}
-                kidsAge={this.state.kidsAge}
-                levelOfEducation = {this.state.levelOfEducation}
+                truthyArray={truthyArray}
+                clientAge={clientAge}
+                kidsAge={kidsAge}
+                levelOfEducation = {levelOfEducation}
             />
 
 

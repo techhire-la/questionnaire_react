@@ -11,22 +11,94 @@ class Catalogue extends React.Component {
 
     state = {
         programs: [],
-        emails: []
+        emails: [],
+        willReceive: []
     }
 
     componentWillMount = () => {
 
-        this.setState({ programs: catalogueData})
-        console.log(this.state.programs)
-
-    // for(var i = 0; i < catalogueData.length; i++) {
-    //
-    //     var obj = catalogueData[i];
-    //
-    //     console.log("Name: " + obj.name + ", " + obj.zip);
-    // }
+        this.setState({ programs: catalogueData});
 
     }
+
+    // shouldComponentUpdate(nextProps) {
+    //     this.setState({ willReceive: nextProps.truthyArray});
+    //     console.log("Should Component Update");
+    //     console.log("willReceive State: " + this.state.willReceive);
+    //     // return this.state.willReceive !== nextProps.truthyArray;
+    // }
+
+    receiveTruthyArray = () => {
+
+        console.log("This is the receive truthy array function " + this.props.truthyArray);
+
+    }
+
+    handleFilterArray = () => {
+
+        debugger
+
+        if(this.state.willReceive.length !== 0) {
+
+            // console.log("this.props.truthyArray: " + this.props.truthyArray);
+
+            console.log("Should be hitting the IF here");
+
+            var contacts = catalogueData.contacts ;
+
+            for (var i = 0 ; i <= contacts.length ; i++){
+
+
+                for (var key in contacts[i]) {
+                    ///////////// working may need to be false /////////////////////////
+                    if (contacts[i].hasOwnProperty(key)) {
+                        // console.log("formState value: " + formState[key]);
+                        filteredProgramArray.push(contacts[i])
+                        // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+                    }
+                }
+
+
+            }
+
+        }else{
+
+            console.log("hitting an else for some reason")
+            // console.log("this.props.truthyArray: " + this.props.truthyArray)
+
+
+
+
+
+        }
+
+
+        console.log("FilteredProgramArray: " + filteredProgramArray);
+
+
+    };
+
+
+    componentWillReceiveProps = (props) => {
+        // this.setState({ willReceive: this.props.truthyArray})
+
+        // console.log("Will Receive: " + this.state.willReceive)
+        // debugger
+        var filteredProgramArray = [];
+        this.setState({ willReceive: props.truthyArray});
+
+        // console.log("propsBoi: " + props.truthyArray)
+
+        // console.log("willReceive State: " + this.state.willReceive)
+
+        // console.log("catalogue data below");
+        // console.log(catalogueData)
+
+        // if(this.props.truthyArray === []) {
+
+        handleFilterArray()
+
+    };
 
 
     handleEmailList = (e, {value}) => {
@@ -68,7 +140,7 @@ class Catalogue extends React.Component {
         event.preventDefault(); // prevent reload
         console.log("handleEmail");
 
-        debugger
+        // debugger
 
         var searchIDs = $("input[type='checkbox']:checked").map(function () {
             return $(this).val();
@@ -166,8 +238,16 @@ class Catalogue extends React.Component {
 
 
     render() {
-
+        console.log("truthy array length: " + this.props.truthyArray.length)
+        // console.log("truthyArray props: " + this.props.truthyArray);
+        if(this.props.truthyArray.length === 0) {
+            var sayWhat = "Saaaaaay WHAAAAAAAT"
+        }else{
+            var sayWhat = "WHOOO DAT BOI"
+        }
         // console.log(this.state.programs);
+            // console.log("Rendered clientAge in Catalogue: " + this.props.clientAge)
+            // console.log("Rendered Truthy Array in Catalogue: " + this.props.truthyArray)
         var programs = this.state.programs.contacts;
         // console.log("programs: " + programs);
         // debugger
@@ -176,6 +256,9 @@ class Catalogue extends React.Component {
         return (
 
                 <div className="ui filterContainer catalogue_items">
+
+                    <h1>{sayWhat}</h1>
+                    <h3>{this.state.willReceive}</h3>
 
                     <Segment.Group>
 
