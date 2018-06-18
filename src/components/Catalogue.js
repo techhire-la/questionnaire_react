@@ -34,10 +34,22 @@ class Catalogue extends React.Component {
 
     }
 
-    handleFilterArray = () => {
+    componentWillReceiveProps = (props) => {
+        // this.setState({ willReceive: this.props.truthyArray})
 
+        // console.log("Will Receive: " + this.state.willReceive)
         debugger
+        var filteredProgramArray = [];
+        this.setState({ willReceive: props.truthyArray});
 
+        // console.log("propsBoi: " + props.truthyArray)
+
+        // console.log("willReceive State: " + this.state.willReceive)
+
+        // console.log("catalogue data below");
+        // console.log(catalogueData)
+
+        // if(this.props.truthyArray === []) {
         if(this.state.willReceive.length !== 0) {
 
             // console.log("this.props.truthyArray: " + this.props.truthyArray);
@@ -76,29 +88,9 @@ class Catalogue extends React.Component {
         console.log("FilteredProgramArray: " + filteredProgramArray);
 
 
-    };
 
 
-    componentWillReceiveProps = (props) => {
-        // this.setState({ willReceive: this.props.truthyArray})
-
-        // console.log("Will Receive: " + this.state.willReceive)
-        // debugger
-        var filteredProgramArray = [];
-        this.setState({ willReceive: props.truthyArray});
-
-        // console.log("propsBoi: " + props.truthyArray)
-
-        // console.log("willReceive State: " + this.state.willReceive)
-
-        // console.log("catalogue data below");
-        // console.log(catalogueData)
-
-        // if(this.props.truthyArray === []) {
-
-        handleFilterArray()
-
-    };
+    }
 
 
     handleEmailList = (e, {value}) => {
