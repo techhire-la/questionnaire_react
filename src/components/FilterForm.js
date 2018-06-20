@@ -4,6 +4,7 @@ import Catalogue from './Catalogue';
 import { Input, Button, Grid, Header, Form, Radio, Checkbox, Responsive, Segment } from 'semantic-ui-react'
 
 import $ from 'jquery';
+import catalogueData from "../api/contacts.json";
 
 
 class FilterForm extends React.Component {
@@ -34,6 +35,35 @@ class FilterForm extends React.Component {
         zip: undefined,
 
         truthyArray: []
+    }
+
+    loop(truthyArray, contacts);
+    function loop (arr, h) {
+        var filterCatalogue = [];
+        var clonedHash = h.slice(0);
+        for( var i = 0 ; i <= arr.length ; i++ ) {
+                // console.log("arr[i]: " + arr[i]);
+                // console.log("h before the 2nd for loop: " + h)
+                // console.log("h[0]: " + h[0].hasOwnProperty("name"))
+            for( var x = 0 ; x < clonedHash.length ; x++) {
+                    console.log("clonedHash.length: " + clonedHash.length)
+                    console.log("clonedHash: " + h);
+                    console.log(" x : " + x);
+                    console.log("clonedHash[" + x + "].name: " + clonedHash[x].name)
+                    // console.log("clonedHash[" + x +"].hasOwnProperty: " + clonedHash[x].hasOwnProperty("name"))
+                // if(clonedHash[x].hasOwnProperty(arr[i]) === true){
+                //     break
+                // }else
+                if(clonedHash[x].hasOwnProperty(arr[i]) === true){
+                    filterCatalogue.push(clonedHash[x]);
+                    clonedHash.splice(x,1);
+                    console.log("popped " + clonedHash[x]);
+                }
+            }
+        }
+        console.log("filterCatalogue.length: " + filterCatalogue.length);
+        console.log("filterCatalogue: " + filterCatalogue);
+        return filterCatalogue
     }
 
     // Question 0
@@ -211,6 +241,7 @@ class FilterForm extends React.Component {
         var clientAge = this.state.clientAge
         var kidsAge= this.state.kidsAge
         var levelOfEducation = this.state.levelOfEducation
+        var zip = this.state.zip;
 
 
         //Question 1
@@ -834,6 +865,7 @@ class FilterForm extends React.Component {
                 clientAge={clientAge}
                 kidsAge={kidsAge}
                 levelOfEducation = {levelOfEducation}
+                zip={zip}
             />
 
 

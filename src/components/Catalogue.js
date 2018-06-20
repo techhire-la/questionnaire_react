@@ -7,12 +7,22 @@ import catalogueData from "../api/contacts.json";
 import $ from 'jquery';
 
 class Catalogue extends React.Component {
+    constructor(props) {
+        // debugger
+        super(props)
+        this.state = {
+            willReceive: props.truthyArray
+        }
+        // this.state.willReceive = props.truthyArray
+        // this.truthyArray = this.truthyArray.bind(this)
+        console.log("willReceive state " + this.state.willReceive);
 
+    }
 
     state = {
         programs: [],
         emails: [],
-        willReceive: []
+        willReceive: this.props.truthyArray || []
     };
 
     componentWillMount = () => {
@@ -20,6 +30,7 @@ class Catalogue extends React.Component {
         // console.log(catalogueData.length)
 
         this.setState({ programs: catalogueData});
+        console.log("willReceive state in Will Mount " + this.state.willReceive);
 
     }
 
@@ -39,11 +50,18 @@ class Catalogue extends React.Component {
     // componentDidUpdate = (props) => {
     componentWillReceiveProps = (newProps) => {
         // this.setState({ willReceive: this.props.truthyArray})
+        console.log("willReceive state in componentWillReceiveProps " + this.state.willReceive);
 
         // console.log("Will Receive: " + this.state.willReceive)
         debugger
         var filteredProgramArray = [];
-        this.setState({ willReceive: newProps.truthyArray});
+        console.log("newProps length: " + newProps.length)
+        console.log("newProps[0]: " + newProps[0])
+        // this.setState({ willReceive: newProps.truthyArray});
+        console.log("newProps.truthyArray: " + newProps.truthyArray);
+
+        // console.log("this.truthyArray = this.truthyArray.bind(this) : " + this.truthyArray );
+
 
 
         // if (props.truthyArray !== this.state.willReceive) {
@@ -68,20 +86,41 @@ class Catalogue extends React.Component {
 
             var contacts = catalogueData.contacts ;
 
-            for (var i = 0 ; i <= contacts.length ; i++){
+            for (var i = 0 ; i <= truthyArray.length ; i++){
+                console.log("contacts[i]: " + contacts[i]);
 
 
                 for (var key in contacts[i]) {
+                    console.log("KEY: " + key);
                     ///////////// working may need to be false /////////////////////////
-                    if (contacts[i].hasOwnProperty(key)) {
+                    if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
 
-                        // console.log("formState value: " + formState[key]);
+                        // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
 
                         filteredProgramArray.push(contacts[i])
-                        // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+                        // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
+                        // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
                     }
                 }
 
+
+
+
+
+                ///////////////////////////////////////////////////////////////////////////
+                // for (var key in contacts[i]) {
+                //     console.log("KEY: " + key);
+                //     ///////////// working may need to be false /////////////////////////
+                //     if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
+                //
+                //         // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
+                //
+                //         filteredProgramArray.push(contacts[i])
+                //         // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
+                //         // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
+                //     }
+                // }
+                ///////////////////////////////////////////////////////////////////////////
 
             }
 
@@ -242,9 +281,9 @@ class Catalogue extends React.Component {
 
 
     render() {
-        console.log("truthy array length: " + this.props.truthyArray.length)
+        // console.log("truthy array length: " + this.props.truthyArray.length)
         // console.log("truthyArray props: " + this.props.truthyArray);
-        if(this.props.truthyArray.length === 0) {
+        if(this.props.truthyArray === undefined || this.props.truthyArray.length === 0) {
             var sayWhat = "Saaaaaay WHAAAAAAAT"
         }else{
             var sayWhat = "WHOOO DAT BOI"
