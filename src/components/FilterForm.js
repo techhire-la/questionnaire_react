@@ -38,23 +38,42 @@ class FilterForm extends React.Component {
     }
 
     loop(truthyArray, contacts);
+
+    // function matchZip(originalZip) {
+    //     return zip ===
+    // }
+
+    function checkZip (zip, array, hash) {
+        //if the 1st zip element on the contact
+        if(typeof(hash.zip[0] === 'number') ) {
+            var zipsArray = hash.zip
+            var regexZip = '^' + zip + '\ ';
+
+            for(var y = 0 ; y < zipsArray.length ; y++){
+                if(zipsArray[y].match(regexZip)) {
+                    filterCatalogue.push(clonedHash[x]);
+                    clonedHash.splice(x,1);
+                    console.log("popped " + clonedHash[x]);
+                }
+            }
+        }
+    }
+
     function loop (arr, h) {
         var filterCatalogue = [];
         var clonedHash = h.slice(0);
+
+        //sort through truthy array
         for( var i = 0 ; i <= arr.length ; i++ ) {
-                // console.log("arr[i]: " + arr[i]);
-                // console.log("h before the 2nd for loop: " + h)
-                // console.log("h[0]: " + h[0].hasOwnProperty("name"))
+
+            //sort through contacts
             for( var x = 0 ; x < clonedHash.length ; x++) {
                     console.log("clonedHash.length: " + clonedHash.length)
                     console.log("clonedHash: " + h);
                     console.log(" x : " + x);
                     console.log("clonedHash[" + x + "].name: " + clonedHash[x].name)
-                    // console.log("clonedHash[" + x +"].hasOwnProperty: " + clonedHash[x].hasOwnProperty("name"))
-                // if(clonedHash[x].hasOwnProperty(arr[i]) === true){
-                //     break
-                // }else
-                if(clonedHash[x].hasOwnProperty(arr[i]) === true){
+
+                if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
                     filterCatalogue.push(clonedHash[x]);
                     clonedHash.splice(x,1);
                     console.log("popped " + clonedHash[x]);
