@@ -199,7 +199,7 @@
             "name": "Girls & Gangs",
             "age": "14 to 65",
             "group": ["College", "Women", "Homeless", "LGBTQIA", "Parents"],
-            "zip": [],
+            "zip": [""],
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
             "clientAge": ["14-18", "18-65"],

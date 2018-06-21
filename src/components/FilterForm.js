@@ -63,33 +63,26 @@ class FilterForm extends React.Component {
         // console.log("clonedHash at the top: " + clonedHash);
 
         //sort through truthy array
-        var arr = array
+        var arr = array;
         console.log("arr: " + arr);
 
         for( var i = 0 ; i <= arr.length ; i++ ) {
 
             //sort through contacts
             for( var x = 0 ; x < clonedHash.length ; x++) {
-                    // console.log("clonedHash.length: " + clonedHash.length)
-                    // console.log("clonedHash: " + clonedHash);
-                    // console.log(" x : " + x);
-                // console.log("clonedHash[" + x + "].name: " + clonedHash[x].name)
-                // console.log("arr[i]: " + arr[i])
-                // console.log("clonedHash[x].hasOwnProperty(arr[i]): " + clonedHash[x] + " - " + clonedHash[x].hasOwnProperty(arr[i]))
+
                 if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
 
-                    console.log("making it to the OUTER IF clonedHash[x].hasOwnProperty(arr[i]) === true")
-
+                    ///////////// HANDLE ZIPS //////////////////////
                     if(typeof(clonedHash[x].zip[0] === 'number') ) {
-                        console.log("making it to the INNER IF clonedHash[x].zip[0] === 'number')")
-                        // var zipsArray = hash.zip
+
                         var zipsArray = clonedHash[x].zip
-                        console.log("zipsArray: " + zipsArray);
+                        // console.log("zipsArray: " + zipsArray);
 
                         for(var y = 0 ; y < zipsArray.length ; y++){
 
-                            // var zipMatch = zipsArray[y].match(zip)
-                            console.log("this.state.zip: " + this.state.zip);
+
+                            // console.log("this.state.zip: " + this.state.zip);
                             var stringyZip = String(zipsArray[y]);
                             var zipMatch = stringyZip.match(this.state.zip);
                             if(zipMatch != null) {
@@ -101,7 +94,9 @@ class FilterForm extends React.Component {
                             }
                         }
 
-                    }else{
+                    }
+
+                    if(typeof(clonedHash[x].zip[0] === 'string') ){
                         console.log("Are we making it to else?")
                         filterCatalogue.push(clonedHash[x]);
                         clonedHash.splice(x,1);
@@ -115,7 +110,7 @@ class FilterForm extends React.Component {
         console.log("filterCatalogue.length: " + filterCatalogue.length);
         console.log("filterCatalogue: " + filterCatalogue);
         return filterCatalogue
-    }
+    };
 
 
     // Question 0
