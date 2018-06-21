@@ -18,7 +18,7 @@
 //     }
 // }
 
-
+//// This is the one I am fixing ///////////
 function checkZip (zip, hash) {
     //if the 1st zip element on the contact
 
@@ -27,10 +27,12 @@ function checkZip (zip, hash) {
 
     if(typeof(hash.zip[0] === 'number') ) {
         var zipsArray = hash.zip
-        var regexZip = '^' + zip + '\ ';
+        // var regexZip = '^' + zip + '\ ';
 
         for(var y = 0 ; y < zipsArray.length ; y++){
-            if(zipsArray[y].match(regexZip)) {
+            // if(zipsArray[y].match(regexZip)) {
+            var zipMatch = zipsArray[y].match(zip)
+            if(zipMatch != null) {
                 filterCatalogue.push(clonedHash[x]);
                 clonedHash.splice(x,1);
                 console.log("popped " + clonedHash[x]);
@@ -46,6 +48,7 @@ function checkZip (zip, arr) {
     var array = arr.slice(0);
 
     if(typeof(array[0] === 'number') ) {
+
         for(var y = 0 ; y < array.length ; y++){
             var stringElement = String(array[y]);
             var zipMatch = stringElement.match(zip);

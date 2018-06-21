@@ -37,46 +37,78 @@ class FilterForm extends React.Component {
         truthyArray: []
     }
 
-    loop(truthyArray, contacts);
+///////////////////////////////////////////////////////////////////////////////////
+//////////////// Checks for zip ///////////////////////////////////////////////
+//     if(typeof(clonedHash[x].zip[0] === 'number') ) {
+//         var zipsArray = hash.zip
+//
+//
+//         for(var y = 0 ; y < zipsArray.length ; y++){
+//
+//             var zipMatch = zipsArray[y].match(zip)
+//             if(zipMatch != null) {
+//
+//             }
+//         }
+//     }
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
-    // function matchZip(originalZip) {
-    //     return zip ===
-    // }
 
-    function checkZip (zip, array, hash) {
-        //if the 1st zip element on the contact
-        if(typeof(hash.zip[0] === 'number') ) {
-            var zipsArray = hash.zip
-            var regexZip = '^' + zip + '\ ';
+    // function loop (arr, h) {
+    handleFormData = (array) => {
 
-            for(var y = 0 ; y < zipsArray.length ; y++){
-                if(zipsArray[y].match(regexZip)) {
-                    filterCatalogue.push(clonedHash[x]);
-                    clonedHash.splice(x,1);
-                    console.log("popped " + clonedHash[x]);
-                }
-            }
-        }
-    }
-
-    function loop (arr, h) {
         var filterCatalogue = [];
-        var clonedHash = h.slice(0);
+        var clonedHash = catalogueData.contacts.slice(0);
+        // console.log("clonedHash at the top: " + clonedHash);
 
         //sort through truthy array
+        var arr = array
+        console.log("arr: " + arr);
+
         for( var i = 0 ; i <= arr.length ; i++ ) {
 
             //sort through contacts
             for( var x = 0 ; x < clonedHash.length ; x++) {
-                    console.log("clonedHash.length: " + clonedHash.length)
-                    console.log("clonedHash: " + h);
-                    console.log(" x : " + x);
-                    console.log("clonedHash[" + x + "].name: " + clonedHash[x].name)
-
+                    // console.log("clonedHash.length: " + clonedHash.length)
+                    // console.log("clonedHash: " + clonedHash);
+                    // console.log(" x : " + x);
+                // console.log("clonedHash[" + x + "].name: " + clonedHash[x].name)
+                // console.log("arr[i]: " + arr[i])
+                // console.log("clonedHash[x].hasOwnProperty(arr[i]): " + clonedHash[x] + " - " + clonedHash[x].hasOwnProperty(arr[i]))
                 if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
-                    filterCatalogue.push(clonedHash[x]);
-                    clonedHash.splice(x,1);
-                    console.log("popped " + clonedHash[x]);
+
+                    console.log("making it to the OUTER IF clonedHash[x].hasOwnProperty(arr[i]) === true")
+
+                    if(typeof(clonedHash[x].zip[0] === 'number') ) {
+                        console.log("making it to the INNER IF clonedHash[x].zip[0] === 'number')")
+                        // var zipsArray = hash.zip
+                        var zipsArray = clonedHash[x].zip
+                        console.log("zipsArray: " + zipsArray);
+
+                        for(var y = 0 ; y < zipsArray.length ; y++){
+
+                            // var zipMatch = zipsArray[y].match(zip)
+                            console.log("this.state.zip: " + this.state.zip);
+                            var stringyZip = String(zipsArray[y]);
+                            var zipMatch = stringyZip.match(this.state.zip);
+                            if(zipMatch != null) {
+
+                                filterCatalogue.push(clonedHash[x]);
+                                clonedHash.splice(x,1);
+                                console.log("popped " + clonedHash[x]);
+
+                            }
+                        }
+
+                    }else{
+                        console.log("Are we making it to else?")
+                        filterCatalogue.push(clonedHash[x]);
+                        clonedHash.splice(x,1);
+                        console.log("popped " + clonedHash[x]);
+
+                    }
+
                 }
             }
         }
@@ -84,6 +116,7 @@ class FilterForm extends React.Component {
         console.log("filterCatalogue: " + filterCatalogue);
         return filterCatalogue
     }
+
 
     // Question 0
     handleClientAgeChange = (e, { value }) => this.setState({ clientAge: value });
@@ -210,12 +243,30 @@ class FilterForm extends React.Component {
 
         if (zip != undefined && zip.toString().length === 5 && Number.isInteger(zipAsInt)) {
             console.log("Zip Validated!")
-            // this.setState({ zip: parseInt(zip) })
-            this.setState({zip: parseInt(zip)})
+
+            // this.setState({zip: parseInt(zip)})
         }
 
     };
 
+
+    // handleTruthyArray = () => {
+    //     // truthyArray
+    //     var arrayOfTruth = [];
+    //
+    //     var formState = this.state;
+    //     for (var key in formState) {
+    //         if (formState.hasOwnProperty(key) && formState[key] === "true") {
+    //             // console.log("formState value: " + formState[key]);
+    //             arrayOfTruth.push(key)
+    //             // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+    //         }
+    //     }
+    //
+    //     this.setState({ truthyArray: arrayOfTruth })
+    //
+    //
+    // }
 
     handleTruthyArray = () => {
         // truthyArray
@@ -230,7 +281,7 @@ class FilterForm extends React.Component {
             }
         }
 
-        this.setState({ truthyArray: arrayOfTruth })
+        return arrayOfTruth
 
 
     }
@@ -244,7 +295,11 @@ class FilterForm extends React.Component {
 
         console.log("After Zip Validation");
 
-        this.handleTruthyArray();
+        var truthyArray = this.handleTruthyArray();
+
+        console.log("truthyArray in handleSubmit: " + truthyArray);
+
+        this.handleFormData(truthyArray);
 
     };
 

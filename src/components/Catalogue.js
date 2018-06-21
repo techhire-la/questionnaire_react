@@ -47,101 +47,102 @@ class Catalogue extends React.Component {
 
     };
 
-    // componentDidUpdate = (props) => {
-    componentWillReceiveProps = (newProps) => {
-        // this.setState({ willReceive: this.props.truthyArray})
-        console.log("willReceive state in componentWillReceiveProps " + this.state.willReceive);
-
-        // console.log("Will Receive: " + this.state.willReceive)
-        debugger
-        var filteredProgramArray = [];
-        console.log("newProps length: " + newProps.length)
-        console.log("newProps[0]: " + newProps[0])
-        // this.setState({ willReceive: newProps.truthyArray});
-        console.log("newProps.truthyArray: " + newProps.truthyArray);
-
-        // console.log("this.truthyArray = this.truthyArray.bind(this) : " + this.truthyArray );
-
-
-
-        // if (props.truthyArray !== this.state.willReceive) {
-        //     this.setState({value: props.willReceive})
-        // }
-
-
-        // console.log("propsBoi: " + props.truthyArray)
-
-        // console.log("willReceive State: " + this.state.willReceive)
-
-        // console.log("catalogue data below");
-        // console.log(catalogueData)
-
-        // if(this.props.truthyArray === []) {
-        if(this.props.truthyArray.length !== 0) {
-        // if(this.state.willReceive.length !== 0) {
-
-            // console.log("this.props.truthyArray: " + this.props.truthyArray);
-
-            console.log("Should be hitting the IF here");
-
-            var contacts = catalogueData.contacts ;
-
-            for (var i = 0 ; i <= truthyArray.length ; i++){
-                console.log("contacts[i]: " + contacts[i]);
-
-
-                for (var key in contacts[i]) {
-                    console.log("KEY: " + key);
-                    ///////////// working may need to be false /////////////////////////
-                    if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
-
-                        // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
-
-                        filteredProgramArray.push(contacts[i])
-                        // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
-                        // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
-                    }
-                }
-
-
-
-
-
-                ///////////////////////////////////////////////////////////////////////////
-                // for (var key in contacts[i]) {
-                //     console.log("KEY: " + key);
-                //     ///////////// working may need to be false /////////////////////////
-                //     if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
-                //
-                //         // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
-                //
-                //         filteredProgramArray.push(contacts[i])
-                //         // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
-                //         // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
-                //     }
-                // }
-                ///////////////////////////////////////////////////////////////////////////
-
-            }
-
-        }else{
-
-            console.log("hitting an else for some reason")
-            // console.log("this.props.truthyArray: " + this.props.truthyArray)
-
-
-
-
-
-        }
-
-
-        console.log("FilteredProgramArray: " + filteredProgramArray);
-
-
-
-
-    }
+    // // componentDidUpdate = (props) => {
+    // componentWillReceiveProps = (newProps) => {
+    //     // this.setState({ willReceive: this.props.truthyArray})
+    //     console.log("willReceive state in componentWillReceiveProps " + this.state.willReceive);
+    //
+    //     // console.log("Will Receive: " + this.state.willReceive)
+    //
+    //     // debugger
+    //     var filteredProgramArray = [];
+    //     console.log("newProps length: " + newProps.length)
+    //     console.log("newProps[0]: " + newProps[0])
+    //     // this.setState({ willReceive: newProps.truthyArray});
+    //     console.log("newProps.truthyArray: " + newProps.truthyArray);
+    //
+    //     // console.log("this.truthyArray = this.truthyArray.bind(this) : " + this.truthyArray );
+    //
+    //
+    //
+    //     // if (props.truthyArray !== this.state.willReceive) {
+    //     //     this.setState({value: props.willReceive})
+    //     // }
+    //
+    //
+    //     // console.log("propsBoi: " + props.truthyArray)
+    //
+    //     // console.log("willReceive State: " + this.state.willReceive)
+    //
+    //     // console.log("catalogue data below");
+    //     // console.log(catalogueData)
+    //
+    //     // if(this.props.truthyArray === []) {
+    //     if(this.props.truthyArray.length !== 0) {
+    //     // if(this.state.willReceive.length !== 0) {
+    //
+    //         // console.log("this.props.truthyArray: " + this.props.truthyArray);
+    //
+    //         console.log("Should be hitting the IF here");
+    //
+    //         var contacts = catalogueData.contacts ;
+    //
+    //         for (var i = 0 ; i <= truthyArray.length ; i++){
+    //             console.log("contacts[i]: " + contacts[i]);
+    //
+    //
+    //             for (var key in contacts[i]) {
+    //                 console.log("KEY: " + key);
+    //                 ///////////// working may need to be false /////////////////////////
+    //                 if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
+    //
+    //                     // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
+    //
+    //                     filteredProgramArray.push(contacts[i])
+    //                     // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
+    //                     // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
+    //                 }
+    //             }
+    //
+    //
+    //
+    //
+    //
+    //             ///////////////////////////////////////////////////////////////////////////
+    //             // for (var key in contacts[i]) {
+    //             //     console.log("KEY: " + key);
+    //             //     ///////////// working may need to be false /////////////////////////
+    //             //     if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
+    //             //
+    //             //         // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
+    //             //
+    //             //         filteredProgramArray.push(contacts[i])
+    //             //         // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
+    //             //         // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
+    //             //     }
+    //             // }
+    //             ///////////////////////////////////////////////////////////////////////////
+    //
+    //         }
+    //
+    //     }else{
+    //
+    //         console.log("hitting an else for some reason")
+    //         // console.log("this.props.truthyArray: " + this.props.truthyArray)
+    //
+    //
+    //
+    //
+    //
+    //     }
+    //
+    //
+    //     console.log("FilteredProgramArray: " + filteredProgramArray);
+    //
+    //
+    //
+    //
+    // }
 
 
     handleEmailList = (e, {value}) => {
