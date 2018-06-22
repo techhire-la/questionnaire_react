@@ -7,17 +7,17 @@ import catalogueData from "../api/contacts.json";
 import $ from 'jquery';
 
 class Catalogue extends React.Component {
-    constructor(props) {
-        // debugger
-        super(props)
-        this.state = {
-            willReceive: props.truthyArray
-        }
-        // this.state.willReceive = props.truthyArray
-        // this.truthyArray = this.truthyArray.bind(this)
-        console.log("willReceive state " + this.state.willReceive);
-
-    }
+    // constructor(props) {
+    //     // debugger
+    //     super(props)
+    //     this.state = {
+    //         willReceive: props.truthyArray
+    //     }
+    //     // this.state.willReceive = props.truthyArray
+    //     // this.truthyArray = this.truthyArray.bind(this)
+    //     console.log("willReceive state " + this.state.willReceive);
+    //
+    // }
 
     state = {
         programs: [],
