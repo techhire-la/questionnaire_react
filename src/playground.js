@@ -80,7 +80,9 @@ handleFormData = (array) => {
                     console.log("popped " + clonedHash[x]);
                 }
 
-                if(zipCheck != null) {
+
+                // possible DERP
+                if(zipCheck != null && zipCheck[0] === this.state.zip) {
 
                     console.log("zipCheck != null: " + zipCheck);
 

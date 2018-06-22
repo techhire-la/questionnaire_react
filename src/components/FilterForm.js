@@ -55,6 +55,7 @@ class FilterForm extends React.Component {
 ///////////////////////////////////////////////////////////////////////////////////
 
     handleMatch = (catalogueAttribute, stateData) => {
+        // debugger
 
     // function handleMatch(catalogueAttribute, stateData) {
 
@@ -67,7 +68,10 @@ class FilterForm extends React.Component {
                     var stringyElement = String(catalogueAttribute[y]);
                     var match = stringyElement.match(stateData);
 
-                    returnVal = match;
+                    if (match != null){
+                        return match;
+                    }
+
                 }
 
             }
@@ -78,13 +82,14 @@ class FilterForm extends React.Component {
                 var stringyElement = String(catalogueAttribute);
                 var match = stringyElement.match(stateData);
 
-                returnVal = match;
+                // returnVal = match;
+                return match
 
         }
 
 
 
-        return returnVal
+        // return returnVal
     };
 
     // }
@@ -184,9 +189,14 @@ class FilterForm extends React.Component {
                 // this.handleMatch(clonedHash[x][arr[i]])
                 var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
                 // && checkMatch != null
+                // debugger
+                // if (checkMatch[0] != undefined){
+                //     console.log(checkMatch[0] === this.state[arr[i]])
+                // }
+                console.log("arr[i]: " + arr[i])
 
-                if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null){
-                    debugger
+                if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
+                    // debugger
                     var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
 
                     // console.log("After zip check")
@@ -201,7 +211,7 @@ class FilterForm extends React.Component {
                         console.log("popped " + clonedHash[x]);
                     }
 
-                    if(zipCheck != null) {
+                    if(zipCheck != null && zipCheck[0] === this.state.zip) {
 
                         // console.log("zipCheck != null: " + zipCheck);
 
