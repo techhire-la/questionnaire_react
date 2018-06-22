@@ -54,19 +54,34 @@ class FilterForm extends React.Component {
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
-    handleMatch = (catalogueArray, stateData) => {
+    handleMatch = (catalogueAttribute, stateData) => {
 
-    // function handleMatch(catalogueArray, stateData) {
+    // function handleMatch(catalogueAttribute, stateData) {
 
         var returnVal = undefined
 
-            for(var y = 0 ; y < catalogueArray.length ; y++){
+            if (typeof(catalogueAttribute) === 'object'){
 
-                var stringyElement = String(catalogueArray[y]);
+                for(var y = 0 ; y < catalogueAttribute.length ; y++){
+
+                    var stringyElement = String(catalogueAttribute[y]);
+                    var match = stringyElement.match(stateData);
+
+                    returnVal = match;
+                }
+
+            }
+
+        if (typeof(catalogueAttribute) === 'string'){
+
+
+                var stringyElement = String(catalogueAttribute);
                 var match = stringyElement.match(stateData);
 
                 returnVal = match;
-            }
+
+        }
+
 
 
         return returnVal
@@ -122,6 +137,43 @@ class FilterForm extends React.Component {
 
         console.log("arr: " + arr);
 
+        /////////// HANDLE CLIENT AGE AND KIDSAGE //////////////////////////////////////
+        // arr[i] =
+        //
+        // for( var x = 0 ; x < clonedHash.length ; x++) {
+        //
+        //
+        //     if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
+        //         debugger
+        //         var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
+        //
+        //         // console.log("After zip check")
+        //         // console.log("zipCheck: " + zipCheck)
+        //
+        //         if( zipCheck === 'string') {
+        //
+        //             // console.log( "zipCheck === 'string': " + zipCheck );
+        //
+        //             filterCatalogue.push(clonedHash[x]);
+        //             clonedHash.splice(x, 1);
+        //             console.log("popped " + clonedHash[x]);
+        //         }
+        //
+        //         if(zipCheck != null) {
+        //
+        //             // console.log("zipCheck != null: " + zipCheck);
+        //
+        //             filterCatalogue.push(clonedHash[x]);
+        //             clonedHash.splice(x, 1);
+        //             console.log("popped " + clonedHash[x]);
+        //         }
+        //
+        //
+        //     }
+        //
+
+
+        /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
         for( var i = 0 ; i <= arr.length ; i++ ) {
 
             //sort through contacts
@@ -129,8 +181,12 @@ class FilterForm extends React.Component {
 
                 // var matchCheck = this.handleMatch(clonedHash[x], )
 
-                if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
-                    // debugger
+                // this.handleMatch(clonedHash[x][arr[i]])
+                var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
+                // && checkMatch != null
+
+                if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null){
+                    debugger
                     var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
 
                     // console.log("After zip check")
@@ -316,7 +372,8 @@ class FilterForm extends React.Component {
 
     handleTruthyArray = () => {
         // truthyArray
-        var arrayOfTruth = [];
+        // var arrayOfTruth = [];
+        var arrayOfTruth = ['clientAge', 'kidsAge' ];
 
         var formState = this.state;
 
