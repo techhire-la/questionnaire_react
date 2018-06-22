@@ -34,7 +34,8 @@ class FilterForm extends React.Component {
         LGBTQIA: undefined,
         zip: undefined,
 
-        truthyArray: []
+        truthyArray: [],
+        filteredList: undefined
     }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -141,41 +142,6 @@ class FilterForm extends React.Component {
         // var arr = array;
 
         console.log("arr: " + arr);
-
-        /////////// HANDLE CLIENT AGE AND KIDSAGE //////////////////////////////////////
-        // arr[i] =
-        //
-        // for( var x = 0 ; x < clonedHash.length ; x++) {
-        //
-        //
-        //     if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
-        //         debugger
-        //         var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
-        //
-        //         // console.log("After zip check")
-        //         // console.log("zipCheck: " + zipCheck)
-        //
-        //         if( zipCheck === 'string') {
-        //
-        //             // console.log( "zipCheck === 'string': " + zipCheck );
-        //
-        //             filterCatalogue.push(clonedHash[x]);
-        //             clonedHash.splice(x, 1);
-        //             console.log("popped " + clonedHash[x]);
-        //         }
-        //
-        //         if(zipCheck != null) {
-        //
-        //             // console.log("zipCheck != null: " + zipCheck);
-        //
-        //             filterCatalogue.push(clonedHash[x]);
-        //             clonedHash.splice(x, 1);
-        //             console.log("popped " + clonedHash[x]);
-        //         }
-        //
-        //
-        //     }
-        //
 
 
         /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
@@ -416,7 +382,9 @@ class FilterForm extends React.Component {
 
         //var results = [], pass this down  or push the returned value into a var
 
-        this.handleFormData(truthyArray);
+        var filteredData = this.handleFormData(truthyArray);
+
+        this.setState({ filteredList : filteredData})
 
     };
 
@@ -426,6 +394,7 @@ class FilterForm extends React.Component {
 
     render() {
 
+        var filteredList = this.state.filteredList
         var truthyArray = this.state.truthyArray
 
         // console.log("Here's Filter Form's truthyArray: " + truthyArray)
@@ -1053,6 +1022,7 @@ class FilterForm extends React.Component {
 
             <Catalogue
                 truthyArray={truthyArray}
+                filteredList = {filteredList}
                 clientAge={clientAge}
                 kidsAge={kidsAge}
                 levelOfEducation = {levelOfEducation}

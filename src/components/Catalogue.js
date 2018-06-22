@@ -29,7 +29,7 @@ class Catalogue extends React.Component {
 
         // console.log(catalogueData.length)
 
-        this.setState({ programs: catalogueData});
+        this.setState({ programs: catalogueData.contacts});
         console.log("willReceive state in Will Mount " + this.state.willReceive);
 
     }
@@ -47,6 +47,11 @@ class Catalogue extends React.Component {
 
     };
 
+    componentWillReceiveProps = (newProps) => {
+
+        this.setState({programs: newProps.filteredList});
+
+    }
     // // componentDidUpdate = (props) => {
     // componentWillReceiveProps = (newProps) => {
     //     // this.setState({ willReceive: this.props.truthyArray})
@@ -284,15 +289,31 @@ class Catalogue extends React.Component {
     render() {
         // console.log("truthy array length: " + this.props.truthyArray.length)
         // console.log("truthyArray props: " + this.props.truthyArray);
-        if(this.props.truthyArray === undefined || this.props.truthyArray.length === 0) {
+        var loopList = function(filteredlist) {
+            var list = []
+            for(var i = 0 ; i < filteredlist.length ; i++){
+                list.push(filteredlist[i].name);
+            }
+            return list
+        }
+        if(this.props.filteredList === undefined || this.props.filteredList.length === 0) {
             var sayWhat = "Saaaaaay WHAAAAAAAT"
         }else{
-            var sayWhat = "WHOOO DAT BOI"
+            var sayWhat = loopList(this.props.filteredList)
+            // this.setState({programs: this.props.filteredList})
         }
+
+        // if(this.props.filteredList != undefined || this.props.filteredList.length != 0) {
+        //     this.setState({programs: this.props.filteredList})
+        // }
         // console.log(this.state.programs);
             // console.log("Rendered clientAge in Catalogue: " + this.props.clientAge)
             // console.log("Rendered Truthy Array in Catalogue: " + this.props.truthyArray)
-        var programs = this.state.programs.contacts;
+        debugger
+        // var programs = this.state.programs.contacts;
+
+        var programs = this.state.programs;
+
         // console.log("programs: " + programs);
         // debugger
 
