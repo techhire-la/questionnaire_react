@@ -204,11 +204,10 @@ class FilterForm extends React.Component {
 
                     if( zipCheck === 'string') {
 
-                        // console.log( "zipCheck === 'string': " + zipCheck );
-
                         filterCatalogue.push(clonedHash[x]);
                         clonedHash.splice(x, 1);
                         console.log("popped " + clonedHash[x]);
+
                     }
 
                     if(zipCheck != null && zipCheck[0] === this.state.zip) {
