@@ -7,17 +7,6 @@ import catalogueData from "../api/contacts.json";
 import $ from 'jquery';
 
 class Catalogue extends React.Component {
-    // constructor(props) {
-    //     // debugger
-    //     super(props)
-    //     this.state = {
-    //         willReceive: props.truthyArray
-    //     }
-    //     // this.state.willReceive = props.truthyArray
-    //     // this.truthyArray = this.truthyArray.bind(this)
-    //     console.log("willReceive state " + this.state.willReceive);
-    //
-    // }
 
     state = {
         programs: [],
@@ -34,120 +23,12 @@ class Catalogue extends React.Component {
 
     }
 
-    // shouldComponentUpdate(nextProps) {
-    //     this.setState({ willReceive: nextProps.truthyArray});
-    //     console.log("Should Component Update");
-    //     console.log("willReceive State: " + this.state.willReceive);
-    //     // return this.state.willReceive !== nextProps.truthyArray;
-    // }
-
-    receiveTruthyArray = () => {
-
-        console.log("This is the receive truthy array function " + this.props.truthyArray);
-
-    };
 
     componentWillReceiveProps = (newProps) => {
 
         this.setState({programs: newProps.filteredList});
 
     }
-    // // componentDidUpdate = (props) => {
-    // componentWillReceiveProps = (newProps) => {
-    //     // this.setState({ willReceive: this.props.truthyArray})
-    //     console.log("willReceive state in componentWillReceiveProps " + this.state.willReceive);
-    //
-    //     // console.log("Will Receive: " + this.state.willReceive)
-    //
-    //     // debugger
-    //     var filteredProgramArray = [];
-    //     console.log("newProps length: " + newProps.length)
-    //     console.log("newProps[0]: " + newProps[0])
-    //     // this.setState({ willReceive: newProps.truthyArray});
-    //     console.log("newProps.truthyArray: " + newProps.truthyArray);
-    //
-    //     // console.log("this.truthyArray = this.truthyArray.bind(this) : " + this.truthyArray );
-    //
-    //
-    //
-    //     // if (props.truthyArray !== this.state.willReceive) {
-    //     //     this.setState({value: props.willReceive})
-    //     // }
-    //
-    //
-    //     // console.log("propsBoi: " + props.truthyArray)
-    //
-    //     // console.log("willReceive State: " + this.state.willReceive)
-    //
-    //     // console.log("catalogue data below");
-    //     // console.log(catalogueData)
-    //
-    //     // if(this.props.truthyArray === []) {
-    //     if(this.props.truthyArray.length !== 0) {
-    //     // if(this.state.willReceive.length !== 0) {
-    //
-    //         // console.log("this.props.truthyArray: " + this.props.truthyArray);
-    //
-    //         console.log("Should be hitting the IF here");
-    //
-    //         var contacts = catalogueData.contacts ;
-    //
-    //         for (var i = 0 ; i <= truthyArray.length ; i++){
-    //             console.log("contacts[i]: " + contacts[i]);
-    //
-    //
-    //             for (var key in contacts[i]) {
-    //                 console.log("KEY: " + key);
-    //                 ///////////// working may need to be false /////////////////////////
-    //                 if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
-    //
-    //                     // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
-    //
-    //                     filteredProgramArray.push(contacts[i])
-    //                     // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
-    //                     // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
-    //                 }
-    //             }
-    //
-    //
-    //
-    //
-    //
-    //             ///////////////////////////////////////////////////////////////////////////
-    //             // for (var key in contacts[i]) {
-    //             //     console.log("KEY: " + key);
-    //             //     ///////////// working may need to be false /////////////////////////
-    //             //     if (contacts[i].hasOwnProperty(key) && contacts[i][key] === "true") {
-    //             //
-    //             //         // console.log("[contacts[i]]: " + contacts[i].); // formState[key]);
-    //             //
-    //             //         filteredProgramArray.push(contacts[i])
-    //             //         // console.log("ARRAY OF TRUTH [filteredProgramArray]: " + filteredProgramArray );
-    //             //         // console.log(" filteredProgramArray LENGTH: " + filteredProgramArray.length);
-    //             //     }
-    //             // }
-    //             ///////////////////////////////////////////////////////////////////////////
-    //
-    //         }
-    //
-    //     }else{
-    //
-    //         console.log("hitting an else for some reason")
-    //         // console.log("this.props.truthyArray: " + this.props.truthyArray)
-    //
-    //
-    //
-    //
-    //
-    //     }
-    //
-    //
-    //     console.log("FilteredProgramArray: " + filteredProgramArray);
-    //
-    //
-    //
-    //
-    // }
 
 
     handleEmailList = (e, {value}) => {
@@ -280,50 +161,17 @@ class Catalogue extends React.Component {
         // });
 
 
-
-
     }
 
 
 
     render() {
-        // console.log("truthy array length: " + this.props.truthyArray.length)
-        // console.log("truthyArray props: " + this.props.truthyArray);
-        var loopList = function(filteredlist) {
-            var list = []
-            for(var i = 0 ; i < filteredlist.length ; i++){
-                list.push(filteredlist[i].name);
-            }
-            return list
-        }
-        if(this.props.filteredList === undefined || this.props.filteredList.length === 0) {
-            var sayWhat = "Saaaaaay WHAAAAAAAT"
-        }else{
-            var sayWhat = loopList(this.props.filteredList)
-            // this.setState({programs: this.props.filteredList})
-        }
-
-        // if(this.props.filteredList != undefined || this.props.filteredList.length != 0) {
-        //     this.setState({programs: this.props.filteredList})
-        // }
-        // console.log(this.state.programs);
-            // console.log("Rendered clientAge in Catalogue: " + this.props.clientAge)
-            // console.log("Rendered Truthy Array in Catalogue: " + this.props.truthyArray)
-        debugger
-        // var programs = this.state.programs.contacts;
 
         var programs = this.state.programs;
-
-        // console.log("programs: " + programs);
-        // debugger
-
 
         return (
 
                 <div className="ui filterContainer catalogue_items">
-
-                    <h1>{sayWhat}</h1>
-                    <h3>{this.state.willReceive}</h3>
 
                     <Segment.Group>
 

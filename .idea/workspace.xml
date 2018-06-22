@@ -28,8 +28,8 @@
             <file leaf-file-name="Catalogue.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/components/Catalogue.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="150">
-                    <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+                  <state relative-caret-position="450">
+                    <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
                     <folding>
                       <element signature="e#0#26#0" expanded="true" />
                     </folding>
@@ -48,8 +48,8 @@
             <file leaf-file-name="contacts.json" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/api/contacts.json">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="771">
-                    <caret line="429" column="1" selection-start-line="429" selection-start-column="1" selection-end-line="429" selection-end-column="1" />
+                  <state relative-caret-position="737">
+                    <caret line="402" column="27" selection-start-line="402" selection-start-column="27" selection-end-line="402" selection-end-column="27" />
                     <folding />
                   </state>
                 </provider>
@@ -69,8 +69,8 @@
       <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="386" column="32" selection-start-line="386" selection-start-column="32" selection-end-line="386" selection-end-column="32" />
+            <state relative-caret-position="206">
+              <caret line="1044" column="22" selection-start-line="1044" selection-start-column="22" selection-end-line="1044" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -138,8 +138,8 @@
         <option value="$PROJECT_DIR$/src/api/contacts.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/playground.js" />
-        <option value="$PROJECT_DIR$/src/components/FilterForm.js" />
         <option value="$PROJECT_DIR$/src/components/Catalogue.js" />
+        <option value="$PROJECT_DIR$/src/components/FilterForm.js" />
       </list>
     </option>
   </component>
@@ -353,7 +353,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232375000" />
+    <option name="totallyTimeSpent" value="233704000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -765,14 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/contacts.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="429" column="1" selection-start-line="429" selection-start-column="1" selection-end-line="429" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/playground.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-507">
@@ -793,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="386" column="32" selection-start-line="386" selection-start-column="32" selection-end-line="386" selection-end-column="32" />
+        <state relative-caret-position="206">
+          <caret line="1044" column="22" selection-start-line="1044" selection-start-column="22" selection-end-line="1044" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -803,11 +795,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Catalogue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/contacts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="402" column="27" selection-start-line="402" selection-start-column="27" selection-end-line="402" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
