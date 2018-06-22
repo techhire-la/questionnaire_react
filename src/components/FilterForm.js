@@ -88,14 +88,18 @@ class FilterForm extends React.Component {
 
 
     // function loop (arr, h) {
-    handleFormData = (array) => {
+    // handleFormData = (array) => {
+    handleFormData = (arr) => {
+
+        ///Make an exception for kids
 
         var filterCatalogue = [];
         var clonedHash = catalogueData.contacts.slice(0);
         // console.log("clonedHash at the top: " + clonedHash);
 
         //sort through truthy array
-        var arr = array;
+        // var arr = array;
+
         console.log("arr: " + arr);
 
         for( var i = 0 ; i <= arr.length ; i++ ) {
@@ -104,15 +108,15 @@ class FilterForm extends React.Component {
             for( var x = 0 ; x < clonedHash.length ; x++) {
 
                 if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
-                    debugger
+                    // debugger
                     var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
 
-                    console.log("After zip check")
-                    console.log("zipCheck: " + zipCheck)
+                    // console.log("After zip check")
+                    // console.log("zipCheck: " + zipCheck)
 
                     if( zipCheck === 'string') {
 
-                        console.log( "zipCheck === 'string': " + zipCheck );
+                        // console.log( "zipCheck === 'string': " + zipCheck );
 
                         filterCatalogue.push(clonedHash[x]);
                         clonedHash.splice(x, 1);
@@ -121,7 +125,7 @@ class FilterForm extends React.Component {
 
                     if(zipCheck != null) {
 
-                        console.log("zipCheck != null: " + zipCheck);
+                        // console.log("zipCheck != null: " + zipCheck);
 
                         filterCatalogue.push(clonedHash[x]);
                         clonedHash.splice(x, 1);
@@ -293,13 +297,16 @@ class FilterForm extends React.Component {
         var arrayOfTruth = [];
 
         var formState = this.state;
+
+        // does not uptake "kids"
         for (var key in formState) {
-            if (formState.hasOwnProperty(key) && formState[key] === "true") {
+            if (formState.hasOwnProperty(key) && formState[key] === "true" && key != "kids") {
                 // console.log("formState value: " + formState[key]);
                 arrayOfTruth.push(key)
                 // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
             }
         }
+
 
         return arrayOfTruth
 
