@@ -54,10 +54,30 @@ class FilterForm extends React.Component {
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
+    handleMatch = (catalogueArray, stateData) => {
+
+    // function handleMatch(catalogueArray, stateData) {
+
+        var returnVal = undefined
+
+            for(var y = 0 ; y < catalogueArray.length ; y++){
+
+                var stringyElement = String(catalogueArray[y]);
+                var match = stringyElement.match(stateData);
+
+                returnVal = match;
+            }
+
+
+        return returnVal
+    };
+
+    // }
+
     inTheRightZip = (zipList, zipState) => {
 
             var returnValue = undefined;
-            console.log("inTheRightZip")
+            // console.log("inTheRightZip")
             ///////////// HANDLE ZIPS //////////////////////
             console.log("typeof(zipList[0] === 'number') RESULT:  " + typeof(zipList[0]))
             if(typeof(zipList[0] === 'number') ) {
@@ -106,6 +126,8 @@ class FilterForm extends React.Component {
 
             //sort through contacts
             for( var x = 0 ; x < clonedHash.length ; x++) {
+
+                // var matchCheck = this.handleMatch(clonedHash[x], )
 
                 if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
                     // debugger
@@ -325,6 +347,8 @@ class FilterForm extends React.Component {
         var truthyArray = this.handleTruthyArray();
 
         console.log("truthyArray in handleSubmit: " + truthyArray);
+
+        //var results = [], pass this down  or push the returned value into a var
 
         this.handleFormData(truthyArray);
 
