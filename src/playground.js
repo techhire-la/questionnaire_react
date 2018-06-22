@@ -18,6 +18,90 @@
 //     }
 // }
 
+
+inTheRightZip = (zipList, zipState) => {
+
+
+    console.log("inTheRightZip")
+    ///////////// HANDLE ZIPS //////////////////////
+    console.log("typeof(zipList[0] === 'number') RESULT:  " + typeof(zipList[0]))
+    if(typeof(zipList[0] === 'number') ) {
+
+        var zipsArray = zipList
+
+        for(var y = 0 ; y < zipsArray.length ; y++){
+
+            var stringyZip = String(zipsArray[y]);
+            var zipMatch = stringyZip.match(zipState);
+
+            return zipMatch
+        }
+
+    }
+
+    console.log("typeof(zipList[0] === 'string') RESULT:  " + typeof(zipList[0]))
+    if(typeof(zipList[x].zip[0] === 'string') ){
+        return 'string'
+
+    }
+
+
+}
+
+
+// function loop (arr, h) {
+handleFormData = (array) => {
+
+    var filterCatalogue = [];
+    var clonedHash = catalogueData.contacts.slice(0);
+    // console.log("clonedHash at the top: " + clonedHash);
+
+    //sort through truthy array
+    var arr = array;
+    console.log("arr: " + arr);
+
+    for( var i = 0 ; i <= arr.length ; i++ ) {
+
+        //sort through contacts
+        for( var x = 0 ; x < clonedHash.length ; x++) {
+
+            if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
+
+                var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
+
+                console.log("After zip check")
+
+                if( zipCheck === 'string') {
+
+                    console.log( "zipCheck === 'string': " + zipCheck );
+
+                    filterCatalogue.push(clonedHash[x]);
+                    clonedHash.splice(x, 1);
+                    console.log("popped " + clonedHash[x]);
+                }
+
+                if(zipCheck != null) {
+
+                    console.log("zipCheck != null: " + zipCheck);
+
+                    filterCatalogue.push(clonedHash[x]);
+                    clonedHash.splice(x, 1);
+                    console.log("popped " + clonedHash[x]);
+                }
+
+
+            }
+        }
+    }
+    console.log("filterCatalogue.length: " + filterCatalogue.length);
+    console.log("filterCatalogue: " + filterCatalogue);
+    return filterCatalogue
+};
+
+
+
+
+
 //// This is the one I am fixing ///////////
 function checkZip (zip, hash) {
     //if the 1st zip element on the contact

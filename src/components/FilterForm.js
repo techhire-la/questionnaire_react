@@ -54,6 +54,38 @@ class FilterForm extends React.Component {
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
+    inTheRightZip = (zipList, zipState) => {
+
+            var returnValue = undefined;
+            console.log("inTheRightZip")
+            ///////////// HANDLE ZIPS //////////////////////
+            console.log("typeof(zipList[0] === 'number') RESULT:  " + typeof(zipList[0]))
+            if(typeof(zipList[0] === 'number') ) {
+
+                var zipsArray = zipList
+
+                for(var y = 0 ; y < zipsArray.length ; y++){
+
+                    var stringyZip = String(zipsArray[y]);
+                    var zipMatch = stringyZip.match(zipState);
+
+                    returnValue = zipMatch;
+                    // return stringyZip.match(zipState);
+                }
+
+            }
+
+            console.log("typeof(zipList[0] === 'string') RESULT:  " + typeof(zipList[0]))
+            if(typeof(zipList[0] === 'string') ){
+                returnValue = "string"
+                // return typeof(zipList[x].zip[0])
+
+
+            }
+
+            return returnValue
+    };
+
 
     // function loop (arr, h) {
     handleFormData = (array) => {
@@ -72,37 +104,30 @@ class FilterForm extends React.Component {
             for( var x = 0 ; x < clonedHash.length ; x++) {
 
                 if(clonedHash[x].hasOwnProperty(arr[i]) === true ){
+                    debugger
+                    var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
 
-                    ///////////// HANDLE ZIPS //////////////////////
-                    if(typeof(clonedHash[x].zip[0] === 'number') ) {
+                    console.log("After zip check")
+                    console.log("zipCheck: " + zipCheck)
 
-                        var zipsArray = clonedHash[x].zip
-                        // console.log("zipsArray: " + zipsArray);
+                    if( zipCheck === 'string') {
 
-                        for(var y = 0 ; y < zipsArray.length ; y++){
+                        console.log( "zipCheck === 'string': " + zipCheck );
 
-
-                            // console.log("this.state.zip: " + this.state.zip);
-                            var stringyZip = String(zipsArray[y]);
-                            var zipMatch = stringyZip.match(this.state.zip);
-                            if(zipMatch != null) {
-
-                                filterCatalogue.push(clonedHash[x]);
-                                clonedHash.splice(x,1);
-                                console.log("popped " + clonedHash[x]);
-
-                            }
-                        }
-
-                    }
-
-                    if(typeof(clonedHash[x].zip[0] === 'string') ){
-                        console.log("Are we making it to else?")
                         filterCatalogue.push(clonedHash[x]);
-                        clonedHash.splice(x,1);
+                        clonedHash.splice(x, 1);
                         console.log("popped " + clonedHash[x]);
-
                     }
+
+                    if(zipCheck != null) {
+
+                        console.log("zipCheck != null: " + zipCheck);
+
+                        filterCatalogue.push(clonedHash[x]);
+                        clonedHash.splice(x, 1);
+                        console.log("popped " + clonedHash[x]);
+                    }
+
 
                 }
             }
