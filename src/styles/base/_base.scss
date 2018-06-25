@@ -10,6 +10,19 @@ body {
 
 }
 
+//This controls appearance of side scrollbar
+body ::-webkit-scrollbar {
+  width: 0px;
+  //height: 100%;
+  //overflow-y: scroll!important;
+  //-webkit-overflow-scrolling: touch;
+}
+
+body ::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+
 button {
   cursor: pointer;
 }
@@ -17,3 +30,5 @@ button {
 button:disabled {
   cursor: default;
 }
+
+

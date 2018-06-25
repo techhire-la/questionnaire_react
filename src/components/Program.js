@@ -6,7 +6,7 @@ import { Image, Item, Responsive, Segment, Form, Radio, Checkbox } from 'semanti
 
 const Program = (props) => (
 
-    <div className="">
+    <div className="row">
         <Responsive as={Segment}>
             <Item.Content>
                 <Item.Header as='a'>{props.programName}</Item.Header>

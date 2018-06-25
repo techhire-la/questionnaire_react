@@ -134,8 +134,10 @@ class Catalogue extends React.Component {
         emailjs.send("default_service", "email_blast", dataForm)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
+                alert("Your email has been sent")
             }, function(error) {
                 console.log('FAILED...', error);
+                alert("There was an error processing your emails")
             });
 
         //slightly less simple way /////////////////////////////////////////////////////////////

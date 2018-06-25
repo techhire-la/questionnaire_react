@@ -128,18 +128,10 @@ class FilterForm extends React.Component {
     };
 
 
-    // function loop (arr, h) {
-    // handleFormData = (array) => {
     handleFormData = (arr) => {
-
-        ///Make an exception for kids
 
         var filterCatalogue = [];
         var clonedHash = catalogueData.contacts.slice(0);
-        // console.log("clonedHash at the top: " + clonedHash);
-
-        //sort through truthy array
-        // var arr = array;
 
         console.log("arr: " + arr);
 
@@ -150,23 +142,12 @@ class FilterForm extends React.Component {
             //sort through contacts
             for( var x = 0 ; x < clonedHash.length ; x++) {
 
-                // var matchCheck = this.handleMatch(clonedHash[x], )
-
-                // this.handleMatch(clonedHash[x][arr[i]])
                 var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
-                // && checkMatch != null
-                // debugger
-                // if (checkMatch[0] != undefined){
-                //     console.log(checkMatch[0] === this.state[arr[i]])
-                // }
                 console.log("arr[i]: " + arr[i])
 
                 if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
-                    // debugger
-                    var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
 
-                    // console.log("After zip check")
-                    // console.log("zipCheck: " + zipCheck)
+                    var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
 
                     if( zipCheck === 'string') {
 
@@ -178,13 +159,10 @@ class FilterForm extends React.Component {
 
                     if(zipCheck != null && zipCheck[0] === this.state.zip) {
 
-                        // console.log("zipCheck != null: " + zipCheck);
-
                         filterCatalogue.push(clonedHash[x]);
                         clonedHash.splice(x, 1);
                         console.log("popped " + clonedHash[x]);
                     }
-
 
                 }
             }
@@ -327,24 +305,6 @@ class FilterForm extends React.Component {
     };
 
 
-    // handleTruthyArray = () => {
-    //     // truthyArray
-    //     var arrayOfTruth = [];
-    //
-    //     var formState = this.state;
-    //     for (var key in formState) {
-    //         if (formState.hasOwnProperty(key) && formState[key] === "true") {
-    //             // console.log("formState value: " + formState[key]);
-    //             arrayOfTruth.push(key)
-    //             // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
-    //         }
-    //     }
-    //
-    //     this.setState({ truthyArray: arrayOfTruth })
-    //
-    //
-    // }
-
     handleTruthyArray = () => {
         // truthyArray
         // var arrayOfTruth = [];
@@ -373,11 +333,9 @@ class FilterForm extends React.Component {
 
         this.handleZipValidation(this.state.zip);
 
-        // console.log("After Zip Validation");
 
         var truthyArray = this.handleTruthyArray();
 
-        // console.log("truthyArray in handleSubmit: " + truthyArray);
 
         var filteredData = this.handleFormData(truthyArray);
 
@@ -513,15 +471,39 @@ class FilterForm extends React.Component {
                                 <h3>Do you have children in the ages of:</h3>
                                 <Form>
                                     <Form.Field>
-                                        <Checkbox label={{ children: '1-3 (Infants + Toddlers)' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
-                                        <Checkbox label={{ children: '3-5 (Preschool + Kindergarten)' }} value='3-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                        <Checkbox label={{ children: '5-10 (Elementary School)' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                        <Grid columns={4}>
+                                            <Grid.Row>
+                                                <Grid.Column width={4}>
+                                                    <Checkbox label={{ children: '1-3 (Infants + Toddlers)' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
+                                                </Grid.Column>
+
+                                                <Grid.Column width={4}>
+                                                    <Checkbox label={{ children: '3-5 (Preschool + Kindergarten)' }} value='3-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                                </Grid.Column>
+
+                                                <Grid.Column width={4}>
+                                                    <Checkbox label={{ children: '5-10 (Elementary School)' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                                </Grid.Column>
+                                            </Grid.Row>
+                                        </Grid>
                                     </Form.Field>
 
                                     <Form.Field>
-                                        <Checkbox label={{ children: '10-14 (Middle School)' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
-                                        <Checkbox label={{ children: '14-18 (Highschool)' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                        <Checkbox label={{ children: '18-25 (Adults)' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-right"/>
+                                        <Grid columns={4}>
+                                            <Grid.Row>
+                                                <Grid.Column width={4}>
+                                                    <Checkbox label={{ children: '10-14 (Middle School)' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
+                                                </Grid.Column>
+
+                                                <Grid.Column width={4}>
+                                                    <Checkbox label={{ children: '14-18 (Highschool)' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
+                                                </Grid.Column>
+
+                                                <Grid.Column width={4}>
+                                                    <Checkbox label={{ children: '18-25 (Adults)' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-right"/>
+                                                </Grid.Column>
+                                            </Grid.Row>
+                                        </Grid>
                                     </Form.Field>
                                 </Form>
 
