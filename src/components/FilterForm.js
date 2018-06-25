@@ -399,7 +399,7 @@ class FilterForm extends React.Component {
 
                 <div className="ui filterContainer" >
 
-                    <h3>Question 0</h3>
+                    <h3>Question 1</h3>
                     <Form>
 
                         <h3>What is your age?</h3>
@@ -437,7 +437,7 @@ class FilterForm extends React.Component {
 
                     </Form>
 
-                    <h3>Question 1</h3>
+                    <h3>Question 2</h3>
                     <Form>
                         <Form.Field>
                             <h3>Do you have any children?</h3>
@@ -643,7 +643,7 @@ class FilterForm extends React.Component {
                         </div>
 
 
-                    <h3>Question 2</h3>
+                    <h3>Question 3</h3>
                     <Form>
 
                         <Form.Field className="large">
@@ -810,7 +810,7 @@ class FilterForm extends React.Component {
 
                     </div>
 
-                    <h3>Question 3</h3>
+                    <h3>Question 4</h3>
                     <Form>
                         <Form.Field className="">
                             <h3>Are you facing Housing Hardships?</h3>
@@ -839,7 +839,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Question 4</h3>
+                    <h3>Question 5</h3>
                     <Form>
                         <Form.Field className="large">
                             <h3>Are you facing Financial Hardships?</h3>
@@ -868,7 +868,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Question 5</h3>
+                    <h3>Question 6</h3>
                     <Form>
                         <Form.Field>
                             <h3>Do you or any of the adults in your immediate family have a disability</h3>
@@ -907,7 +907,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Question 6</h3>
+                    <h3>Question 7</h3>
                     <Form>
 
                         <Form.Field>
@@ -937,7 +937,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Question 7</h3>
+                    <h3>Question 8</h3>
                     <Form>
 
                         <Form.Field>
@@ -967,7 +967,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Question 8</h3>
+                    <h3>Question 9</h3>
                     <Form>
                         <Form.Field>
                             <h3>Would you like to include organizations that offer services to the LGBTQIA community</h3>

@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f7d034-109a-4db1-a8a5-d2b8e04fe83b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Catalogue.js" afterPath="$PROJECT_DIR$/src/components/Catalogue.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/FilterForm.js" afterPath="$PROJECT_DIR$/src/components/FilterForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Program.js" afterPath="$PROJECT_DIR$/src/components/Program.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/base/_base.scss" afterPath="$PROJECT_DIR$/src/styles/base/_base.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/components/_filterform.scss" afterPath="$PROJECT_DIR$/src/styles/components/_filterform.scss" />
     </list>
     <ignored path="questionnaire_react.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FilterForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="526" column="64" selection-start-line="526" selection-start-column="64" selection-end-line="526" selection-end-column="64" />
+            <state relative-caret-position="318">
+              <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -92,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/base/_base.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+            <state relative-caret-position="390">
+              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -173,9 +169,9 @@
         <option value="$PROJECT_DIR$/src/playground.js" />
         <option value="$PROJECT_DIR$/src/components/Catalogue.js" />
         <option value="$PROJECT_DIR$/src/components/Program.js" />
-        <option value="$PROJECT_DIR$/src/components/FilterForm.js" />
         <option value="$PROJECT_DIR$/src/styles/components/_filterform.scss" />
         <option value="$PROJECT_DIR$/src/styles/base/_base.scss" />
+        <option value="$PROJECT_DIR$/src/components/FilterForm.js" />
       </list>
     </option>
   </component>
@@ -451,7 +447,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240510000" />
+    <option name="totallyTimeSpent" value="240929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -880,16 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="526" column="64" selection-start-line="526" selection-start-column="64" selection-end-line="526" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/base/_settings.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -908,9 +894,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/base/_base.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state relative-caret-position="390">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FilterForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
