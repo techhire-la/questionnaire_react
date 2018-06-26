@@ -228,8 +228,6 @@ class Catalogue extends React.Component {
 
                 </div>
 
-
-
             );
         }
 }
