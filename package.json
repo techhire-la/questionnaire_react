@@ -1,5 +1,5 @@
 {
-  "name": "YPI Catalogue",
+  "name": "ypi-catalogue",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Jupiter",
@@ -30,6 +30,7 @@
     "sass-loader": "6.0.6",
     "semantic-ui-react": "^0.80.0",
     "style-loader": "0.18.2",
+    "url-loader": "^1.0.1",
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"
