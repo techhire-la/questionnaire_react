@@ -9,7 +9,7 @@ const Program = (props) => (
     <div className="row">
         <Responsive as={Segment}>
             <Item.Content>
-                <Item.Header as='a'>{props.programName}</Item.Header>
+                <h2><Item.Header as='a'>{props.programName}</Item.Header></h2>
                 <Form>
                     <Form.Field>
                         <Checkbox label={{ children: props.programEmail }} value={props.programEmail} onChange={props.updateEmailList} className="check-box-spacing"/>

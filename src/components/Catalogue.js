@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Program from './Program';
-import { Image, Item, Responsive, Segment , Button} from 'semantic-ui-react'
+import { Image, Item, Responsive, Segment , Form, Button, } from 'semantic-ui-react'
 
 import catalogueData from "../api/contacts.json";
 import $ from 'jquery';
@@ -196,44 +196,61 @@ class Catalogue extends React.Component {
 
 
 
-                    <form id="email" method="POST">
-                        <div id="resultstest">
-                            <table className="table table-hover table-dark table-responsive" id="#message">
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="form-row">
-
-                            <div className="form-group col-md-6">
-                                <input id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
-                            </div>
-
-                            <div className="form-group col-md-6" name="lastname">
-                                <input id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
-                            </div>
-
-                        </div>
+                        <Form>
+                            <Form.Group widths='equal'>
 
 
-                        <div className="form-row">
-                            <div className="form-group col-md-8">
-                                <input  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
-                            </div>
-                            <div className="form-group col-md-4">
-                                <input id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
-                            </div>
-                        </div>
+                                <div id="resultstest">
+                                    <table className="table table-hover table-dark table-responsive" id="#message">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div className="form-row">
 
-                        <div className="form-row">
-                            <input id="emaillist" type="email" className="form-control" placeholder="Email to 'CC'" name="emailto" value={this.state.emails}/>
-                        </div>
+                                    <div className="form-group col-md-6">
+                                        <Form.Input fluid label='First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
+                                    </div>
+
+                                    <div className="form-group col-md-6" name="lastname">
+                                        <Form.Input fluid label='Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
+                                    </div>
+
+                                </div>
+
+                            </Form.Group>
 
 
-                        <Button basic color='black' onClick={this.handleEmail}> Submit </Button>
+                            <Form.Group widths='equal'>
 
-                    </form>
+                                <div className="form-row">
+                                    <div className="form-group col-md-8">
+                                        <Form.Input fluid label='Your Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
+                                    </div>
+                                    <div className="form-group col-md-4">
+                                        <Form.Input fluid label='Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
+                                    </div>
+                                </div>
+
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
+
+                                <div className="form-row">
+                                    <Form.Input fluid label='Email List' id="emaillist" type="email" className="form-control" placeholder="Email to 'CC'" name="emailto" value={this.state.emails}/>
+                                </div>
+
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
+
+                                <Button basic color='black' onClick={this.handleEmail}> Submit </Button>
+
+                            </Form.Group>
+                        </Form>
+
                 </div>
+
 
 
 
