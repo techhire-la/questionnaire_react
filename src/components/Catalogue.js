@@ -175,7 +175,7 @@ class Catalogue extends React.Component {
 
                 <div className="ui filterContainer catalogue_items">
 
-                    <Segment.Group>
+
 
                         <Item.Group>
                             {
@@ -192,7 +192,7 @@ class Catalogue extends React.Component {
                             }
                         </Item.Group>
 
-                    </Segment.Group>
+
 
 
                     <Form>
