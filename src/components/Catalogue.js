@@ -195,62 +195,38 @@ class Catalogue extends React.Component {
                     </Segment.Group>
 
 
+                    <Form>
 
-                        <Form>
-                            <Form.Group widths='equal'>
+                        <Form.Group widths='equal'>
 
+                            <Form.Input fluid label='First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
 
-                                <div id="resultstest">
-                                    <table className="table table-hover table-dark table-responsive" id="#message">
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div className="form-row">
-
-                                    <div className="form-group col-md-6">
-                                        <Form.Input fluid label='First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
-                                    </div>
-
-                                    <div className="form-group col-md-6" name="lastname">
-                                        <Form.Input fluid label='Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
-                                    </div>
-
-                                </div>
-
-                            </Form.Group>
+                            <Form.Input fluid label='Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
 
 
-                            <Form.Group widths='equal'>
+                        </Form.Group>
 
-                                <div className="form-row">
-                                    <div className="form-group col-md-8">
-                                        <Form.Input fluid label='Your Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
-                                    </div>
-                                    <div className="form-group col-md-4">
-                                        <Form.Input fluid label='Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
-                                    </div>
-                                </div>
+                        <Form.Group widths='equal'>
 
-                            </Form.Group>
 
-                            <Form.Group widths='equal'>
+                            <Form.Input fluid label='Your Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
 
-                                <div className="form-row">
-                                    <Form.Input fluid label='Email List' id="emaillist" type="email" className="form-control" placeholder="Email to 'CC'" name="emailto" value={this.state.emails}/>
-                                </div>
+                            <Form.Input fluid label='Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
 
-                            </Form.Group>
 
-                            <Form.Group widths='equal'>
+                        </Form.Group>
 
-                                <Button basic color='black' onClick={this.handleEmail}> Submit </Button>
+                        <Form.Group widths='equal'>
 
-                            </Form.Group>
-                        </Form>
+                            <Form.Input fluid label='Email List' id="emaillist" type="email" className="form-control" placeholder="Email to 'CC'" name="emailto" value={this.state.emails}/>
+
+                        </Form.Group>
+
+                        <Button basic color='black' onClick={this.handleEmail}> Submit </Button>
+
+                    </Form>
 
                 </div>
-
 
 
 
