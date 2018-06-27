@@ -482,15 +482,15 @@ class FilterForm extends React.Component {
                                             <Form.Field>
                                                 <Grid columns={4}>
                                                     <Grid.Row>
-                                                        <Grid.Column width={4}>
-                                                            <Checkbox label={{ children: '1-3 (Infants + Toddlers)' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
+                                                        <Grid.Column >
+                                                            <Checkbox label={{ children: '1-3 (Infants + Toddlers)' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing "/>
                                                         </Grid.Column>
 
-                                                        <Grid.Column width={4}>
+                                                        <Grid.Column >
                                                             <Checkbox label={{ children: '3-5 (Preschool + Kindergarten)' }} value='3-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
                                                         </Grid.Column>
 
-                                                        <Grid.Column width={4}>
+                                                        <Grid.Column >
                                                             <Checkbox label={{ children: '5-10 (Elementary School)' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
                                                         </Grid.Column>
                                                     </Grid.Row>
@@ -502,16 +502,16 @@ class FilterForm extends React.Component {
                                         <Form.Field>
                                             <Grid columns={4}>
                                                 <Grid.Row>
-                                                    <Grid.Column width={4}>
-                                                        <Checkbox label={{ children: '10-14 (Middle School)' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-left"/>
+                                                    <Grid.Column >
+                                                        <Checkbox label={{ children: '10-14 (Middle School)' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing "/>
                                                     </Grid.Column>
 
-                                                    <Grid.Column width={4}>
+                                                    <Grid.Column >
                                                         <Checkbox label={{ children: '14-18 (Highschool)' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
                                                     </Grid.Column>
 
-                                                    <Grid.Column width={4}>
-                                                        <Checkbox label={{ children: '18-25 (Adults)' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing pull-right"/>
+                                                    <Grid.Column >
+                                                        <Checkbox label={{ children: '18-25 (Adults)' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
                                                     </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>
