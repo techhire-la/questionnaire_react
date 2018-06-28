@@ -11,8 +11,9 @@
     "serve": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "start": "yarn run dev-server",
-    "postinstall": "webpack - p"
+    "dev": "yarn run dev-server",
+    "postinstall": "webpack -p",
+    "start": ""
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -24,6 +25,7 @@
     "css-loader": "0.28.4",
     "emailjs": "^2.0.0",
     "emailjs-com": "^2.1.1",
+    "express": "^4.13.3",
     "jquery": "^3.3.1",
     "live-server": "^1.2.0",
     "node-sass": "4.5.3",
