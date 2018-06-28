@@ -11,7 +11,8 @@
     "serve": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "start": "yarn run dev-server"
+    "start": "yarn run dev-server",
+    "postinstall": "webpack - p"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
