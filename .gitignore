@@ -34,6 +34,11 @@ build/Release
 
 # Dependency directories
 node_modules/
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
+
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -59,3 +64,4 @@ typings/
 
 # next.js build output
 .next
+
