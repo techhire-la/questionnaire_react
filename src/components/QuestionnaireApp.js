@@ -34,7 +34,7 @@ render() {
             <Grid columns={12}>
                 <Grid.Row>
                     <Grid.Column width={11}>
-                        <p>If you are uncertain which programs may benefit your client, you can answer a few questions and the app will filter relevant results</p>
+                        <p>If you are uncertain which programs may benefit your client, you can answer a few questions and the app will filter relevant results. Please answer from the point of view of the client.</p>
                     </Grid.Column>
 
                     <Grid.Column className="pushLeft" centered width={1}>
