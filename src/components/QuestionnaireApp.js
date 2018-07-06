@@ -29,12 +29,12 @@ render() {
             <h2>Welcome to the YPI Referral Tool</h2>
             <hr/>
 
-            <p>The purpose of this app is to help find services most relevant to our clients and to put them in touch with point of contacts within the program.</p>
+            <p>The purpose of this app is to help you find the most relevant services for our clients and to put them in touch with the right person within those programs.</p>
 
             <Grid columns={12}>
                 <Grid.Row>
                     <Grid.Column width={11}>
-                        <p>If you are uncertain which programs may pertain to you, you can fill out our questions form that will filter relevant results</p>
+                        <p>If you are uncertain which programs may benefit your client, you can answer a few questions and the app will filter relevant results</p>
                     </Grid.Column>
 
                     <Grid.Column className="pushLeft" centered width={1}>
