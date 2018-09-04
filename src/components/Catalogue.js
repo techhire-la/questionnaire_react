@@ -131,14 +131,14 @@ class Catalogue extends React.Component {
 
 
         //simple way /////////////////////////////////////////////////////////////
-        emailjs.send("default_service", "email_blast", dataForm)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                alert("Your email has been sent")
-            }, function(error) {
-                console.log('FAILED...', error);
-                alert("There was an error processing your emails")
-            });
+        // emailjs.send("default_service", "email_blast", dataForm)
+        //     .then(function(response) {
+        //         console.log('SUCCESS!', response.status, response.text);
+        //         alert("Your email has been sent")
+        //     }, function(error) {
+        //         console.log('FAILED...', error);
+        //         alert("There was an error processing your emails")
+        //     });
 
         //slightly less simple way /////////////////////////////////////////////////////////////
         // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
@@ -148,19 +148,19 @@ class Catalogue extends React.Component {
         // });
 
         // API way /////////////////////////////////////////////////////////////
-        // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-        //     type: 'POST',
-        //     data: formData,
-        //
-        //     contentType: false, // auto-detection
-        //     processData: false // no need to parse formData to string
-        // }).done(function() {
-        //     alert('Your mail is sent!');
-        //
-        // }).fail(function(error) {
-        //     console.log('Oops... ' + JSON.stringify(error.responseText));
-        //     alert('Oops... ' + JSON.stringify(error));
-        // });
+        $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+            type: 'POST',
+            data: formData,
+
+            contentType: false, // auto-detection
+            processData: false // no need to parse formData to string
+        }).done(function() {
+            alert('Your mail is sent!');
+
+        }).fail(function(error) {
+            console.log('Oops... ' + JSON.stringify(error.responseText));
+            alert('Oops... ' + JSON.stringify(error));
+        });
 
 
     }
