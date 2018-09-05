@@ -77,34 +77,3 @@ render() {
 
 export default QuestionnaireApp;
 
-
-
-// <Button style={myStyle}>
-
-
-{/*<Form>*/}
-    {/*<Form.Group widths='equal'>*/}
-
-        {/*<Link to="/form">*/}
-            {/*<Button secondary size='massive'>*/}
-                {/*<p>Questions Form</p>*/}
-            {/*</Button>*/}
-        {/*</Link>*/}
-
-        {/*<Link to="/catalogue">*/}
-            {/*<Button secondary size='massive'>*/}
-                {/*<p>Catalogue</p>*/}
-            {/*</Button>*/}
-        {/*</Link>*/}
-    {/*</Form.Group>*/}
-
-
-
-    {/*<Form.Group widths='equal'>*/}
-
-    {/*</Form.Group>*/}
-{/*</Form>*/}
-
-{/*<div className="center">*/}
-
-    {/*</div>*/}

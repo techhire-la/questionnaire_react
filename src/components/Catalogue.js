@@ -136,6 +136,7 @@ class Catalogue extends React.Component {
                 console.log('SUCCESS!', response.status, response.text);
                 alert("Your email has been sent")
             }, function(error) {
+                console.log(dataForm)
                 console.log('FAILED...', error);
                 alert("There was an error processing your emails")
             });
