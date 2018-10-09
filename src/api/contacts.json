@@ -7,8 +7,7 @@
             "phonenumber": "323.546.8071",
             "email": "lsimpson@ypiusa.org",
             "clientAge": ["18-65"],
-            "kids": "true",
-            "kidsAge": ["18-25"]
+            "kids": "true"
         },
 
         {
@@ -18,8 +17,7 @@
             "zip": [""],
             "phonenumber": "213.673.5952",
             "email": "joanna.co@ypiusa.org",
-            "working": "true",
-            "financialHardships": "true"
+            "working": "true"
         },
 
         {
@@ -30,8 +28,7 @@
             "phonenumber": "213.893.8050",
             "email": "abonilla@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": "true",
-            "kidsAge": ["3-5", "5-10", "10-14", "14-18"]
+            "kids": "true"
 
         },
 
@@ -43,8 +40,7 @@
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
             "clientAge": ["14-18"],
-            "kids": "true",
-            "kidsAge": ["14-18"]
+            "kids": "true"
         },
 
         {
@@ -55,8 +51,7 @@
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
             "clientAge": ["14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["14-18", "18-25"]
+            "kids": "true"
         },
 
         {
@@ -67,9 +62,7 @@
             "phonenumber": "818.302.3222",
             "email": "jcortez@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": "true",
-            "kidsAge": ["10-14", "14-18"]
-
+            "kids": "true"
         },
 
 
@@ -92,8 +85,7 @@
             "zip": [90004, 90027, 90028, 90029, 90031, 90032, 90038, 90065],
             "phonenumber": "213.893.8067",
             "email": "ehs@ypiusa.org",
-            "kids": "true",
-            "kidsAge": ["1-3"]
+            "kids": "true"
         },
 
         {
@@ -104,8 +96,7 @@
             "phonenumber": "818.899.5550",
             "email": "cperez@ypiusa.org",
             "clientAge": ["14-18"],
-            "kids": "true",
-            "kidsAge": ["14-18"]
+            "kids": "true"
         },
 
 
@@ -117,16 +108,13 @@
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
             "clientAge": ["18-65"],
-            "kids": "true",
-            "kidsAge": ["18-25"],
+            "kids": "true"
             "childrenOfWorkingAge": "true",
             "childrenOfCollegeAge": "true",
             "childrenInJusticeSystem": "true",
             "interestedInTraining": "true",
             "othersJobless": "true",
-            "housingHardships": "true",
-            "financialHardships": "true",
-            "LGBTQIA": "true"
+            "housingHardships": "true"
         },
 
         {
@@ -136,10 +124,9 @@
             "zip": [""],
             "email": "exl@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["3-5", "5-10", "10-14", "14-18", "18-25"]
-
+            "kids": "true"
         },
+
         {
             "name": "Face Forward (FF)",
             "age": "14 to 35",
@@ -148,12 +135,10 @@
             "phonenumber": "213.797.4858",
             "email": "rrenteria@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["3-5", "5-10", "10-14", "14-18", "18-25"],
-            "housingHardships": "true",
-            "LGBTQIA": "true",
-            "teacher": "true"
+            "kids": "true"
+            "housingHardships": "true"
         },
+
         {
             "name": "Financial Empowerment",
             "age": "18 to 65",
@@ -162,6 +147,7 @@
             "phonenumber": "323.940.4189",
             "email": "mnemececk@ypiusa.org"
         },
+
         {
             "name": "Food Insecurity Nutrition Incentive (FINI)",
             "age": "18 to 65",
@@ -179,9 +165,9 @@
             "phonenumber": "818.964.1085",
             "email": "nwu@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": "true",
-            "kidsAge": ["10-14", "14-18"]
+            "kids": "true"
         },
+
         {
             "name": "Gang Reduction & Youth Development (GRYD)",
             "age": "10 to 14",
@@ -190,8 +176,7 @@
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
             "clientAge": ["10-14"],
-            "kids": "true",
-            "kidsAge": ["10-14"]
+            "kids": "true"
         },
 
 
@@ -203,12 +188,11 @@
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
             "clientAge": ["14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["14-18", "18-25"],
+            "kids": "true"
             "housingHardships": "true",
             "childrenWithDisabilties": "true",
-            "adultWithDisability": "true",
-            "LGBTQIA": "true"
+            "adultWithDisability": "true"
+
         },
 
         {
@@ -219,15 +203,14 @@
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["1-3", "3-5", "5-10", "10-14", "14-18", "18-25"],
+            "kids": "true"
             "levelOfEducation": "BA or Higher",
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
             "housingHardships": "true",
             "seniorCitizen": "true",
-            "veteran": "true",
-            "LGBTQIA": "true"
+            "veteran": "true"
+
         },
 
         {
@@ -240,8 +223,8 @@
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
             "housingHardships": "true",
-            "veteran": "true",
-            "LGBTQIA": "true"
+            "veteran": "true"
+
         },
 
         {
@@ -252,8 +235,7 @@
             "phonenumber": "818.302.3235",
             "email": "erica.jaramillo@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": "true",
-            "kidsAge": ["5-10", "10-14", "14-18"]
+            "kids": "true"
         },
 
         {
@@ -264,9 +246,7 @@
             "phonenumber": "213.688.2802",
             "email": "lapn@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": "true",
-            "kidsAge": ["1-3", "3-5", "5-10", "10-14", "14-18"],
-            "teacher": "true"
+            "kids": "true"
         },
 
         {
@@ -277,8 +257,7 @@
             "phonenumber": "818.899.5550",
             "email": "Lcarbajo@ypiusa.org",
             "clientAge": ["10-14", "14-18"],
-            "kids": "true",
-            "kidsAge": ["3-5", "5-10", "10-14", "14-18"]
+            "kids": "true"
         },
 
         {
@@ -289,8 +268,7 @@
             "phonenumber": "323.978.1578",
             "email": "kkirkpatrick@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["10-14", "14-18", "18-25"]
+            "kids": "true"
         },
 
         {
@@ -301,8 +279,7 @@
             "phonenumber": "818.899.5550",
             "email": "gortiz@ypiusa.org",
             "clientAge": ["10-14"],
-            "kids": "true",
-            "kidsAge": ["10-14"]
+            "kids": "true"
         },
 
         {
@@ -313,8 +290,7 @@
             "phonenumber": "323.940.4187",
             "email": "sbolton@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true",
-            "kidsAge": ["3-5", "5-10", "10-14", "14-18", "18-25"]
+            "kids": "true"
         },
 
         {
@@ -325,8 +301,7 @@
             "phonenumber": "818.899.8550",
             "email": "cperez@ypiusa.org",
             "clientAge": ["14-18"],
-            "kids": "true",
-            "kidsAge": ["14-18"]
+            "kids": "true"
         },
         {
             "name": "San Fernando Gardens Community Center",
@@ -337,12 +312,10 @@
             "email": "bdelgado@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
-            "kidsAge": ["5-10", "10-14", "14-18", "18-25"],
             "childrenWithDisabilties": "true",
             "housingHardships": "true",
             "veteran": "true",
             "seniorCitizen": "true",
-            "LGBTQIA": "true",
             "adultWithDisability": "true"
         },
         {
@@ -377,7 +350,7 @@
             "phonenumber": "818.492.4065",
             "email": "mfigueroa@ypi.org",
             "kids": "true",
-            "LGBTQIA": "true",
+             ,
             "veteran": "true",
             "adultWithDisability": "true",
             "housingHardships": "true"
@@ -401,15 +374,14 @@
             "email": "jhernandez@ypiusa.org",
             "clientAge": ["18-65"],
             "kids": "true",
-            "kidsAge": ["18-25"],
             "childrenOfWorkingAge": "true",
             "childrenOfCollegeAge": "true",
             "childrenInJusticeSystem": "true",
             "childrenInFosterCare": "true",
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
-            "housingHardships": "true",
-            "LGBTQIA": "true"
+            "housingHardships": "true"
+
         },
         {
             "name": "YouthWorks",
@@ -420,11 +392,9 @@
             "email": "mhernandez@ypiusa.org",
             "clientAge": ["14-18", "18-65"],
             "kids": "true",
-            "kidsAge": ["14-18", "18-25"],
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
-            "housingHardships": "true",
-            "LGBTQIA": "true"
+            "housingHardships": "true"
         }
     ]
 }
