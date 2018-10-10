@@ -9,7 +9,8 @@
             "clientAge": ["18-65"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -21,7 +22,8 @@
             "email": "joanna.co@ypiusa.org",
             "working": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -34,7 +36,8 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
 
@@ -48,7 +51,8 @@
             "clientAge": ["14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
 
@@ -62,7 +66,8 @@
             "clientAge": ["14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -75,7 +80,8 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
 
@@ -90,7 +96,8 @@
             "working": "true",
             "othersJobless": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -102,7 +109,8 @@
             "email": "ehs@ypiusa.org",
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -115,7 +123,8 @@
             "clientAge": ["14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
 
@@ -135,7 +144,8 @@
             "othersJobless": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -147,7 +157,8 @@
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -161,7 +172,8 @@
             "kids": "true"
             "housingHardships": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -172,7 +184,8 @@
             "phonenumber": "323.940.4189",
             "email": "mnemececk@ypiusa.org",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -184,7 +197,8 @@
             "email": "ahernandez@ypiusa.org",
             "clientAge": [ "18-65"],
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
         {
             "name": "Gaining Early Awareness and Readiness for Undergraduate Programs (GEAR UP)",
@@ -196,7 +210,8 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -209,7 +224,8 @@
             "clientAge": ["10-14"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
 
@@ -226,7 +242,8 @@
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
 
@@ -246,7 +263,8 @@
             "seniorCitizen": "true",
             "veteran": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
 
@@ -262,7 +280,8 @@
             "housingHardships": "true",
             "veteran": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
 
@@ -276,7 +295,8 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -289,7 +309,8 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -302,7 +323,8 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -315,7 +337,8 @@
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -328,7 +351,8 @@
             "clientAge": ["10-14"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -341,7 +365,8 @@
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -354,7 +379,8 @@
             "clientAge": ["14-18"],
             "kids": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -372,7 +398,8 @@
             "seniorCitizen": "true",
             "adultWithDisability": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
         {
             "name": "TechHire",
@@ -386,7 +413,8 @@
             "adultWithDisability": "true",
             "veteran": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
         {
             "name": "Veterans Now (VN)",
@@ -399,7 +427,8 @@
             "veteran": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
         {
@@ -414,7 +443,8 @@
             "adultWithDisability": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
         {
             "name": "YouthBuild (YB)",
@@ -425,7 +455,8 @@
             "email": "vgarcia@ypiusa.org",
             "clientAge": ["18-65"],
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         },
 
         {
@@ -445,7 +476,8 @@
             "adultWithDisability": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
 
         },
         {
@@ -461,7 +493,8 @@
             "adultWithDisability": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : ""
+            "category" : "",
+            "location": ""
         }
     ]
 }
