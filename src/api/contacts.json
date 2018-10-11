@@ -1,17 +1,17 @@
 {
     "contacts": [{
-            "name": "Bridge To Coding",
-            "age": "18 to 25",
-            "group": ["High school", "College", "Career"],
-            "zip": [90006],
-            "phonenumber": "323.546.8071",
-            "email": "lsimpson@ypiusa.org",
-            "clientAge": ["18-65"],
-            "kids": "true",
-            "description": "",
-            "category" : "",
-            "location": ""
-        },
+        "name": "Bridge To Coding",
+        "age": "18 to 25",
+        "group": ["High school", "College", "Career"],
+        "zip": [90006],
+        "phonenumber": "323.546.8071",
+        "email": "lsimpson@ypiusa.org",
+        "clientAge": ["18-65"],
+        "kids": "true",
+        "description": "",
+        "category": "",
+        "location": ""
+    },
 
         {
             "name": "California Earned Income Tax Credit (CalEITC)",
@@ -22,7 +22,7 @@
             "email": "joanna.co@ypiusa.org",
             "working": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -36,7 +36,7 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -51,7 +51,7 @@
             "clientAge": ["14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -66,7 +66,7 @@
             "clientAge": ["14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -80,7 +80,7 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -96,7 +96,7 @@
             "working": "true",
             "othersJobless": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -109,7 +109,7 @@
             "email": "ehs@ypiusa.org",
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -123,7 +123,7 @@
             "clientAge": ["14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -136,7 +136,7 @@
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
             "clientAge": ["18-65"],
-            "kids": "true"
+            "kids": "true",
             "childrenOfWorkingAge": "true",
             "childrenOfCollegeAge": "true",
             "childrenInJusticeSystem": "true",
@@ -144,7 +144,7 @@
             "othersJobless": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -157,7 +157,7 @@
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -169,10 +169,10 @@
             "phonenumber": "213.797.4858",
             "email": "rrenteria@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true"
+            "kids": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -184,7 +184,7 @@
             "phonenumber": "323.940.4189",
             "email": "mnemececk@ypiusa.org",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -195,9 +195,9 @@
             "zip": [90028, 90038, 90020],
             "phonenumber": "818.573.7617",
             "email": "ahernandez@ypiusa.org",
-            "clientAge": [ "18-65"],
+            "clientAge": ["18-65"],
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
         {
@@ -210,7 +210,7 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -224,7 +224,7 @@
             "clientAge": ["10-14"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -237,12 +237,12 @@
             "phonenumber": "818.573.9002",
             "email": "maguilar@ypiusa.org",
             "clientAge": ["14-18", "18-65"],
-            "kids": "true"
+            "kids": "true",
             "housingHardships": "true",
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -255,7 +255,7 @@
             "phonenumber": "323.836.0055",
             "email": "hfsc@ypiusa.org",
             "clientAge": ["10-14", "14-18", "18-65"],
-            "kids": "true"
+            "kids": "true",
             "levelOfEducation": "BA or Higher",
             "childrenWithDisabilties": "true",
             "adultWithDisability": "true",
@@ -263,7 +263,7 @@
             "seniorCitizen": "true",
             "veteran": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -280,7 +280,7 @@
             "housingHardships": "true",
             "veteran": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -295,7 +295,7 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -309,7 +309,7 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -323,7 +323,7 @@
             "clientAge": ["10-14", "14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -337,7 +337,7 @@
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -351,7 +351,7 @@
             "clientAge": ["10-14"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -365,7 +365,7 @@
             "clientAge": ["10-14", "14-18", "18-65"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -379,7 +379,7 @@
             "clientAge": ["14-18"],
             "kids": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -398,7 +398,7 @@
             "seniorCitizen": "true",
             "adultWithDisability": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
         {
@@ -413,7 +413,7 @@
             "adultWithDisability": "true",
             "veteran": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
         {
@@ -427,7 +427,7 @@
             "veteran": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -443,7 +443,7 @@
             "adultWithDisability": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
         {
@@ -455,7 +455,7 @@
             "email": "vgarcia@ypiusa.org",
             "clientAge": ["18-65"],
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         },
 
@@ -476,7 +476,7 @@
             "adultWithDisability": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
 
         },
@@ -493,7 +493,7 @@
             "adultWithDisability": "true",
             "housingHardships": "true",
             "description": "",
-            "category" : "",
+            "category": "",
             "location": ""
         }
     ]
