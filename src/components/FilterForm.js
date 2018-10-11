@@ -337,7 +337,7 @@ class FilterForm extends React.Component {
                                 label='Los Angeles'
                                 name='radioGroup'
                                 value='Los Angeles'
-                                checked={this.state.location === 'Los Angeles'}
+                                checked={location === 'Los Angeles'}
                                 onChange={this.handleLocation}
                             />
                         </Form.Field>
@@ -347,7 +347,7 @@ class FilterForm extends React.Component {
                                 label='San Fernando Valley'
                                 name='radioGroup'
                                 value='San Fernando Valley'
-                                checked={this.state.location === 'San Fernando Valley'}
+                                checked={location === 'San Fernando Valley'}
                                 onChange={this.handleLocation}
                             />
                         </Form.Field>
@@ -369,7 +369,7 @@ class FilterForm extends React.Component {
                                 label='0-4'
                                 name='radioGroup'
                                 value='0-4'
-                                checked={this.state.clientAge === '0-4'}
+                                checked={clientAge === '0-4'}
                                 onChange={this.handleClientAgeChange}
                             />
                         </Form.Field>
@@ -379,7 +379,7 @@ class FilterForm extends React.Component {
                                 label='5-10'
                                 name='radioGroup'
                                 value='5-10'
-                                checked={this.state.clientAge === '5-10'}
+                                checked={clientAge === '5-10'}
                                 onChange={this.handleClientAgeChange}
                             />
                         </Form.Field>
@@ -390,7 +390,7 @@ class FilterForm extends React.Component {
                                 label='11-13'
                                 name='radioGroup'
                                 value='11-13'
-                                checked={this.state.clientAge === '11-13'}
+                                checked={clientAge === '11-13'}
                                 onChange={this.handleClientAgeChange}
                             />
                         </Form.Field>
@@ -400,7 +400,7 @@ class FilterForm extends React.Component {
                                 label='14-18 (Highschool Age)'
                                 name='radioGroup'
                                 value='14-18'
-                                checked={this.state.clientAge === '14-18'}
+                                checked={clientAge === '14-18'}
                                 onChange={this.handleClientAgeChange}
                             />
                         </Form.Field>
@@ -410,7 +410,7 @@ class FilterForm extends React.Component {
                                 label='18-24 (College/Working Age)'
                                 name='radioGroup'
                                 value='18-24'
-                                checked={this.state.clientAge === '18-24'}
+                                checked={clientAge === '18-24'}
                                 onChange={this.handleClientAgeChange}
                             />
                         </Form.Field>
@@ -420,7 +420,7 @@ class FilterForm extends React.Component {
                                 label='25-65'
                                 name='radioGroup'
                                 value='25-65'
-                                checked={this.state.clientAge === '25-65'}
+                                checked={clientAge === '25-65'}
                                 onChange={this.handleClientAgeChange}
                             />
                         </Form.Field>
@@ -437,7 +437,7 @@ class FilterForm extends React.Component {
                                 label='Yes'
                                 name='radioGroup'
                                 value='true'
-                                checked={this.state.interestedInTraining === 'true'}
+                                checked={interestedInTraining === 'true'}
                                 onChange={this.handleInterestedInTraining}
                             />
                         </Form.Field>
@@ -447,7 +447,7 @@ class FilterForm extends React.Component {
                                 label='No'
                                 name='radioGroup'
                                 value='false'
-                                checked={this.state.interestedInTraining === 'false'}
+                                checked={interestedInTraining === 'false'}
                                 onChange={this.handleInterestedInTraining}
                             />
                         </Form.Field>
@@ -634,9 +634,25 @@ export default FilterForm;
 //        truthyArray={truthyArray}
 //        filteredList = {filteredList}
 //        clientAge={clientAge}
+//        interestedInTraining={interestedInTraining}
+        //veteran = {veteran}
+        //interestedInTraining: {interestedInTraining}
+        //interestedAfterSchoolPrograms: {interestedAfterSchoolPrograms}
+        //interestedInCriminalServices: {interestedInCriminalServices}
+        //interestedInCompletingDiploma: {interestedInCompletingDiploma}
 //        zip={zip}
 //    />
 //</div>
+
+
+
+
+
+
+
+
+
+
 
 
 // <div className="ui checkbox">
