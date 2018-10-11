@@ -483,6 +483,42 @@ class FilterForm extends React.Component {
                     </Form>
 
 
+
+                    <h3>Question 3</h3>
+
+                    <h3>Is the participant a veteran?</h3>
+                    <Form>
+
+                        <Form.Field>
+                            <Radio
+                                label='Yes'
+                                name='radioGroup'
+                                value='true'
+                                checked={veteran === 'true'}
+                                onChange={this.handleVeteran}
+                            />
+                        </Form.Field>
+
+                        <Form.Field>
+                            <Radio
+                                label='No'
+                                name='radioGroup'
+                                value='false'
+                                checked={veteran === 'false'}
+                                onChange={this.handleVeteran}
+                            />
+                        </Form.Field>
+
+                    </Form>
+
+
+
+
+
+
+
+
+
                     <h3>Question 3</h3>
                     <Form>
 
@@ -572,30 +608,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Are you and/or someone in your family a veteran</h3>
-                    <Form>
 
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.veteran === 'true'}
-                                onChange={this.handleVeteran}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.veteran === 'false'}
-                                onChange={this.handleVeteran}
-                            />
-                        </Form.Field>
-
-                    </Form>
 
 
 
