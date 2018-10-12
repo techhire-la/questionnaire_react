@@ -13,9 +13,10 @@ class FilterForm extends React.Component {
         location: undefined,
         clientAge: undefined,
         kids: undefined,
-        veteran: undefined,
-        inSchool: undefined,
 
+        inSchool: undefined,
+        levelofEducation: undefined,
+        veteran: undefined,
         interestedInTraining: undefined,
         interestedAfterSchoolPrograms: undefined,
         interestedInCriminalServices: undefined,
@@ -182,7 +183,7 @@ class FilterForm extends React.Component {
     handleInSchool = (e, { value }) => this.setState({ inSchool: value })
 
     //Question 4
-    handleLevelOfEducation  = (e, { value }) => this.setState({ level: value });
+    handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
 
     //Question 5
     handleVeteran = (e, { value }) => this.setState({ veteran: value });
