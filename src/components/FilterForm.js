@@ -189,9 +189,9 @@ class FilterForm extends React.Component {
     handleVeteran = (e, { value }) => this.setState({ veteran: value });
 
     //Question 6
-    handleAfterSchool = (e, { value }) => this.setState({ veteran: value })
+    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value })
 
-
+    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value })
 
 
 
@@ -622,6 +622,33 @@ class FilterForm extends React.Component {
 
                     </Form>
 
+
+                    <h3>Question 7</h3>
+                    <h3>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h3>
+
+                    <Form>
+
+                        <Form.Field>
+                            <Radio
+                                label='Yes'
+                                name='radioGroup'
+                                value='true'
+                                checked={this.state.interestedInCriminalServices === 'true'}
+                                onChange={this.handleInterestedInCriminalServices}
+                            />
+                        </Form.Field>
+
+                        <Form.Field>
+                            <Radio
+                                label='No'
+                                name='radioGroup'
+                                value='false'
+                                checked={this.state.interestedInCriminalServices === 'false'}
+                                onChange={this.handleInterestedInCriminalServices}
+                            />
+                        </Form.Field>
+
+                    </Form>
 
 
 
