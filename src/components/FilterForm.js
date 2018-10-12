@@ -188,6 +188,11 @@ class FilterForm extends React.Component {
     //Question 5
     handleVeteran = (e, { value }) => this.setState({ veteran: value });
 
+    //Question 6
+    handleAfterSchool = (e, { value }) => this.setState({ veteran: value })
+
+
+
 
 
 
@@ -563,7 +568,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <h3>Question 3</h3>
+                    <h3>Question 6</h3>
 
                     <h3>Is the participant interested in employment support or vocational training</h3>
                     <Form>
@@ -590,20 +595,18 @@ class FilterForm extends React.Component {
 
                     </Form>
 
-                    <h3>Question 2</h3>
-                    <Form>
-                        <Form.Field>
-                            <h3>Do you have any children?</h3>
+                    <h3> Question 6 </h3>
+                    <h3> Is the participant looking for after-school program? </h3>
 
-                        </Form.Field>
+                    <Form>
 
                         <Form.Field>
                             <Radio
                                 label='Yes'
                                 name='radioGroup'
                                 value='true'
-                                checked={this.state.kids === 'true'}
-                                onChange={this.handleChildrenChange}
+                                checked={interestedAfterSchoolPrograms === 'true'}
+                                onChange={this.handleAfterSchool}
                             />
                         </Form.Field>
 
@@ -612,53 +615,13 @@ class FilterForm extends React.Component {
                                 label='No'
                                 name='radioGroup'
                                 value='false'
-                                checked={this.state.kids === 'false'}
-                                onChange={this.handleChildrenChange}
-                            />
-                        </Form.Field>
-                    </Form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <h3>Question 3</h3>
-                    <Form>
-
-                        <Form.Field className="large">
-                            <h3>Are you currently working?</h3>
-
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.working === 'true'}
-                                onChange={this.handleWorkingChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.working === 'false'}
-                                onChange={this.handleWorkingChange}
+                                checked={interestedAfterSchoolPrograms === 'false'}
+                                onChange={this.handleAfterSchool}
                             />
                         </Form.Field>
 
                     </Form>
+
 
 
 
