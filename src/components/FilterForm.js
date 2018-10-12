@@ -193,7 +193,7 @@ class FilterForm extends React.Component {
 
     handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value })
 
-    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCriminalServices: value })
+    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value })
 
 
 
