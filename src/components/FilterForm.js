@@ -22,6 +22,14 @@ class FilterForm extends React.Component {
         interestedInCriminalServices: undefined,
         interestedInCompletingDiploma: undefined,
 
+        showOne: true,
+        showTwo: false,
+        showThree: false,
+        showFour: false,
+        showFive: false,
+        showSix: false,
+
+
 
         // working: undefined,
         // levelOfEducation: undefined,
@@ -291,13 +299,14 @@ class FilterForm extends React.Component {
         // console.log("Here's Filter Form's truthyArray: " + truthyArray)
 
 
-        // var levelOfEducation = this.state.levelOfEducation
         var zip = this.state.zip;
 
         var location = this.state.location;
         var clientAge = this.state.clientAge;
         var kids = this.state.kids;
         var veteran = this.state.veteran;
+        var inSchool = this.state.inSchool;
+        var levelOfEducation = this.state.levelOfEducation
         var interestedInTraining = this.state.interestedInTraining;
         var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
         var interestedInCriminalServices = this.state.interestedInCriminalServices;
@@ -324,6 +333,64 @@ class FilterForm extends React.Component {
         //     showWorking = {display: 'none' }
         // }
 
+        //Question 1
+        let showLocation = "";
+        if (this.state.showOne === 'true') {
+            showLocation = {display: 'block'};
+        } else {
+            showLocation = {display: 'none'};
+        }
+
+
+        //Question 2
+        if (this.state.showTwo === 'true') {
+            showAge = {display: 'block'};
+        } else {
+            showAge = {display: 'none'};
+        }
+
+        //Question 3
+        let showEducation = "";
+        if (this.state.showThree === 'true') {
+            showEducation = {display: 'block'};
+        } else {
+            showEducation = {display: 'none'};
+        }
+
+        //Question 4
+        let showInSchool = "";
+        if (this.state.showFour === 'true') {
+            showInSchool = {display: 'block'};
+        } else {
+            showInSchool = {display: 'none'};
+        }
+
+        // var inSchool = this.state.inSchool;
+        // var levelOfEducation = this.state.levelOfEducation
+
+        //Question 5
+        let showAfterSchool = "";
+        let showTraining = "";
+        let showDiploma = "";
+
+        if (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College') ){
+            if (this.state.showFive === 'true') {
+                showAfterSchool = {display: 'block'};
+
+            } else {
+                showAfterSchool = {display: 'none'};
+            }
+        }
+
+        if (inSchool === 'false' && (levelOfEducation !== 'Highschool/GED' || levelOfEducation !== 'Some College')  )
+            if (this.state.showFive === 'true') {
+                showAfterSchool = {display: 'block'};
+
+            } else {
+                showAfterSchool = {display: 'none'};
+            }
+        }
+
         let showForm = "";
         if(this.state.filteredList === undefined){
             showForm = {display: 'block' }
@@ -347,32 +414,35 @@ class FilterForm extends React.Component {
 
                 <div className="ui filterContainer" >
 
-                    <h3>Question 1</h3>
-                    <Form>
+                    <div>
+                        <h3>Question 1</h3>
+                        <Form>
 
-                        <h3>Is the participant looking for services in the LA area or San Fernando Valley?</h3>
+                            <h3>Is the participant looking for services in the LA area or San Fernando Valley?</h3>
 
-                        <Form.Field>
-                            <Radio
-                                label='Los Angeles'
-                                name='radioGroup'
-                                value='Los Angeles'
-                                checked={location === 'Los Angeles'}
-                                onChange={this.handleLocation}
-                            />
-                        </Form.Field>
+                            <Form.Field>
+                                <Radio
+                                    label='Los Angeles'
+                                    name='radioGroup'
+                                    value='Los Angeles'
+                                    checked={location === 'Los Angeles'}
+                                    onChange={this.handleLocation}
+                                />
+                            </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='San Fernando Valley'
-                                name='radioGroup'
-                                value='San Fernando Valley'
-                                checked={location === 'San Fernando Valley'}
-                                onChange={this.handleLocation}
-                            />
-                        </Form.Field>
+                            <Form.Field>
+                                <Radio
+                                    label='San Fernando Valley'
+                                    name='radioGroup'
+                                    value='San Fernando Valley'
+                                    checked={location === 'San Fernando Valley'}
+                                    onChange={this.handleLocation}
+                                />
+                            </Form.Field>
 
-                    </Form>
+                        </Form>
+                    </div>
+
 
 
 
@@ -483,10 +553,10 @@ class FilterForm extends React.Component {
 
                         <Form.Field>
                             <Radio
-                                label='No Highschool'
+                                label='No Highschool / Some Highschool'
                                 name='radioGroup'
-                                value='No Highschool'
-                                checked={this.state.levelOfEducation === 'No Highschool'}
+                                value='No Highschool / Some Highschool'
+                                checked={this.state.levelOfEducation === 'No Highschool / Some Highschool'}
                                 onChange={this.handleLevelOfEducation}
                             />
                         </Form.Field>
@@ -682,17 +752,6 @@ class FilterForm extends React.Component {
 
 
 
-
-
-
-
-                    <br/>
-
-                    <Input label='  Zip  ' placeholder='please enter a 5 digit zip code' onChange={this.handleZipChange} />
-
-                    <br/>
-                    <br/>
-
                     <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
 
 
@@ -712,6 +771,17 @@ class FilterForm extends React.Component {
 
 
 export default FilterForm;
+
+
+
+
+// Zip Button
+// <br/>
+//
+// <Input label='  Zip  ' placeholder='please enter a 5 digit zip code' onChange={this.handleZipChange} />
+//
+// <br/>
+// <br/>
 
 
 //CATALOGUE COMPONENT
