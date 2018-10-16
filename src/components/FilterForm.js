@@ -343,6 +343,7 @@ class FilterForm extends React.Component {
 
 
         //Question 2
+        let showAge = ""
         if (this.state.showTwo === 'true') {
             showAge = {display: 'block'};
         } else {
@@ -373,7 +374,7 @@ class FilterForm extends React.Component {
         let showTraining = "";
         let showDiploma = "";
 
-        if (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College') ){
+        if (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ){
             if (this.state.showFive === 'true') {
                 showAfterSchool = {display: 'block'};
 
@@ -382,14 +383,34 @@ class FilterForm extends React.Component {
             }
         }
 
-        if (inSchool === 'false' && (levelOfEducation !== 'Highschool/GED' || levelOfEducation !== 'Some College')  )
+        if (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College')  ){
             if (this.state.showFive === 'true') {
-                showAfterSchool = {display: 'block'};
+                showTraining = {display: 'block'};
 
             } else {
-                showAfterSchool = {display: 'none'};
+                showTraining = {display: 'none'};
             }
         }
+
+        if (inSchool === 'false' && (levelOfEducation !== 'Some Highschool')  ){
+            if (this.state.showFive === 'true') {
+                showDiploma= {display: 'block'};
+
+            } else {
+                showDiploma = {display: 'none'};
+            }
+        }
+
+
+        let showCriminalServices = "";
+        if (this.state.showSix === 'true') {
+            showCriminalServices = {display: 'block'};
+        } else {
+            showCriminalServices = {display: 'none'};
+        }
+
+
+
 
         let showForm = "";
         if(this.state.filteredList === undefined){
