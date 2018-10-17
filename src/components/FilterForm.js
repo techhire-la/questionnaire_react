@@ -28,6 +28,7 @@ class FilterForm extends React.Component {
         showFour: false,
         showFive: false,
         showSix: false,
+        showSeven: false
 
 
 
@@ -429,6 +430,22 @@ class FilterForm extends React.Component {
         }
 
 
+        //Question 7
+        let showVeteran = "";
+
+        if (this.state.showSeven === 'true') {
+
+            if(clientAge === '18-24' || clientAge ==='25-65' ){
+                showVeteran = {display: 'block'};
+            }
+
+        } else {
+            showVeteran = {display: 'none'};
+        }
+
+
+
+
 
         // Show Questions vs Show Catalogue
         let showForm = "";
@@ -454,7 +471,7 @@ class FilterForm extends React.Component {
 
                 <div className="ui filterContainer" >
 
-                    <div>
+                    <div className="showLocation">
                         <h3>Question 1</h3>
                         <Form>
 
@@ -488,159 +505,272 @@ class FilterForm extends React.Component {
 
 
 
+                    <div className="showAge">
+                        <h3>Question 2</h3>
+                        <Form>
 
-                    <h3>Question 2</h3>
-                    <Form>
+                            <h3>What is the participants age?</h3>
 
-                        <h3>What is the participants age?</h3>
+                            <Form.Field>
+                                <Radio
+                                    label='0-4'
+                                    name='radioGroup'
+                                    value='0-4'
+                                    checked={clientAge === '0-4'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='0-4'
-                                name='radioGroup'
-                                value='0-4'
-                                checked={clientAge === '0-4'}
-                                onChange={this.handleClientAge}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='5-10'
-                                name='radioGroup'
-                                value='5-10'
-                                checked={clientAge === '5-10'}
-                                onChange={this.handleClientAge}
-                            />
-                        </Form.Field>
-
-
-                        <Form.Field>
-                            <Radio
-                                label='11-13'
-                                name='radioGroup'
-                                value='11-13'
-                                checked={clientAge === '11-13'}
-                                onChange={this.handleClientAge}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='14-18 (Highschool Age)'
-                                name='radioGroup'
-                                value='14-18'
-                                checked={clientAge === '14-18'}
-                                onChange={this.handleClientAge}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='18-24 (College/Working Age)'
-                                name='radioGroup'
-                                value='18-24'
-                                checked={clientAge === '18-24'}
-                                onChange={this.handleClientAge}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='25-65'
-                                name='radioGroup'
-                                value='25-65'
-                                checked={clientAge === '25-65'}
-                                onChange={this.handleClientAge}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-                    <h3>Question 3</h3>
-
-                    <h3>Is the participant in school? </h3>
-
-                    <Form>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.inSchool === 'true'}
-                                onChange={this.handleInSchool}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.inSchool === 'false'}
-                                onChange={this.handleInSchool}
-                            />
-                        </Form.Field>
-                    </Form>
+                            <Form.Field>
+                                <Radio
+                                    label='5-10'
+                                    name='radioGroup'
+                                    value='5-10'
+                                    checked={clientAge === '5-10'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
 
 
-                    <h3>Question 4</h3>
+                            <Form.Field>
+                                <Radio
+                                    label='11-13'
+                                    name='radioGroup'
+                                    value='11-13'
+                                    checked={clientAge === '11-13'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
 
-                    <h3>What is the participant's highest level of completed education </h3>
+                            <Form.Field>
+                                <Radio
+                                    label='14-18 (Highschool Age)'
+                                    name='radioGroup'
+                                    value='14-18'
+                                    checked={clientAge === '14-18'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
 
-                    <Form>
+                            <Form.Field>
+                                <Radio
+                                    label='18-24 (College/Working Age)'
+                                    name='radioGroup'
+                                    value='18-24'
+                                    checked={clientAge === '18-24'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='No Highschool / Some Highschool'
-                                name='radioGroup'
-                                value='No Highschool / Some Highschool'
-                                checked={this.state.levelOfEducation === 'No Highschool / Some Highschool'}
-                                onChange={this.handleLevelOfEducation}
-                            />
-                        </Form.Field>
+                            <Form.Field>
+                                <Radio
+                                    label='25-65'
+                                    name='radioGroup'
+                                    value='25-65'
+                                    checked={clientAge === '25-65'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='Highschool/GED'
-                                name='radioGroup'
-                                value='Highschool/GED'
-                                checked={this.state.levelOfEducation === 'Highschool/GED'}
-                                onChange={this.handleLevelOfEducation}
-                            />
-                        </Form.Field>
+                        </Form>
+                    </div>
 
-                        <Form.Field>
-                            <Radio
-                                label='Some College'
-                                name='radioGroup'
-                                value='Some College'
-                                checked={this.state.levelOfEducation === 'Some College'}
-                                onChange={this.handleLevelOfEducation}
-                            />
-                        </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='AA'
-                                name='radioGroup'
-                                value='AA'
-                                checked={this.state.levelOfEducation === 'AA'}
-                                onChange={this.handleLevelOfEducation}
-                            />
-                        </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='BA or Higher'
-                                name='radioGroup'
-                                value='BA or Higher'
-                                checked={this.state.levelOfEducation === 'BA or Higher'}
-                                onChange={this.handleLevelOfEducation}
-                            />
-                        </Form.Field>
-                    </Form>
+                    <div className ="showEducation">
+                        <h3>Question 3</h3>
+
+                        <h3>What is the participant's highest level of completed education </h3>
+
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No Highschool / Some Highschool'
+                                    name='radioGroup'
+                                    value='No Highschool / Some Highschool'
+                                    checked={this.state.levelOfEducation === 'No Highschool / Some Highschool'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Highschool/GED'
+                                    name='radioGroup'
+                                    value='Highschool/GED'
+                                    checked={this.state.levelOfEducation === 'Highschool/GED'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Some College'
+                                    name='radioGroup'
+                                    value='Some College'
+                                    checked={this.state.levelOfEducation === 'Some College'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='AA'
+                                    name='radioGroup'
+                                    value='AA'
+                                    checked={this.state.levelOfEducation === 'AA'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='BA or Higher'
+                                    name='radioGroup'
+                                    value='BA or Higher'
+                                    checked={this.state.levelOfEducation === 'BA or Higher'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                    </div>
+
+
+                    <div className="showInSchool">
+                        <h3>Question 4</h3>
+
+                        <h3>Is the participant in school? </h3>
+
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.inSchool === 'true'}
+                                    onChange={this.handleInSchool}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.inSchool === 'false'}
+                                    onChange={this.handleInSchool}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                    </div>
+
+
+
+                    <div className="showAfterSchool">
+                        <h3> Question 5 </h3>
+                        <h3> Is the participant looking for after-school program? </h3>
+
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={interestedAfterSchoolPrograms === 'true'}
+                                    onChange={this.handleAfterSchool}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={interestedAfterSchoolPrograms === 'false'}
+                                    onChange={this.handleAfterSchool}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+                    </div>
+
+
+
+                    <div className="showTraining">
+                        <h3>Question 5</h3>
+
+                        <h3>Is the participant interested in employment support or vocational training</h3>
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={interestedInTraining === 'true'}
+                                    onChange={this.handleInterestedInTraining}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={interestedInTraining === 'false'}
+                                    onChange={this.handleInterestedInTraining}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+                    </div>
+
+
+
+                    <div className="showDiploma">
+                        <h3>Question 5</h3>
+                        <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
+
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.interestedInCompletingDiploma === 'true'}
+                                    onChange={this.handleInterestedInCompletingDiploma}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.interestedInCompletingDiploma === 'false'}
+                                    onChange={this.handleInterestedInCompletingDiploma}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+                    </div>
+
+
+
+
+
+
+
+                    <div className="showVeteran"> </div>
 
 
                     <h3>Question 5</h3>
@@ -680,59 +810,6 @@ class FilterForm extends React.Component {
 
 
 
-                    <h3>Question 6</h3>
-
-                    <h3>Is the participant interested in employment support or vocational training</h3>
-                    <Form>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={interestedInTraining === 'true'}
-                                onChange={this.handleInterestedInTraining}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={interestedInTraining === 'false'}
-                                onChange={this.handleInterestedInTraining}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-                    <h3> Question 6 </h3>
-                    <h3> Is the participant looking for after-school program? </h3>
-
-                    <Form>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={interestedAfterSchoolPrograms === 'true'}
-                                onChange={this.handleAfterSchool}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={interestedAfterSchoolPrograms === 'false'}
-                                onChange={this.handleAfterSchool}
-                            />
-                        </Form.Field>
-
-                    </Form>
 
 
                     <h3>Question 7</h3>
@@ -763,32 +840,7 @@ class FilterForm extends React.Component {
                     </Form>
 
 
-                    <h3>Question 8</h3>
-                    <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
 
-                    <Form>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.interestedInCompletingDiploma === 'true'}
-                                onChange={this.handleInterestedInCompletingDiploma}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.interestedInCompletingDiploma === 'false'}
-                                onChange={this.handleInterestedInCompletingDiploma}
-                            />
-                        </Form.Field>
-
-                    </Form>
 
 
 
