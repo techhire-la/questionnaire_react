@@ -28,7 +28,10 @@ class FilterForm extends React.Component {
         showFour: false,
         showFive: false,
         showSix: false,
-        showSeven: false
+        showSeven: false,
+
+        questionNumber: 1,
+
 
 
 
@@ -131,6 +134,16 @@ class FilterForm extends React.Component {
 
             return returnValue
     };
+
+    handleNext = (e, { id }) => {
+        debugger
+        // var stringId = e.target.parentNode.id;
+        var nextQuestion = parseInt(e.target.parentNode.id)
+        // e.target.getAttribute('id');
+        console.log(nextQuestion);
+        // this.setState
+
+    }
 
 
     handleFormData = (arr) => {
@@ -287,8 +300,6 @@ class FilterForm extends React.Component {
 
         }
 
-
-
     };
 
 
@@ -313,6 +324,9 @@ class FilterForm extends React.Component {
         var interestedInCriminalServices = this.state.interestedInCriminalServices;
         var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
 
+        let showDiv = {display: 'block' };
+        // let hidden = {display: 'none' };
+
 
         //Question 1
         // let showKids = "";
@@ -334,13 +348,14 @@ class FilterForm extends React.Component {
         //     showWorking = {display: 'none' }
         // }
 
-        //Question 1
+        Question 1
         let showLocation = "";
         if (this.state.showOne === 'true') {
             showLocation = {display: 'block'};
         } else {
             showLocation = {display: 'none'};
         }
+
 
 
         //Question 2
@@ -471,7 +486,7 @@ class FilterForm extends React.Component {
 
                 <div className="ui filterContainer" >
 
-                    <div className="showLocation">
+                    <div className="showLocation" id="1">
                         <h3>Question 1</h3>
                         <Form>
 
@@ -498,6 +513,9 @@ class FilterForm extends React.Component {
                             </Form.Field>
 
                         </Form>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
                     </div>
 
 
@@ -505,7 +523,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <div className="showAge">
+                    <div className="showAge" id="2">
                         <h3>Question 2</h3>
                         <Form>
 
@@ -577,7 +595,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <div className ="showEducation">
+                    <div className ="showEducation" id="3">
                         <h3>Question 3</h3>
 
                         <h3>What is the participant's highest level of completed education </h3>
@@ -638,7 +656,7 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    <div className="showInSchool">
+                    <div className="showInSchool" id="4">
                         <h3>Question 4</h3>
 
                         <h3>Is the participant in school? </h3>
@@ -669,10 +687,111 @@ class FilterForm extends React.Component {
                     </div>
 
 
+                    <div className="show" id="5">
 
-                    <div className="showAfterSchool">
-                        <h3> Question 5 </h3>
-                        <h3> Is the participant looking for after-school program? </h3>
+                        <div className="showAfterSchool" id="5">
+                            <h3> Question 5 </h3>
+                            <h3> Is the participant looking for after-school program? </h3>
+
+                            <Form>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={interestedAfterSchoolPrograms === 'true'}
+                                        onChange={this.handleAfterSchool}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={interestedAfterSchoolPrograms === 'false'}
+                                        onChange={this.handleAfterSchool}
+                                    />
+                                </Form.Field>
+
+                            </Form>
+
+                        </div>
+
+
+
+                        <div className="showTraining">
+                            <h3>Question 5</h3>
+
+                            <h3>Is the participant interested in employment support or vocational training</h3>
+                            <Form>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={interestedInTraining === 'true'}
+                                        onChange={this.handleInterestedInTraining}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={interestedInTraining === 'false'}
+                                        onChange={this.handleInterestedInTraining}
+                                    />
+                                </Form.Field>
+
+                            </Form>
+
+                        </div>
+
+
+
+                        <div className="showDiploma">
+                            <h3>Question 5</h3>
+                            <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
+
+                            <Form>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={this.state.interestedInCompletingDiploma === 'true'}
+                                        onChange={this.handleInterestedInCompletingDiploma}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={this.state.interestedInCompletingDiploma === 'false'}
+                                        onChange={this.handleInterestedInCompletingDiploma}
+                                    />
+                                </Form.Field>
+
+                            </Form>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div className="showCriminalServices" id="6">
+                        <h3>Question 6</h3>
+                        <h3>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h3>
 
                         <Form>
 
@@ -681,8 +800,8 @@ class FilterForm extends React.Component {
                                     label='Yes'
                                     name='radioGroup'
                                     value='true'
-                                    checked={interestedAfterSchoolPrograms === 'true'}
-                                    onChange={this.handleAfterSchool}
+                                    checked={this.state.interestedInCriminalServices === 'true'}
+                                    onChange={this.handleInterestedInCriminalServices}
                                 />
                             </Form.Field>
 
@@ -691,21 +810,22 @@ class FilterForm extends React.Component {
                                     label='No'
                                     name='radioGroup'
                                     value='false'
-                                    checked={interestedAfterSchoolPrograms === 'false'}
-                                    onChange={this.handleAfterSchool}
+                                    checked={this.state.interestedInCriminalServices === 'false'}
+                                    onChange={this.handleInterestedInCriminalServices}
                                 />
                             </Form.Field>
 
                         </Form>
-
                     </div>
 
 
 
-                    <div className="showTraining">
-                        <h3>Question 5</h3>
 
-                        <h3>Is the participant interested in employment support or vocational training</h3>
+                    <div className="showVeteran" id="7">
+
+                        <h3>Question 7</h3>
+
+                        <h3>Is the participant a veteran?</h3>
                         <Form>
 
                             <Form.Field>
@@ -713,8 +833,8 @@ class FilterForm extends React.Component {
                                     label='Yes'
                                     name='radioGroup'
                                     value='true'
-                                    checked={interestedInTraining === 'true'}
-                                    onChange={this.handleInterestedInTraining}
+                                    checked={veteran === 'true'}
+                                    onChange={this.handleVeteran}
                                 />
                             </Form.Field>
 
@@ -723,121 +843,17 @@ class FilterForm extends React.Component {
                                     label='No'
                                     name='radioGroup'
                                     value='false'
-                                    checked={interestedInTraining === 'false'}
-                                    onChange={this.handleInterestedInTraining}
+                                    checked={veteran === 'false'}
+                                    onChange={this.handleVeteran}
                                 />
                             </Form.Field>
 
                         </Form>
 
-                    </div>
-
-
-
-                    <div className="showDiploma">
-                        <h3>Question 5</h3>
-                        <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
-
-                        <Form>
-
-                            <Form.Field>
-                                <Radio
-                                    label='Yes'
-                                    name='radioGroup'
-                                    value='true'
-                                    checked={this.state.interestedInCompletingDiploma === 'true'}
-                                    onChange={this.handleInterestedInCompletingDiploma}
-                                />
-                            </Form.Field>
-
-                            <Form.Field>
-                                <Radio
-                                    label='No'
-                                    name='radioGroup'
-                                    value='false'
-                                    checked={this.state.interestedInCompletingDiploma === 'false'}
-                                    onChange={this.handleInterestedInCompletingDiploma}
-                                />
-                            </Form.Field>
-
-                        </Form>
 
                     </div>
 
 
-
-
-
-
-
-                    <div className="showVeteran"> </div>
-
-
-                    <h3>Question 5</h3>
-
-                    <h3>Is the participant a veteran?</h3>
-                    <Form>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={veteran === 'true'}
-                                onChange={this.handleVeteran}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={veteran === 'false'}
-                                onChange={this.handleVeteran}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <h3>Question 7</h3>
-                    <h3>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h3>
-
-                    <Form>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.interestedInCriminalServices === 'true'}
-                                onChange={this.handleInterestedInCriminalServices}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.interestedInCriminalServices === 'false'}
-                                onChange={this.handleInterestedInCriminalServices}
-                            />
-                        </Form.Field>
-
-                    </Form>
 
 
 
@@ -892,14 +908,6 @@ export default FilterForm;
 //        zip={zip}
 //    />
 //</div>
-
-
-
-
-
-
-
-
 
 
 
