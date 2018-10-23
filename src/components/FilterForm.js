@@ -139,10 +139,24 @@ class FilterForm extends React.Component {
         debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
-        // e.target.getAttribute('id');
-        console.log(nextQuestion);
-        // this.setState
+        // e.target.parentNode.getAttribute('id'); ||
+        // console.log(nextQuestion++);
+        // var addOne = (nextQuestion + 1);
+        var addOne = (nextQuestion + 1).toString();
 
+
+        this.setState({ questionNumber: addOne })
+        console.log(this.state.questionNumber)
+
+    }
+
+    handleBack = (e, { id }) => {
+        debugger
+        var lastQuestion = parseInt(e.target.parentNode.id)
+        var subtractOne = lastQuestion - 1;
+
+        this.setState({ questionNumber: subtractOne })
+        console.log(this.state.questionNumber)
     }
 
 
@@ -305,8 +319,8 @@ class FilterForm extends React.Component {
 
     render() {
 
-        var filteredList = this.state.filteredList
-        var truthyArray = this.state.truthyArray
+        var filteredList = this.state.filteredList;
+        var truthyArray = this.state.truthyArray;
 
         // console.log("Here's Filter Form's truthyArray: " + truthyArray)
 
@@ -348,7 +362,7 @@ class FilterForm extends React.Component {
         //     showWorking = {display: 'none' }
         // }
 
-        Question 1
+        //Question 1
         let showLocation = "";
         if (this.state.showOne === 'true') {
             showLocation = {display: 'block'};
@@ -486,7 +500,7 @@ class FilterForm extends React.Component {
 
                 <div className="ui filterContainer" >
 
-                    <div className="showLocation" id="1">
+                    <div className="showLocation" id="1" data-id="thing">
                         <h3>Question 1</h3>
                         <Form>
 
@@ -591,6 +605,10 @@ class FilterForm extends React.Component {
                             </Form.Field>
 
                         </Form>
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
                     </div>
 
 
@@ -653,6 +671,12 @@ class FilterForm extends React.Component {
                             </Form.Field>
                         </Form>
 
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
+
+
                     </div>
 
 
@@ -683,6 +707,10 @@ class FilterForm extends React.Component {
                                 />
                             </Form.Field>
                         </Form>
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
 
                     </div>
 
@@ -749,6 +777,7 @@ class FilterForm extends React.Component {
 
                             </Form>
 
+
                         </div>
 
 
@@ -783,6 +812,10 @@ class FilterForm extends React.Component {
 
                         </div>
 
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
 
                     </div>
 
@@ -816,6 +849,12 @@ class FilterForm extends React.Component {
                             </Form.Field>
 
                         </Form>
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
+
                     </div>
 
 
@@ -851,16 +890,13 @@ class FilterForm extends React.Component {
                         </Form>
 
 
+
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
+
                     </div>
-
-
-
-
-
-
-
-
-                    <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
 
 
 
