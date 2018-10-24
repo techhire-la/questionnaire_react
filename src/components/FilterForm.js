@@ -136,7 +136,7 @@ class FilterForm extends React.Component {
     };
 
     handleNext = (e, { id }) => {
-        debugger
+        // debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
@@ -151,9 +151,9 @@ class FilterForm extends React.Component {
     }
 
     handleBack = (e, { id }) => {
-        debugger
+        // debugger
         var lastQuestion = parseInt(e.target.parentNode.id)
-        var subtractOne = lastQuestion - 1;
+        var subtractOne = (lastQuestion - 1).toString();
 
         this.setState({ questionNumber: subtractOne })
         console.log(this.state.questionNumber)
@@ -326,6 +326,7 @@ class FilterForm extends React.Component {
 
 
         var zip = this.state.zip;
+        var questionNumber = this.state.questionNumber;
 
         var location = this.state.location;
         var clientAge = this.state.clientAge;
@@ -338,8 +339,9 @@ class FilterForm extends React.Component {
         var interestedInCriminalServices = this.state.interestedInCriminalServices;
         var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
 
-        let showDiv = {display: 'block' };
-        // let hidden = {display: 'none' };
+
+        // var showDiv = {display: 'block'};
+        // var hidden = {display: 'none' };
 
 
         //Question 1
@@ -500,7 +502,7 @@ class FilterForm extends React.Component {
 
                 <div className="ui filterContainer" >
 
-                    <div className="showLocation" id="1" data-id="thing">
+                    <div style={ this.state.questionNumber == "1" ? {display: 'block'} : {display: 'none'} } id="1" data-id="thing">
                         <h3>Question 1</h3>
                         <Form>
 
@@ -537,7 +539,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <div className="showAge" id="2">
+                    <div style={ this.state.questionNumber == "2" ? {display: 'block'} : {display: 'none'} } id="2">
                         <h3>Question 2</h3>
                         <Form>
 
@@ -613,7 +615,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <div className ="showEducation" id="3">
+                    <div style={ this.state.questionNumber == "3" ? {display: 'block'} : {display: 'none'} } id="3">
                         <h3>Question 3</h3>
 
                         <h3>What is the participant's highest level of completed education </h3>
@@ -680,7 +682,7 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    <div className="showInSchool" id="4">
+                    <div style={ this.state.questionNumber == "4" ? {display: 'block'} : {display: 'none'} } id="4">
                         <h3>Question 4</h3>
 
                         <h3>Is the participant in school? </h3>
@@ -715,9 +717,9 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    <div className="show" id="5">
+                    <div style={ this.state.questionNumber == "5" ? {display: 'block'} : {display: 'none'} } id="5">
 
-                        <div className="showAfterSchool" id="5">
+                        <div className="showAfterSchool">
                             <h3> Question 5 </h3>
                             <h3> Is the participant looking for after-school program? </h3>
 
@@ -822,7 +824,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <div className="showCriminalServices" id="6">
+                    <div style={ this.state.questionNumber == "6" ? {display: 'block'} : {display: 'none'} } id="6">
                         <h3>Question 6</h3>
                         <h3>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h3>
 
