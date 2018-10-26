@@ -22,26 +22,10 @@ class FilterForm extends React.Component {
         interestedInCriminalServices: undefined,
         interestedInCompletingDiploma: undefined,
 
-        // showOne: true,
-        // showTwo: false,
-        // showThree: false,
-        // showFour: false,
-        // showFive: false,
-        // showSix: false,
-        // showSeven: false,
-        showAfterSchool: false,
-        showTraining: false,
-        showDiploma: false,
-
         questionNumber: 1,
-
-
-
 
         // working: undefined,
         // levelOfEducation: undefined,
-
-
 
         zip: undefined,
 
@@ -402,15 +386,6 @@ class FilterForm extends React.Component {
         // var showTraining = "";
         // var showDiploma = "";
 
-        // var showAfterSchoolDiv = {display: 'none !important'};
-        // var showTrainingDiv = {display: 'none !important'};
-        // var showDiplomaDiv = {display: 'none !important'};
-
-        // {this.state.showAfterSchool === "true" ? showAfterSchoolDiv = {display: 'block !important'} : showAfterSchoolDiv = {display: 'none !important'} }
-        // {this.state.showTraining === "true" ? showAfterSchoolDiv = {display: 'block !important'} : showTrainingDiv = {display: 'none !important'} }
-        // {this.state.showDiploma === "true" ? showAfterSchoolDiv = {display: 'block !important'} : showDiplomaDiv = {display: 'none !important'} }
-
-
         var showAfterSchool = {display: 'none !important'};
         var showTraining = {display: 'none !important'};
         var showDiploma = {display: 'none !important'};
@@ -420,7 +395,6 @@ class FilterForm extends React.Component {
             debugger
 
             if (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
-                // this.setState({ showAfterSchool: "true" })
 
                 showAfterSchool = {display: 'block !important'};
                 //
@@ -429,15 +403,13 @@ class FilterForm extends React.Component {
             }
 
             if (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') ) {
-                // this.setState({ showTraining: "true" })
                 showTraining = {display: 'block !important'};
                 //
                 // showAfterSchool = {display: 'none !important'};
                 // showDiploma = {display: 'none !important'};
             }
 
-            if (inSchool === 'false' && (levelOfEducation !== 'Some Highschool') ){
-                // this.setState({ showDiploma: "true" })
+            if (inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ){
                 showDiploma= {display: 'block !important'};
                 //
                 // showAfterSchool = {display: 'none !important'};
@@ -446,9 +418,7 @@ class FilterForm extends React.Component {
             }
 
         }else{
-            // this.setState({ showAfterSchool: "false" })
-            // this.setState({ showTraining: "false" })
-            // this.setState({ showDiploma: "false" })
+
             showAfterSchool = {display: 'none !important'};
             showTraining = {display: 'none !important'};
             showDiploma = {display: 'none !important'};
@@ -754,7 +724,7 @@ class FilterForm extends React.Component {
 
 
 
-                        <div style={(inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') ) ? {display: 'block'} : {display: 'none'}} className='showTraining'>
+                        <div style={(inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher' || levelOfEducation === 'Some College')) ? {display: 'block'} : {display: 'none'}} className='showTraining'>
                             <h3>Question 5</h3>
 
                             <h3>Is the participant interested in employment support or vocational training</h3>
@@ -787,7 +757,7 @@ class FilterForm extends React.Component {
 
 
 
-                        <div style={(inSchool === 'false' && (levelOfEducation !== 'Some Highschool') ) ? {display: 'block'} : {display: 'none'}} className='showDiploma'>
+                        <div style={(inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ? {display: 'block'} : {display: 'none'}} className='showDiploma'>
                             <h3>Question 5</h3>
                             <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
 
