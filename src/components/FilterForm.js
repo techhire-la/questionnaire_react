@@ -188,16 +188,16 @@ class FilterForm extends React.Component {
         return filterCatalogue
     };
 
-    //Question 0
+    //Question 1
     handleLocation = (e, { value }) => this.setState({ location: value });
 
-    // Question 1
+    // Question 2
     handleClientAge = (e, { value }) => this.setState({ clientAge: value });
 
 
     //Question 2
     // handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
-    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value })
+
 
     //Question 3
     handleInSchool = (e, { value }) => this.setState({ inSchool: value })
@@ -205,18 +205,20 @@ class FilterForm extends React.Component {
     //Question 4
     handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
 
+
+
     //Question 5
+    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined })
+
+    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined })
+
+    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined })
+
+    // Question 6
+    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value})
+
+    //Question 7
     handleVeteran = (e, { value }) => this.setState({ veteran: value });
-
-    //Question 6
-    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value })
-
-    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value })
-
-    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value })
-
-
-
 
 
     /////////////////////////////////////////////////////////////////////////////
