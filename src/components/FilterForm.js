@@ -124,6 +124,7 @@ class FilterForm extends React.Component {
     };
 
     handleNext = (e, { id }) => {
+        debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
@@ -463,6 +464,7 @@ class FilterForm extends React.Component {
 
 
 
+        //////////////////  ISSUE  ///////////////////////////////////////////////
 
         // var showAfterSchool = {display: 'none !important'};
         // var showTraining = {display: 'none !important'};
@@ -518,17 +520,28 @@ class FilterForm extends React.Component {
         }
 
 
-        //Question 7
         let showVeteran = "";
-        if (this.state.questionNumber == '7') {
-
-            if(clientAge === '18-24' || clientAge ==='25-65' ){
-                showVeteran = {display: 'block'};
-            }
-
+        if (this.state.questionNumber == '7' && (clientAge == "18-24" || clientAge == "25-65")) {
+            // debugger
+            showVeteran = {display: 'block'};
         } else {
+            // debugger
             showVeteran = {display: 'none'};
         }
+
+
+
+        //Question 7
+        // let showVeteran = {display: 'none'};
+        // if (this.state.questionNumber == '7' && (clientAge === '18-24' || clientAge ==='25-65' )) {
+        //
+        //     showVeteran = {display: 'block'};
+        //
+        // } else {
+        //
+        //     showVeteran = {display: 'none'};
+        //
+        // }
 
 
 
@@ -908,9 +921,16 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <div style={ (this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ?  {display: 'block'} : {display: 'none'} } id="6">
+                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        </div>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <div style={ (this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ?  {display: 'block'} : {display: 'none'} } id="6">
+                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
+                        </div>
+
 
 
                     </div>
@@ -918,7 +938,7 @@ class FilterForm extends React.Component {
 
 
 
-                    <div style={showVeteran} className="showVeteran" id="7">
+                    <div style={ showVeteran } id="7">
 
                         <h3>Question 7</h3>
 
@@ -1162,4 +1182,4 @@ export default FilterForm;
 
 
 
-
+// style={(this.state.questionNumber === '7' && (clientAge === '18-24' || clientAge ==='25-65' )) ?  {display: 'block'} : {display: 'none'} }
