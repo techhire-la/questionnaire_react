@@ -25,6 +25,8 @@ class FilterForm extends React.Component {
         questionNumber: 1,
         toggleFive: undefined,
 
+        locationArray: [],
+
         // working: undefined,
         // levelOfEducation: undefined,
 
@@ -50,6 +52,36 @@ class FilterForm extends React.Component {
 //     }
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
+
+    // handleLocation = (e, { value }) => this.setState({ location: value });
+
+    parseLocation = () => {
+        console.log("Parse Location")
+
+        var locationArray = []
+        var catalogueLength = catalogueData.contacts.length - 1
+        console.log(catalogueLength)
+        for(var i = 0 ; i <= catalogueLength ; i++){
+
+            if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+                console.log("IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
+            }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
+
+                console.log("ELSE IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
+
+            }else{
+                console.log("Else")
+            }
+
+        }
+
+        this.setState({ locationArray: locationArray })
+
+    }
 
     handleMatch = (catalogueAttribute, stateData) => {
         // debugger
@@ -91,37 +123,7 @@ class FilterForm extends React.Component {
 
     // }
 
-    inTheRightZip = (zipList, zipState) => {
 
-            var returnValue = undefined;
-            // console.log("inTheRightZip")
-            ///////////// HANDLE ZIPS //////////////////////
-            console.log("typeof(zipList[0] === 'number') RESULT:  " + typeof(zipList[0]))
-            if(typeof(zipList[0] === 'number') ) {
-
-                var zipsArray = zipList
-
-                for(var y = 0 ; y < zipsArray.length ; y++){
-
-                    var stringyZip = String(zipsArray[y]);
-                    var zipMatch = stringyZip.match(zipState);
-
-                    returnValue = zipMatch;
-                    // return stringyZip.match(zipState);
-                }
-
-            }
-
-            console.log("typeof(zipList[0] === 'string') RESULT:  " + typeof(zipList[0]))
-            if(typeof(zipList[0] === 'string') ){
-                returnValue = "string"
-                // return typeof(zipList[x].zip[0])
-
-
-            }
-
-            return returnValue
-    };
 
     handleNext = (e, { id }) => {
         debugger
@@ -599,7 +601,7 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button basic color='black' onClick={this.parseLocation}> Next </Button>
 
                     </div>
 
@@ -928,7 +930,7 @@ class FilterForm extends React.Component {
 
                         <div style={ (this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ?  {display: 'block'} : {display: 'none'} } id="6">
                             <Button basic color='black' onClick={this.handleBack}> Back </Button>
-                            <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
+                            <Button basic color='black' onClick={this.parseLocation}> Submit </Button>
                         </div>
 
 
@@ -972,7 +974,7 @@ class FilterForm extends React.Component {
 
                         <Button basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
+                        <Button basic color='black' onClick={this.parseLocation}> Submit </Button>
 
                     </div>
 
@@ -993,193 +995,3 @@ class FilterForm extends React.Component {
 
 
 export default FilterForm;
-
-
-
-
-// Zip Button
-// <br/>
-//
-// <Input label='  Zip  ' placeholder='please enter a 5 digit zip code' onChange={this.handleZipChange} />
-//
-// <br/>
-// <br/>
-
-
-//CATALOGUE COMPONENT
-
-//<div style={showCatalogue}>
-//    <Catalogue
-//        truthyArray={truthyArray}
-//        filteredList = {filteredList}
-//        clientAge={clientAge}
-//        interestedInTraining={interestedInTraining}
-        //veteran = {veteran}
-        //interestedInTraining: {interestedInTraining}
-        //interestedAfterSchoolPrograms: {interestedAfterSchoolPrograms}
-        //interestedInCriminalServices: {interestedInCriminalServices}
-        //interestedInCompletingDiploma: {interestedInCompletingDiploma}
-//        zip={zip}
-//    />
-//</div>
-
-
-
-
-// <div className="ui checkbox">
-//     <input type="checkbox" className="example"/>
-//     <label>Make my profile visible</label>
-// </div>
-
-
-// <Grid>
-// <Grid.Column only='computer' computer={5}>
-//     <Header>Articles</Header>
-//     </Grid.Column>
-//     <Grid.Column mobile={16} tablet={8} computer={5}>
-//     <p> Thing 2 </p>
-// </Grid.Column>
-//
-// <Grid.Column mobile={16} tablet={8} computer={5}>
-//     <p>thing 1</p>
-// </Grid.Column>
-// </Grid>
-//
-// <Form.Field>
-//     <div className="ui checkbox"><input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="4-5"/><label>4-5</label></div>
-// </Form.Field>
-
-
-
-
-
-
-
-
-
-
-// Question 5
-//
-// <div style={showFive} id="5" >
-//
-//     <div style={showAfterSchool} className='showAfterSchool'>
-//         <h3> Question 5 </h3>
-//         <h3> Is the participant looking for after-school program? </h3>
-//
-//         <Form>
-//
-//             <Form.Field>
-//                 <Radio
-//                     label='Yes'
-//                     name='radioGroup'
-//                     value='true'
-//                     checked={interestedAfterSchoolPrograms === 'true'}
-//                     onChange={this.handleAfterSchool}
-//                 />
-//             </Form.Field>
-//
-//             <Form.Field>
-//                 <Radio
-//                     label='No'
-//                     name='radioGroup'
-//                     value='false'
-//                     checked={interestedAfterSchoolPrograms === 'false'}
-//                     onChange={this.handleAfterSchool}
-//                 />
-//             </Form.Field>
-//
-//         </Form>
-//
-//     </div>
-//
-//
-//
-//     <div style={showTraining} className='showTraining'>
-//         <h3>Question 5</h3>
-//
-//         <h3>Is the participant interested in employment support or vocational training</h3>
-//         <Form>
-//
-//             <Form.Field>
-//                 <Radio
-//                     label='Yes'
-//                     name='radioGroup'
-//                     value='true'
-//                     checked={interestedInTraining === 'true'}
-//                     onChange={this.handleInterestedInTraining}
-//                 />
-//             </Form.Field>
-//
-//             <Form.Field>
-//                 <Radio
-//                     label='No'
-//                     name='radioGroup'
-//                     value='false'
-//                     checked={interestedInTraining === 'false'}
-//                     onChange={this.handleInterestedInTraining}
-//                 />
-//             </Form.Field>
-//
-//         </Form>
-//
-//
-//     </div>
-//
-//
-//
-//     <div style={showDiploma} className='showDiploma'>
-//         <h3>Question 5</h3>
-//         <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
-//
-//         <Form>
-//
-//             <Form.Field>
-//                 <Radio
-//                     label='Yes'
-//                     name='radioGroup'
-//                     value='true'
-//                     checked={this.state.interestedInCompletingDiploma === 'true'}
-//                     onChange={this.handleInterestedInCompletingDiploma}
-//                 />
-//             </Form.Field>
-//
-//             <Form.Field>
-//                 <Radio
-//                     label='No'
-//                     name='radioGroup'
-//                     value='false'
-//                     checked={this.state.interestedInCompletingDiploma === 'false'}
-//                     onChange={this.handleInterestedInCompletingDiploma}
-//                 />
-//             </Form.Field>
-//
-//         </Form>
-//
-//     </div>
-//
-//     <Button basic color='black' onClick={this.handleBack}> Back </Button>
-//
-//     <Button basic color='black' onClick={this.handleNext}> Next </Button>
-//
-//
-// </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// style={(this.state.questionNumber === '7' && (clientAge === '18-24' || clientAge ==='25-65' )) ?  {display: 'block'} : {display: 'none'} }
