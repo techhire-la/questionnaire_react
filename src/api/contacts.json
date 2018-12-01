@@ -254,13 +254,15 @@
       "contactPerson": "Sareth Elizarraras",
       "email": "Sareth.Elizarraras@ypi.org",
       "phonenumber": "213-238-7206",
-      "programEnd": "Jun-20"
+      "programEnd": "Jun-20",
+      "location": "Los Angeles"
     },
     {
       "name": "Ventanilla National Adminstrator",
       "department": "Community Empowerment",
       "acceptReferrals": "No",
-      "descriptionOfProgram": "Not a program"
+      "descriptionOfProgram": "Not a program",
+      "location": "Los Angeles"
     },
     {
       "name": "Veterans Now",
@@ -270,7 +272,8 @@
       "coreServicesOffered": "Job/career counseling; open computer lab; workshops; limited job training and supportive services",
       "populationServed": "Adults",
       "eligibilityRequirements": "Right to work documentation; DD214",
-      "locationOfProgram": "North Valley WorkSource Center- Pacoima                                            13420 Van Nuys Blvd #221 Pacoima (Telfair & Van Nuys)                    "
+      "locationOfProgram": "North Valley WorkSource Center- Pacoima, 13420 Van Nuys Blvd #221 Pacoima (Telfair & Van Nuys)",
+      "location": "San Fernando Valley"
     },
     {
       "name": "Worksource Center (WIOA)",
@@ -284,12 +287,14 @@
       "servicesOnlyOfferedAtProgram Site": "Yes ",
       "contactPerson": "Merin Figueroa",
       "email": "mfigueroa@ypi.org",
-      "phonenumber": "818.492.4121"
+      "phonenumber": "818.492.4121",
+      "location": "San Fernando Valley"
     },
     {
       "name": "CNCS Promise Zone Americorp",
       "department": "CSI",
-      "acceptReferrals": "No"
+      "acceptReferrals": "No",
+      "location": "Los Angeles"
     },
     {
       "name": "California State Preschool Program (CSPP)",
@@ -340,7 +345,8 @@
       "name": "CalEITC",
       "department": "Financial Empowerment",
       "acceptReferrals": "No",
-      "descriptionOfProgram": "Not a program"
+      "descriptionOfProgram": "Not a program",
+      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
       "name": "Champions for Change",
@@ -354,12 +360,14 @@
       "contactPerson": "Alex Bonilla ",
       "email": "abonilla@ypi.org",
       "phonenumber": "213-893-8050",
-      "programEnd": "Year around, October 1 -September 30th "
+      "programEnd": "Year around, October 1 -September 30th ",
+      "location": "Los Angeles"
     },
     {
       "name": "Community Impact Arts (CIA)",
       "department": "Health & Wellness",
-      "acceptReferrals": "No"
+      "acceptReferrals": "No",
+      "location": "San Fernando Valley"
     },
     {
       "name": "Food Insecurity Nutrition Incentive (FINI)",
@@ -391,7 +399,8 @@
       "acceptReferrals": "Yes",
       "descriptionOfProgram": "Provides assistance with securing daily work.",
       "populationServed": "Adults",
-      "eligibilityRequirements": "none"
+      "eligibilityRequirements": "none",
+      "location": "San Fernando Valley"
     },
     {
       "name": "Bridge to Coding",
@@ -454,7 +463,8 @@
       "contactPerson": "Vanessa Gutierrez",
       "email": "vgutierrez@ypiusa.org",
       "phonenumber": "818 217 5160",
-      "programEnd": "Ongoing"
+      "programEnd": "Ongoing",
+      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
       "name": "Pathways to Justice Careers",
@@ -469,7 +479,8 @@
       "contactPerson": "Maurice Buntin",
       "email": "maurice.buntin@ucla.org",
       "phonenumber": "3237942190",
-      "programEnd": "March 2019, enrollment has closed"
+      "programEnd": "March 2019, enrollment has closed",
+      "location": "Los Angeles"
     },
     {
       "name": "YouthBuild",
@@ -592,30 +603,38 @@
       "interestedInCompletingDiploma": "false"
     },
     {
-      "name": "Financial Capability & Asset Building"
+      "name": "Financial Capability & Asset Building",
+      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
-      "name": "Latinos in Finance"
+      "name": "Latinos in Finance",
+      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
-      "name": "MakerSpace"
+      "name": "MakerSpace",
+      "location": "San Fernando Valley"
     },
     {
-      "name": "Promise of Credit"
+      "name": "Promise of Credit",
+      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
-      "name": "Promise of Wellness"
+      "name": "Promise of Wellness",
+      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
-      "name": "Promise Scholars"
+      "name": "Promise Scholars",
+      "location": "Los Angeles"
     },
     {
       "name": "Veteran's Employment-Related Assistance Program (VEAP)",
-      "descriptionOfProgram": "See Veterans Now"
+      "descriptionOfProgram": "See Veterans Now",
+      "location": "San Fernando Valley"
     },
     {
-      "name": "Youth Financial Empowerent for Financial Success",
-      "descriptionOfProgram": "See Financial Empowerment"
+      "name": "Youth Financial Empowerment for Financial Success",
+      "descriptionOfProgram": "See Financial Empowerment",
+      "location": "Los Angeles"
     }
   ]
 }
