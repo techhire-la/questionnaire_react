@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Catalogue from './Catalogue';
 import { Input, Button, Grid, Header, Form, Radio, Checkbox, Responsive, Segment } from 'semantic-ui-react'
 
-import $ from 'jquery';
 import catalogueData from "../api/contacts.json";
 
 
@@ -22,111 +21,30 @@ class FilterForm extends React.Component {
         interestedInCriminalServices: undefined,
         interestedInCompletingDiploma: undefined,
 
+
         questionNumber: 1,
         toggleFive: undefined,
-
         locationArray: [],
 
-        // working: undefined,
-        // levelOfEducation: undefined,
-
-        zip: undefined,
 
         truthyArray: [],
         filteredList: undefined
     }
 
-///////////////////////////////////////////////////////////////////////////////////
-//////////////// Checks for zip ///////////////////////////////////////////////
-//     if(typeof(clonedHash[x].zip[0] === 'number') ) {
-//         var zipsArray = hash.zip
-//
-//
-//         for(var y = 0 ; y < zipsArray.length ; y++){
-//
-//             var zipMatch = zipsArray[y].match(zip)
-//             if(zipMatch != null) {
-//
-//             }
-//         }
-//     }
-////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////
-
-    // handleLocation = (e, { value }) => this.setState({ location: value });
-
-    parseLocation = () => {
-        console.log("Parse Location")
-
-        var locationArray = []
-        var catalogueLength = catalogueData.contacts.length - 1
-        console.log(catalogueLength)
-        for(var i = 0 ; i <= catalogueLength ; i++){
-
-            if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
-                console.log("IF")
-                locationArray.push(catalogueData.contacts[i])
-                console.log(locationArray)
-            }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
-
-                console.log("ELSE IF")
-                locationArray.push(catalogueData.contacts[i])
-                console.log(locationArray)
-
-            }else{
-                console.log("Else")
-            }
-
-        }
-
-        this.setState({ locationArray: locationArray })
-
-    }
-
-    handleMatch = (catalogueAttribute, stateData) => {
-        // debugger
-
-    // function handleMatch(catalogueAttribute, stateData) {
-
-        var returnVal = undefined
-
-            if (typeof(catalogueAttribute) === 'object'){
-
-                for(var y = 0 ; y < catalogueAttribute.length ; y++){
-
-                    var stringyElement = String(catalogueAttribute[y]);
-                    var match = stringyElement.match(stateData);
-
-                    if (match != null){
-                        return match;
-                    }
-
-                }
-
-            }
-
-        if (typeof(catalogueAttribute) === 'string'){
-
-
-                var stringyElement = String(catalogueAttribute);
-                var match = stringyElement.match(stateData);
-
-                // returnVal = match;
-                return match
-
-        }
-
-
-
-        // return returnVal
-    };
-
+    // constructor(props){
+    //     super(props)
+    //     this.handleSubmit = this.handleSubmit.bind(this)
     // }
 
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //// Handle Buttons /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
 
 
     handleNext = (e, { id }) => {
-        debugger
+        // debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
@@ -146,6 +64,49 @@ class FilterForm extends React.Component {
         console.log(this.state.questionNumber)
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////// Handle Question State ////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+    //Question 1
+    handleLocation = (e, { value }) => this.setState({ location: value });
+
+    // Question 2
+    handleClientAge = (e, { value }) => this.setState({ clientAge: value });
+
+
+    //Question 2
+    // handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
+
+
+    //Question 3
+    handleInSchool = (e, { value }) => this.setState({ inSchool: value })
+
+    //Question 4
+    handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
+
+
+
+    //Question 5
+    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined })
+
+    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined })
+
+    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined })
+
+    // Question 6
+    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value})
+
+    //Question 7
+    handleVeteran = (e, { value }) => this.setState({ veteran: value });
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////// Handle Submit ////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
 
     handleFormData = (arr) => {
 
@@ -191,74 +152,63 @@ class FilterForm extends React.Component {
         return filterCatalogue
     };
 
-    //Question 1
-    handleLocation = (e, { value }) => this.setState({ location: value });
 
-    // Question 2
-    handleClientAge = (e, { value }) => this.setState({ clientAge: value });
+    parseLocation = () => {
+        console.log("Parse Location")
 
+        var locationArray = []
+        var catalogueLength = catalogueData.contacts.length - 1
+        console.log(catalogueLength)
+        for(var i = 0 ; i <= catalogueLength ; i++){
 
-    //Question 2
-    // handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
+            if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+                // console.log("IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
+            }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
 
+                // console.log("ELSE IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
 
-    //Question 3
-    handleInSchool = (e, { value }) => this.setState({ inSchool: value })
-
-    //Question 4
-    handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
-
-
-
-    //Question 5
-    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined })
-
-    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined })
-
-    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined })
-
-    // Question 6
-    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value})
-
-    //Question 7
-    handleVeteran = (e, { value }) => this.setState({ veteran: value });
-
-
-    /////////////////////////////////////////////////////////////////////////////
-    ///////////// Zip Code and Submit ///////////////////////////////////////////
-
-    handleZipChange = (e, { value }) => this.setState({ zip: parseInt(value) });
-
-
-    handleZipValidation = (zip) => {
-
-
-        console.log(zip) //DOES NOT WORK FOR ZIPS STARTING WITH ZEROS
-
-        var zipAsInt = parseInt(zip)
-
-        if(zip === undefined  ||  zip === NaN) {
-            alert(' Please Enter A Zip Code')
+            }else{
+                // console.log("Else")
+            }
 
         }
 
-        if(zip != undefined && zip.toString().length !== 5) {
-            alert('Zip Code must be 5 digits')
+        this.setState({ locationArray: locationArray })
+
+    }
+
+    handleMatch = (catalogueAttribute, stateData) => {
+
+        var returnVal = undefined
+
+        if (typeof(catalogueAttribute) === 'object'){
+
+            for(var y = 0 ; y < catalogueAttribute.length ; y++){
+
+                var stringyElement = String(catalogueAttribute[y]);
+                var match = stringyElement.match(stateData);
+
+                if (match != null){
+                    return match;
+                }
+
+            }
 
         }
 
-        if( !(Number.isInteger(zipAsInt)) ){
-            alert('Zip Code must be numbers only')
-        }
+        if (typeof(catalogueAttribute) === 'string'){
 
-        // if( !(/^\d{5}(-\d{4})?$/.test(zip))) ){
-        //     alert('Zip Code must be numbers only')
-        // }
 
-        if (zip != undefined && zip.toString().length === 5 && Number.isInteger(zipAsInt)) {
-            console.log("Zip Validated!")
-            return true
-            // this.setState({zip: parseInt(zip)})
+            var stringyElement = String(catalogueAttribute);
+            var match = stringyElement.match(stateData);
+
+            // returnVal = match;
+            return match
+
         }
 
     };
@@ -287,23 +237,45 @@ class FilterForm extends React.Component {
     };
 
 
-    handleSubmit = () => {
-
-
-        var passZip = this.handleZipValidation(this.state.zip);
-
-        if (passZip === true) {
-
-            var truthyArray = this.handleTruthyArray();
-
-
-            var filteredData = this.handleFormData(truthyArray);
-
-            this.setState({ filteredList : filteredData})
-
+    submitData = () => {
+        debugger
+        var formState = this.state
+        console.log(formState)
+        for (var key in formState) {
+            // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+            if (formState.hasOwnProperty(key) && formState[key] != undefined) {
+                // debugger
+                console.log(key + " " + formState[key])
+                // console.log(formstate[key])
+                // console.log("formState value: " + formState[key]);
+                // arrayOfTruth.push(key)
+                // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+            }
         }
+    }
 
-    };
+    // handleSubmit = () => {
+    //     var state = this.state
+    //     console.log(state)
+    //     this.parseLocation()
+    //     // debugger
+    //
+    //
+    //
+    //     // var passZip = this.handleZipValidation(this.state.zip);
+    //     //
+    //     // if (passZip === true) {
+    //     //
+    //     //     var truthyArray = this.handleTruthyArray();
+    //     //
+    //     //
+    //     //     var filteredData = this.handleFormData(truthyArray);
+    //     //
+    //     //     this.setState({ filteredList : filteredData})
+    //     //
+    //     // }
+    //
+    // };
 
 
     render() {
@@ -601,7 +573,7 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.parseLocation}> Next </Button>
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
 
                     </div>
 
@@ -930,7 +902,7 @@ class FilterForm extends React.Component {
 
                         <div style={ (this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ?  {display: 'block'} : {display: 'none'} } id="6">
                             <Button basic color='black' onClick={this.handleBack}> Back </Button>
-                            <Button basic color='black' onClick={this.parseLocation}> Submit </Button>
+                            <Button basic color='black' onClick={this.submitData}> Submit </Button>
                         </div>
 
 
@@ -974,7 +946,7 @@ class FilterForm extends React.Component {
 
                         <Button basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.parseLocation}> Submit </Button>
+                        <Button basic color='black' onClick={this.submitData}> Submit </Button>
 
                     </div>
 
