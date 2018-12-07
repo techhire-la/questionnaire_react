@@ -3,386 +3,664 @@ import ReactDOM from 'react-dom';
 import Catalogue from './Catalogue';
 import { Input, Button, Grid, Header, Form, Radio, Checkbox, Responsive, Segment } from 'semantic-ui-react'
 
-import $ from 'jquery';
 import catalogueData from "../api/contacts.json";
 
 
 class FilterForm extends React.Component {
 
     state = {
+        location: undefined,
         clientAge: undefined,
-        kids: undefined,
-        kidsAge: [],
-        childrenOfWorkingAge: undefined,
-        childrenOfCollegeAge: undefined,
-        childrenInJusticeSystem: undefined,
-        childrenInFosterCare: undefined,
-        childrenWithDisabilties: undefined,
-
-        working: undefined,
-        levelOfEducation: undefined,
+        inSchool: undefined,
+        levelofEducation: undefined,
         veteran: undefined,
         interestedInTraining: undefined,
-        othersJobless: undefined,
+        interestedAfterSchoolPrograms: undefined,
+        interestedInCriminalServices: undefined,
+        interestedInCompletingDiploma: undefined,
 
-        housingHardships: undefined,
-        financialHardships: undefined,
 
-        adultWithDisability: undefined,
-        seniorCitizen: undefined,
-        teacher: undefined,
-        LGBTQIA: undefined,
-        zip: undefined,
+        questionNumber: 1,
+        toggleFive: undefined,
+        locationArray: [],
 
         truthyArray: [],
         filteredList: undefined
     }
 
-///////////////////////////////////////////////////////////////////////////////////
-//////////////// Checks for zip ///////////////////////////////////////////////
-//     if(typeof(clonedHash[x].zip[0] === 'number') ) {
-//         var zipsArray = hash.zip
-//
-//
-//         for(var y = 0 ; y < zipsArray.length ; y++){
-//
-//             var zipMatch = zipsArray[y].match(zip)
-//             if(zipMatch != null) {
-//
-//             }
-//         }
-//     }
-////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////
+    // constructor(props){
+    //     super(props)
+    //     this.handleSubmit = this.handleSubmit.bind(this)
+    // }
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //// Handle Buttons /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+
+    handleNext = (e, { id }) => {
+        // debugger
+        // var stringId = e.target.parentNode.id;
+        var nextQuestion = parseInt(e.target.parentNode.id)
+        // e.target.parentNode.getAttribute('id'); ||
+        var addOne = (nextQuestion + 1).toString();
+
+
+        this.setState({ questionNumber: addOne })
+        console.log(this.state.questionNumber)
+
+    }
+
+    handleBack = (e, { id }) => {
+        var lastQuestion = parseInt(e.target.parentNode.id)
+        var subtractOne = (lastQuestion - 1).toString();
+
+        this.setState({ questionNumber: subtractOne })
+        console.log(this.state.questionNumber)
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////// Handle Question State ////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+
+    // parseLocation = () => {
+    //     // console.log("Parse Location")
+    //
+    //     var locationArray = []
+    //     var catalogueLength = catalogueData.contacts.length - 1
+    //     console.log(catalogueLength)
+    //     debugger
+    //     for(var i = 0 ; i <= catalogueLength ; i++){
+    //
+    //         console.log(catalogueData.contacts[i].name)
+    //         console.log(catalogueData.contacts[i].location)
+    //
+    //         if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+    //             console.log("Pushed IN!")
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //         }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
+    //             console.log("BOTH Pushed IN!")
+    //             // console.log("ELSE IF")
+    //             console.log(catalogueData.contacts[i].name)
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //
+    //         }else{
+    //             console.log("<<<<<<<NOT PUSHED>>>>>>>>")
+    //             // console.log("Else")
+    //         }
+    //
+    //     }
+    //     // parsedArray = locationArray
+    //     // debugger
+    //     this.setState({ locationArray: locationArray })
+    //
+    // }
+
+    //Question 1
+    handleLocation = (e, { value }) => this.setState({ location: value });
+
+    // handleLocation = (e, { value }) => {
+    //
+    //
+    //     this.setState({ location: value });
+    //
+    //     debugger
+    //
+    //     this.parseLocation()
+    //
+    // }
+
+
+
+    // Question 2
+    handleClientAge = (e, { value }) => this.setState({ clientAge: value });
+
+
+    //Question 2
+    // handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
+
+
+    //Question 3
+    handleInSchool = (e, { value }) => this.setState({ inSchool: value })
+
+    //Question 4
+    handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
+
+
+
+    //Question 5
+    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined })
+
+    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined })
+
+    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined })
+
+    // Question 6
+    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value})
+
+    //Question 7
+    handleVeteran = (e, { value }) => this.setState({ veteran: value });
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////// Handle Submit ////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+    // handleFormData = (arr) => {
+    //
+    //     var filterCatalogue = [];
+    //     var clonedHash = catalogueData.contacts.slice(0);
+    //
+    //     console.log("arr: " + arr);
+    //
+    //
+    //     /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
+    //     for( var i = 0 ; i <= arr.length ; i++ ) {
+    //
+    //         //sort through contacts
+    //         for( var x = 0 ; x < clonedHash.length ; x++) {
+    //
+    //             var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
+    //             console.log("arr[i]: " + arr[i])
+    //
+    //             if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
+    //
+    //                 var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
+    //
+    //                 if( zipCheck === 'string') {
+    //
+    //                     filterCatalogue.push(clonedHash[x]);
+    //                     clonedHash.splice(x, 1);
+    //                     console.log("popped " + clonedHash[x]);
+    //
+    //                 }
+    //
+    //                 if(zipCheck != null && zipCheck[0] === this.state.zip) {
+    //
+    //                     filterCatalogue.push(clonedHash[x]);
+    //                     clonedHash.splice(x, 1);
+    //                     console.log("popped " + clonedHash[x]);
+    //                 }
+    //
+    //             }
+    //         }
+    //     }
+    //     console.log("filterCatalogue.length: " + filterCatalogue.length);
+    //     console.log("filterCatalogue: " + filterCatalogue);
+    //     return filterCatalogue
+    // };
+
+
+    // parseLocation = () => {
+    //     console.log("Parse Location")
+    //
+    //     var locationArray = []
+    //     var catalogueLength = catalogueData.contacts.length - 1
+    //     console.log(catalogueLength)
+    //     for(var i = 0 ; i <= catalogueLength ; i++){
+    //
+    //         if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+    //             // console.log("IF")
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //         }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
+    //
+    //             // console.log("ELSE IF")
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //
+    //         }else{
+    //             // console.log("Else")
+    //         }
+    //
+    //     }
+    //     debugger
+    //     this.setState({ locationArray: locationArray })
+    //
+    // }
+
+
+
+
 
     handleMatch = (catalogueAttribute, stateData) => {
-        // debugger
 
-    // function handleMatch(catalogueAttribute, stateData) {
+
 
         var returnVal = undefined
 
-            if (typeof(catalogueAttribute) === 'object'){
+        if (typeof(catalogueAttribute) === 'object'){
 
-                for(var y = 0 ; y < catalogueAttribute.length ; y++){
+            for(var y = 0 ; y < catalogueAttribute.length ; y++){
 
-                    var stringyElement = String(catalogueAttribute[y]);
-                    var match = stringyElement.match(stateData);
+                var stringyElement = String(catalogueAttribute[y]);
+                var match = stringyElement.match(stateData);
 
-                    if (match != null){
-                        return match;
-                    }
-
+                if (match != null){
+                    return match;
                 }
 
             }
+
+        }
 
         if (typeof(catalogueAttribute) === 'string'){
 
 
-                var stringyElement = String(catalogueAttribute);
-                var match = stringyElement.match(stateData);
+            var stringyElement = String(catalogueAttribute);
+            var match = stringyElement.match(stateData);
 
-                // returnVal = match;
-                return match
+            // returnVal = match;
+            return match
 
-        }
-
-
-
-        // return returnVal
-    };
-
-    // }
-
-    inTheRightZip = (zipList, zipState) => {
-
-            var returnValue = undefined;
-            // console.log("inTheRightZip")
-            ///////////// HANDLE ZIPS //////////////////////
-            console.log("typeof(zipList[0] === 'number') RESULT:  " + typeof(zipList[0]))
-            if(typeof(zipList[0] === 'number') ) {
-
-                var zipsArray = zipList
-
-                for(var y = 0 ; y < zipsArray.length ; y++){
-
-                    var stringyZip = String(zipsArray[y]);
-                    var zipMatch = stringyZip.match(zipState);
-
-                    returnValue = zipMatch;
-                    // return stringyZip.match(zipState);
-                }
-
-            }
-
-            console.log("typeof(zipList[0] === 'string') RESULT:  " + typeof(zipList[0]))
-            if(typeof(zipList[0] === 'string') ){
-                returnValue = "string"
-                // return typeof(zipList[x].zip[0])
-
-
-            }
-
-            return returnValue
-    };
-
-
-    handleFormData = (arr) => {
-
-        var filterCatalogue = [];
-        var clonedHash = catalogueData.contacts.slice(0);
-
-        console.log("arr: " + arr);
-
-
-        /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
-        for( var i = 0 ; i <= arr.length ; i++ ) {
-
-            //sort through contacts
-            for( var x = 0 ; x < clonedHash.length ; x++) {
-
-                var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
-                console.log("arr[i]: " + arr[i])
-
-                if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
-
-                    var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
-
-                    if( zipCheck === 'string') {
-
-                        filterCatalogue.push(clonedHash[x]);
-                        clonedHash.splice(x, 1);
-                        console.log("popped " + clonedHash[x]);
-
-                    }
-
-                    if(zipCheck != null && zipCheck[0] === this.state.zip) {
-
-                        filterCatalogue.push(clonedHash[x]);
-                        clonedHash.splice(x, 1);
-                        console.log("popped " + clonedHash[x]);
-                    }
-
-                }
-            }
-        }
-        console.log("filterCatalogue.length: " + filterCatalogue.length);
-        console.log("filterCatalogue: " + filterCatalogue);
-        return filterCatalogue
-    };
-
-
-    // Question 0
-    handleClientAgeChange = (e, { value }) => this.setState({ clientAge: value });
-
-
-    // Question 1
-    handleChildrenChange = (e, { value }) => {(value === "true") ? this.setState({ kids: value }) : this.setState({ kids: value, kidsAge: [], childrenOfWorkingAge: undefined, childrenOfCollegeAge: undefined, childrenInJusticeSystem: undefined })};
-
-    //Question 1.1
-    handleAgeChange = (e, {value}) => {
-
-        var matchIndex = undefined;
-
-        for(var i = 0 ; i <= this.state.kidsAge.length ; i++) {
-
-            var array = this.state.kidsAge;
-
-            if (value === array[i]) {
-                console.log("value " + value + " is being compared to array element " + array[i] );
-                matchIndex = array.indexOf(value);
-                console.log("Index value saved as " + matchIndex )
-            }
-
-        }
-
-        if ((matchIndex != undefined ) && (matchIndex > -1)) {
-            array.splice(matchIndex, 1);
-            this.setState({ kidsAge: array });
-            console.log("State after splice: " + this.state.kidsAge)
-
-
-        } else {
-            array.push( value )
-            console.log("Array with new pushed value: " + array);
-            this.setState({ kidsAge: array });
-            console.log("State after push: " + this.state.kidsAge)
         }
 
     };
 
-    //Question 1.2
-    handleChildrenOfWorkingAge = (e, { value }) => this.setState({ childrenOfWorkingAge: value });
 
-    //Question 1.3
-    handleChildrenOfCollegeAge = (e, { value }) => this.setState({ childrenOfCollegeAge: value });
-
-    //Question 1.4
-    handleChildrenInJusticeSystem = (e, { value }) => this.setState({ childrenInJusticeSystem: value });
-
-
-    //Question 2
-    // handleWorkingChange = (e, { value }) => this.setState({ working: value })
-    handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
-
-    //Question 2.1
-    handleLevelOfEducation = (e, { value }) => this.setState({ levelOfEducation: value });
-
-    //Question 2.2
-    handleVeteran = (e, { value }) => this.setState({ veteran: value });
-
-    //Question 2.3
-    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value });
-
-    //Question 2.4
-    handleOthersJobless = (e, { value }) => this.setState({ othersJobless: value });
-
-    //Question 2.5
-    handleChildrenInFosterCare = (e, { value }) => this.setState({ childrenInFosterCare: value });
-
-    //Question 2.6
-    handleChildrenWithDisabilties = (e, { value }) => this.setState({ childrenWithDisabilties: value });
+    // handleTruthyArray = () => {
+    //     // truthyArray
+    //     // var arrayOfTruth = [];
+    //     var arrayOfTruth = ['clientAge', 'kidsAge'];
+    //
+    //     var formState = this.state;
+    //
+    //     // does not uptake "kids"
+    //     for (var key in formState) {
+    //         if (formState.hasOwnProperty(key) && formState[key] === "true" && key != "kids") {
+    //             // console.log("formState value: " + formState[key]);
+    //             arrayOfTruth.push(key)
+    //             // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+    //         }
+    //     }
+    //
+    //
+    //     return arrayOfTruth
+    //
+    //
+    // };
 
 
-    //Question 3
-    handleHousingHardshipsChange = (e, { value }) => this.setState({ housingHardships: value });
+    submitData = () => {
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //Question 4
-    handleFinancialHardshipsChange = (e, { value }) => this.setState({ financialHardships: value });
+        var locationArray = []
+        var catalogueLength = catalogueData.contacts.length - 1
+        console.log(catalogueLength)
+        for(var i = 0 ; i <= catalogueLength ; i++){
 
-    //Question 5
-    // handleAdultDisabilityChange = (e, { value }) => {(value === 'Prefer not to disclose') ? this.setState({ adultWithDisability: undefined }) : this.setState({ adultWithDisability: value})}
-    handleAdultDisabilityChange = (e, { value }) => this.setState({ adultWithDisability: value });
+            if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+                // console.log("IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
+            }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
 
-    //Question 6
-    handleSeniorCitizenChange = (e, { value }) => this.setState({ seniorCitizen: value });
+                // console.log("ELSE IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
 
-
-    //Question 7
-    handleTeacherChange = (e, { value }) => this.setState({ teacher: value });
-
-    //Question 8
-    handleLGBTQIAChange = (e, { value }) => this.setState({ LGBTQIA: value });
-
-
-    /////////////////////////////////////////////////////////////////////////////
-    ///////////// Zip Code and Submit ///////////////////////////////////////////
-
-    handleZipChange = (e, { value }) => this.setState({ zip: parseInt(value) });
-
-
-    handleZipValidation = (zip) => {
-
-
-        console.log(zip) //DOES NOT WORK FOR ZIPS STARTING WITH ZEROS
-
-        var zipAsInt = parseInt(zip)
-
-        if(zip === undefined  ||  zip === NaN) {
-            alert(' Please Enter A Zip Code')
+            }else{
+                // console.log("Else")
+            }
 
         }
 
-        if(zip != undefined && zip.toString().length !== 5) {
-            alert('Zip Code must be 5 digits')
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////// iterate over catalogue ////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        }
 
-        if( !(Number.isInteger(zipAsInt)) ){
-            alert('Zip Code must be numbers only')
-        }
+        // debugger
+        // var parsedArray = undefined
+        // this.parseLocation()
+        // console.log(parsedArray)
 
-        // if( !(/^\d{5}(-\d{4})?$/.test(zip))) ){
-        //     alert('Zip Code must be numbers only')
+        var formState = this.state
+        // var parsedArray = this.state.locationArray
+        var parsedArray = locationArray
+        var filteredArray = []
+
+        console.log(formState)
+
+
+        // for (var key in formState) {
+        //     // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+        //     if (formState.hasOwnProperty(key) && formState[key] != true) {
+        //         for (var program in parsedArray){
+        //             console.log("program: " + program + " - CatalogueItem: " + parsedArray)
+        //         }
+        //         // console.log(key + " " + formState[key])
+        //         // console.log(formstate[key])
+        //         // console.log("formState value: " + formState[key]);
+        //         // arrayOfTruth.push(key)
+        //         // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+        //     } else if (formState.hasOwnProperty(key) && key === "clientAge") {
+        //         console.log("else if")
+        //
+        //     }
+        //
         // }
 
-        if (zip != undefined && zip.toString().length === 5 && Number.isInteger(zipAsInt)) {
-            console.log("Zip Validated!")
-            return true
-            // this.setState({zip: parseInt(zip)})
-        }
-
-    };
-
-
-    handleTruthyArray = () => {
-        // truthyArray
-        // var arrayOfTruth = [];
-        var arrayOfTruth = ['clientAge', 'kidsAge' ];
-
-        var formState = this.state;
-
-        // does not uptake "kids"
+        // for (var program in parsedArray){
+        //
+        //
+        //     if (program.hasOwnProperty(key) && program[key] == "true") {
+        //
+        //
+        //
+        //     }else if (formState.hasOwnProperty(key) && key === "clientAge") {
+        //
+        //     }
+        // }
+        debugger
         for (var key in formState) {
-            if (formState.hasOwnProperty(key) && formState[key] === "true" && key != "kids") {
-                // console.log("formState value: " + formState[key]);
-                arrayOfTruth.push(key)
-                // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+            // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+            for (var i = 0; i < parsedArray.length; i++) {
+                if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
+                    filteredArray.push(parsedArray[i])
+                }else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
+                    debugger
+                    filteredArray.push(parsedArray[i])
+                }else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
+                    filteredArray.push(parsedArray[i])
+                }
+
             }
+                // } else if (key === "clientAge") {
+                //
+                //
+                // } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key] || parsedArray[i][key] == "true")) {
+                //     filteredArray.push(parsedArray[i])
+                // }
+
+
         }
+        debugger
 
-
-        return arrayOfTruth
-
-
+        console.log(filteredArray.length)
+        this.setState({ filteredList: filteredArray})
     }
 
-
-    handleSubmit = () => {
-
-
-        var passZip = this.handleZipValidation(this.state.zip);
-
-        if (passZip === true) {
-
-            var truthyArray = this.handleTruthyArray();
-
-
-            var filteredData = this.handleFormData(truthyArray);
-
-            this.setState({ filteredList : filteredData})
-
-        }
-
-
-
-    };
+    // handleSubmit = () => {
+    //     var state = this.state
+    //     console.log(state)
+    //     this.parseLocation()
+    //     // debugger
+    //
+    //
+    //
+    //     // var passZip = this.handleZipValidation(this.state.zip);
+    //     //
+    //     // if (passZip === true) {
+    //     //
+    //     //     var truthyArray = this.handleTruthyArray();
+    //     //
+    //     //
+    //     //     var filteredData = this.handleFormData(truthyArray);
+    //     //
+    //     //     this.setState({ filteredList : filteredData})
+    //     //
+    //     // }
+    //
+    // };
 
 
     render() {
 
-        var filteredList = this.state.filteredList
-        var truthyArray = this.state.truthyArray
+        var filteredList = this.state.filteredList;
+        var truthyArray = this.state.truthyArray;
 
         // console.log("Here's Filter Form's truthyArray: " + truthyArray)
-        var clientAge = this.state.clientAge
-        var kidsAge= this.state.kidsAge
-        var levelOfEducation = this.state.levelOfEducation
+
+
         var zip = this.state.zip;
+        var questionNumber = this.state.questionNumber;
+
+        var location = this.state.location;
+        var clientAge = this.state.clientAge;
+        var kids = this.state.kids;
+        var veteran = this.state.veteran;
+        var inSchool = this.state.inSchool;
+        var levelOfEducation = this.state.levelOfEducation
+        var interestedInTraining = this.state.interestedInTraining;
+        var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
+        var interestedInCriminalServices = this.state.interestedInCriminalServices;
+        var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
 
 
-        //Question 1
-        let showKids = "";
-        let checkStatus = false
-        if(this.state.kids === 'true'){
-            showKids = {display: 'block' };
-            //clears the state
-            checkStatus = undefined
-        }else{
-            showKids = {display: 'none' };
-            let checkStatus = false
-        }
+        var showDiv = {display: 'block'};
+        var hidden = {display: 'none' };
+
+
+        // Question 1
+        // let showKids = "";
+        // let checkStatus = false;
+        // if(this.state.kids === 'true'){
+        //     showKids = {display: 'block' };
+        //     //clears the state
+        //     checkStatus = undefined
+        // }else{
+        //     showKids = {display: 'none' };
+        //     let checkStatus = false
+        // }
 
         //Question 2
-        let showWorking = "";
-        if(this.state.working === 'false'){
-            showWorking = {display: 'block' }
-        }else{
-            showWorking = {display: 'none' }
+        // let showWorking = "";
+        // if(this.state.working === 'false'){
+        //     showWorking = {display: 'block' }
+        // }else{
+        //     showWorking = {display: 'none' }
+        // }
+
+        //Question 1
+        let showLocation = "";
+        if (this.state.questionNumber == '1') {
+            showLocation = {display: 'block'};
+        } else {
+            showLocation = {display: 'none'};
         }
 
+
+
+        //Question 2
+        let showAge = ""
+        if (this.state.questionNumber == '2') {
+            showAge = {display: 'block'};
+        } else {
+            showAge = {display: 'none'};
+        }
+
+        //Question 3
+        let showEducation = "";
+        if (this.state.questionNumber == '3') {
+            showEducation = {display: 'block'};
+        } else {
+            showEducation = {display: 'none'};
+        }
+
+        //Question 4
+        let showInSchool = "";
+        if (this.state.questionNumber == '4') {
+            showInSchool = {display: 'block'};
+        } else {
+            showInSchool = {display: 'none'};
+        }
+
+        // Question 5
+        var showFive = "";
+        var showAfterSchool = "";
+        var showTraining = "";
+        var showDiploma = "";
+
+        // if (this.state.questionNumber == '5' && (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ) {
+        //     showFive = {display: 'block'};
+        //     showAfterSchool = {display: 'block !important'};
+        // }
+        //
+        // if (this.state.questionNumber == '5' && (inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ){
+        //     showFive = {display: 'block'};
+        //     showTraining = {display: 'block !important'};
+        //
+        // }
+        //
+        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+        //
+        //  if(inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') ){
+        //     showFive = {display: 'block'};
+        //     showDiploma= {display: 'block !important'};
+        //
+        //  }
+
+
+
+
+
+        // } else {
+        //     showFive = {display: 'none'};
+        //     showAfterSchool = {display: 'none !important'};
+        //     showTraining = {display: 'none !important'};
+        //     showDiploma = {display: 'none !important'};
+        // }
+
+
+
+        if (this.state.questionNumber == '5') {
+            // debugger
+            showFive = {display: 'block'};
+            var showAfterSchool = {display: 'none !important'};
+            var showTraining = {display: 'none !important'};
+            var showDiploma = {display: 'none !important'};
+            // var showAfterSchool = "";
+            // var showTraining = "";
+            // var showDiploma = "";
+            //showInSchool
+
+
+            if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
+
+                showAfterSchool = {display: 'block !important'};
+
+            }
+
+            else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
+                showDiploma= {display: 'block !important'};
+
+            }
+
+            // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+
+            else {
+
+                showTraining = {display: 'block !important'};
+
+            }
+
+
+        } else {
+            showFive = {display: 'none'};
+            showAfterSchool = {display: 'none !important'};
+            showTraining = {display: 'none !important'};
+            showDiploma = {display: 'none !important'};
+        }
+
+
+
+        //////////////////  ISSUE  ///////////////////////////////////////////////
+
+        // var showAfterSchool = {display: 'none !important'};
+        // var showTraining = {display: 'none !important'};
+        // var showDiploma = {display: 'none !important'};
+
+        // if(this.state.questionNumber == '5') {
+        //
+        //     showFive = {display: 'block !important'};
+        //
+        //     debugger
+        //
+        //     if (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
+        //
+        //         showAfterSchool = {display: 'block !important'};
+        //         //
+        //         // showTraining = {display: 'none !important'};
+        //         // showDiploma = {display: 'none !important'};
+        //     }
+        //
+        //     else if (inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
+        //         showTraining = {display: 'block !important'};
+        //         //
+        //         // showAfterSchool = {display: 'none !important'};
+        //         // showDiploma = {display: 'none !important'};
+        //     }
+        //
+        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+        //
+        //     else {
+        //         showDiploma= {display: 'block !important'};
+        //         //
+        //         // showAfterSchool = {display: 'none !important'};
+        //         // showTraining = {display: 'none !important'};
+        //
+        //     }
+        //
+        // }else{
+        //     showFive = {display: 'none !important'};
+        //     showAfterSchool = {display: 'none !important'};
+        //     showTraining = {display: 'none !important'};
+        //     showDiploma = {display: 'none !important'};
+        // }
+
+
+
+
+        //Question 6
+        let showCriminalServices = "";
+        if (this.state.questionNumber == '6') {
+            showCriminalServices = {display: 'block'};
+        } else {
+            showCriminalServices = {display: 'none'};
+        }
+
+
+        let showVeteran = "";
+        if (this.state.questionNumber == '7' && (clientAge == "18-24" || clientAge == "25-65")) {
+            // debugger
+            showVeteran = {display: 'block'};
+        } else {
+            // debugger
+            showVeteran = {display: 'none'};
+        }
+
+
+
+        //Question 7
+        // let showVeteran = {display: 'none'};
+        // if (this.state.questionNumber == '7' && (clientAge === '18-24' || clientAge ==='25-65' )) {
+        //
+        //     showVeteran = {display: 'block'};
+        //
+        // } else {
+        //
+        //     showVeteran = {display: 'none'};
+        //
+        // }
+
+
+
+
+
+        // Show Questions vs Show Catalogue
         let showForm = "";
         if(this.state.filteredList === undefined){
             showForm = {display: 'block' }
@@ -404,205 +682,239 @@ class FilterForm extends React.Component {
         <div>
             <div style={showForm}>
 
-                <div className="ui filterContainer" >
+                <div className="ui filterContainer" id="questionHeight">
 
-                    <h3>Question 1</h3>
-                    <Form>
+                    <div style={showLocation} id="1" data-id="thing">
+                        <h3>Question 1</h3>
+                        <Form>
 
-                        <h3>What is your age?</h3>
+                            <h3>Is the participant looking for services in the LA area or San Fernando Valley?</h3>
 
-                        <Form.Field>
-                            <Radio
-                                label='10-14 (Middle School)'
-                                name='radioGroup'
-                                value='10-14'
-                                checked={this.state.clientAge === '10-14'}
-                                onChange={this.handleClientAgeChange}
-                            />
-                        </Form.Field>
+                            <Form.Field>
+                                <Radio
+                                    label='Los Angeles'
+                                    name='radioGroup'
+                                    value='Los Angeles'
+                                    checked={location === 'Los Angeles'}
+                                    onChange={this.handleLocation}
+                                />
+                            </Form.Field>
 
-                        <Form.Field>
-                            <Radio
-                                label='14-18 (High School)'
-                                name='radioGroup'
-                                value='14-18'
-                                checked={this.state.clientAge === '14-18'}
-                                onChange={this.handleClientAgeChange}
-                            />
-                        </Form.Field>
+                            <Form.Field>
+                                <Radio
+                                    label='San Fernando Valley'
+                                    name='radioGroup'
+                                    value='San Fernando Valley'
+                                    checked={location === 'San Fernando Valley'}
+                                    onChange={this.handleLocation}
+                                />
+                            </Form.Field>
 
+                        </Form>
 
-                        <Form.Field>
-                            <Radio
-                                label='18-65 (Adult)'
-                                name='radioGroup'
-                                value='18-65'
-                                checked={this.state.clientAge === '18-65'}
-                                onChange={this.handleClientAgeChange}
-                            />
-                        </Form.Field>
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
 
-                    </Form>
-
-                    <h3>Question 2</h3>
-                    <Form>
-                        <Form.Field>
-                            <h3>Do you have any children?</h3>
-
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.kids === 'true'}
-                                onChange={this.handleChildrenChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.kids === 'false'}
-                                onChange={this.handleChildrenChange}
-                            />
-                        </Form.Field>
-                    </Form>
-
-                            <div style={showKids} className="push-right">
-
-
-                                <h3>Do you have children in the ages of:</h3>
-
-                                    <Form>
-                                        <Responsive>
-                                            <Form.Field>
-                                                <Grid columns={4}>
-                                                    <Grid.Row>
-                                                        <Grid.Column >
-                                                            <Checkbox label={{ children: '1-3 (Infants + Toddlers)' }} value='1-3' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing "/>
-                                                        </Grid.Column>
-
-                                                        <Grid.Column >
-                                                            <Checkbox label={{ children: '3-5 (Preschool + Kindergarten)' }} value='3-5' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                                        </Grid.Column>
-
-                                                        <Grid.Column >
-                                                            <Checkbox label={{ children: '5-10 (Elementary School)' }} value='5-10' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                                        </Grid.Column>
-                                                    </Grid.Row>
-                                                </Grid>
-                                            </Form.Field>
-                                        </Responsive>
-
-                                    <Responsive>
-                                        <Form.Field>
-                                            <Grid columns={4}>
-                                                <Grid.Row>
-                                                    <Grid.Column >
-                                                        <Checkbox label={{ children: '10-14 (Middle School)' }} value='10-14' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing "/>
-                                                    </Grid.Column>
-
-                                                    <Grid.Column >
-                                                        <Checkbox label={{ children: '14-18 (Highschool)' }} value='14-18' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                                    </Grid.Column>
-
-                                                    <Grid.Column >
-                                                        <Checkbox label={{ children: '18-25 (Adults)' }} value='18-25' onChange={this.handleAgeChange} checked={checkStatus} className="check-box-spacing"/>
-                                                    </Grid.Column>
-                                                </Grid.Row>
-                                            </Grid>
-                                        </Form.Field>
-                                    </Responsive>
-                                </Form>
-
-                                <h3>Do you have children that are of working age, That are not currently working?</h3>
-                                <Form>
-                                    <Form.Field>
-                                        <Radio
-                                            label='Yes'
-                                            name='radioGroup'
-                                            value='true'
-                                            checked={this.state.childrenOfWorkingAge === 'true'}
-                                            onChange={this.handleChildrenOfWorkingAge}
-                                        />
-                                    </Form.Field>
-
-                                    <Form.Field>
-                                        <Radio
-                                            label='No'
-                                            name='radioGroup'
-                                            value='false'
-                                            checked={this.state.childrenOfWorkingAge === 'false'}
-                                            onChange={this.handleChildrenOfWorkingAge}
-                                        />
-                                    </Form.Field>
-                                </Form>
-
-
-                                <h3>Do you have children of college age, planning or going to college?</h3>
-                                <Form>
-                                    <Form.Field>
-                                        <Radio
-                                            label='Yes'
-                                            name='radioGroup'
-                                            value='true'
-                                            checked={this.state.childrenOfCollegeAge === 'true'}
-                                            onChange={this.handleChildrenOfCollegeAge}
-                                        />
-                                    </Form.Field>
-
-                                    <Form.Field>
-                                        <Radio
-                                            label='No'
-                                            name='radioGroup'
-                                            value='false'
-                                            checked={this.state.childrenOfCollegeAge === 'false'}
-                                            onChange={this.handleChildrenOfCollegeAge}
-                                        />
-                                    </Form.Field>
-                                </Form>
+                    </div>
 
 
 
-                                <h3>Do you have any children involved in the Juvenile Justice System?</h3>
-                                <Form>
-                                        <Form.Field>
-                                            <Radio
-                                                label='Yes'
-                                                name='radioGroup'
-                                                value='true'
-                                                checked={this.state.childrenInJusticeSystem === 'true'}
-                                                onChange={this.handleChildrenInJusticeSystem}
-                                            />
-                                        </Form.Field>
-
-                                        <Form.Field>
-                                            <Radio
-                                                label='No'
-                                                name='radioGroup'
-                                                value='false'
-                                                checked={this.state.childrenInJusticeSystem === 'false'}
-                                                onChange={this.handleChildrenInJusticeSystem}
-                                            />
-                                    </Form.Field>
-                                </Form>
 
 
-                            <h3>Do you have any children involved in the Foster Care System?</h3>
+
+                    <div style={showAge} id="2">
+                        <h3>Question 2</h3>
+                        <Form>
+
+                            <h3>What is the participants age?</h3>
+
+                            <Form.Field>
+                                <Radio
+                                    label='0-4'
+                                    name='radioGroup'
+                                    value='0-4'
+                                    checked={clientAge === '0-4'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='5-10'
+                                    name='radioGroup'
+                                    value='5-10'
+                                    checked={clientAge === '5-10'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
+
+
+                            <Form.Field>
+                                <Radio
+                                    label='11-13'
+                                    name='radioGroup'
+                                    value='11-13'
+                                    checked={clientAge === '11-13'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='14-18 (Highschool Age)'
+                                    name='radioGroup'
+                                    value='14-18'
+                                    checked={clientAge === '14-18'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='18-24 (College/Working Age)'
+                                    name='radioGroup'
+                                    value='18-24'
+                                    checked={clientAge === '18-24'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='25-65'
+                                    name='radioGroup'
+                                    value='25-65'
+                                    checked={clientAge === '25-65'}
+                                    onChange={this.handleClientAge}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                    </div>
+
+
+
+                    <div style={ showEducation } id="3">
+                        <h3>Question 3</h3>
+
+                        <h3>What is the participant's highest level of completed education </h3>
+
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No Highschool / Some Highschool'
+                                    name='radioGroup'
+                                    value='No Highschool / Some Highschool'
+                                    checked={this.state.levelOfEducation === 'No Highschool / Some Highschool'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Highschool/GED'
+                                    name='radioGroup'
+                                    value='Highschool/GED'
+                                    checked={this.state.levelOfEducation === 'Highschool/GED'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Some College'
+                                    name='radioGroup'
+                                    value='Some College'
+                                    checked={this.state.levelOfEducation === 'Some College'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='AA'
+                                    name='radioGroup'
+                                    value='AA'
+                                    checked={this.state.levelOfEducation === 'AA'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='BA or Higher'
+                                    name='radioGroup'
+                                    value='BA or Higher'
+                                    checked={this.state.levelOfEducation === 'BA or Higher'}
+                                    onChange={this.handleLevelOfEducation}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
+
+
+                    </div>
+
+
+                    <div style={ showInSchool } id="4">
+                        <h3>Question 4</h3>
+
+                        <h3>Is the participant in school? </h3>
+
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.inSchool === 'true'}
+                                    onChange={this.handleInSchool}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.inSchool === 'false'}
+                                    onChange={this.handleInSchool}
+                                />
+                            </Form.Field>
+                        </Form>
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
+                    </div>
+
+
+                    <div style={showFive} id="5" >
+
+                        <div style={ (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ? {display: 'block'} : {display: 'none'} } >
+
+                            <h3>Question 5</h3>
+                            <h3> Is the participant looking for after-school program? </h3>
+
                             <Form>
                                 <Form.Field>
                                     <Radio
                                         label='Yes'
                                         name='radioGroup'
                                         value='true'
-                                        checked={this.state.childrenInFosterCare === 'true'}
-                                        onChange={this.handleChildrenInFosterCare}
+                                        checked={interestedAfterSchoolPrograms === 'true'}
+                                        onChange={this.handleAfterSchool}
                                     />
-
                                 </Form.Field>
 
                                 <Form.Field>
@@ -610,44 +922,8 @@ class FilterForm extends React.Component {
                                         label='No'
                                         name='radioGroup'
                                         value='false'
-                                        checked={this.state.childrenInFosterCare === 'false'}
-                                        onChange={this.handleChildrenInFosterCare}
-                                    />
-                                </Form.Field>
-                            </Form>
-
-
-                            <h3>Do you have any children with disabilities?</h3>
-                            <Form>
-                                <Form.Field>
-                                    <Radio
-                                        label='Yes'
-                                        name='radioGroup'
-                                        value='true'
-                                        checked={this.state.childrenWithDisabilties === 'true'}
-                                        onChange={this.handleChildrenWithDisabilties}
-                                    />
-
-                                </Form.Field>
-
-                                <Form.Field>
-                                    <Radio
-                                        label='No'
-                                        name='radioGroup'
-                                        value='false'
-                                        checked={this.state.childrenWithDisabilties === 'false'}
-                                        onChange={this.handleChildrenWithDisabilties}
-                                    />
-                                </Form.Field>
-
-
-                                <Form.Field>
-                                    <Radio
-                                        label='Prefer not to disclose'
-                                        name='radioGroup'
-                                        value='Prefer not to disclose'
-                                        checked={this.state.childrenWithDisabilties === 'Prefer not to disclose'}
-                                        onChange={this.handleChildrenWithDisabilties}
+                                        checked={interestedAfterSchoolPrograms === 'false'}
+                                        onChange={this.handleAfterSchool}
                                     />
                                 </Form.Field>
                             </Form>
@@ -655,105 +931,20 @@ class FilterForm extends React.Component {
                         </div>
 
 
-                    <h3>Question 3</h3>
-                    <Form>
 
-                        <Form.Field className="large">
-                            <h3>Are you currently working?</h3>
+                        <div style={ ((inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher')) || (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') )) ? {display: 'block'} : {display: 'none'}} id="5">
 
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.working === 'true'}
-                                onChange={this.handleWorkingChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.working === 'false'}
-                                onChange={this.handleWorkingChange}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-                        <div style={showWorking} className="push-right">
-
-
-                            <h3>What is your highest level of Education</h3>
+                            <h3>Question 5</h3>
+                            <h3> Is the participant interested in employment support or vocational training </h3>
 
                             <Form>
-
-                                <Form.Field>
-                                    <Radio
-                                        label='No Highschool'
-                                        name='radioGroup'
-                                        value='No Highschool'
-                                        checked={this.state.levelOfEducation === 'No Highschool'}
-                                        onChange={this.handleLevelOfEducation}
-                                    />
-                                </Form.Field>
-
-                                <Form.Field>
-                                    <Radio
-                                        label='Highschool/GED'
-                                        name='radioGroup'
-                                        value='Highschool/GED'
-                                        checked={this.state.levelOfEducation === 'Highschool/GED'}
-                                        onChange={this.handleLevelOfEducation}
-                                    />
-                                </Form.Field>
-
-                                <Form.Field>
-                                    <Radio
-                                        label='Some College'
-                                        name='radioGroup'
-                                        value='Some College'
-                                        checked={this.state.levelOfEducation === 'Some College'}
-                                        onChange={this.handleLevelOfEducation}
-                                    />
-                                </Form.Field>
-
-                                <Form.Field>
-                                    <Radio
-                                        label='AA'
-                                        name='radioGroup'
-                                        value='AA'
-                                        checked={this.state.levelOfEducation === 'AA'}
-                                        onChange={this.handleLevelOfEducation}
-                                    />
-                                </Form.Field>
-
-                                <Form.Field>
-                                    <Radio
-                                        label='BA or Higher'
-                                        name='radioGroup'
-                                        value='BA or Higher'
-                                        checked={this.state.levelOfEducation === 'BA or Higher'}
-                                        onChange={this.handleLevelOfEducation}
-                                    />
-                                </Form.Field>
-                            </Form>
-
-
-                            <h3>Are you and/or someone in your family a veteran</h3>
-                            <Form>
-
                                 <Form.Field>
                                     <Radio
                                         label='Yes'
                                         name='radioGroup'
                                         value='true'
-                                        checked={this.state.veteran === 'true'}
-                                        onChange={this.handleVeteran}
+                                        checked={interestedInTraining === 'true'}
+                                        onChange={this.handleInterestedInTraining}
                                     />
                                 </Form.Field>
 
@@ -762,283 +953,159 @@ class FilterForm extends React.Component {
                                         label='No'
                                         name='radioGroup'
                                         value='false'
-                                        checked={this.state.veteran === 'false'}
-                                        onChange={this.handleVeteran}
+                                        checked={interestedInTraining === 'false'}
+                                        onChange={this.handleInterestedInTraining}
                                     />
                                 </Form.Field>
 
                             </Form>
 
-
-                        <h3>Are you interested in receiving Training?</h3>
-                        <Form>
-
-                            <Form.Field>
-                                <Radio
-                                    label='Yes'
-                                    name='radioGroup'
-                                    value='true'
-                                    checked={this.state.interestedInTraining === 'true'}
-                                    onChange={this.handleInterestedInTraining}
-                                />
-                            </Form.Field>
-
-                            <Form.Field>
-                                <Radio
-                                    label='No'
-                                    name='radioGroup'
-                                    value='false'
-                                    checked={this.state.interestedInTraining === 'false'}
-                                    onChange={this.handleInterestedInTraining}
-                                />
-                            </Form.Field>
-
-                        </Form>
+                        </div>
 
 
-                        <h3> Is there anyone else in the household jobless? </h3>
-                        <Form>
-                            <Form.Field>
-                                <Radio
-                                    label='Yes'
-                                    name='radioGroup'
-                                    value='true'
-                                    checked={this.state.othersJobless === 'true'}
-                                    onChange={this.handleOthersJobless}
-                                />
-                            </Form.Field>
+                        <div style={(inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ? {display: 'block'} : {display: 'none'}} className='showDiploma'>
+                            <h3>Question 5</h3>
+                            <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
 
-                            <Form.Field>
-                                <Radio
-                                    label='No'
-                                    name='radioGroup'
-                                    value='false'
-                                    checked={this.state.othersJobless === 'false'}
-                                    onChange={this.handleOthersJobless}
-                                />
-                            </Form.Field>
+                            <Form>
 
-                        </Form>
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={this.state.interestedInCompletingDiploma === 'true'}
+                                        onChange={this.handleInterestedInCompletingDiploma}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={this.state.interestedInCompletingDiploma === 'false'}
+                                        onChange={this.handleInterestedInCompletingDiploma}
+                                    />
+                                </Form.Field>
+
+                            </Form>
+
+                        </div>
+
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+
 
                     </div>
 
-                    <h3>Question 4</h3>
-                    <Form>
-                        <Form.Field className="">
-                            <h3>Are you facing Housing Hardships?</h3>
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.housingHardships === 'true'}
-                                onChange={this.handleHousingHardshipsChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.housingHardships === 'false'}
-                                onChange={this.handleHousingHardshipsChange}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-
-                    <h3>Question 5</h3>
-                    <Form>
-                        <Form.Field className="large">
-                            <h3>Are you facing Financial Hardships?</h3>
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.financialHardships === 'true'}
-                                onChange={this.handleFinancialHardshipsChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.financialHardships === 'false'}
-                                onChange={this.handleFinancialHardshipsChange}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-
-                    <h3>Question 6</h3>
-                    <Form>
-                        <Form.Field>
-                            <h3>Do you or any of the adults in your immediate family have a disability</h3>
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.adultWithDisability === 'true'}
-                                onChange={this.handleAdultDisabilityChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.adultWithDisability === 'false'}
-                                onChange={this.handleAdultDisabilityChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Prefer not to disclose'
-                                name='radioGroup'
-                                value='Prefer not to disclose'
-                                checked={this.state.adultWithDisability === 'Prefer not to disclose'}
-                                onChange={this.handleAdultDisabilityChange}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-
-                    <h3>Question 7</h3>
-                    <Form>
-
-                        <Form.Field>
-                            <h3>Are you or someone in your immediate family a senior citizen?</h3>
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.seniorCitizen === 'true'}
-                                onChange={this.handleSeniorCitizenChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.seniorCitizen === 'false'}
-                                onChange={this.handleSeniorCitizenChange}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-
-                    <h3>Question 8</h3>
-                    <Form>
-
-                        <Form.Field>
-                        <h3>Are you or someone in your immediate family a teacher?</h3>
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.teacher === 'true'}
-                                onChange={this.handleTeacherChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.teacher === 'false'}
-                                onChange={this.handleTeacherChange}
-                            />
-                        </Form.Field>
-
-                    </Form>
-
-
-                    <h3>Question 9</h3>
-                    <Form>
-                        <Form.Field>
-                            <h3>Would you like to include organizations that offer services to the LGBTQIA community</h3>
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='Yes'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.state.LGBTQIA === 'true'}
-                                onChange={this.handleLGBTQIAChange}
-                            />
-                        </Form.Field>
-
-                        <Form.Field>
-                            <Radio
-                                label='No'
-                                name='radioGroup'
-                                value='false'
-                                checked={this.state.LGBTQIA === 'false'}
-                                onChange={this.handleLGBTQIAChange}
-                            />
-                        </Form.Field>
 
 
 
 
-                    </Form>
 
-                    <br/>
+                    <div style={ this.state.questionNumber == "6" ? {display: 'block'} : {display: 'none'} } id="6">
+                        <h3>Question 6</h3>
+                        <h3>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h3>
 
-                    <Input label='  Zip  ' placeholder='please enter a 5 digit zip code' onChange={this.handleZipChange} />
+                        <Form>
 
-                    <br/>
-                    <br/>
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={this.state.interestedInCriminalServices === 'true'}
+                                    onChange={this.handleInterestedInCriminalServices}
+                                />
+                            </Form.Field>
 
-                    <Button basic color='black' onClick={this.handleSubmit}> Submit </Button>
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={this.state.interestedInCriminalServices === 'false'}
+                                    onChange={this.handleInterestedInCriminalServices}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+                        <div style={ (this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ?  {display: 'block'} : {display: 'none'} } id="6">
+                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        </div>
+
+                        <div style={ (this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ?  {display: 'block'} : {display: 'none'} } id="6">
+                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button basic color='black' onClick={this.submitData}> Submit </Button>
+                        </div>
 
 
+
+                    </div>
+
+
+
+
+                    <div style={ showVeteran } id="7">
+
+                        <h3>Question 7</h3>
+
+                        <h3>Is the participant a veteran?</h3>
+                        <Form>
+
+                            <Form.Field>
+                                <Radio
+                                    label='Yes'
+                                    name='radioGroup'
+                                    value='true'
+                                    checked={veteran === 'true'}
+                                    onChange={this.handleVeteran}
+                                />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <Radio
+                                    label='No'
+                                    name='radioGroup'
+                                    value='false'
+                                    checked={veteran === 'false'}
+                                    onChange={this.handleVeteran}
+                                />
+                            </Form.Field>
+
+                        </Form>
+
+
+
+
+                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button basic color='black' onClick={this.submitData}> Submit </Button>
+
+                    </div>
 
 
                 </div>
 
 
+
             </div>
+
 
 
             <div style={showCatalogue}>
-                    <Catalogue
-                        truthyArray={truthyArray}
-                        filteredList = {filteredList}
-                        clientAge={clientAge}
-                        kidsAge={kidsAge}
-                        levelOfEducation = {levelOfEducation}
-                        zip={zip}
-                    />
+                <Catalogue
+                    filteredList = {filteredList}
+                    clientAge={clientAge}
+                    levelOfEducation = {levelOfEducation}
+                    zip={zip}
+                />
             </div>
-
         </div>
 
         );
@@ -1047,27 +1114,3 @@ class FilterForm extends React.Component {
 
 
 export default FilterForm;
-
-
-// <div className="ui checkbox">
-//     <input type="checkbox" className="example"/>
-//     <label>Make my profile visible</label>
-// </div>
-
-
-// <Grid>
-// <Grid.Column only='computer' computer={5}>
-//     <Header>Articles</Header>
-//     </Grid.Column>
-//     <Grid.Column mobile={16} tablet={8} computer={5}>
-//     <p> Thing 2 </p>
-// </Grid.Column>
-//
-// <Grid.Column mobile={16} tablet={8} computer={5}>
-//     <p>thing 1</p>
-// </Grid.Column>
-// </Grid>
-//
-// <Form.Field>
-//     <div className="ui checkbox"><input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="4-5"/><label>4-5</label></div>
-// </Form.Field>

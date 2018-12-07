@@ -17,7 +17,15 @@ const Program = (props) => (
                     </Form.Field>
                 </Form>
 
-                <Item.Extra> {props.programPhone} </Item.Extra>
+                <Item.Extra> <strong>Phone Number :</strong> {props.programPhone} </Item.Extra>
+                <Item.Extra> <strong>Accepts Referrals? : </strong>{props.programAcceptReferrals} </Item.Extra>
+                <Item.Extra> <strong>Description : </strong>{props.programDescription} </Item.Extra>
+                <Item.Extra> <strong>Services Offered : </strong>{props.programServices} </Item.Extra>
+                <Item.Extra> <strong>Population Served : </strong>{props.programPopulationServed} </Item.Extra>
+                <Item.Extra> <strong>Eligibility Requirements : </strong>{props.programEligibility} </Item.Extra>
+                <Item.Extra> <strong>Only Offered At Program Site : </strong>{props.programOnSite} </Item.Extra>
+                <Item.Extra> <strong>Location:</strong> {props.programLocation} </Item.Extra>
+
 
             </Item.Content>
         </Responsive>

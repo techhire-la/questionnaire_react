@@ -10,4 +10,3 @@
  
   > e.g. `yarn add babel-plugin-transform-class-properties@6.24.1`
   > or `yarn add --save-dev babel-plugin-transform-class-properties`
-
