@@ -11,7 +11,7 @@ class Catalogue extends React.Component {
     state = {
         programs: [],
         emails: [],
-        willReceive: this.props.truthyArray || []
+        willReceive: this.props.filteredList || []
     };
 
     componentWillMount = () => {
