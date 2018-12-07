@@ -371,12 +371,6 @@ class FilterForm extends React.Component {
                 for (var i = 0; i < parsedArray.length; i++) {
                     if (parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
                         filteredArray.push(parsedArray[i])
-                    } else if (key === "clientAge") {
-                        debugger
-
-
-                    } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
-                        filteredArray.push(parsedArray[i])
                     }
 
                 }
@@ -387,6 +381,15 @@ class FilterForm extends React.Component {
                 //     filteredArray.push(parsedArray[i])
                 // }
 
+            }
+
+            else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
+                debugger
+                filteredArray.push(parsedArray[i])
+
+
+            } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
+                filteredArray.push(parsedArray[i])
             }
         }
         debugger
