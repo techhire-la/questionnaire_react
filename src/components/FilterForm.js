@@ -11,8 +11,6 @@ class FilterForm extends React.Component {
     state = {
         location: undefined,
         clientAge: undefined,
-        kids: undefined,
-
         inSchool: undefined,
         levelofEducation: undefined,
         veteran: undefined,
@@ -25,7 +23,6 @@ class FilterForm extends React.Component {
         questionNumber: 1,
         toggleFive: undefined,
         locationArray: [],
-
 
         truthyArray: [],
         filteredList: undefined
@@ -70,8 +67,57 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
 
+
+    // parseLocation = () => {
+    //     // console.log("Parse Location")
+    //
+    //     var locationArray = []
+    //     var catalogueLength = catalogueData.contacts.length - 1
+    //     console.log(catalogueLength)
+    //     debugger
+    //     for(var i = 0 ; i <= catalogueLength ; i++){
+    //
+    //         console.log(catalogueData.contacts[i].name)
+    //         console.log(catalogueData.contacts[i].location)
+    //
+    //         if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+    //             console.log("Pushed IN!")
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //         }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
+    //             console.log("BOTH Pushed IN!")
+    //             // console.log("ELSE IF")
+    //             console.log(catalogueData.contacts[i].name)
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //
+    //         }else{
+    //             console.log("<<<<<<<NOT PUSHED>>>>>>>>")
+    //             // console.log("Else")
+    //         }
+    //
+    //     }
+    //     // parsedArray = locationArray
+    //     // debugger
+    //     this.setState({ locationArray: locationArray })
+    //
+    // }
+
     //Question 1
     handleLocation = (e, { value }) => this.setState({ location: value });
+
+    // handleLocation = (e, { value }) => {
+    //
+    //
+    //     this.setState({ location: value });
+    //
+    //     debugger
+    //
+    //     this.parseLocation()
+    //
+    // }
+
+
 
     // Question 2
     handleClientAge = (e, { value }) => this.setState({ clientAge: value });
@@ -108,80 +154,86 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
 
-    handleFormData = (arr) => {
+    // handleFormData = (arr) => {
+    //
+    //     var filterCatalogue = [];
+    //     var clonedHash = catalogueData.contacts.slice(0);
+    //
+    //     console.log("arr: " + arr);
+    //
+    //
+    //     /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
+    //     for( var i = 0 ; i <= arr.length ; i++ ) {
+    //
+    //         //sort through contacts
+    //         for( var x = 0 ; x < clonedHash.length ; x++) {
+    //
+    //             var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
+    //             console.log("arr[i]: " + arr[i])
+    //
+    //             if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
+    //
+    //                 var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
+    //
+    //                 if( zipCheck === 'string') {
+    //
+    //                     filterCatalogue.push(clonedHash[x]);
+    //                     clonedHash.splice(x, 1);
+    //                     console.log("popped " + clonedHash[x]);
+    //
+    //                 }
+    //
+    //                 if(zipCheck != null && zipCheck[0] === this.state.zip) {
+    //
+    //                     filterCatalogue.push(clonedHash[x]);
+    //                     clonedHash.splice(x, 1);
+    //                     console.log("popped " + clonedHash[x]);
+    //                 }
+    //
+    //             }
+    //         }
+    //     }
+    //     console.log("filterCatalogue.length: " + filterCatalogue.length);
+    //     console.log("filterCatalogue: " + filterCatalogue);
+    //     return filterCatalogue
+    // };
 
-        var filterCatalogue = [];
-        var clonedHash = catalogueData.contacts.slice(0);
 
-        console.log("arr: " + arr);
-
-
-        /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
-        for( var i = 0 ; i <= arr.length ; i++ ) {
-
-            //sort through contacts
-            for( var x = 0 ; x < clonedHash.length ; x++) {
-
-                var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
-                console.log("arr[i]: " + arr[i])
-
-                if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
-
-                    var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
-
-                    if( zipCheck === 'string') {
-
-                        filterCatalogue.push(clonedHash[x]);
-                        clonedHash.splice(x, 1);
-                        console.log("popped " + clonedHash[x]);
-
-                    }
-
-                    if(zipCheck != null && zipCheck[0] === this.state.zip) {
-
-                        filterCatalogue.push(clonedHash[x]);
-                        clonedHash.splice(x, 1);
-                        console.log("popped " + clonedHash[x]);
-                    }
-
-                }
-            }
-        }
-        console.log("filterCatalogue.length: " + filterCatalogue.length);
-        console.log("filterCatalogue: " + filterCatalogue);
-        return filterCatalogue
-    };
+    // parseLocation = () => {
+    //     console.log("Parse Location")
+    //
+    //     var locationArray = []
+    //     var catalogueLength = catalogueData.contacts.length - 1
+    //     console.log(catalogueLength)
+    //     for(var i = 0 ; i <= catalogueLength ; i++){
+    //
+    //         if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+    //             // console.log("IF")
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //         }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
+    //
+    //             // console.log("ELSE IF")
+    //             locationArray.push(catalogueData.contacts[i])
+    //             console.log(locationArray)
+    //
+    //         }else{
+    //             // console.log("Else")
+    //         }
+    //
+    //     }
+    //     debugger
+    //     this.setState({ locationArray: locationArray })
+    //
+    // }
 
 
-    parseLocation = () => {
-        console.log("Parse Location")
 
-        var locationArray = []
-        var catalogueLength = catalogueData.contacts.length - 1
-        console.log(catalogueLength)
-        for(var i = 0 ; i <= catalogueLength ; i++){
 
-            if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
-                // console.log("IF")
-                locationArray.push(catalogueData.contacts[i])
-                console.log(locationArray)
-            }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
-
-                // console.log("ELSE IF")
-                locationArray.push(catalogueData.contacts[i])
-                console.log(locationArray)
-
-            }else{
-                // console.log("Else")
-            }
-
-        }
-
-        this.setState({ locationArray: locationArray })
-
-    }
 
     handleMatch = (catalogueAttribute, stateData) => {
+
+
 
         var returnVal = undefined
 
@@ -214,44 +266,133 @@ class FilterForm extends React.Component {
     };
 
 
-    handleTruthyArray = () => {
-        // truthyArray
-        // var arrayOfTruth = [];
-        var arrayOfTruth = ['clientAge', 'kidsAge'];
-
-        var formState = this.state;
-
-        // does not uptake "kids"
-        for (var key in formState) {
-            if (formState.hasOwnProperty(key) && formState[key] === "true" && key != "kids") {
-                // console.log("formState value: " + formState[key]);
-                arrayOfTruth.push(key)
-                // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
-            }
-        }
-
-
-        return arrayOfTruth
-
-
-    };
+    // handleTruthyArray = () => {
+    //     // truthyArray
+    //     // var arrayOfTruth = [];
+    //     var arrayOfTruth = ['clientAge', 'kidsAge'];
+    //
+    //     var formState = this.state;
+    //
+    //     // does not uptake "kids"
+    //     for (var key in formState) {
+    //         if (formState.hasOwnProperty(key) && formState[key] === "true" && key != "kids") {
+    //             // console.log("formState value: " + formState[key]);
+    //             arrayOfTruth.push(key)
+    //             // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+    //         }
+    //     }
+    //
+    //
+    //     return arrayOfTruth
+    //
+    //
+    // };
 
 
     submitData = () => {
-        debugger
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        var locationArray = []
+        var catalogueLength = catalogueData.contacts.length - 1
+        console.log(catalogueLength)
+        for(var i = 0 ; i <= catalogueLength ; i++){
+
+            if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
+                // console.log("IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
+            }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
+
+                // console.log("ELSE IF")
+                locationArray.push(catalogueData.contacts[i])
+                console.log(locationArray)
+
+            }else{
+                // console.log("Else")
+            }
+
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////// iterate over catalogue ////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        // debugger
+        // var parsedArray = undefined
+        // this.parseLocation()
+        // console.log(parsedArray)
+
         var formState = this.state
+        // var parsedArray = this.state.locationArray
+        var parsedArray = locationArray
+        var filteredArray = []
+
         console.log(formState)
+
+
+        // for (var key in formState) {
+        //     // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+        //     if (formState.hasOwnProperty(key) && formState[key] != true) {
+        //         for (var program in parsedArray){
+        //             console.log("program: " + program + " - CatalogueItem: " + parsedArray)
+        //         }
+        //         // console.log(key + " " + formState[key])
+        //         // console.log(formstate[key])
+        //         // console.log("formState value: " + formState[key]);
+        //         // arrayOfTruth.push(key)
+        //         // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+        //     } else if (formState.hasOwnProperty(key) && key === "clientAge") {
+        //         console.log("else if")
+        //
+        //     }
+        //
+        // }
+
+        // for (var program in parsedArray){
+        //
+        //
+        //     if (program.hasOwnProperty(key) && program[key] == "true") {
+        //
+        //
+        //
+        //     }else if (formState.hasOwnProperty(key) && key === "clientAge") {
+        //
+        //     }
+        // }
+        debugger
         for (var key in formState) {
             // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
-            if (formState.hasOwnProperty(key) && formState[key] != undefined) {
-                // debugger
-                console.log(key + " " + formState[key])
-                // console.log(formstate[key])
-                // console.log("formState value: " + formState[key]);
-                // arrayOfTruth.push(key)
-                // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
+            if (formState.hasOwnProperty(key) && formState[key] == "true") {
+                for (var i = 0; i < parsedArray.length; i++) {
+                    if (parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
+                        filteredArray.push(parsedArray[i])
+                    } else if (key === "clientAge") {
+                        debugger
+
+
+                    } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
+                        filteredArray.push(parsedArray[i])
+                    }
+
+                }
+                // } else if (key === "clientAge") {
+                //
+                //
+                // } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key] || parsedArray[i][key] == "true")) {
+                //     filteredArray.push(parsedArray[i])
+                // }
+
             }
         }
+        debugger
+
+        console.log(filteredArray.length)
+        this.setState({ filteredList: filteredArray})
     }
 
     // handleSubmit = () => {
