@@ -682,7 +682,7 @@ class FilterForm extends React.Component {
         <div>
             <div style={showForm}>
 
-                <div className="ui filterContainer" >
+                <div className="ui filterContainer" id="questionHeight">
 
                     <div style={showLocation} id="1" data-id="thing">
                         <h3>Question 1</h3>

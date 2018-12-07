@@ -186,6 +186,13 @@ class Catalogue extends React.Component {
                                         programName={program.name}
                                         programEmail={program.email}
                                         programPhone={program.phonenumber}
+                                        programAcceptReferrals={program.acceptReferrals}
+                                        programDescription={program.descriptionOfProgram}
+                                        programServices={program.coreServicesOffered}
+                                        programPopulationServed={program.populationServed}
+                                        programEligibility={program.eligibilityRequirements}
+                                        programOnSite={program.servicesOnlyOfferedAtProgramSite}
+                                        programLocation={program.locationOfProgram}
                                         updateEmailList = {this.handleEmailList}
                                         count={index + 1}
                                     />
