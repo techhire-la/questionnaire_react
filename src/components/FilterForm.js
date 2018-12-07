@@ -367,13 +367,17 @@ class FilterForm extends React.Component {
         debugger
         for (var key in formState) {
             // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
-            if (formState.hasOwnProperty(key) && formState[key] == "true") {
-                for (var i = 0; i < parsedArray.length; i++) {
-                    if (parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
-                        filteredArray.push(parsedArray[i])
-                    }
-
+            for (var i = 0; i < parsedArray.length; i++) {
+                if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
+                    filteredArray.push(parsedArray[i])
+                }else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
+                    debugger
+                    filteredArray.push(parsedArray[i])
+                }else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
+                    filteredArray.push(parsedArray[i])
                 }
+
+            }
                 // } else if (key === "clientAge") {
                 //
                 //
@@ -381,16 +385,7 @@ class FilterForm extends React.Component {
                 //     filteredArray.push(parsedArray[i])
                 // }
 
-            }
 
-            else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-                debugger
-                filteredArray.push(parsedArray[i])
-
-
-            } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
-                filteredArray.push(parsedArray[i])
-            }
         }
         debugger
 
@@ -1095,14 +1090,22 @@ class FilterForm extends React.Component {
                     </div>
 
 
-
-
                 </div>
+
 
 
             </div>
 
 
+
+            <div style={showCatalogue}>
+                <Catalogue
+                    filteredList = {filteredList}
+                    clientAge={clientAge}
+                    levelOfEducation = {levelOfEducation}
+                    zip={zip}
+                />
+            </div>
         </div>
 
         );
