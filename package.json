@@ -13,7 +13,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "dev": "yarn run dev-server",
-    "postinstall": "webpack -p",
+    "postinstall": "npm rebuild",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
