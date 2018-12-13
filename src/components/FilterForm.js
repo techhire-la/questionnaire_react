@@ -641,7 +641,7 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
                     </div>
 
