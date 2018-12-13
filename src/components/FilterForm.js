@@ -719,9 +719,9 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
                     </div>
 
 
@@ -784,9 +784,9 @@ class FilterForm extends React.Component {
                             </Form.Field>
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
 
 
@@ -821,9 +821,9 @@ class FilterForm extends React.Component {
                             </Form.Field>
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
                     </div>
 
@@ -923,9 +923,9 @@ class FilterForm extends React.Component {
                         </div>
 
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
 
                     </div>
@@ -964,13 +964,13 @@ class FilterForm extends React.Component {
                         </Form>
 
                         <div style={ (this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ?  {display: 'block'} : {display: 'none'} } id="6">
-                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
-                            <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
                         </div>
 
                         <div style={ (this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ?  {display: 'block'} : {display: 'none'} } id="6">
-                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
-                            <Button basic color='black' onClick={this.submitData}> Submit </Button>
+                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button>
                         </div>
 
 
@@ -1012,9 +1012,9 @@ class FilterForm extends React.Component {
 
 
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.submitData}> Submit </Button>
+                        <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button>
 
                     </div>
 
