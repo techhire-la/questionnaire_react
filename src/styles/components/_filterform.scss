@@ -62,8 +62,43 @@
   display: none !important;
 }
 
+.firstDiv{
+  float:left;
+}
 
+.secondDiv{
+  float: left;
+  margin-left: 6em;
+}
 // use semantic classes to add subclass to it
 .ui.button.button-header {
   margin-top: 1em;
 }
+
+.ui.input.fonts {
+  font-size: 60px;
+  color: red;
+}
+
+//.ui.checkbox input.hidden+label {
+//  color:red;
+//
+//}
+//
+//.ui.radio.checkbox .box .ui.radio.checkbox label {
+//  color:red;
+//}
+
+.ui.radio.checkbox .box, .ui.radio.checkbox label {
+  //color: blue !important;
+  font-size: 1.5em;
+  padding-left: 1.3em;
+}
+
+//.ui.radio.checkbox.box {
+//  color: red;
+//}
+//
+//.ui.radio.checkbox.label {
+//  color: red;
+//}

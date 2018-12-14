@@ -341,7 +341,7 @@ class FilterForm extends React.Component {
                 if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
                     filteredArray.push(parsedArray[i])
                 }else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-                    debugger
+                    // debugger
                     filteredArray.push(parsedArray[i])
                 }else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
                     filteredArray.push(parsedArray[i])
@@ -614,13 +614,17 @@ class FilterForm extends React.Component {
                 <div className="ui filterContainer" id="questionHeight">
 
                     <div style={showLocation} id="1" data-id="thing">
+
                         <h3>Question 1</h3>
+                        <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
+
                         <Form>
 
-                            <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
+
 
                             <Form.Field>
                                 <Radio
+                                    className="fonts"
                                     label='Los Angeles'
                                     name='radioGroup'
                                     value='Los Angeles'
@@ -652,9 +656,10 @@ class FilterForm extends React.Component {
 
                     <div style={showAge} id="2">
                         <h3>Question 2</h3>
+                        <h2>What is the participants age?</h2>
                         <Form>
 
-                            <h2>What is the participants age?</h2>
+
 
                             <Form.Field>
                                 <Radio
@@ -686,6 +691,8 @@ class FilterForm extends React.Component {
                                     onChange={this.handleClientAge}
                                 />
                             </Form.Field>
+
+
 
                             <Form.Field>
                                 <Radio
@@ -719,6 +726,7 @@ class FilterForm extends React.Component {
 
                         </Form>
 
+
                         <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
                         <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
@@ -732,6 +740,8 @@ class FilterForm extends React.Component {
                         <h2>What is the participant's highest level of completed education </h2>
 
                         <Form>
+
+
 
                             <Form.Field>
                                 <Radio
