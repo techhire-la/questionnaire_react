@@ -322,11 +322,6 @@ class FilterForm extends React.Component {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        // debugger
-        // var parsedArray = undefined
-        // this.parseLocation()
-        // console.log(parsedArray)
-
         var formState = this.state
         // var parsedArray = this.state.locationArray
         var parsedArray = locationArray
@@ -335,86 +330,28 @@ class FilterForm extends React.Component {
         console.log(formState)
 
 
-        // for (var key in formState) {
-        //     // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
-        //     if (formState.hasOwnProperty(key) && formState[key] != true) {
-        //         for (var program in parsedArray){
-        //             console.log("program: " + program + " - CatalogueItem: " + parsedArray)
-        //         }
-        //         // console.log(key + " " + formState[key])
-        //         // console.log(formstate[key])
-        //         // console.log("formState value: " + formState[key]);
-        //         // arrayOfTruth.push(key)
-        //         // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
-        //     } else if (formState.hasOwnProperty(key) && key === "clientAge") {
-        //         console.log("else if")
-        //
-        //     }
-        //
-        // }
-
-        // for (var program in parsedArray){
-        //
-        //
-        //     if (program.hasOwnProperty(key) && program[key] == "true") {
-        //
-        //
-        //
-        //     }else if (formState.hasOwnProperty(key) && key === "clientAge") {
-        //
-        //     }
-        // }
-        debugger
         for (var key in formState) {
             // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+            debugger
             for (var i = 0; i < parsedArray.length; i++) {
-                if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
+
+                if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
                     filteredArray.push(parsedArray[i])
                 }else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-                    debugger
+                    // debugger
                     filteredArray.push(parsedArray[i])
                 }else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
                     filteredArray.push(parsedArray[i])
                 }
 
             }
-                // } else if (key === "clientAge") {
-                //
-                //
-                // } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key] || parsedArray[i][key] == "true")) {
-                //     filteredArray.push(parsedArray[i])
-                // }
-
 
         }
-        debugger
 
-        console.log(filteredArray.length)
         this.setState({ filteredList: filteredArray})
     }
 
-    // handleSubmit = () => {
-    //     var state = this.state
-    //     console.log(state)
-    //     this.parseLocation()
-    //     // debugger
-    //
-    //
-    //
-    //     // var passZip = this.handleZipValidation(this.state.zip);
-    //     //
-    //     // if (passZip === true) {
-    //     //
-    //     //     var truthyArray = this.handleTruthyArray();
-    //     //
-    //     //
-    //     //     var filteredData = this.handleFormData(truthyArray);
-    //     //
-    //     //     this.setState({ filteredList : filteredData})
-    //     //
-    //     // }
-    //
-    // };
+
 
 
     render() {
@@ -444,25 +381,6 @@ class FilterForm extends React.Component {
         var hidden = {display: 'none' };
 
 
-        // Question 1
-        // let showKids = "";
-        // let checkStatus = false;
-        // if(this.state.kids === 'true'){
-        //     showKids = {display: 'block' };
-        //     //clears the state
-        //     checkStatus = undefined
-        // }else{
-        //     showKids = {display: 'none' };
-        //     let checkStatus = false
-        // }
-
-        //Question 2
-        // let showWorking = "";
-        // if(this.state.working === 'false'){
-        //     showWorking = {display: 'block' }
-        // }else{
-        //     showWorking = {display: 'none' }
-        // }
 
         //Question 1
         let showLocation = "";
@@ -685,13 +603,17 @@ class FilterForm extends React.Component {
                 <div className="ui filterContainer" id="questionHeight">
 
                     <div style={showLocation} id="1" data-id="thing">
+
                         <h3>Question 1</h3>
+                        <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
+
                         <Form>
 
-                            <h3>Is the participant looking for services in the LA area or San Fernando Valley?</h3>
+
 
                             <Form.Field>
                                 <Radio
+                                    className="fonts"
                                     label='Los Angeles'
                                     name='radioGroup'
                                     value='Los Angeles'
@@ -712,7 +634,7 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
                     </div>
 
@@ -723,9 +645,10 @@ class FilterForm extends React.Component {
 
                     <div style={showAge} id="2">
                         <h3>Question 2</h3>
+                        <h2>What is the participants age?</h2>
                         <Form>
 
-                            <h3>What is the participants age?</h3>
+
 
                             <Form.Field>
                                 <Radio
@@ -757,6 +680,8 @@ class FilterForm extends React.Component {
                                     onChange={this.handleClientAge}
                                 />
                             </Form.Field>
+
+
 
                             <Form.Field>
                                 <Radio
@@ -790,9 +715,10 @@ class FilterForm extends React.Component {
 
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
                     </div>
 
 
@@ -800,9 +726,11 @@ class FilterForm extends React.Component {
                     <div style={ showEducation } id="3">
                         <h3>Question 3</h3>
 
-                        <h3>What is the participant's highest level of completed education </h3>
+                        <h2>What is the participant's highest level of completed education </h2>
 
                         <Form>
+
+
 
                             <Form.Field>
                                 <Radio
@@ -855,9 +783,9 @@ class FilterForm extends React.Component {
                             </Form.Field>
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
 
 
@@ -867,7 +795,7 @@ class FilterForm extends React.Component {
                     <div style={ showInSchool } id="4">
                         <h3>Question 4</h3>
 
-                        <h3>Is the participant in school? </h3>
+                        <h2>Is the participant in school? </h2>
 
                         <Form>
 
@@ -892,9 +820,9 @@ class FilterForm extends React.Component {
                             </Form.Field>
                         </Form>
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
                     </div>
 
@@ -904,7 +832,7 @@ class FilterForm extends React.Component {
                         <div style={ (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ? {display: 'block'} : {display: 'none'} } >
 
                             <h3>Question 5</h3>
-                            <h3> Is the participant looking for after-school program? </h3>
+                            <h2> Is the participant looking for after-school program? </h2>
 
                             <Form>
                                 <Form.Field>
@@ -935,7 +863,7 @@ class FilterForm extends React.Component {
                         <div style={ ((inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher')) || (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') )) ? {display: 'block'} : {display: 'none'}} id="5">
 
                             <h3>Question 5</h3>
-                            <h3> Is the participant interested in employment support or vocational training </h3>
+                            <h2> Is the participant interested in employment support or vocational training </h2>
 
                             <Form>
                                 <Form.Field>
@@ -965,7 +893,7 @@ class FilterForm extends React.Component {
 
                         <div style={(inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ? {display: 'block'} : {display: 'none'}} className='showDiploma'>
                             <h3>Question 5</h3>
-                            <h3>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h3>
+                            <h2>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h2>
 
                             <Form>
 
@@ -994,9 +922,9 @@ class FilterForm extends React.Component {
                         </div>
 
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
 
                     </div>
@@ -1008,7 +936,7 @@ class FilterForm extends React.Component {
 
                     <div style={ this.state.questionNumber == "6" ? {display: 'block'} : {display: 'none'} } id="6">
                         <h3>Question 6</h3>
-                        <h3>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h3>
+                        <h2>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h2>
 
                         <Form>
 
@@ -1035,13 +963,13 @@ class FilterForm extends React.Component {
                         </Form>
 
                         <div style={ (this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ?  {display: 'block'} : {display: 'none'} } id="6">
-                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
-                            <Button basic color='black' onClick={this.handleNext}> Next </Button>
+                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
                         </div>
 
                         <div style={ (this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ?  {display: 'block'} : {display: 'none'} } id="6">
-                            <Button basic color='black' onClick={this.handleBack}> Back </Button>
-                            <Button basic color='black' onClick={this.submitData}> Submit </Button>
+                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+                            <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button>
                         </div>
 
 
@@ -1055,7 +983,7 @@ class FilterForm extends React.Component {
 
                         <h3>Question 7</h3>
 
-                        <h3>Is the participant a veteran?</h3>
+                        <h2>Is the participant a veteran?</h2>
                         <Form>
 
                             <Form.Field>
@@ -1083,9 +1011,9 @@ class FilterForm extends React.Component {
 
 
 
-                        <Button basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
-                        <Button basic color='black' onClick={this.submitData}> Submit </Button>
+                        <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button>
 
                     </div>
 

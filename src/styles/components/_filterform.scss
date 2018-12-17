@@ -17,7 +17,7 @@
   //background-color: #00a693;
   color: white;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   margin: 30px auto;
   margin-top: 5em;
   margin-bottom: 1em;
@@ -61,3 +61,44 @@
 .hidden {
   display: none !important;
 }
+
+.firstDiv{
+  float:left;
+}
+
+.secondDiv{
+  float: left;
+  margin-left: 6em;
+}
+// use semantic classes to add subclass to it
+.ui.button.button-header {
+  margin-top: 1em;
+}
+
+.ui.input.fonts {
+  font-size: 60px;
+  color: red;
+}
+
+//.ui.checkbox input.hidden+label {
+//  color:red;
+//
+//}
+//
+//.ui.radio.checkbox .box .ui.radio.checkbox label {
+//  color:red;
+//}
+
+.ui.radio.checkbox .box, .ui.radio.checkbox label {
+  //color: blue !important;
+  font-size: 1.5em;
+  padding-left: 1.3em;
+}
+
+//.ui.radio.checkbox.box {
+//  color: red;
+//}
+//
+//.ui.radio.checkbox.label {
+//  color: red;
+//}
