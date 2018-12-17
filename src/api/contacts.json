@@ -603,20 +603,8 @@
       "interestedInCompletingDiploma": "false"
     },
     {
-      "name": "Financial Capability & Asset Building",
-      "location": ["Los Angeles", "San Fernando Valley"]
-    },
-    {
-      "name": "Latinos in Finance",
-      "location": ["Los Angeles", "San Fernando Valley"]
-    },
-    {
       "name": "MakerSpace",
       "location": "San Fernando Valley"
-    },
-    {
-      "name": "Promise of Credit",
-      "location": ["Los Angeles", "San Fernando Valley"]
     },
     {
       "name": "Promise of Wellness",
@@ -624,16 +612,6 @@
     },
     {
       "name": "Promise Scholars",
-      "location": "Los Angeles"
-    },
-    {
-      "name": "Veteran's Employment-Related Assistance Program (VEAP)",
-      "descriptionOfProgram": "See Veterans Now",
-      "location": "San Fernando Valley"
-    },
-    {
-      "name": "Youth Financial Empowerment for Financial Success",
-      "descriptionOfProgram": "See Financial Empowerment",
       "location": "Los Angeles"
     }
   ]
