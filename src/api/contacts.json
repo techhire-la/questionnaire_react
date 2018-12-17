@@ -342,13 +342,6 @@
       "interestedInCompletingDiploma": "false"
     },
     {
-      "name": "CalEITC",
-      "department": "Financial Empowerment",
-      "acceptReferrals": "No",
-      "descriptionOfProgram": "Not a program",
-      "location": ["Los Angeles", "San Fernando Valley"]
-    },
-    {
       "name": "Champions for Change",
       "department": "Health & Wellness",
       "acceptReferrals": "Yes",
