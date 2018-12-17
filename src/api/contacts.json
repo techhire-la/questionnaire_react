@@ -1,10 +1,6 @@
 {
 
-  "contacts": [{
-    "name": "Community Engagement",
-    "department": " ",
-    "locationOfProgram": "* 2nd grade – 12th grade students"
-  },
+  "contacts": [
     {
       "name": "FamilySource Center - Case Management",
       "department": "Community & Family Support",
@@ -123,7 +119,7 @@
       "descriptionOfProgram": "Gang prevention program geared at working with families in an effort to create resources and strengthened relationships for positive outcomes",
       "coreServicesOffered": "Family Case Management, resource development, field trips and ongoing activities, after school tutoring",
       "populationServed": "Youth qualify based on an Assessemnt that measures risk factors for becoming gang involved",
-      "eligibilityRequirements": "10 to 15, must have tie to the GRYD Zone (hang out in area, live, go to school)  https://ypiusa.sharepoint.com/:b:/s/GRYDTeam/EaC5QJhgTXVMq_ca8Y7hxc0BLFLIDcKUGz1kDajFfbp6Gg?e=2eQShe",
+      "eligibilityRequirements": "10 to 15, must have tie to the GRYD Zone (hang out in area, live, go to school) ",
       "locationOfProgram": "Hollywood FSC",
       "servicesOnlyOfferedAtProgramSite": "No - home visits and school",
       "contactPerson": "Angelica Romero",

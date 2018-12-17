@@ -322,11 +322,6 @@ class FilterForm extends React.Component {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        // debugger
-        // var parsedArray = undefined
-        // this.parseLocation()
-        // console.log(parsedArray)
-
         var formState = this.state
         // var parsedArray = this.state.locationArray
         var parsedArray = locationArray
@@ -337,8 +332,10 @@ class FilterForm extends React.Component {
 
         for (var key in formState) {
             // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+            debugger
             for (var i = 0; i < parsedArray.length; i++) {
-                if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
+
+                if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
                     filteredArray.push(parsedArray[i])
                 }else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
                     // debugger
@@ -348,17 +345,9 @@ class FilterForm extends React.Component {
                 }
 
             }
-                // } else if (key === "clientAge") {
-                //
-                //
-                // } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key] || parsedArray[i][key] == "true")) {
-                //     filteredArray.push(parsedArray[i])
-                // }
-
 
         }
 
-        // console.log(filteredArray.length)
         this.setState({ filteredList: filteredArray})
     }
 
