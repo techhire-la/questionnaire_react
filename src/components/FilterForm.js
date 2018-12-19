@@ -332,7 +332,7 @@ class FilterForm extends React.Component {
 
         for (var key in formState) {
             // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
-            debugger
+
             for (var i = 0; i < parsedArray.length; i++) {
 
                 if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {

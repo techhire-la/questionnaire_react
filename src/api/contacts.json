@@ -1,5 +1,4 @@
 {
-
   "contacts": [
     {
       "name": "FamilySource Center - Case Management",
@@ -583,18 +582,9 @@
       "interestedAfterSchoolPrograms": "false",
       "interestedInCriminalServices": "false",
       "interestedInCompletingDiploma": "false"
-    },
-    {
-      "name": "MakerSpace",
-      "location": "San Fernando Valley"
-    },
-    {
-      "name": "Promise of Wellness",
-      "location": ["Los Angeles", "San Fernando Valley"]
-    },
-    {
-      "name": "Promise Scholars",
-      "location": "Los Angeles"
     }
   ]
 }
+
+
+
