@@ -183,7 +183,7 @@ class Catalogue extends React.Component {
                                 programs.map((program, index) => (
                                     <Program
                                         key={index}
-                                        programName={program.name}
+                                        programName={(program.altProgramName != undefined && program.altProgramName !== "" ) ? program.altProgramName : program.name}
                                         programEmail={program.email}
                                         programPhone={program.phonenumber}
                                         programAcceptReferrals={program.acceptReferrals}
@@ -244,3 +244,6 @@ class Catalogue extends React.Component {
 export default Catalogue;
 
 
+
+
+// (program.hasOwnProperty(altProgramName) && ( program.altProgramName !== "" || program.altProgramName !== undefined)) ? program.altProgramName : program.name
