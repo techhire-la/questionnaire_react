@@ -11,3 +11,9 @@
   font-size: 1.5rem;
   color: black;
 }
+
+.ui.checkbox label, .ui.checkbox+label .ui.checkbox+label:hover {
+  color: black;
+  //-webkit-transition: color .1s ease;
+  //transition: color .1s ease;
+}
