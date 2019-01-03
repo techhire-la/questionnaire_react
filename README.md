@@ -1,10 +1,10 @@
 ## Instructions
 
- * `nvm install v8.10.0` or `nvm use 8.10.0` if already installed
+ * `nvm install v8.11.3` or `nvm use 8.11.3` if already installed
 
  * Run Server: `yarn run dev-server`
  
- * Build assets: `yarn run build`
+ * Build assets: `yarn run build` or `yarn run build:dev` or `yarn run build:prod`
  
  * To add an npm package or babel plugin use: `yarn add {your thingy here}`
  
