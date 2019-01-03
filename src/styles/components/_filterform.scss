@@ -91,8 +91,12 @@
 
 .ui.radio.checkbox .box, .ui.radio.checkbox label {
   //color: blue !important;
-  font-size: 1.5em;
+  font-size: 1em;
   padding-left: 1.3em;
+}
+
+.ui.form .field>label {
+  font-size: 1.5em;
 }
 
 //.ui.radio.checkbox.box {
