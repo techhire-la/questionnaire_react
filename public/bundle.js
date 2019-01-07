@@ -31816,7 +31816,7 @@ var Catalogue = function (_React$Component) {
                     programs.map(function (program, index) {
                         return _react2.default.createElement(_Program2.default, {
                             key: index,
-                            programName: program.name,
+                            programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
                             programEmail: program.email,
                             programPhone: program.phonenumber,
                             programAcceptReferrals: program.acceptReferrals,
@@ -31866,17 +31866,14 @@ var Catalogue = function (_React$Component) {
 
 exports.default = Catalogue;
 
+// (program.hasOwnProperty(altProgramName) && ( program.altProgramName !== "" || program.altProgramName !== undefined)) ? program.altProgramName : program.name
+
 /***/ }),
 /* 494 */
 /***/ (function(module, exports) {
 
 module.exports = {
 	"contacts": [
-		{
-			"name": "Community Engagement",
-			"department": " ",
-			"locationOfProgram": "* 2nd grade – 12th grade students"
-		},
 		{
 			"name": "FamilySource Center - Case Management",
 			"department": "Community & Family Support",
@@ -32019,7 +32016,7 @@ module.exports = {
 			"descriptionOfProgram": "Gang prevention program geared at working with families in an effort to create resources and strengthened relationships for positive outcomes",
 			"coreServicesOffered": "Family Case Management, resource development, field trips and ongoing activities, after school tutoring",
 			"populationServed": "Youth qualify based on an Assessemnt that measures risk factors for becoming gang involved",
-			"eligibilityRequirements": "10 to 15, must have tie to the GRYD Zone (hang out in area, live, go to school)  https://ypiusa.sharepoint.com/:b:/s/GRYDTeam/EaC5QJhgTXVMq_ca8Y7hxc0BLFLIDcKUGz1kDajFfbp6Gg?e=2eQShe",
+			"eligibilityRequirements": "10 to 15, must have tie to the GRYD Zone (hang out in area, live, go to school) ",
 			"locationOfProgram": "Hollywood FSC",
 			"servicesOnlyOfferedAtProgramSite": "No - home visits and school",
 			"contactPerson": "Angelica Romero",
@@ -32178,13 +32175,6 @@ module.exports = {
 			"location": "Los Angeles"
 		},
 		{
-			"name": "Ventanilla National Adminstrator",
-			"department": "Community Empowerment",
-			"acceptReferrals": "No",
-			"descriptionOfProgram": "Not a program",
-			"location": "Los Angeles"
-		},
-		{
 			"name": "Veterans Now",
 			"department": "Community Empowerment",
 			"acceptReferrals": "Yes",
@@ -32265,16 +32255,6 @@ module.exports = {
 			"interestedAfterSchoolPrograms": "true",
 			"interestedInCriminalServices": "false",
 			"interestedInCompletingDiploma": "false"
-		},
-		{
-			"name": "CalEITC",
-			"department": "Financial Empowerment",
-			"acceptReferrals": "No",
-			"descriptionOfProgram": "Not a program",
-			"location": [
-				"Los Angeles",
-				"San Fernando Valley"
-			]
 		},
 		{
 			"name": "Champions for Change",
@@ -32475,7 +32455,7 @@ module.exports = {
 			"locationOfProgram": "YouthSource Center Valley",
 			"servicesOnlyOfferedAtProgramSite": "Yes",
 			"contactPerson": "Valley: Brenda Ruiz",
-			"email": "Valley: bruiz@ypi.org",
+			"email": "bruiz@ypi.org",
 			"phonenumber": "(323) 978-1036",
 			"programEnd": "Ongoing",
 			"altProgramName": "Valley YouthSource Center",
@@ -32583,52 +32563,6 @@ module.exports = {
 			"interestedAfterSchoolPrograms": "false",
 			"interestedInCriminalServices": "false",
 			"interestedInCompletingDiploma": "false"
-		},
-		{
-			"name": "Financial Capability & Asset Building",
-			"location": [
-				"Los Angeles",
-				"San Fernando Valley"
-			]
-		},
-		{
-			"name": "Latinos in Finance",
-			"location": [
-				"Los Angeles",
-				"San Fernando Valley"
-			]
-		},
-		{
-			"name": "MakerSpace",
-			"location": "San Fernando Valley"
-		},
-		{
-			"name": "Promise of Credit",
-			"location": [
-				"Los Angeles",
-				"San Fernando Valley"
-			]
-		},
-		{
-			"name": "Promise of Wellness",
-			"location": [
-				"Los Angeles",
-				"San Fernando Valley"
-			]
-		},
-		{
-			"name": "Promise Scholars",
-			"location": "Los Angeles"
-		},
-		{
-			"name": "Veteran's Employment-Related Assistance Program (VEAP)",
-			"descriptionOfProgram": "See Veterans Now",
-			"location": "San Fernando Valley"
-		},
-		{
-			"name": "Youth Financial Empowerment for Financial Success",
-			"descriptionOfProgram": "See Financial Empowerment",
-			"location": "Los Angeles"
 		}
 	]
 };
@@ -70923,11 +70857,6 @@ var FilterForm = function (_React$Component) {
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-            // debugger
-            // var parsedArray = undefined
-            // this.parseLocation()
-            // console.log(parsedArray)
-
             var formState = _this.state;
             // var parsedArray = this.state.locationArray
             var parsedArray = locationArray;
@@ -70935,59 +70864,22 @@ var FilterForm = function (_React$Component) {
 
             console.log(formState);
 
-            // for (var key in formState) {
-            //     // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
-            //     if (formState.hasOwnProperty(key) && formState[key] != true) {
-            //         for (var program in parsedArray){
-            //             console.log("program: " + program + " - CatalogueItem: " + parsedArray)
-            //         }
-            //         // console.log(key + " " + formState[key])
-            //         // console.log(formstate[key])
-            //         // console.log("formState value: " + formState[key]);
-            //         // arrayOfTruth.push(key)
-            //         // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
-            //     } else if (formState.hasOwnProperty(key) && key === "clientAge") {
-            //         console.log("else if")
-            //
-            //     }
-            //
-            // }
-
-            // for (var program in parsedArray){
-            //
-            //
-            //     if (program.hasOwnProperty(key) && program[key] == "true") {
-            //
-            //
-            //
-            //     }else if (formState.hasOwnProperty(key) && key === "clientAge") {
-            //
-            //     }
-            // }
-            debugger;
             for (var key in formState) {
                 // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+
                 for (var i = 0; i < parsedArray.length; i++) {
-                    if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key]) {
+
+                    if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
                         filteredArray.push(parsedArray[i]);
                     } else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-                        debugger;
+                        // debugger
                         filteredArray.push(parsedArray[i]);
                     } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
                         filteredArray.push(parsedArray[i]);
                     }
                 }
-                // } else if (key === "clientAge") {
-                //
-                //
-                // } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key] || parsedArray[i][key] == "true")) {
-                //     filteredArray.push(parsedArray[i])
-                // }
-
             }
-            debugger;
 
-            console.log(filteredArray.length);
             _this.setState({ filteredList: filteredArray });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -71176,32 +71068,6 @@ var FilterForm = function (_React$Component) {
 
     _createClass(FilterForm, [{
         key: 'render',
-
-
-        // handleSubmit = () => {
-        //     var state = this.state
-        //     console.log(state)
-        //     this.parseLocation()
-        //     // debugger
-        //
-        //
-        //
-        //     // var passZip = this.handleZipValidation(this.state.zip);
-        //     //
-        //     // if (passZip === true) {
-        //     //
-        //     //     var truthyArray = this.handleTruthyArray();
-        //     //
-        //     //
-        //     //     var filteredData = this.handleFormData(truthyArray);
-        //     //
-        //     //     this.setState({ filteredList : filteredData})
-        //     //
-        //     // }
-        //
-        // };
-
-
         value: function render() {
 
             var filteredList = this.state.filteredList;
@@ -71226,26 +71092,6 @@ var FilterForm = function (_React$Component) {
 
             var showDiv = { display: 'block' };
             var hidden = { display: 'none' };
-
-            // Question 1
-            // let showKids = "";
-            // let checkStatus = false;
-            // if(this.state.kids === 'true'){
-            //     showKids = {display: 'block' };
-            //     //clears the state
-            //     checkStatus = undefined
-            // }else{
-            //     showKids = {display: 'none' };
-            //     let checkStatus = false
-            // }
-
-            //Question 2
-            // let showWorking = "";
-            // if(this.state.working === 'false'){
-            //     showWorking = {display: 'block' }
-            // }else{
-            //     showWorking = {display: 'none' }
-            // }
 
             //Question 1
             var showLocation = "";
@@ -71453,17 +71299,18 @@ var FilterForm = function (_React$Component) {
                                 'Question 1'
                             ),
                             _react2.default.createElement(
+                                'h2',
+                                null,
+                                'Is the participant looking for services in the LA area or San Fernando Valley?'
+                            ),
+                            _react2.default.createElement(
                                 _semanticUiReact.Form,
                                 null,
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    'Is the participant looking for services in the LA area or San Fernando Valley?'
-                                ),
                                 _react2.default.createElement(
                                     _semanticUiReact.Form.Field,
                                     null,
                                     _react2.default.createElement(_semanticUiReact.Radio, {
+                                        className: 'fonts',
                                         label: 'Los Angeles',
                                         name: 'radioGroup',
                                         value: 'Los Angeles',
@@ -71485,7 +71332,7 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleNext },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
                                 ' Next '
                             )
                         ),
@@ -71498,13 +71345,13 @@ var FilterForm = function (_React$Component) {
                                 'Question 2'
                             ),
                             _react2.default.createElement(
+                                'h2',
+                                null,
+                                'What is the participants age?'
+                            ),
+                            _react2.default.createElement(
                                 _semanticUiReact.Form,
                                 null,
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    'What is the participants age?'
-                                ),
                                 _react2.default.createElement(
                                     _semanticUiReact.Form.Field,
                                     null,
@@ -71574,12 +71421,12 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleBack },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                 ' Back '
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleNext },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
                                 ' Next '
                             )
                         ),
@@ -71592,7 +71439,7 @@ var FilterForm = function (_React$Component) {
                                 'Question 3'
                             ),
                             _react2.default.createElement(
-                                'h3',
+                                'h2',
                                 null,
                                 'What is the participant\'s highest level of completed education '
                             ),
@@ -71657,12 +71504,12 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleBack },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                 ' Back '
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleNext },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
                                 ' Next '
                             )
                         ),
@@ -71675,7 +71522,7 @@ var FilterForm = function (_React$Component) {
                                 'Question 4'
                             ),
                             _react2.default.createElement(
-                                'h3',
+                                'h2',
                                 null,
                                 'Is the participant in school? '
                             ),
@@ -71707,12 +71554,12 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleBack },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                 ' Back '
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleNext },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
                                 ' Next '
                             )
                         ),
@@ -71728,7 +71575,7 @@ var FilterForm = function (_React$Component) {
                                     'Question 5'
                                 ),
                                 _react2.default.createElement(
-                                    'h3',
+                                    'h2',
                                     null,
                                     ' Is the participant looking for after-school program? '
                                 ),
@@ -71768,7 +71615,7 @@ var FilterForm = function (_React$Component) {
                                     'Question 5'
                                 ),
                                 _react2.default.createElement(
-                                    'h3',
+                                    'h2',
                                     null,
                                     ' Is the participant interested in employment support or vocational training '
                                 ),
@@ -71808,7 +71655,7 @@ var FilterForm = function (_React$Component) {
                                     'Question 5'
                                 ),
                                 _react2.default.createElement(
-                                    'h3',
+                                    'h2',
                                     null,
                                     'Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)'
                                 ),
@@ -71841,12 +71688,12 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleBack },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                 ' Back '
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleNext },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
                                 ' Next '
                             )
                         ),
@@ -71859,7 +71706,7 @@ var FilterForm = function (_React$Component) {
                                 'Question 6'
                             ),
                             _react2.default.createElement(
-                                'h3',
+                                'h2',
                                 null,
                                 'Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? '
                             ),
@@ -71894,12 +71741,12 @@ var FilterForm = function (_React$Component) {
                                 { style: this.state.clientAge == "18-24" || this.state.clientAge == "25-65" ? { display: 'block' } : { display: 'none' }, id: '6' },
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { basic: true, color: 'black', onClick: this.handleBack },
+                                    { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                     ' Back '
                                 ),
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { basic: true, color: 'black', onClick: this.handleNext },
+                                    { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
                                     ' Next '
                                 )
                             ),
@@ -71908,12 +71755,12 @@ var FilterForm = function (_React$Component) {
                                 { style: this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18" ? { display: 'block' } : { display: 'none' }, id: '6' },
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { basic: true, color: 'black', onClick: this.handleBack },
+                                    { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                     ' Back '
                                 ),
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { basic: true, color: 'black', onClick: this.submitData },
+                                    { className: 'button-header', basic: true, color: 'black', onClick: this.submitData },
                                     ' Submit '
                                 )
                             )
@@ -71927,7 +71774,7 @@ var FilterForm = function (_React$Component) {
                                 'Question 7'
                             ),
                             _react2.default.createElement(
-                                'h3',
+                                'h2',
                                 null,
                                 'Is the participant a veteran?'
                             ),
@@ -71959,12 +71806,12 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.handleBack },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
                                 ' Back '
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Button,
-                                { basic: true, color: 'black', onClick: this.submitData },
+                                { className: 'button-header', basic: true, color: 'black', onClick: this.submitData },
                                 ' Submit '
                             )
                         )

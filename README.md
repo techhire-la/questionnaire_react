@@ -1,6 +1,8 @@
 ## Instructions
 
- * `nvm install v8.11.3` or `nvm use 8.11.3` if already installed
+ * Set the node correct node version: `nvm install v8.11.3` or `nvm use 8.11.3` if already installed
+ 
+ * Use `yarn install` to install all dependencies for a project
 
  * Run Server: `yarn run dev-server`
  
