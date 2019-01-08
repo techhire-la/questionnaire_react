@@ -41,12 +41,11 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        // debugger
+        debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
         var addOne = (nextQuestion + 1).toString();
-
 
         this.setState({ questionNumber: addOne })
         console.log(this.state.questionNumber)
@@ -104,23 +103,29 @@ class FilterForm extends React.Component {
     // }
 
     //Question 1
-    handleLocation = (e, { value }) => this.setState({ location: value });
+    // handleLocation = (e, { value }) => this.setState({ location: value });
 
-    // handleLocation = (e, { value }) => {
-    //
-    //
-    //     this.setState({ location: value });
-    //
-    //     debugger
-    //
-    //     this.parseLocation()
-    //
-    // }
+    handleLocation = (e, { value }) => {
+    
+    
+        this.setState({ location: value });
+    
+        // debugger
+        console.log(value)
+        console.log(this.state)
+    
+        // this.parseLocation()
+    
+    }
 
 
 
     // Question 2
-    handleClientAge = (e, { value }) => this.setState({ clientAge: value });
+    handleClientAge = (e, { value }) => {
+        this.setState({ clientAge: value })
+        console.log(value)
+        console.log(this.state)
+    }
 
 
     //Question 2
@@ -455,7 +460,7 @@ class FilterForm extends React.Component {
 
 
         if (this.state.questionNumber == '5') {
-            // debugger
+            debugger
             showFive = {display: 'block'};
             var showAfterSchool = {display: 'none !important'};
             var showTraining = {display: 'none !important'};
