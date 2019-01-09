@@ -12,7 +12,7 @@ class FilterForm extends React.Component {
         location: undefined,
         clientAge: undefined,
         inSchool: undefined,
-        levelofEducation: undefined,
+        levelOfEducation: undefined, 
         veteran: undefined,
         interestedInTraining: undefined,
         interestedAfterSchoolPrograms: undefined,
@@ -41,7 +41,7 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        debugger
+        // debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
@@ -112,7 +112,7 @@ class FilterForm extends React.Component {
     
         // debugger
         console.log(value)
-        console.log(this.state)
+        console.log(this.state.location)
     
         // this.parseLocation()
     
@@ -124,7 +124,6 @@ class FilterForm extends React.Component {
     handleClientAge = (e, { value }) => {
         this.setState({ clientAge: value })
         console.log(value)
-        console.log(this.state)
     }
 
 
@@ -133,11 +132,16 @@ class FilterForm extends React.Component {
 
 
     //Question 3
-    handleInSchool = (e, { value }) => this.setState({ inSchool: value })
+    handleLevelOfEducation = (e, { value }) => {
+        this.setState({ levelOfEducation: value })
+        console.log(value)
+    }
 
     //Question 4
-    handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
-
+    handleInSchool = (e, { value }) => {
+        this.setState({ inSchool: value })
+        console.log(value)
+    }
 
 
     //Question 5
@@ -603,6 +607,7 @@ class FilterForm extends React.Component {
         return (
 
         <div>
+            {console.log(this.state)}
             <div style={showForm}>
 
                 <div className="ui filterContainer" id="questionHeight">
