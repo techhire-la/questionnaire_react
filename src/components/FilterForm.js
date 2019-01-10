@@ -102,6 +102,15 @@ class FilterForm extends React.Component {
     //
     // }
 
+    //-------------------------- * * * * * --------------------------
+
+    handleChange(e) {
+        this.setState({ value: e.target.value})
+        console.log(e, value)
+    }
+
+    //-------------------------- * * * * * --------------------------
+
     //Question 1
     // handleLocation = (e, { value }) => this.setState({ location: value });
 
@@ -365,71 +374,104 @@ class FilterForm extends React.Component {
 
     render() {
 
-        var filteredList = this.state.filteredList;
-        var truthyArray = this.state.truthyArray;
+        // var filteredList = this.state.filteredList;
+        // var truthyArray = this.state.truthyArray;
 
-        // console.log("Here's Filter Form's truthyArray: " + truthyArray)
-
-
-        var zip = this.state.zip;
-        var questionNumber = this.state.questionNumber;
-
-        var location = this.state.location;
-        var clientAge = this.state.clientAge;
-        var kids = this.state.kids;
-        var veteran = this.state.veteran;
-        var inSchool = this.state.inSchool;
-        var levelOfEducation = this.state.levelOfEducation
-        var interestedInTraining = this.state.interestedInTraining;
-        var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
-        var interestedInCriminalServices = this.state.interestedInCriminalServices;
-        var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
+        // // console.log("Here's Filter Form's truthyArray: " + truthyArray)
 
 
-        var showDiv = {display: 'block'};
-        var hidden = {display: 'none' };
+        // var zip = this.state.zip;
+        // var questionNumber = this.state.questionNumber;
+
+        // var location = this.state.location;
+        // var clientAge = this.state.clientAge;
+        // var levelOfEducation = this.state.levelOfEducation
+        // var inSchool = this.state.inSchool;
+        // var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
+        // var interestedInTraining = this.state.interestedInTraining;
+        // var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
+        // var interestedInCriminalServices = this.state.interestedInCriminalServices;
+        // var veteran = this.state.veteran;
+        // var kids = this.state.kids;
+        
+        // var showDiv = {display: 'block'};
+        // var hidden = {display: 'none' };
+
+        //-------------------------- * * * * * --------------------------
+        let filteredList = this.state.filteredList;
+        let truthyArray = this.state.truthyArray;
+        let zip = this.state.zip;
+        let questionNumber = this.state.questionNumber;
+        let location = this.state.location;
+        let clientAge = this.state.clientAge;
+        let levelOfEducation = this.state.levelOfEducation
+        let inSchool = this.state.inSchool;
+        let interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
+        let interestedInTraining = this.state.interestedInTraining;
+        let interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
+        let interestedInCriminalServices = this.state.interestedInCriminalServices;
+        let veteran = this.state.veteran;
+        let kids = this.state.kids;
+
+        let showDiv = { display: 'block' };
+        let hidden = { display: 'none' };
+        //-------------------------- * * * * * --------------------------
 
 
 
-        //Question 1
-        let showLocation = "";
-        if (this.state.questionNumber == '1') {
-            showLocation = {display: 'block'};
-        } else {
-            showLocation = {display: 'none'};
-        }
+        // //Question 1
+        // let showLocation = "";
+        // if (this.state.questionNumber == '1') {
+        //     showLocation = {display: 'block'};
+        // } else {
+        //     showLocation = {display: 'none'};
+        // }
+
+
+        // //Question 2
+        // let showAge = ""
+        // if (this.state.questionNumber == '2') {
+        //     showAge = {display: 'block'};
+        // } else {
+        //     showAge = {display: 'none'};
+        // }
+
+        // //Question 3
+        // let showEducation = "";
+        // if (this.state.questionNumber == '3') {
+        //     showEducation = {display: 'block'};
+        // } else {
+        //     showEducation = {display: 'none'};
+        // }
+
+        // //Question 4
+        // let showInSchool = "";
+        // if (this.state.questionNumber == '4') {
+        //     showInSchool = {display: 'block'};
+        // } else {
+        //     showInSchool = {display: 'none'};
+        // }
+
+        //-------------------------- * * * * * --------------------------
+        let showLocation = this.state.questionNumber == '1' ? showDiv : hidden
+        let showAge = this.state.questionNumber == '2' ? showDiv : hidden
+        let showEducation = this.state.questionNumber == '3' ? showDiv : hidden
+        let showInSchool = this.state.questionNumber == '4' ? showDiv : hidden
+        
+
+        let showFive = this.state.questionNumber == '5' ? showDiv : hidden
+
+
+        //-------------------------- * * * * * --------------------------
 
 
 
-        //Question 2
-        let showAge = ""
-        if (this.state.questionNumber == '2') {
-            showAge = {display: 'block'};
-        } else {
-            showAge = {display: 'none'};
-        }
-
-        //Question 3
-        let showEducation = "";
-        if (this.state.questionNumber == '3') {
-            showEducation = {display: 'block'};
-        } else {
-            showEducation = {display: 'none'};
-        }
-
-        //Question 4
-        let showInSchool = "";
-        if (this.state.questionNumber == '4') {
-            showInSchool = {display: 'block'};
-        } else {
-            showInSchool = {display: 'none'};
-        }
 
         // Question 5
-        var showFive = "";
-        var showAfterSchool = "";
-        var showTraining = "";
-        var showDiploma = "";
+        // var showFive = "";
+        // var showAfterSchool = "";
+        // var showTraining = "";
+        // var showDiploma = "";
 
         // if (this.state.questionNumber == '5' && (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ) {
         //     showFive = {display: 'block'};
@@ -462,47 +504,48 @@ class FilterForm extends React.Component {
         // }
 
 
-
-        if (this.state.questionNumber == '5') {
-            debugger
-            showFive = {display: 'block'};
-            var showAfterSchool = {display: 'none !important'};
-            var showTraining = {display: 'none !important'};
-            var showDiploma = {display: 'none !important'};
-            // var showAfterSchool = "";
-            // var showTraining = "";
-            // var showDiploma = "";
-            //showInSchool
-
-
-            if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
-
-                showAfterSchool = {display: 'block !important'};
-
-            }
-
-            else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
-                showDiploma= {display: 'block !important'};
-
-            }
-
-            // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
-
-            else {
-
-                showTraining = {display: 'block !important'};
-
-            }
+        // *****************************************************************************
+        
+        // if (this.state.questionNumber == '5') {
+        //     debugger
+        //     showFive = {display: 'block'};
+        //     var showAfterSchool = {display: 'none !important'};
+        //     var showTraining = {display: 'none !important'};
+        //     var showDiploma = {display: 'none !important'};
+        //     // var showAfterSchool = "";
+        //     // var showTraining = "";
+        //     // var showDiploma = "";
+        //     //showInSchool
 
 
-        } else {
-            showFive = {display: 'none'};
-            showAfterSchool = {display: 'none !important'};
-            showTraining = {display: 'none !important'};
-            showDiploma = {display: 'none !important'};
-        }
+        //     if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
+
+        //         showAfterSchool = {display: 'block !important'};
+
+        //     }
+
+        //     else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
+        //         showDiploma= {display: 'block !important'};
+
+        //     }
+
+        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+
+        //     else {
+
+        //         showTraining = {display: 'block !important'};
+
+        //     }
 
 
+        // } else {
+        //     showFive = {display: 'none'};
+        //     showAfterSchool = {display: 'none !important'};
+        //     showTraining = {display: 'none !important'};
+        //     showDiploma = {display: 'none !important'};
+        // }
+
+        // *****************************************************************************
 
         //////////////////  ISSUE  ///////////////////////////////////////////////
 
@@ -837,12 +880,12 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    <div style={showFive} id="5" >
+                    {/* <div style={showFive} id="5" >
 
                         <div style={ (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ? {display: 'block'} : {display: 'none'} } >
 
                             <h3>Question 5</h3>
-                            <h2> Is the participant looking for after-school program? </h2>
+                            <h2> Is the participant looking for after-school program? </h2> 
 
                             <Form>
                                 <Form.Field>
@@ -937,7 +980,18 @@ class FilterForm extends React.Component {
                         <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
 
-                    </div>
+                    </div> */}
+
+                        <div style={showFive} >
+                            <h2>this.state.questionNumber == '5' conditon</h2>
+                            <div style={showFive} >
+                                <div>nested div inside q5</div>
+                            </div>
+
+                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+
+                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
+                        </div>
 
 
 
