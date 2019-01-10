@@ -11,7 +11,7 @@ class FilterForm extends React.Component {
     state = {
         location: undefined,
         clientAge: undefined,
-        inSchool: undefined,
+        inSchool: false,
         levelOfEducation: undefined, 
         veteran: undefined,
         interestedInTraining: undefined,
@@ -405,7 +405,7 @@ class FilterForm extends React.Component {
         let location = this.state.location;
         let clientAge = this.state.clientAge;
         let levelOfEducation = this.state.levelOfEducation
-        let inSchool = this.state.inSchool;
+        let inSchool = this.state.inSchool
         let interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
         let interestedInTraining = this.state.interestedInTraining;
         let interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
@@ -460,7 +460,11 @@ class FilterForm extends React.Component {
         
 
         let showFive = this.state.questionNumber == '5' ? showDiv : hidden
+        let showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && inSchool === 'true'  ? showDiv : hidden
+        // let showB = inSchool === 'false' &&
+        // (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher')) || (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') )) ? {display: 'block'} : {display: 'none'}}
 
+        let showC = (levelOfEducation === 'No Highschool / Some Highschool')  && (inSchool === 'false' || inSchool === false) ? showDiv : hidden
 
         //-------------------------- * * * * * --------------------------
 
@@ -650,7 +654,7 @@ class FilterForm extends React.Component {
         return (
 
         <div>
-            {console.log(this.state)}
+            {console.log(this.state.inSchool, this.state.levelOfEducation)}
             <div style={showForm}>
 
                 <div className="ui filterContainer" id="questionHeight">
@@ -880,9 +884,9 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    {/* <div style={showFive} id="5" >
+                    <div style={showFive} id="5" >
 
-                        <div style={ (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ? {display: 'block'} : {display: 'none'} } >
+                        <div style={showA} >
 
                             <h3>Question 5</h3>
                             <h2> Is the participant looking for after-school program? </h2> 
@@ -944,7 +948,7 @@ class FilterForm extends React.Component {
                         </div>
 
 
-                        <div style={(inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ? {display: 'block'} : {display: 'none'}} className='showDiploma'>
+                        <div style={showC} className='showDiploma'>
                             <h3>Question 5</h3>
                             <h2>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h2>
 
@@ -980,18 +984,71 @@ class FilterForm extends React.Component {
                         <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
 
 
-                    </div> */}
+                    </div>
+                    
+ 
+                        {/* <div style={showFive} >
 
-                        <div style={showFive} >
-                            <h2>this.state.questionNumber == '5' conditon</h2>
-                            <div style={showFive} >
-                                <div>nested div inside q5</div>
+                            <div style={showA} >
+                                <h3>Question 5</h3>
+                                <h2> Is the participant looking for after-school program? </h2>
+
+                                <Form>
+                                    <Form.Field>
+                                        <Radio
+                                            label='Yes'
+                                            name='radioGroup'
+                                            value='true'
+                                            checked={interestedAfterSchoolPrograms === 'true'}
+                                            onChange={this.handleAfterSchool}
+                                        />
+                                    </Form.Field>
+
+                                    <Form.Field>
+                                        <Radio
+                                            label='No'
+                                            name='radioGroup'
+                                            value='false'
+                                            checked={interestedAfterSchoolPrograms === 'false'}
+                                            onChange={this.handleAfterSchool}
+                                        />
+                                    </Form.Field>
+                                </Form>
                             </div>
 
+                            <div style={showC} >
+                            <h3>Question 5</h3>
+                            <h2>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h2>
+
+                            <Form>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='Yes'
+                                        name='radioGroup'
+                                        value='true'
+                                        checked={this.state.interestedInCompletingDiploma === 'true'}
+                                        onChange={this.handleInterestedInCompletingDiploma}
+                                    />
+                                </Form.Field>
+
+                                <Form.Field>
+                                    <Radio
+                                        label='No'
+                                        name='radioGroup'
+                                        value='false'
+                                        checked={this.state.interestedInCompletingDiploma === 'false'}
+                                        onChange={this.handleInterestedInCompletingDiploma}
+                                    />
+                                </Form.Field>
+
+                            </Form>
+
+                        </div>
                             <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
                             <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
-                        </div>
+                        </div>  */}
 
 
 
