@@ -28,10 +28,6 @@ class FilterForm extends React.Component {
         filteredList: undefined
     }
 
-    // constructor(props){
-    //     super(props)
-    //     this.handleSubmit = this.handleSubmit.bind(this)
-    // }
 
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -67,6 +63,7 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
 
 
+<<<<<<< HEAD
     // parseLocation = () => {
     //     // console.log("Parse Location")
     //
@@ -104,67 +101,13 @@ class FilterForm extends React.Component {
 
     //-------------------------- * * * * * --------------------------
 
+=======
+>>>>>>> 9ae6021cbfd2d6e1e9a6daf4293c5562fa64de68
     handleChange = input => (e, {value}) => {
         // debugger
         this.setState({[input]: value})
         // console.log(input, value)
     }
-
-    //-------------------------- * * * * * --------------------------
-
-    //Question 1
-    // handleLocation = (e, { value }) => this.setState({ location: value });
-
-    handleLocation = (e, { value }) => {
-    
-        this.setState({ location: value });
-    
-        // debugger
-        console.log(value)
-        console.log(this.state.location)
-    
-        // this.parseLocation()
-    
-    }
-
-
-
-    // Question 2
-    handleClientAge = (e, { value }) => {
-        this.setState({ clientAge: value })
-        console.log(value)
-    }
-
-
-    //Question 2
-    // handleWorkingChange = (e, { value }) => {(value === "false") ? this.setState({ working: value }) : this.setState({ working: value, levelOfEducation: undefined, veteran: undefined, interestedInTraining: undefined, othersJobless: undefined })};
-
-
-    //Question 3
-    handleLevelOfEducation = (e, { value }) => {
-        this.setState({ levelOfEducation: value })
-        console.log(value)
-    }
-
-    //Question 4
-    handleInSchool = (e, { value }) => {
-        this.setState({ inSchool: value })
-        console.log(value)
-    }
-
-
-    //Question 5
-    handleAfterSchool = (e, { value }) => this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined })
-
-    handleInterestedInTraining = (e, { value }) => this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined })
-
-    handleInterestedInCompletingDiploma = (e, { value }) => this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined })
-
-    // Question 6
-    handleInterestedInCriminalServices = (e, { value }) => this.setState({ interestedInCriminalServices: value})
-
-    //Question 7
-    handleVeteran = (e, { value }) => this.setState({ veteran: value });
 
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -172,6 +115,7 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
     // handleFormData = (arr) => {
     //
     //     var filterCatalogue = [];
@@ -246,6 +190,8 @@ class FilterForm extends React.Component {
     // }
 
 
+=======
+>>>>>>> 9ae6021cbfd2d6e1e9a6daf4293c5562fa64de68
 
     handleMatch = (catalogueAttribute, stateData) => {
 
@@ -281,28 +227,6 @@ class FilterForm extends React.Component {
 
     };
 
-
-    // handleTruthyArray = () => {
-    //     // truthyArray
-    //     // var arrayOfTruth = [];
-    //     var arrayOfTruth = ['clientAge', 'kidsAge'];
-    //
-    //     var formState = this.state;
-    //
-    //     // does not uptake "kids"
-    //     for (var key in formState) {
-    //         if (formState.hasOwnProperty(key) && formState[key] === "true" && key != "kids") {
-    //             // console.log("formState value: " + formState[key]);
-    //             arrayOfTruth.push(key)
-    //             // console.log("ARRAY OF TRUTH: " + arrayOfTruth);
-    //         }
-    //     }
-    //
-    //
-    //     return arrayOfTruth
-    //
-    //
-    // };
 
 
     submitData = () => {
@@ -371,9 +295,6 @@ class FilterForm extends React.Component {
 
 
     render() {
-        //-------------------------- * * * * * --------------------------
-
-        // // console.log("Here's Filter Form's truthyArray: " + truthyArray)
 
         let filteredList = this.state.filteredList;
         let truthyArray = this.state.truthyArray;
@@ -388,45 +309,10 @@ class FilterForm extends React.Component {
         let interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
         let interestedInCriminalServices = this.state.interestedInCriminalServices;
         let veteran = this.state.veteran;
-        let kids = this.state.kids;
+
 
         let showDiv = { display: 'block' };
         let hidden = { display: 'none' };
-
-        //-------------------------- * * * * * --------------------------
-
-        // //Question 1
-        // let showLocation = "";
-        // if (this.state.questionNumber == '1') {
-        //     showLocation = {display: 'block'};
-        // } else {
-        //     showLocation = {display: 'none'};
-        // }
-
-
-        // //Question 2
-        // let showAge = ""
-        // if (this.state.questionNumber == '2') {
-        //     showAge = {display: 'block'};
-        // } else {
-        //     showAge = {display: 'none'};
-        // }
-
-        // //Question 3
-        // let showEducation = "";
-        // if (this.state.questionNumber == '3') {
-        //     showEducation = {display: 'block'};
-        // } else {
-        //     showEducation = {display: 'none'};
-        // }
-
-        // //Question 4
-        // let showInSchool = "";
-        // if (this.state.questionNumber == '4') {
-        //     showInSchool = {display: 'block'};
-        // } else {
-        //     showInSchool = {display: 'none'};
-        // }
 
         //-------------------------- * * * * * --------------------------
         let showLocation = questionNumber == '1' ? showDiv : hidden
