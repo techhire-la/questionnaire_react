@@ -37,14 +37,15 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        // debugger
+        debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
         var addOne = (nextQuestion + 1).toString();
 
         this.setState({ questionNumber: addOne })
-        console.log(this.state.questionNumber)
+        // console.log(this.state.questionNumber)
+        console.log("AN:", this.state['inSchool'])
 
     }
 
@@ -53,7 +54,7 @@ class FilterForm extends React.Component {
         var subtractOne = (lastQuestion - 1).toString();
 
         this.setState({ questionNumber: subtractOne })
-        console.log(this.state.questionNumber)
+        // console.log(this.state.questionNumber)
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -63,50 +64,8 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
 
 
-<<<<<<< HEAD
-    // parseLocation = () => {
-    //     // console.log("Parse Location")
-    //
-    //     var locationArray = []
-    //     var catalogueLength = catalogueData.contacts.length - 1
-    //     console.log(catalogueLength)
-    //     debugger
-    //     for(var i = 0 ; i <= catalogueLength ; i++){
-    //
-    //         console.log(catalogueData.contacts[i].name)
-    //         console.log(catalogueData.contacts[i].location)
-    //
-    //         if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
-    //             console.log("Pushed IN!")
-    //             locationArray.push(catalogueData.contacts[i])
-    //             console.log(locationArray)
-    //         }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
-    //             console.log("BOTH Pushed IN!")
-    //             // console.log("ELSE IF")
-    //             console.log(catalogueData.contacts[i].name)
-    //             locationArray.push(catalogueData.contacts[i])
-    //             console.log(locationArray)
-    //
-    //         }else{
-    //             console.log("<<<<<<<NOT PUSHED>>>>>>>>")
-    //             // console.log("Else")
-    //         }
-    //
-    //     }
-    //     // parsedArray = locationArray
-    //     // debugger
-    //     this.setState({ locationArray: locationArray })
-    //
-    // }
-
-    //-------------------------- * * * * * --------------------------
-
-=======
->>>>>>> 9ae6021cbfd2d6e1e9a6daf4293c5562fa64de68
     handleChange = input => (e, {value}) => {
-        // debugger
         this.setState({[input]: value})
-        // console.log(input, value)
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -115,83 +74,6 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-    // handleFormData = (arr) => {
-    //
-    //     var filterCatalogue = [];
-    //     var clonedHash = catalogueData.contacts.slice(0);
-    //
-    //     console.log("arr: " + arr);
-    //
-    //
-    //     /////////// HANDLE TRUTHY ARRAY ///////////////////////////////////////////////
-    //     for( var i = 0 ; i <= arr.length ; i++ ) {
-    //
-    //         //sort through contacts
-    //         for( var x = 0 ; x < clonedHash.length ; x++) {
-    //
-    //             var checkMatch = this.handleMatch(clonedHash[x][arr[i]], this.state[arr[i]])
-    //             console.log("arr[i]: " + arr[i])
-    //
-    //             if(clonedHash[x].hasOwnProperty(arr[i]) === true  && checkMatch != null && checkMatch[0] == this.state[arr[i]]){
-    //
-    //                 var zipCheck = this.inTheRightZip(clonedHash[x].zip, this.state.zip);
-    //
-    //                 if( zipCheck === 'string') {
-    //
-    //                     filterCatalogue.push(clonedHash[x]);
-    //                     clonedHash.splice(x, 1);
-    //                     console.log("popped " + clonedHash[x]);
-    //
-    //                 }
-    //
-    //                 if(zipCheck != null && zipCheck[0] === this.state.zip) {
-    //
-    //                     filterCatalogue.push(clonedHash[x]);
-    //                     clonedHash.splice(x, 1);
-    //                     console.log("popped " + clonedHash[x]);
-    //                 }
-    //
-    //             }
-    //         }
-    //     }
-    //     console.log("filterCatalogue.length: " + filterCatalogue.length);
-    //     console.log("filterCatalogue: " + filterCatalogue);
-    //     return filterCatalogue
-    // };
-
-
-    // parseLocation = () => {
-    //     console.log("Parse Location")
-    //
-    //     var locationArray = []
-    //     var catalogueLength = catalogueData.contacts.length - 1
-    //     console.log(catalogueLength)
-    //     for(var i = 0 ; i <= catalogueLength ; i++){
-    //
-    //         if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)){
-    //             // console.log("IF")
-    //             locationArray.push(catalogueData.contacts[i])
-    //             console.log(locationArray)
-    //         }else if(catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location ){
-    //
-    //             // console.log("ELSE IF")
-    //             locationArray.push(catalogueData.contacts[i])
-    //             console.log(locationArray)
-    //
-    //         }else{
-    //             // console.log("Else")
-    //         }
-    //
-    //     }
-    //     debugger
-    //     this.setState({ locationArray: locationArray })
-    //
-    // }
-
-
-=======
->>>>>>> 9ae6021cbfd2d6e1e9a6daf4293c5562fa64de68
 
     handleMatch = (catalogueAttribute, stateData) => {
 
@@ -515,8 +397,8 @@ class FilterForm extends React.Component {
         return (
 
         <div>
-            {console.log(this.state.inSchool, this.state.levelOfEducation)}
-            {console.log(this.state)}
+            {/* {console.log(this.state.inSchool, this.state.levelOfEducation)} */}
+            {/* {console.log(this.state)} */}
             <div style={showForm}>
 
                 <div className="ui filterContainer" id="questionHeight">
@@ -529,7 +411,6 @@ class FilterForm extends React.Component {
                         <Form>
 
 
-
                             <Form.Field>
                                 <Radio
                                     className="fonts"
@@ -538,7 +419,6 @@ class FilterForm extends React.Component {
                                     value='Los Angeles'
                                     checked={location === 'Los Angeles'}
                                     onChange={this.handleChange("location")}
-                                    // onChange={ this.handleChange}
                                 />
                             </Form.Field>
 
@@ -549,7 +429,6 @@ class FilterForm extends React.Component {
                                     value='San Fernando Valley'
                                     checked={location === 'San Fernando Valley'}
                                     onChange={this.handleChange("location")}
-                                    // onChange={this.handleChange}
 
                                 />
                             </Form.Field>
@@ -578,7 +457,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='0-4'
                                     checked={clientAge === '0-4'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
                                 />
                             </Form.Field>
@@ -589,7 +467,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='5-10'
                                     checked={clientAge === '5-10'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -602,7 +479,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='11-13'
                                     checked={clientAge === '11-13'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -616,7 +492,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='14-18'
                                     checked={clientAge === '14-18'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -628,7 +503,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='18-24'
                                     checked={clientAge === '18-24'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -640,7 +514,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='25-65'
                                     checked={clientAge === '25-65'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -683,7 +556,6 @@ class FilterForm extends React.Component {
                                     value='Highschool/GED'
                                     checked={this.state.levelOfEducation === 'Highschool/GED'}
                                     onChange={this.handleChange("levelOfEducation")}
-                                    // onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
 
@@ -694,7 +566,6 @@ class FilterForm extends React.Component {
                                     value='Some College'
                                     checked={this.state.levelOfEducation === 'Some College'}
                                     onChange={this.handleChange("levelOfEducation")}
-                                    // onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
 
@@ -705,7 +576,6 @@ class FilterForm extends React.Component {
                                     value='AA'
                                     checked={this.state.levelOfEducation === 'AA'}
                                     onChange={this.handleChange("levelOfEducation")}
-                                    // onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
 
@@ -716,7 +586,6 @@ class FilterForm extends React.Component {
                                     value='BA or Higher'
                                     checked={this.state.levelOfEducation === 'BA or Higher'}
                                     onChange={this.handleChange("levelOfEducation")}
-                                    // onChange={this.handleLevelOfEducation}
                                 />
                             </Form.Field>
                         </Form>
@@ -743,7 +612,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='true'
                                     checked={this.state.inSchool === 'true'}
-                                    // onChange={this.handleInSchool}
                                     onChange={this.handleChange("inSchool")}
 
                                 />
@@ -755,7 +623,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='false'
                                     checked={this.state.inSchool === 'false'}
-                                    // onChange={this.handleInSchool}
                                     onChange={this.handleChange("inSchool")}
 
                                 />
