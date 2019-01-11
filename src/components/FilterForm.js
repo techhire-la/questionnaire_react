@@ -34,10 +34,11 @@ class FilterForm extends React.Component {
     //// Handle Buttons /////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
+    
 
 
     handleNext = (e, { id }) => {
-        debugger
+        // debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
@@ -45,7 +46,10 @@ class FilterForm extends React.Component {
 
         this.setState({ questionNumber: addOne })
         // console.log(this.state.questionNumber)
-        console.log("AN:", this.state['inSchool'])
+
+        let previousSibling = e.target.previousSibling.id;
+        console.log(previousSibling)
+        // console.log("AN:", this.state['inSchool'])
 
     }
 
@@ -408,8 +412,7 @@ class FilterForm extends React.Component {
                         <h3>Question 1</h3>
                         <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
 
-                        <Form>
-
+                        <Form id="location">
 
                             <Form.Field>
                                 <Radio
@@ -439,17 +442,12 @@ class FilterForm extends React.Component {
 
                     </div>
 
-
-
-
-
-
                     <div style={showAge} id="2">
+
                         <h3>Question 2</h3>
                         <h2>What is the participants age?</h2>
-                        <Form>
 
-
+                        <Form id="clientAge">
 
                             <Form.Field>
                                 <Radio
@@ -522,7 +520,7 @@ class FilterForm extends React.Component {
                         </Form>
 
 
-                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button id="back_button" className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
                         <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
                     </div>
@@ -530,13 +528,11 @@ class FilterForm extends React.Component {
 
 
                     <div style={ showEducation } id="3">
-                        <h3>Question 3</h3>
 
+                        <h3>Question 3</h3>
                         <h2>What is the participant's highest level of completed education </h2>
 
-                        <Form>
-
-
+                        <Form id="levelOfEducation">
 
                             <Form.Field>
                                 <Radio
@@ -599,7 +595,7 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    <div style={ showInSchool } id="4">
+                    <div style={ showInSchool } id="inSchool">
                         <h3>Question 4</h3>
 
                         <h2>Is the participant in school? </h2>
