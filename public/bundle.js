@@ -31612,7 +31612,7 @@ StatisticValue.create = __WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorthan
 
 
 Object.defineProperty(exports, "__esModule", {
-        value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31648,220 +31648,220 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Catalogue = function (_React$Component) {
-        _inherits(Catalogue, _React$Component);
+    _inherits(Catalogue, _React$Component);
 
-        function Catalogue() {
-                var _ref;
+    function Catalogue() {
+        var _ref;
 
-                var _temp, _this, _ret;
+        var _temp, _this, _ret;
 
-                _classCallCheck(this, Catalogue);
+        _classCallCheck(this, Catalogue);
 
-                for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                        args[_key] = arguments[_key];
-                }
-
-                return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Catalogue.__proto__ || Object.getPrototypeOf(Catalogue)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-                        programs: [],
-                        emails: [],
-                        willReceive: _this.props.filteredList || []
-                }, _this.componentWillMount = function () {
-
-                        // console.log(catalogueData.length)
-
-                        _this.setState({ programs: _contacts2.default.contacts });
-                        console.log("willReceive state in Will Mount " + _this.state.willReceive);
-                }, _this.componentWillReceiveProps = function (newProps) {
-
-                        _this.setState({ programs: newProps.filteredList });
-                }, _this.handleEmailList = function (e, _ref2) {
-                        var value = _ref2.value;
-
-
-                        var matchIndex = undefined;
-
-                        for (var i = 0; i <= _this.state.emails.length; i++) {
-
-                                var array = _this.state.emails;
-
-                                if (value === array[i]) {
-                                        console.log("value " + value + " is being compared to array element " + array[i]);
-                                        matchIndex = array.indexOf(value);
-                                        console.log("Index value saved as " + matchIndex);
-                                }
-                        }
-
-                        if (matchIndex != undefined && matchIndex > -1) {
-                                array.splice(matchIndex, 1);
-                                _this.setState({ emails: array });
-                                console.log("State after splice: " + _this.state.emails);
-                        } else {
-                                array.push(value);
-                                console.log("Array with new pushed value: " + array);
-                                _this.setState({ emails: array });
-                                console.log("State after push: " + _this.state.emails);
-                        }
-                }, _this.handleEmail = function (event) {
-
-                        event.preventDefault(); // prevent reload
-                        console.log("handleEmail");
-
-                        // debugger
-
-                        var searchIDs = (0, _jquery2.default)("input[type='checkbox']:checked").map(function () {
-                                return (0, _jquery2.default)(this).val();
-                        }).get(); // <----
-                        console.log("SEARCH ID's: " + searchIDs);
-                        console.log("EmailList Value " + document.getElementById("emaillist").value);
-                        document.getElementById("emaillist").value = searchIDs;
-
-                        var that = document.getElementById('email');
-                        console.log("that: " + that);
-
-                        // var formData = new FormData(this);
-                        var formData = new FormData(that);
-
-                        formData.append('service_id', 'default_service');
-                        formData.append('template_id', 'email_blast');
-                        formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
-                        // formData.append('user_id', EMAIL_JS_USER_ID);
-
-                        var firstname = document.getElementById("firstname").value;
-                        var lastname = document.getElementById("lastname").value;
-                        var phonenumber = document.getElementById("phonenumber").value;
-                        var senderemail = document.getElementById("senderemail").value;
-                        var emaillist = document.getElementById("emaillist").value;
-
-                        formData = {
-                                "service_id": "default_service",
-                                "template_id": "email_blast",
-                                "user_id": "user_NT8KduLVWnsRhOfMwJEB8" //,
-                                // 'firstname': firstname,
-                                // 'lastname': lastname,
-                                // 'phonenumber': phonenumber,
-                                // 'senderemail': senderemail,
-                                // 'emaillist': emaillist
-                        };
-
-                        // emailjs.sendForm('contact_service', 'contact_form', this);
-
-
-                        var dataForm = {
-                                "firstname": firstname,
-                                "lastname": lastname,
-                                "phonenumber": phonenumber,
-                                "senderemail": senderemail,
-                                "emailto": emaillist
-                        };
-
-                        console.log("formData: " + formData);
-
-                        console.log("dataForm: " + dataForm);
-
-                        // data: {
-                        //     'service_id': 'default_service',
-                        //     'template_id': 'email_blast',
-                        //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
-                        // },
-
-
-                        //simple way /////////////////////////////////////////////////////////////
-                        emailjs.send("default_service", "email_blast", dataForm).then(function (response) {
-                                console.log('SUCCESS!', response.status, response.text);
-                                alert("Your email has been sent");
-                        }, function (error) {
-                                console.log(dataForm);
-                                console.log('FAILED...', error);
-                                alert("There was an error processing your emails");
-                        });
-
-                        //slightly less simple way /////////////////////////////////////////////////////////////
-                        // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
-                        //     console.log('SUCCESS!', response.status, response.text);
-                        // }, function(error) {
-                        //     console.log('FAILED...', error);
-                        // });
-
-                        // API way /////////////////////////////////////////////////////////////
-                        // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-                        //     type: 'POST',
-                        //     data: formData,
-                        //
-                        //     contentType: false, // auto-detection
-                        //     processData: false // no need to parse formData to string
-                        // }).done(function() {
-                        //     alert('Your mail is sent!');
-                        //
-                        // }).fail(function(error) {
-                        //     console.log('Oops... ' + JSON.stringify(error.responseText));
-                        //     alert('Oops... ' + JSON.stringify(error));
-                        // });
-
-                }, _temp), _possibleConstructorReturn(_this, _ret);
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
         }
 
-        _createClass(Catalogue, [{
-                key: 'render',
-                value: function render() {
-                        var _this2 = this;
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Catalogue.__proto__ || Object.getPrototypeOf(Catalogue)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            programs: [],
+            emails: [],
+            willReceive: _this.props.filteredList || []
+        }, _this.componentWillMount = function () {
 
-                        var programs = this.state.programs;
+            // console.log(catalogueData.length)
 
-                        return _react2.default.createElement(
-                                'div',
-                                { className: 'ui filterContainer catalogue_items' },
-                                _react2.default.createElement(
-                                        _semanticUiReact.Item.Group,
-                                        null,
-                                        programs.map(function (program, index) {
-                                                return _react2.default.createElement(_Program2.default, {
-                                                        key: index,
-                                                        programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
-                                                        programEmail: program.email,
-                                                        programPhone: program.phonenumber,
-                                                        programAcceptReferrals: program.acceptReferrals,
-                                                        programDescription: program.descriptionOfProgram,
-                                                        programServices: program.coreServicesOffered,
-                                                        programPopulationServed: program.populationServed,
-                                                        programEligibility: program.eligibilityRequirements,
-                                                        programOnSite: program.servicesOnlyOfferedAtProgramSite,
-                                                        programLocation: program.locationOfProgram,
-                                                        updateEmailList: _this2.handleEmailList,
-                                                        count: index + 1
-                                                });
-                                        })
-                                ),
-                                _react2.default.createElement(
-                                        _semanticUiReact.Form,
-                                        null,
-                                        _react2.default.createElement(
-                                                _semanticUiReact.Form.Group,
-                                                { widths: 'equal' },
-                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'First Name', id: 'firstname', type: 'text', className: 'form-control', placeholder: 'First name', name: 'firstname' }),
-                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Last Name', id: 'lastname', type: 'text', className: 'form-control', placeholder: 'Last name', name: 'lastname' })
-                                        ),
-                                        _react2.default.createElement(
-                                                _semanticUiReact.Form.Group,
-                                                { widths: 'equal' },
-                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Your Email', id: 'senderemail', type: 'email', className: 'form-control', placeholder: 'Email', name: 'senderemail' }),
-                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Phone Number', id: 'phonenumber', type: 'text', className: 'form-control', placeholder: 'Phone Number', name: 'phonenumber' })
-                                        ),
-                                        _react2.default.createElement(
-                                                _semanticUiReact.Form.Group,
-                                                { widths: 'equal' },
-                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email List', id: 'emaillist', type: 'email', className: 'form-control', placeholder: 'Email to \'CC\'', name: 'emailto', value: this.state.emails })
-                                        ),
-                                        _react2.default.createElement(
-                                                _semanticUiReact.Button,
-                                                { basic: true, color: 'black', onClick: this.handleEmail },
-                                                ' Submit '
-                                        )
-                                )
-                        );
+            _this.setState({ programs: _contacts2.default.contacts });
+            console.log("willReceive state in Will Mount " + _this.state.willReceive);
+        }, _this.componentWillReceiveProps = function (newProps) {
+
+            _this.setState({ programs: newProps.filteredList });
+        }, _this.handleEmailList = function (e, _ref2) {
+            var value = _ref2.value;
+
+
+            var matchIndex = undefined;
+
+            for (var i = 0; i <= _this.state.emails.length; i++) {
+
+                var array = _this.state.emails;
+
+                if (value === array[i]) {
+                    console.log("value " + value + " is being compared to array element " + array[i]);
+                    matchIndex = array.indexOf(value);
+                    console.log("Index value saved as " + matchIndex);
                 }
-        }]);
+            }
 
-        return Catalogue;
+            if (matchIndex != undefined && matchIndex > -1) {
+                array.splice(matchIndex, 1);
+                _this.setState({ emails: array });
+                console.log("State after splice: " + _this.state.emails);
+            } else {
+                array.push(value);
+                console.log("Array with new pushed value: " + array);
+                _this.setState({ emails: array });
+                console.log("State after push: " + _this.state.emails);
+            }
+        }, _this.handleEmail = function (event) {
+
+            event.preventDefault(); // prevent reload
+            console.log("handleEmail");
+
+            // debugger
+
+            var searchIDs = (0, _jquery2.default)("input[type='checkbox']:checked").map(function () {
+                return (0, _jquery2.default)(this).val();
+            }).get(); // <----
+            console.log("SEARCH ID's: " + searchIDs);
+            console.log("EmailList Value " + document.getElementById("emaillist").value);
+            document.getElementById("emaillist").value = searchIDs;
+
+            var that = document.getElementById('email');
+            console.log("that: " + that);
+
+            // var formData = new FormData(this);
+            var formData = new FormData(that);
+
+            formData.append('service_id', 'default_service');
+            formData.append('template_id', 'email_blast');
+            formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
+            // formData.append('user_id', EMAIL_JS_USER_ID);
+
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var phonenumber = document.getElementById("phonenumber").value;
+            var senderemail = document.getElementById("senderemail").value;
+            var emaillist = document.getElementById("emaillist").value;
+
+            formData = {
+                "service_id": "default_service",
+                "template_id": "email_blast",
+                "user_id": "user_NT8KduLVWnsRhOfMwJEB8" //,
+                // 'firstname': firstname,
+                // 'lastname': lastname,
+                // 'phonenumber': phonenumber,
+                // 'senderemail': senderemail,
+                // 'emaillist': emaillist
+            };
+
+            // emailjs.sendForm('contact_service', 'contact_form', this);
+
+
+            var dataForm = {
+                "firstname": firstname,
+                "lastname": lastname,
+                "phonenumber": phonenumber,
+                "senderemail": senderemail,
+                "emailto": emaillist
+            };
+
+            console.log("formData: " + formData);
+
+            console.log("dataForm: " + dataForm);
+
+            // data: {
+            //     'service_id': 'default_service',
+            //     'template_id': 'email_blast',
+            //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
+            // },
+
+
+            //simple way /////////////////////////////////////////////////////////////
+            emailjs.send("default_service", "email_blast", dataForm).then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert("Your email has been sent");
+            }, function (error) {
+                console.log(dataForm);
+                console.log('FAILED...', error);
+                alert("There was an error processing your emails");
+            });
+
+            //slightly less simple way /////////////////////////////////////////////////////////////
+            // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
+            //     console.log('SUCCESS!', response.status, response.text);
+            // }, function(error) {
+            //     console.log('FAILED...', error);
+            // });
+
+            // API way /////////////////////////////////////////////////////////////
+            // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+            //     type: 'POST',
+            //     data: formData,
+            //
+            //     contentType: false, // auto-detection
+            //     processData: false // no need to parse formData to string
+            // }).done(function() {
+            //     alert('Your mail is sent!');
+            //
+            // }).fail(function(error) {
+            //     console.log('Oops... ' + JSON.stringify(error.responseText));
+            //     alert('Oops... ' + JSON.stringify(error));
+            // });
+
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Catalogue, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var programs = this.state.programs;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'ui filterContainer catalogue_items' },
+                _react2.default.createElement(
+                    _semanticUiReact.Item.Group,
+                    null,
+                    programs.map(function (program, index) {
+                        return _react2.default.createElement(_Program2.default, {
+                            key: index,
+                            programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
+                            programEmail: program.email,
+                            programPhone: program.phonenumber,
+                            programAcceptReferrals: program.acceptReferrals,
+                            programDescription: program.descriptionOfProgram,
+                            programServices: program.coreServicesOffered,
+                            programPopulationServed: program.populationServed,
+                            programEligibility: program.eligibilityRequirements,
+                            programOnSite: program.servicesOnlyOfferedAtProgramSite,
+                            programLocation: program.locationOfProgram,
+                            updateEmailList: _this2.handleEmailList,
+                            count: index + 1
+                        });
+                    })
+                ),
+                _react2.default.createElement(
+                    _semanticUiReact.Form,
+                    null,
+                    _react2.default.createElement(
+                        _semanticUiReact.Form.Group,
+                        { widths: 'equal' },
+                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'First Name', id: 'firstname', type: 'text', className: 'form-control', placeholder: 'First name', name: 'firstname' }),
+                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Last Name', id: 'lastname', type: 'text', className: 'form-control', placeholder: 'Last name', name: 'lastname' })
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Form.Group,
+                        { widths: 'equal' },
+                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Your Email', id: 'senderemail', type: 'email', className: 'form-control', placeholder: 'Email', name: 'senderemail' }),
+                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Phone Number', id: 'phonenumber', type: 'text', className: 'form-control', placeholder: 'Phone Number', name: 'phonenumber' })
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Form.Group,
+                        { widths: 'equal' },
+                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email List', id: 'emaillist', type: 'email', className: 'form-control', placeholder: 'Email to \'CC\'', name: 'emailto', value: this.state.emails })
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Button,
+                        { basic: true, color: 'black', onClick: this.handleEmail },
+                        ' Submit '
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Catalogue;
 }(_react2.default.Component);
 
 exports.default = Catalogue;
@@ -70705,6 +70705,8 @@ var _contacts2 = _interopRequireDefault(_contacts);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -70728,8 +70730,8 @@ var FilterForm = function (_React$Component) {
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FilterForm.__proto__ || Object.getPrototypeOf(FilterForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
             location: undefined,
             clientAge: undefined,
-            inSchool: undefined,
-            levelofEducation: undefined,
+            inSchool: false,
+            levelOfEducation: undefined,
             veteran: undefined,
             interestedInTraining: undefined,
             interestedAfterSchoolPrograms: undefined,
@@ -70774,32 +70776,54 @@ var FilterForm = function (_React$Component) {
 
             _this.setState({ questionNumber: subtractOne });
             console.log(_this.state.questionNumber);
-        }, _this.handleLocation = function (e, _ref4) {
-            var value = _ref4.value;
-            return _this.setState({ location: value });
-        }, _this.handleClientAge = function (e, _ref5) {
+        }, _this.handleChange = function (input) {
+            return function (e, _ref4) {
+                var value = _ref4.value;
+
+                debugger;
+                _this.setState(_defineProperty({}, input, value));
+                console.log(input, value);
+            };
+        }, _this.handleLocation = function (e, _ref5) {
             var value = _ref5.value;
-            return _this.setState({ clientAge: value });
-        }, _this.handleInSchool = function (e, _ref6) {
+
+
+            _this.setState({ location: value });
+
+            // debugger
+            console.log(value);
+            console.log(_this.state.location);
+
+            // this.parseLocation()
+        }, _this.handleClientAge = function (e, _ref6) {
             var value = _ref6.value;
-            return _this.setState({ inSchool: value });
+
+            _this.setState({ clientAge: value });
+            console.log(value);
         }, _this.handleLevelOfEducation = function (e, _ref7) {
             var value = _ref7.value;
-            return _this.setState({ levelOfEducation: value });
-        }, _this.handleAfterSchool = function (e, _ref8) {
+
+            _this.setState({ levelOfEducation: value });
+            console.log(value);
+        }, _this.handleInSchool = function (e, _ref8) {
             var value = _ref8.value;
-            return _this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined });
-        }, _this.handleInterestedInTraining = function (e, _ref9) {
+
+            _this.setState({ inSchool: value });
+            console.log(value);
+        }, _this.handleAfterSchool = function (e, _ref9) {
             var value = _ref9.value;
-            return _this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined });
-        }, _this.handleInterestedInCompletingDiploma = function (e, _ref10) {
+            return _this.setState({ interestedAfterSchoolPrograms: value, interestedInTraining: undefined, interestedInCompletingDiploma: undefined });
+        }, _this.handleInterestedInTraining = function (e, _ref10) {
             var value = _ref10.value;
-            return _this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined });
-        }, _this.handleInterestedInCriminalServices = function (e, _ref11) {
+            return _this.setState({ interestedInTraining: value, interestedInCompletingDiploma: undefined, interestedAfterSchoolPrograms: undefined });
+        }, _this.handleInterestedInCompletingDiploma = function (e, _ref11) {
             var value = _ref11.value;
-            return _this.setState({ interestedInCriminalServices: value });
-        }, _this.handleVeteran = function (e, _ref12) {
+            return _this.setState({ interestedInCompletingDiploma: value, interestedAfterSchoolPrograms: undefined, interestedInTraining: undefined });
+        }, _this.handleInterestedInCriminalServices = function (e, _ref12) {
             var value = _ref12.value;
+            return _this.setState({ interestedInCriminalServices: value });
+        }, _this.handleVeteran = function (e, _ref13) {
+            var value = _ref13.value;
             return _this.setState({ veteran: value });
         }, _this.handleMatch = function (catalogueAttribute, stateData) {
 
@@ -70926,20 +70950,17 @@ var FilterForm = function (_React$Component) {
     //
     // }
 
-    //Question 1
+    //-------------------------- * * * * * --------------------------
 
-
-    // handleLocation = (e, { value }) => {
-    //
-    //
-    //     this.setState({ location: value });
-    //
+    // handleChange(e) {
     //     debugger
-    //
-    //     this.parseLocation()
-    //
+    //     this.setState({ value: e.target.value})
     // }
 
+    //-------------------------- * * * * * --------------------------
+
+    //Question 1
+    // handleLocation = (e, { value }) => this.setState({ location: value });
 
     // Question 2
 
@@ -71069,67 +71090,82 @@ var FilterForm = function (_React$Component) {
     _createClass(FilterForm, [{
         key: 'render',
         value: function render() {
+            //-------------------------- * * * * * --------------------------
+
+            // // console.log("Here's Filter Form's truthyArray: " + truthyArray)
 
             var filteredList = this.state.filteredList;
             var truthyArray = this.state.truthyArray;
-
-            // console.log("Here's Filter Form's truthyArray: " + truthyArray)
-
-
             var zip = this.state.zip;
             var questionNumber = this.state.questionNumber;
-
             var location = this.state.location;
             var clientAge = this.state.clientAge;
-            var kids = this.state.kids;
-            var veteran = this.state.veteran;
-            var inSchool = this.state.inSchool;
             var levelOfEducation = this.state.levelOfEducation;
-            var interestedInTraining = this.state.interestedInTraining;
+            var inSchool = this.state.inSchool;
             var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
-            var interestedInCriminalServices = this.state.interestedInCriminalServices;
+            var interestedInTraining = this.state.interestedInTraining;
             var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
+            var interestedInCriminalServices = this.state.interestedInCriminalServices;
+            var veteran = this.state.veteran;
+            var kids = this.state.kids;
 
             var showDiv = { display: 'block' };
             var hidden = { display: 'none' };
 
-            //Question 1
-            var showLocation = "";
-            if (this.state.questionNumber == '1') {
-                showLocation = { display: 'block' };
-            } else {
-                showLocation = { display: 'none' };
-            }
+            //-------------------------- * * * * * --------------------------
 
-            //Question 2
-            var showAge = "";
-            if (this.state.questionNumber == '2') {
-                showAge = { display: 'block' };
-            } else {
-                showAge = { display: 'none' };
-            }
+            // //Question 1
+            // let showLocation = "";
+            // if (this.state.questionNumber == '1') {
+            //     showLocation = {display: 'block'};
+            // } else {
+            //     showLocation = {display: 'none'};
+            // }
 
-            //Question 3
-            var showEducation = "";
-            if (this.state.questionNumber == '3') {
-                showEducation = { display: 'block' };
-            } else {
-                showEducation = { display: 'none' };
-            }
 
-            //Question 4
-            var showInSchool = "";
-            if (this.state.questionNumber == '4') {
-                showInSchool = { display: 'block' };
-            } else {
-                showInSchool = { display: 'none' };
-            }
+            // //Question 2
+            // let showAge = ""
+            // if (this.state.questionNumber == '2') {
+            //     showAge = {display: 'block'};
+            // } else {
+            //     showAge = {display: 'none'};
+            // }
+
+            // //Question 3
+            // let showEducation = "";
+            // if (this.state.questionNumber == '3') {
+            //     showEducation = {display: 'block'};
+            // } else {
+            //     showEducation = {display: 'none'};
+            // }
+
+            // //Question 4
+            // let showInSchool = "";
+            // if (this.state.questionNumber == '4') {
+            //     showInSchool = {display: 'block'};
+            // } else {
+            //     showInSchool = {display: 'none'};
+            // }
+
+            //-------------------------- * * * * * --------------------------
+            var showLocation = questionNumber == '1' ? showDiv : hidden;
+            var showAge = questionNumber == '2' ? showDiv : hidden;
+            var showEducation = questionNumber == '3' ? showDiv : hidden;
+            var showInSchool = questionNumber == '4' ? showDiv : hidden;
+
+            var showFive = questionNumber == '5' ? showDiv : hidden;
+            var showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
+            var showB = (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'false' || inSchool === false) || (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
+            var showC = levelOfEducation === 'No Highschool / Some Highschool' && (inSchool === 'false' || inSchool === false) ? showDiv : hidden;
+
+            //-------------------------- * * * * * --------------------------
+
 
             // Question 5
-            var showFive = "";
-            var showAfterSchool = "";
-            var showTraining = "";
-            var showDiploma = "";
+            // var showFive = "";
+            // var showAfterSchool = "";
+            // var showTraining = "";
+            // var showDiploma = "";
 
             // if (this.state.questionNumber == '5' && (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ) {
             //     showFive = {display: 'block'};
@@ -71159,37 +71195,48 @@ var FilterForm = function (_React$Component) {
             // }
 
 
-            if (this.state.questionNumber == '5') {
-                // debugger
-                showFive = { display: 'block' };
-                var showAfterSchool = { display: 'none !important' };
-                var showTraining = { display: 'none !important' };
-                var showDiploma = { display: 'none !important' };
-                // var showAfterSchool = "";
-                // var showTraining = "";
-                // var showDiploma = "";
-                //showInSchool
+            // *****************************************************************************
+
+            // if (this.state.questionNumber == '5') {
+            //     debugger
+            //     showFive = {display: 'block'};
+            //     var showAfterSchool = {display: 'none !important'};
+            //     var showTraining = {display: 'none !important'};
+            //     var showDiploma = {display: 'none !important'};
+            //     // var showAfterSchool = "";
+            //     // var showTraining = "";
+            //     // var showDiploma = "";
+            //     //showInSchool
 
 
-                if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College')) {
+            //     if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
 
-                    showAfterSchool = { display: 'block !important' };
-                } else if (this.state.inSchool === 'false' && levelOfEducation === 'No Highschool / Some Highschool') {
-                    showDiploma = { display: 'block !important' };
-                }
+            //         showAfterSchool = {display: 'block !important'};
 
-                // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+            //     }
 
-                else {
+            //     else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
+            //         showDiploma= {display: 'block !important'};
 
-                        showTraining = { display: 'block !important' };
-                    }
-            } else {
-                showFive = { display: 'none' };
-                showAfterSchool = { display: 'none !important' };
-                showTraining = { display: 'none !important' };
-                showDiploma = { display: 'none !important' };
-            }
+            //     }
+
+            //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+
+            //     else {
+
+            //         showTraining = {display: 'block !important'};
+
+            //     }
+
+
+            // } else {
+            //     showFive = {display: 'none'};
+            //     showAfterSchool = {display: 'none !important'};
+            //     showTraining = {display: 'none !important'};
+            //     showDiploma = {display: 'none !important'};
+            // }
+
+            // *****************************************************************************
 
             //////////////////  ISSUE  ///////////////////////////////////////////////
 
@@ -71284,6 +71331,7 @@ var FilterForm = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
+                console.log(this.state.inSchool, this.state.levelOfEducation),
                 _react2.default.createElement(
                     'div',
                     { style: showForm },
@@ -71315,7 +71363,8 @@ var FilterForm = function (_React$Component) {
                                         name: 'radioGroup',
                                         value: 'Los Angeles',
                                         checked: location === 'Los Angeles',
-                                        onChange: this.handleLocation
+                                        onChange: this.handleChange("location")
+                                        // onChange={ this.handleChange}
                                     })
                                 ),
                                 _react2.default.createElement(
@@ -71326,7 +71375,9 @@ var FilterForm = function (_React$Component) {
                                         name: 'radioGroup',
                                         value: 'San Fernando Valley',
                                         checked: location === 'San Fernando Valley',
-                                        onChange: this.handleLocation
+                                        onChange: this.handleChange("location")
+                                        // onChange={this.handleChange}
+
                                     })
                                 )
                             ),
@@ -71359,8 +71410,9 @@ var FilterForm = function (_React$Component) {
                                         label: '0-4',
                                         name: 'radioGroup',
                                         value: '0-4',
-                                        checked: clientAge === '0-4',
-                                        onChange: this.handleClientAge
+                                        checked: clientAge === '0-4'
+                                        // onChange={this.handleClientAge}
+                                        , onChange: this.handleChange("clientAge")
                                     })
                                 ),
                                 _react2.default.createElement(
@@ -71370,8 +71422,10 @@ var FilterForm = function (_React$Component) {
                                         label: '5-10',
                                         name: 'radioGroup',
                                         value: '5-10',
-                                        checked: clientAge === '5-10',
-                                        onChange: this.handleClientAge
+                                        checked: clientAge === '5-10'
+                                        // onChange={this.handleClientAge}
+                                        , onChange: this.handleChange("clientAge")
+
                                     })
                                 ),
                                 _react2.default.createElement(
@@ -71381,8 +71435,10 @@ var FilterForm = function (_React$Component) {
                                         label: '11-13',
                                         name: 'radioGroup',
                                         value: '11-13',
-                                        checked: clientAge === '11-13',
-                                        onChange: this.handleClientAge
+                                        checked: clientAge === '11-13'
+                                        // onChange={this.handleClientAge}
+                                        , onChange: this.handleChange("clientAge")
+
                                     })
                                 ),
                                 _react2.default.createElement(
@@ -71392,8 +71448,10 @@ var FilterForm = function (_React$Component) {
                                         label: '14-18 (Highschool Age)',
                                         name: 'radioGroup',
                                         value: '14-18',
-                                        checked: clientAge === '14-18',
-                                        onChange: this.handleClientAge
+                                        checked: clientAge === '14-18'
+                                        // onChange={this.handleClientAge}
+                                        , onChange: this.handleChange("clientAge")
+
                                     })
                                 ),
                                 _react2.default.createElement(
@@ -71403,8 +71461,10 @@ var FilterForm = function (_React$Component) {
                                         label: '18-24 (College/Working Age)',
                                         name: 'radioGroup',
                                         value: '18-24',
-                                        checked: clientAge === '18-24',
-                                        onChange: this.handleClientAge
+                                        checked: clientAge === '18-24'
+                                        // onChange={this.handleClientAge}
+                                        , onChange: this.handleChange("clientAge")
+
                                     })
                                 ),
                                 _react2.default.createElement(
@@ -71414,8 +71474,10 @@ var FilterForm = function (_React$Component) {
                                         label: '25-65',
                                         name: 'radioGroup',
                                         value: '25-65',
-                                        checked: clientAge === '25-65',
-                                        onChange: this.handleClientAge
+                                        checked: clientAge === '25-65'
+                                        // onChange={this.handleClientAge}
+                                        , onChange: this.handleChange("clientAge")
+
                                     })
                                 )
                             ),
@@ -71568,7 +71630,7 @@ var FilterForm = function (_React$Component) {
                             { style: showFive, id: '5' },
                             _react2.default.createElement(
                                 'div',
-                                { style: inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ? { display: 'block' } : { display: 'none' } },
+                                { style: showA },
                                 _react2.default.createElement(
                                     'h3',
                                     null,
@@ -71608,7 +71670,7 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 'div',
-                                { style: inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') || inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') ? { display: 'block' } : { display: 'none' }, id: '5' },
+                                { style: showB, id: '5' },
                                 _react2.default.createElement(
                                     'h3',
                                     null,
@@ -71648,7 +71710,7 @@ var FilterForm = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 'div',
-                                { style: inSchool === 'false' && levelOfEducation === 'No Highschool / Some Highschool' ? { display: 'block' } : { display: 'none' }, className: 'showDiploma' },
+                                { style: showC, className: 'showDiploma' },
                                 _react2.default.createElement(
                                     'h3',
                                     null,
