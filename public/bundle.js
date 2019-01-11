@@ -31612,7 +31612,7 @@ StatisticValue.create = __WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorthan
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+        value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31648,220 +31648,220 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Catalogue = function (_React$Component) {
-    _inherits(Catalogue, _React$Component);
+        _inherits(Catalogue, _React$Component);
 
-    function Catalogue() {
-        var _ref;
+        function Catalogue() {
+                var _ref;
 
-        var _temp, _this, _ret;
+                var _temp, _this, _ret;
 
-        _classCallCheck(this, Catalogue);
+                _classCallCheck(this, Catalogue);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Catalogue.__proto__ || Object.getPrototypeOf(Catalogue)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            programs: [],
-            emails: [],
-            willReceive: _this.props.filteredList || []
-        }, _this.componentWillMount = function () {
-
-            // console.log(catalogueData.length)
-
-            _this.setState({ programs: _contacts2.default.contacts });
-            console.log("willReceive state in Will Mount " + _this.state.willReceive);
-        }, _this.componentWillReceiveProps = function (newProps) {
-
-            _this.setState({ programs: newProps.filteredList });
-        }, _this.handleEmailList = function (e, _ref2) {
-            var value = _ref2.value;
-
-
-            var matchIndex = undefined;
-
-            for (var i = 0; i <= _this.state.emails.length; i++) {
-
-                var array = _this.state.emails;
-
-                if (value === array[i]) {
-                    console.log("value " + value + " is being compared to array element " + array[i]);
-                    matchIndex = array.indexOf(value);
-                    console.log("Index value saved as " + matchIndex);
+                for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                        args[_key] = arguments[_key];
                 }
-            }
 
-            if (matchIndex != undefined && matchIndex > -1) {
-                array.splice(matchIndex, 1);
-                _this.setState({ emails: array });
-                console.log("State after splice: " + _this.state.emails);
-            } else {
-                array.push(value);
-                console.log("Array with new pushed value: " + array);
-                _this.setState({ emails: array });
-                console.log("State after push: " + _this.state.emails);
-            }
-        }, _this.handleEmail = function (event) {
+                return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Catalogue.__proto__ || Object.getPrototypeOf(Catalogue)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+                        programs: [],
+                        emails: [],
+                        willReceive: _this.props.filteredList || []
+                }, _this.componentWillMount = function () {
 
-            event.preventDefault(); // prevent reload
-            console.log("handleEmail");
+                        // console.log(catalogueData.length)
 
-            // debugger
+                        _this.setState({ programs: _contacts2.default.contacts });
+                        console.log("willReceive state in Will Mount " + _this.state.willReceive);
+                }, _this.componentWillReceiveProps = function (newProps) {
 
-            var searchIDs = (0, _jquery2.default)("input[type='checkbox']:checked").map(function () {
-                return (0, _jquery2.default)(this).val();
-            }).get(); // <----
-            console.log("SEARCH ID's: " + searchIDs);
-            console.log("EmailList Value " + document.getElementById("emaillist").value);
-            document.getElementById("emaillist").value = searchIDs;
-
-            var that = document.getElementById('email');
-            console.log("that: " + that);
-
-            // var formData = new FormData(this);
-            var formData = new FormData(that);
-
-            formData.append('service_id', 'default_service');
-            formData.append('template_id', 'email_blast');
-            formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
-            // formData.append('user_id', EMAIL_JS_USER_ID);
-
-            var firstname = document.getElementById("firstname").value;
-            var lastname = document.getElementById("lastname").value;
-            var phonenumber = document.getElementById("phonenumber").value;
-            var senderemail = document.getElementById("senderemail").value;
-            var emaillist = document.getElementById("emaillist").value;
-
-            formData = {
-                "service_id": "default_service",
-                "template_id": "email_blast",
-                "user_id": "user_NT8KduLVWnsRhOfMwJEB8" //,
-                // 'firstname': firstname,
-                // 'lastname': lastname,
-                // 'phonenumber': phonenumber,
-                // 'senderemail': senderemail,
-                // 'emaillist': emaillist
-            };
-
-            // emailjs.sendForm('contact_service', 'contact_form', this);
+                        _this.setState({ programs: newProps.filteredList });
+                }, _this.handleEmailList = function (e, _ref2) {
+                        var value = _ref2.value;
 
 
-            var dataForm = {
-                "firstname": firstname,
-                "lastname": lastname,
-                "phonenumber": phonenumber,
-                "senderemail": senderemail,
-                "emailto": emaillist
-            };
+                        var matchIndex = undefined;
 
-            console.log("formData: " + formData);
+                        for (var i = 0; i <= _this.state.emails.length; i++) {
 
-            console.log("dataForm: " + dataForm);
+                                var array = _this.state.emails;
 
-            // data: {
-            //     'service_id': 'default_service',
-            //     'template_id': 'email_blast',
-            //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
-            // },
+                                if (value === array[i]) {
+                                        console.log("value " + value + " is being compared to array element " + array[i]);
+                                        matchIndex = array.indexOf(value);
+                                        console.log("Index value saved as " + matchIndex);
+                                }
+                        }
+
+                        if (matchIndex != undefined && matchIndex > -1) {
+                                array.splice(matchIndex, 1);
+                                _this.setState({ emails: array });
+                                console.log("State after splice: " + _this.state.emails);
+                        } else {
+                                array.push(value);
+                                console.log("Array with new pushed value: " + array);
+                                _this.setState({ emails: array });
+                                console.log("State after push: " + _this.state.emails);
+                        }
+                }, _this.handleEmail = function (event) {
+
+                        event.preventDefault(); // prevent reload
+                        console.log("handleEmail");
+
+                        // debugger
+
+                        var searchIDs = (0, _jquery2.default)("input[type='checkbox']:checked").map(function () {
+                                return (0, _jquery2.default)(this).val();
+                        }).get(); // <----
+                        console.log("SEARCH ID's: " + searchIDs);
+                        console.log("EmailList Value " + document.getElementById("emaillist").value);
+                        document.getElementById("emaillist").value = searchIDs;
+
+                        var that = document.getElementById('email');
+                        console.log("that: " + that);
+
+                        // var formData = new FormData(this);
+                        var formData = new FormData(that);
+
+                        formData.append('service_id', 'default_service');
+                        formData.append('template_id', 'email_blast');
+                        formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
+                        // formData.append('user_id', EMAIL_JS_USER_ID);
+
+                        var firstname = document.getElementById("firstname").value;
+                        var lastname = document.getElementById("lastname").value;
+                        var phonenumber = document.getElementById("phonenumber").value;
+                        var senderemail = document.getElementById("senderemail").value;
+                        var emaillist = document.getElementById("emaillist").value;
+
+                        formData = {
+                                "service_id": "default_service",
+                                "template_id": "email_blast",
+                                "user_id": "user_NT8KduLVWnsRhOfMwJEB8" //,
+                                // 'firstname': firstname,
+                                // 'lastname': lastname,
+                                // 'phonenumber': phonenumber,
+                                // 'senderemail': senderemail,
+                                // 'emaillist': emaillist
+                        };
+
+                        // emailjs.sendForm('contact_service', 'contact_form', this);
 
 
-            //simple way /////////////////////////////////////////////////////////////
-            emailjs.send("default_service", "email_blast", dataForm).then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                alert("Your email has been sent");
-            }, function (error) {
-                console.log(dataForm);
-                console.log('FAILED...', error);
-                alert("There was an error processing your emails");
-            });
+                        var dataForm = {
+                                "firstname": firstname,
+                                "lastname": lastname,
+                                "phonenumber": phonenumber,
+                                "senderemail": senderemail,
+                                "emailto": emaillist
+                        };
 
-            //slightly less simple way /////////////////////////////////////////////////////////////
-            // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
-            //     console.log('SUCCESS!', response.status, response.text);
-            // }, function(error) {
-            //     console.log('FAILED...', error);
-            // });
+                        console.log("formData: " + formData);
 
-            // API way /////////////////////////////////////////////////////////////
-            // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-            //     type: 'POST',
-            //     data: formData,
-            //
-            //     contentType: false, // auto-detection
-            //     processData: false // no need to parse formData to string
-            // }).done(function() {
-            //     alert('Your mail is sent!');
-            //
-            // }).fail(function(error) {
-            //     console.log('Oops... ' + JSON.stringify(error.responseText));
-            //     alert('Oops... ' + JSON.stringify(error));
-            // });
+                        console.log("dataForm: " + dataForm);
 
-        }, _temp), _possibleConstructorReturn(_this, _ret);
-    }
+                        // data: {
+                        //     'service_id': 'default_service',
+                        //     'template_id': 'email_blast',
+                        //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
+                        // },
 
-    _createClass(Catalogue, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
 
-            var programs = this.state.programs;
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'ui filterContainer catalogue_items' },
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Group,
-                    null,
-                    programs.map(function (program, index) {
-                        return _react2.default.createElement(_Program2.default, {
-                            key: index,
-                            programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
-                            programEmail: program.email,
-                            programPhone: program.phonenumber,
-                            programAcceptReferrals: program.acceptReferrals,
-                            programDescription: program.descriptionOfProgram,
-                            programServices: program.coreServicesOffered,
-                            programPopulationServed: program.populationServed,
-                            programEligibility: program.eligibilityRequirements,
-                            programOnSite: program.servicesOnlyOfferedAtProgramSite,
-                            programLocation: program.locationOfProgram,
-                            updateEmailList: _this2.handleEmailList,
-                            count: index + 1
+                        //simple way /////////////////////////////////////////////////////////////
+                        emailjs.send("default_service", "email_blast", dataForm).then(function (response) {
+                                console.log('SUCCESS!', response.status, response.text);
+                                alert("Your email has been sent");
+                        }, function (error) {
+                                console.log(dataForm);
+                                console.log('FAILED...', error);
+                                alert("There was an error processing your emails");
                         });
-                    })
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Form,
-                    null,
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'First Name', id: 'firstname', type: 'text', className: 'form-control', placeholder: 'First name', name: 'firstname' }),
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Last Name', id: 'lastname', type: 'text', className: 'form-control', placeholder: 'Last name', name: 'lastname' })
-                    ),
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Your Email', id: 'senderemail', type: 'email', className: 'form-control', placeholder: 'Email', name: 'senderemail' }),
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Phone Number', id: 'phonenumber', type: 'text', className: 'form-control', placeholder: 'Phone Number', name: 'phonenumber' })
-                    ),
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email List', id: 'emaillist', type: 'email', className: 'form-control', placeholder: 'Email to \'CC\'', name: 'emailto', value: this.state.emails })
-                    ),
-                    _react2.default.createElement(
-                        _semanticUiReact.Button,
-                        { basic: true, color: 'black', onClick: this.handleEmail },
-                        ' Submit '
-                    )
-                )
-            );
-        }
-    }]);
 
-    return Catalogue;
+                        //slightly less simple way /////////////////////////////////////////////////////////////
+                        // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
+                        //     console.log('SUCCESS!', response.status, response.text);
+                        // }, function(error) {
+                        //     console.log('FAILED...', error);
+                        // });
+
+                        // API way /////////////////////////////////////////////////////////////
+                        // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+                        //     type: 'POST',
+                        //     data: formData,
+                        //
+                        //     contentType: false, // auto-detection
+                        //     processData: false // no need to parse formData to string
+                        // }).done(function() {
+                        //     alert('Your mail is sent!');
+                        //
+                        // }).fail(function(error) {
+                        //     console.log('Oops... ' + JSON.stringify(error.responseText));
+                        //     alert('Oops... ' + JSON.stringify(error));
+                        // });
+
+                }, _temp), _possibleConstructorReturn(_this, _ret);
+        }
+
+        _createClass(Catalogue, [{
+                key: 'render',
+                value: function render() {
+                        var _this2 = this;
+
+                        var programs = this.state.programs;
+
+                        return _react2.default.createElement(
+                                'div',
+                                { className: 'ui filterContainer catalogue_items' },
+                                _react2.default.createElement(
+                                        _semanticUiReact.Item.Group,
+                                        null,
+                                        programs.map(function (program, index) {
+                                                return _react2.default.createElement(_Program2.default, {
+                                                        key: index,
+                                                        programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
+                                                        programEmail: program.email,
+                                                        programPhone: program.phonenumber,
+                                                        programAcceptReferrals: program.acceptReferrals,
+                                                        programDescription: program.descriptionOfProgram,
+                                                        programServices: program.coreServicesOffered,
+                                                        programPopulationServed: program.populationServed,
+                                                        programEligibility: program.eligibilityRequirements,
+                                                        programOnSite: program.servicesOnlyOfferedAtProgramSite,
+                                                        programLocation: program.locationOfProgram,
+                                                        updateEmailList: _this2.handleEmailList,
+                                                        count: index + 1
+                                                });
+                                        })
+                                ),
+                                _react2.default.createElement(
+                                        _semanticUiReact.Form,
+                                        null,
+                                        _react2.default.createElement(
+                                                _semanticUiReact.Form.Group,
+                                                { widths: 'equal' },
+                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'First Name', id: 'firstname', type: 'text', className: 'form-control', placeholder: 'First name', name: 'firstname' }),
+                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Last Name', id: 'lastname', type: 'text', className: 'form-control', placeholder: 'Last name', name: 'lastname' })
+                                        ),
+                                        _react2.default.createElement(
+                                                _semanticUiReact.Form.Group,
+                                                { widths: 'equal' },
+                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Your Email', id: 'senderemail', type: 'email', className: 'form-control', placeholder: 'Email', name: 'senderemail' }),
+                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Phone Number', id: 'phonenumber', type: 'text', className: 'form-control', placeholder: 'Phone Number', name: 'phonenumber' })
+                                        ),
+                                        _react2.default.createElement(
+                                                _semanticUiReact.Form.Group,
+                                                { widths: 'equal' },
+                                                _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email List', id: 'emaillist', type: 'email', className: 'form-control', placeholder: 'Email to \'CC\'', name: 'emailto', value: this.state.emails })
+                                        ),
+                                        _react2.default.createElement(
+                                                _semanticUiReact.Button,
+                                                { basic: true, color: 'black', onClick: this.handleEmail },
+                                                ' Submit '
+                                        )
+                                )
+                        );
+                }
+        }]);
+
+        return Catalogue;
 }(_react2.default.Component);
 
 exports.default = Catalogue;

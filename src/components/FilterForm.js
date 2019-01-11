@@ -11,8 +11,8 @@ class FilterForm extends React.Component {
     state = {
         location: undefined,
         clientAge: undefined,
-        inSchool: undefined,
-        levelofEducation: undefined,
+        inSchool: false,
+        levelOfEducation: undefined, 
         veteran: undefined,
         interestedInTraining: undefined,
         interestedAfterSchoolPrograms: undefined,
@@ -46,7 +46,6 @@ class FilterForm extends React.Component {
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
         var addOne = (nextQuestion + 1).toString();
-
 
         this.setState({ questionNumber: addOne })
         console.log(this.state.questionNumber)
@@ -103,24 +102,43 @@ class FilterForm extends React.Component {
     //
     // }
 
-    //Question 1
-    handleLocation = (e, { value }) => this.setState({ location: value });
+    //-------------------------- * * * * * --------------------------
 
-    // handleLocation = (e, { value }) => {
-    //
-    //
-    //     this.setState({ location: value });
-    //
+    // handleChange(e) {
     //     debugger
-    //
-    //     this.parseLocation()
-    //
+    //     this.setState({ value: e.target.value})
     // }
+
+    handleChange = input => (e, {value}) => {
+        debugger
+        this.setState({[input]: value})
+        console.log(input, value)
+    }
+
+    //-------------------------- * * * * * --------------------------
+
+    //Question 1
+    // handleLocation = (e, { value }) => this.setState({ location: value });
+
+    handleLocation = (e, { value }) => {
+    
+        this.setState({ location: value });
+    
+        // debugger
+        console.log(value)
+        console.log(this.state.location)
+    
+        // this.parseLocation()
+    
+    }
 
 
 
     // Question 2
-    handleClientAge = (e, { value }) => this.setState({ clientAge: value });
+    handleClientAge = (e, { value }) => {
+        this.setState({ clientAge: value })
+        console.log(value)
+    }
 
 
     //Question 2
@@ -128,11 +146,16 @@ class FilterForm extends React.Component {
 
 
     //Question 3
-    handleInSchool = (e, { value }) => this.setState({ inSchool: value })
+    handleLevelOfEducation = (e, { value }) => {
+        this.setState({ levelOfEducation: value })
+        console.log(value)
+    }
 
     //Question 4
-    handleLevelOfEducation  = (e, { value }) => this.setState({ levelOfEducation: value });
-
+    handleInSchool = (e, { value }) => {
+        this.setState({ inSchool: value })
+        console.log(value)
+    }
 
 
     //Question 5
@@ -355,72 +378,87 @@ class FilterForm extends React.Component {
 
 
     render() {
+        //-------------------------- * * * * * --------------------------
 
-        var filteredList = this.state.filteredList;
-        var truthyArray = this.state.truthyArray;
+        // // console.log("Here's Filter Form's truthyArray: " + truthyArray)
 
-        // console.log("Here's Filter Form's truthyArray: " + truthyArray)
+        let filteredList = this.state.filteredList;
+        let truthyArray = this.state.truthyArray;
+        let zip = this.state.zip;
+        let questionNumber = this.state.questionNumber;
+        let location = this.state.location;
+        let clientAge = this.state.clientAge;
+        let levelOfEducation = this.state.levelOfEducation
+        let inSchool = this.state.inSchool
+        let interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
+        let interestedInTraining = this.state.interestedInTraining;
+        let interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
+        let interestedInCriminalServices = this.state.interestedInCriminalServices;
+        let veteran = this.state.veteran;
+        let kids = this.state.kids;
 
+        let showDiv = { display: 'block' };
+        let hidden = { display: 'none' };
 
-        var zip = this.state.zip;
-        var questionNumber = this.state.questionNumber;
+        //-------------------------- * * * * * --------------------------
 
-        var location = this.state.location;
-        var clientAge = this.state.clientAge;
-        var kids = this.state.kids;
-        var veteran = this.state.veteran;
-        var inSchool = this.state.inSchool;
-        var levelOfEducation = this.state.levelOfEducation
-        var interestedInTraining = this.state.interestedInTraining;
-        var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
-        var interestedInCriminalServices = this.state.interestedInCriminalServices;
-        var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
-
-
-        var showDiv = {display: 'block'};
-        var hidden = {display: 'none' };
-
-
-
-        //Question 1
-        let showLocation = "";
-        if (this.state.questionNumber == '1') {
-            showLocation = {display: 'block'};
-        } else {
-            showLocation = {display: 'none'};
-        }
+        // //Question 1
+        // let showLocation = "";
+        // if (this.state.questionNumber == '1') {
+        //     showLocation = {display: 'block'};
+        // } else {
+        //     showLocation = {display: 'none'};
+        // }
 
 
+        // //Question 2
+        // let showAge = ""
+        // if (this.state.questionNumber == '2') {
+        //     showAge = {display: 'block'};
+        // } else {
+        //     showAge = {display: 'none'};
+        // }
 
-        //Question 2
-        let showAge = ""
-        if (this.state.questionNumber == '2') {
-            showAge = {display: 'block'};
-        } else {
-            showAge = {display: 'none'};
-        }
+        // //Question 3
+        // let showEducation = "";
+        // if (this.state.questionNumber == '3') {
+        //     showEducation = {display: 'block'};
+        // } else {
+        //     showEducation = {display: 'none'};
+        // }
 
-        //Question 3
-        let showEducation = "";
-        if (this.state.questionNumber == '3') {
-            showEducation = {display: 'block'};
-        } else {
-            showEducation = {display: 'none'};
-        }
+        // //Question 4
+        // let showInSchool = "";
+        // if (this.state.questionNumber == '4') {
+        //     showInSchool = {display: 'block'};
+        // } else {
+        //     showInSchool = {display: 'none'};
+        // }
 
-        //Question 4
-        let showInSchool = "";
-        if (this.state.questionNumber == '4') {
-            showInSchool = {display: 'block'};
-        } else {
-            showInSchool = {display: 'none'};
-        }
+        //-------------------------- * * * * * --------------------------
+        let showLocation = questionNumber == '1' ? showDiv : hidden
+        let showAge = questionNumber == '2' ? showDiv : hidden
+        let showEducation = questionNumber == '3' ? showDiv : hidden
+        let showInSchool = questionNumber == '4' ? showDiv : hidden
+        
+
+        let showFive = questionNumber == '5' ? showDiv : hidden
+        let showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && (inSchool === 'true' || inSchool === true)  ? showDiv : hidden
+        let showB = ( (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'false' || inSchool === false) )
+        || (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'true' || inSchool === true)
+        ? showDiv : hidden
+        let showC = (levelOfEducation === 'No Highschool / Some Highschool')  && (inSchool === 'false' || inSchool === false) ? showDiv : hidden
+
+        //-------------------------- * * * * * --------------------------
+
+
+
 
         // Question 5
-        var showFive = "";
-        var showAfterSchool = "";
-        var showTraining = "";
-        var showDiploma = "";
+        // var showFive = "";
+        // var showAfterSchool = "";
+        // var showTraining = "";
+        // var showDiploma = "";
 
         // if (this.state.questionNumber == '5' && (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ) {
         //     showFive = {display: 'block'};
@@ -453,47 +491,48 @@ class FilterForm extends React.Component {
         // }
 
 
-
-        if (this.state.questionNumber == '5') {
-            // debugger
-            showFive = {display: 'block'};
-            var showAfterSchool = {display: 'none !important'};
-            var showTraining = {display: 'none !important'};
-            var showDiploma = {display: 'none !important'};
-            // var showAfterSchool = "";
-            // var showTraining = "";
-            // var showDiploma = "";
-            //showInSchool
-
-
-            if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
-
-                showAfterSchool = {display: 'block !important'};
-
-            }
-
-            else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
-                showDiploma= {display: 'block !important'};
-
-            }
-
-            // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
-
-            else {
-
-                showTraining = {display: 'block !important'};
-
-            }
+        // *****************************************************************************
+        
+        // if (this.state.questionNumber == '5') {
+        //     debugger
+        //     showFive = {display: 'block'};
+        //     var showAfterSchool = {display: 'none !important'};
+        //     var showTraining = {display: 'none !important'};
+        //     var showDiploma = {display: 'none !important'};
+        //     // var showAfterSchool = "";
+        //     // var showTraining = "";
+        //     // var showDiploma = "";
+        //     //showInSchool
 
 
-        } else {
-            showFive = {display: 'none'};
-            showAfterSchool = {display: 'none !important'};
-            showTraining = {display: 'none !important'};
-            showDiploma = {display: 'none !important'};
-        }
+        //     if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
+
+        //         showAfterSchool = {display: 'block !important'};
+
+        //     }
+
+        //     else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
+        //         showDiploma= {display: 'block !important'};
+
+        //     }
+
+        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
+
+        //     else {
+
+        //         showTraining = {display: 'block !important'};
+
+        //     }
 
 
+        // } else {
+        //     showFive = {display: 'none'};
+        //     showAfterSchool = {display: 'none !important'};
+        //     showTraining = {display: 'none !important'};
+        //     showDiploma = {display: 'none !important'};
+        // }
+
+        // *****************************************************************************
 
         //////////////////  ISSUE  ///////////////////////////////////////////////
 
@@ -598,6 +637,7 @@ class FilterForm extends React.Component {
         return (
 
         <div>
+            {console.log(this.state.inSchool, this.state.levelOfEducation)}
             <div style={showForm}>
 
                 <div className="ui filterContainer" id="questionHeight">
@@ -618,7 +658,8 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='Los Angeles'
                                     checked={location === 'Los Angeles'}
-                                    onChange={this.handleLocation}
+                                    onChange={this.handleChange("location")}
+                                    // onChange={ this.handleChange}
                                 />
                             </Form.Field>
 
@@ -628,7 +669,9 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='San Fernando Valley'
                                     checked={location === 'San Fernando Valley'}
-                                    onChange={this.handleLocation}
+                                    onChange={this.handleChange("location")}
+                                    // onChange={this.handleChange}
+
                                 />
                             </Form.Field>
 
@@ -656,7 +699,8 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='0-4'
                                     checked={clientAge === '0-4'}
-                                    onChange={this.handleClientAge}
+                                    // onChange={this.handleClientAge}
+                                    onChange={this.handleChange("clientAge")}
                                 />
                             </Form.Field>
 
@@ -666,7 +710,9 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='5-10'
                                     checked={clientAge === '5-10'}
-                                    onChange={this.handleClientAge}
+                                    // onChange={this.handleClientAge}
+                                    onChange={this.handleChange("clientAge")}
+
                                 />
                             </Form.Field>
 
@@ -677,7 +723,9 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='11-13'
                                     checked={clientAge === '11-13'}
-                                    onChange={this.handleClientAge}
+                                    // onChange={this.handleClientAge}
+                                    onChange={this.handleChange("clientAge")}
+
                                 />
                             </Form.Field>
 
@@ -689,7 +737,9 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='14-18'
                                     checked={clientAge === '14-18'}
-                                    onChange={this.handleClientAge}
+                                    // onChange={this.handleClientAge}
+                                    onChange={this.handleChange("clientAge")}
+
                                 />
                             </Form.Field>
 
@@ -699,7 +749,9 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='18-24'
                                     checked={clientAge === '18-24'}
-                                    onChange={this.handleClientAge}
+                                    // onChange={this.handleClientAge}
+                                    onChange={this.handleChange("clientAge")}
+
                                 />
                             </Form.Field>
 
@@ -709,7 +761,9 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='25-65'
                                     checked={clientAge === '25-65'}
-                                    onChange={this.handleClientAge}
+                                    // onChange={this.handleClientAge}
+                                    onChange={this.handleChange("clientAge")}
+
                                 />
                             </Form.Field>
 
@@ -829,10 +883,10 @@ class FilterForm extends React.Component {
 
                     <div style={showFive} id="5" >
 
-                        <div style={ (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ? {display: 'block'} : {display: 'none'} } >
+                        <div style={showA} >
 
                             <h3>Question 5</h3>
-                            <h2> Is the participant looking for after-school program? </h2>
+                            <h2> Is the participant looking for after-school program? </h2> 
 
                             <Form>
                                 <Form.Field>
@@ -860,7 +914,8 @@ class FilterForm extends React.Component {
 
 
 
-                        <div style={ ((inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher')) || (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') )) ? {display: 'block'} : {display: 'none'}} id="5">
+                        {/* <div style={ ((inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher')) || (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') )) ? {display: 'block'} : {display: 'none'}} id="5"> */}
+                        <div style={showB} id="5">
 
                             <h3>Question 5</h3>
                             <h2> Is the participant interested in employment support or vocational training </h2>
@@ -891,7 +946,7 @@ class FilterForm extends React.Component {
                         </div>
 
 
-                        <div style={(inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ? {display: 'block'} : {display: 'none'}} className='showDiploma'>
+                        <div style={showC} className='showDiploma'>
                             <h3>Question 5</h3>
                             <h2>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h2>
 
@@ -928,12 +983,9 @@ class FilterForm extends React.Component {
 
 
                     </div>
-
-
-
-
-
-
+                    
+ 
+                       
                     <div style={ this.state.questionNumber == "6" ? {display: 'block'} : {display: 'none'} } id="6">
                         <h3>Question 6</h3>
                         <h2>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h2>
