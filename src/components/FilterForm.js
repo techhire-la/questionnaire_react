@@ -11,7 +11,7 @@ class FilterForm extends React.Component {
     state = {
         location: undefined,
         clientAge: undefined,
-        inSchool: false,
+        inSchool: undefined,
         levelOfEducation: undefined, 
         veteran: undefined,
         interestedInTraining: undefined,
@@ -48,7 +48,9 @@ class FilterForm extends React.Component {
         // console.log(this.state.questionNumber)
 
         let previousSibling = e.target.previousSibling.id;
-        console.log(previousSibling)
+        if (this.state[previousSibling] == undefined){
+            alert("YES")
+        }
         // console.log("AN:", this.state['inSchool'])
 
     }
