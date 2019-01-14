@@ -11,7 +11,7 @@ class FilterForm extends React.Component {
     state = {
         location: undefined,
         clientAge: undefined,
-        inSchool: false,
+        inSchool: undefined,
         levelOfEducation: undefined, 
         veteran: undefined,
         interestedInTraining: undefined,
@@ -34,6 +34,7 @@ class FilterForm extends React.Component {
     //// Handle Buttons /////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
+    
 
 
     handleNext = (e, { id }) => {
@@ -44,7 +45,13 @@ class FilterForm extends React.Component {
         var addOne = (nextQuestion + 1).toString();
 
         this.setState({ questionNumber: addOne })
-        console.log(this.state.questionNumber)
+        // console.log(this.state.questionNumber)
+
+        let previousSibling = e.target.previousSibling.id;
+        if (this.state[previousSibling] == undefined){
+            alert("YES")
+        }
+        // console.log("AN:", this.state['inSchool'])
 
     }
 
@@ -53,7 +60,7 @@ class FilterForm extends React.Component {
         var subtractOne = (lastQuestion - 1).toString();
 
         this.setState({ questionNumber: subtractOne })
-        console.log(this.state.questionNumber)
+        // console.log(this.state.questionNumber)
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -201,7 +208,6 @@ class FilterForm extends React.Component {
         let showEducation = questionNumber == '3' ? showDiv : hidden
         let showInSchool = questionNumber == '4' ? showDiv : hidden
         
-
         let showFive = questionNumber == '5' ? showDiv : hidden
         let showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && (inSchool === 'true' || inSchool === true)  ? showDiv : hidden
         let showB = ( (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'false' || inSchool === false) )
@@ -399,7 +405,8 @@ class FilterForm extends React.Component {
         return (
 
         <div>
-            {console.log(this.state.inSchool, this.state.levelOfEducation)}
+            {/* {console.log(this.state.inSchool, this.state.levelOfEducation)} */}
+            {/* {console.log(this.state)} */}
             <div style={showForm}>
 
                 <div className="ui filterContainer" id="questionHeight">
@@ -419,7 +426,6 @@ class FilterForm extends React.Component {
                                     value='Los Angeles'
                                     checked={location === 'Los Angeles'}
                                     onChange={this.handleChange("location")}
-                                    // onChange={ this.handleChange}
                                 />
                             </Form.Field>
 
@@ -430,7 +436,6 @@ class FilterForm extends React.Component {
                                     value='San Fernando Valley'
                                     checked={location === 'San Fernando Valley'}
                                     onChange={this.handleChange("location")}
-                                    // onChange={this.handleChange}
 
                                 />
                             </Form.Field>
@@ -441,18 +446,13 @@ class FilterForm extends React.Component {
 
                     </div>
 
-
-
-
-
-
                     <div style={showAge} id="2">
+
                         <h3>Question 2</h3>
                         <h2>What is the participants age?</h2>
 
-                        <Form id="">
 
-
+                        <Form id="clientAge">
 
                             <Form.Field>
                                 <Radio
@@ -460,7 +460,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='0-4'
                                     checked={clientAge === '0-4'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
                                 />
                             </Form.Field>
@@ -471,7 +470,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='5-10'
                                     checked={clientAge === '5-10'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -484,7 +482,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='11-13'
                                     checked={clientAge === '11-13'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -498,7 +495,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='14-18'
                                     checked={clientAge === '14-18'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -510,7 +506,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='18-24'
                                     checked={clientAge === '18-24'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -522,7 +517,6 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='25-65'
                                     checked={clientAge === '25-65'}
-                                    // onChange={this.handleClientAge}
                                     onChange={this.handleChange("clientAge")}
 
                                 />
@@ -531,7 +525,7 @@ class FilterForm extends React.Component {
                         </Form>
 
 
-                        <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
+                        <Button id="back_button" className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
 
                         <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
                     </div>
@@ -539,13 +533,11 @@ class FilterForm extends React.Component {
 
 
                     <div style={ showEducation } id="3">
-                        <h3>Question 3</h3>
 
+                        <h3>Question 3</h3>
                         <h2>What is the participant's highest level of completed education </h2>
 
-                        <Form>
-
-
+                        <Form id="levelOfEducation">
 
                             <Form.Field>
                                 <Radio
@@ -554,6 +546,7 @@ class FilterForm extends React.Component {
                                     value='No Highschool / Some Highschool'
                                     checked={this.state.levelOfEducation === 'No Highschool / Some Highschool'}
                                     onChange={this.handleLevelOfEducation}
+                                    onChange={this.handleChange("levelOfEducation")}
                                 />
                             </Form.Field>
 
@@ -563,7 +556,7 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='Highschool/GED'
                                     checked={this.state.levelOfEducation === 'Highschool/GED'}
-                                    onChange={this.handleLevelOfEducation}
+                                    onChange={this.handleChange("levelOfEducation")}
                                 />
                             </Form.Field>
 
@@ -573,7 +566,7 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='Some College'
                                     checked={this.state.levelOfEducation === 'Some College'}
-                                    onChange={this.handleLevelOfEducation}
+                                    onChange={this.handleChange("levelOfEducation")}
                                 />
                             </Form.Field>
 
@@ -583,7 +576,7 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='AA'
                                     checked={this.state.levelOfEducation === 'AA'}
-                                    onChange={this.handleLevelOfEducation}
+                                    onChange={this.handleChange("levelOfEducation")}
                                 />
                             </Form.Field>
 
@@ -593,7 +586,7 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='BA or Higher'
                                     checked={this.state.levelOfEducation === 'BA or Higher'}
-                                    onChange={this.handleLevelOfEducation}
+                                    onChange={this.handleChange("levelOfEducation")}
                                 />
                             </Form.Field>
                         </Form>
@@ -607,7 +600,7 @@ class FilterForm extends React.Component {
                     </div>
 
 
-                    <div style={ showInSchool } id="4">
+                    <div style={ showInSchool } id="inSchool">
                         <h3>Question 4</h3>
 
                         <h2>Is the participant in school? </h2>
@@ -620,7 +613,8 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='true'
                                     checked={this.state.inSchool === 'true'}
-                                    onChange={this.handleInSchool}
+                                    onChange={this.handleChange("inSchool")}
+
                                 />
                             </Form.Field>
 
@@ -630,7 +624,8 @@ class FilterForm extends React.Component {
                                     name='radioGroup'
                                     value='false'
                                     checked={this.state.inSchool === 'false'}
-                                    onChange={this.handleInSchool}
+                                    onChange={this.handleChange("inSchool")}
+
                                 />
                             </Form.Field>
                         </Form>
