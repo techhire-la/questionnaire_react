@@ -37,7 +37,7 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        // debugger
+        debugger
         // var stringId = e.target.parentNode.id;
         var nextQuestion = parseInt(e.target.parentNode.id)
         // e.target.parentNode.getAttribute('id'); ||
@@ -64,9 +64,7 @@ class FilterForm extends React.Component {
 
 
     handleChange = input => (e, {value}) => {
-        debugger
         this.setState({[input]: value})
-        console.log(input, value)
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -394,6 +392,8 @@ class FilterForm extends React.Component {
             showCatalogue = {display: 'block' }
         }
 
+        let state = this.state
+
 
 
         return (
@@ -409,9 +409,7 @@ class FilterForm extends React.Component {
                         <h3>Question 1</h3>
                         <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
 
-                        <Form>
-
-
+                        <Form id="location">
 
                             <Form.Field>
                                 <Radio
@@ -451,7 +449,8 @@ class FilterForm extends React.Component {
                     <div style={showAge} id="2">
                         <h3>Question 2</h3>
                         <h2>What is the participants age?</h2>
-                        <Form>
+
+                        <Form id="">
 
 
 
