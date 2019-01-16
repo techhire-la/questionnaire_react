@@ -25,7 +25,9 @@ class FilterForm extends React.Component {
         locationArray: [],
 
         truthyArray: [],
-        filteredList: undefined
+        filteredList: undefined,
+
+        answered: false
     }
 
 
@@ -40,15 +42,21 @@ class FilterForm extends React.Component {
     handleNext = (e, { id }) => {
         // debugger
         // var stringId = e.target.parentNode.id;
-        var nextQuestion = parseInt(e.target.parentNode.id)
-        // e.target.parentNode.getAttribute('id'); ||
-        var addOne = (nextQuestion + 1).toString();
+        let answered = this.state.answered;
+        if (answered) {
 
-        this.setState({ questionNumber: addOne })
-        console.log(this.state.questionNumber)
+            var nextQuestion = parseInt(e.target.parentNode.id)
+            // e.target.parentNode.getAttribute('id'); ||
+            var addOne = (nextQuestion + 1).toString();
+
+            this.setState({ questionNumber: addOne, answered: false })
+            console.log(this.state.questionNumber)
+        }
+        else {
+            alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
+        }
         debugger
 
-        //latest change
         // let previousSibling = e.target.previousSibling.id;
         // if (this.state[previousSibling] == undefined){
         //     alert("YES")
@@ -73,7 +81,7 @@ class FilterForm extends React.Component {
 
 
     handleChange = input => (e, { value }) => {
-        this.setState({ [input]: value })
+        this.setState({ [input]: value, answered: true })
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -406,7 +414,7 @@ class FilterForm extends React.Component {
 
             <div>
                 {/* {console.log(this.state.inSchool, this.state.levelOfEducation)} */}
-                {console.log(this.state.questionNumber)}
+                {console.log(this.state.answered)}
                 <div style={showForm}>
 
                     <div className="ui filterContainer" id="questionHeight">
