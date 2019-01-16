@@ -40,7 +40,7 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        debugger
+        // debugger
         // var stringId = e.target.parentNode.id;
         let answered = this.state.answered;
         if (answered) {
@@ -55,7 +55,7 @@ class FilterForm extends React.Component {
         else {
             alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
         }
-        debugger
+        // debugger
 
         // let previousSibling = e.target.previousSibling.id;
         // if (this.state[previousSibling] == undefined){
@@ -230,133 +230,6 @@ class FilterForm extends React.Component {
 
 
 
-        // Question 5
-        // var showFive = "";
-        // var showAfterSchool = "";
-        // var showTraining = "";
-        // var showDiploma = "";
-
-        // if (this.state.questionNumber == '5' && (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) ) {
-        //     showFive = {display: 'block'};
-        //     showAfterSchool = {display: 'block !important'};
-        // }
-        //
-        // if (this.state.questionNumber == '5' && (inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) ){
-        //     showFive = {display: 'block'};
-        //     showTraining = {display: 'block !important'};
-        //
-        // }
-        //
-        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
-        //
-        //  if(inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') ){
-        //     showFive = {display: 'block'};
-        //     showDiploma= {display: 'block !important'};
-        //
-        //  }
-
-
-
-
-
-        // } else {
-        //     showFive = {display: 'none'};
-        //     showAfterSchool = {display: 'none !important'};
-        //     showTraining = {display: 'none !important'};
-        //     showDiploma = {display: 'none !important'};
-        // }
-
-
-        // *****************************************************************************
-
-        // if (this.state.questionNumber == '5') {
-        //     debugger
-        //     showFive = {display: 'block'};
-        //     var showAfterSchool = {display: 'none !important'};
-        //     var showTraining = {display: 'none !important'};
-        //     var showDiploma = {display: 'none !important'};
-        //     // var showAfterSchool = "";
-        //     // var showTraining = "";
-        //     // var showDiploma = "";
-        //     //showInSchool
-
-
-        //     if (this.state.inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
-
-        //         showAfterSchool = {display: 'block !important'};
-
-        //     }
-
-        //     else if (this.state.inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
-        //         showDiploma= {display: 'block !important'};
-
-        //     }
-
-        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
-
-        //     else {
-
-        //         showTraining = {display: 'block !important'};
-
-        //     }
-
-
-        // } else {
-        //     showFive = {display: 'none'};
-        //     showAfterSchool = {display: 'none !important'};
-        //     showTraining = {display: 'none !important'};
-        //     showDiploma = {display: 'none !important'};
-        // }
-
-        // *****************************************************************************
-
-        //////////////////  ISSUE  ///////////////////////////////////////////////
-
-        // var showAfterSchool = {display: 'none !important'};
-        // var showTraining = {display: 'none !important'};
-        // var showDiploma = {display: 'none !important'};
-
-        // if(this.state.questionNumber == '5') {
-        //
-        //     showFive = {display: 'block !important'};
-        //
-        //     debugger
-        //
-        //     if (inSchool === 'true' && (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') ) {
-        //
-        //         showAfterSchool = {display: 'block !important'};
-        //         //
-        //         // showTraining = {display: 'none !important'};
-        //         // showDiploma = {display: 'none !important'};
-        //     }
-        //
-        //     else if (inSchool === 'false' && (levelOfEducation === 'No Highschool / Some Highschool') ) {
-        //         showTraining = {display: 'block !important'};
-        //         //
-        //         // showAfterSchool = {display: 'none !important'};
-        //         // showDiploma = {display: 'none !important'};
-        //     }
-        //
-        //     // (inSchool === 'false' && (levelOfEducation !== 'No Highschool / Some Highschool' || levelOfEducation !== 'Some College') )
-        //
-        //     else {
-        //         showDiploma= {display: 'block !important'};
-        //         //
-        //         // showAfterSchool = {display: 'none !important'};
-        //         // showTraining = {display: 'none !important'};
-        //
-        //     }
-        //
-        // }else{
-        //     showFive = {display: 'none !important'};
-        //     showAfterSchool = {display: 'none !important'};
-        //     showTraining = {display: 'none !important'};
-        //     showDiploma = {display: 'none !important'};
-        // }
-
-
-
-
         //Question 6
         let showCriminalServices = "";
         if (this.state.questionNumber == '6') {
@@ -374,20 +247,6 @@ class FilterForm extends React.Component {
             // debugger
             showVeteran = { display: 'none' };
         }
-
-
-
-        //Question 7
-        // let showVeteran = {display: 'none'};
-        // if (this.state.questionNumber == '7' && (clientAge === '18-24' || clientAge ==='25-65' )) {
-        //
-        //     showVeteran = {display: 'block'};
-        //
-        // } else {
-        //
-        //     showVeteran = {display: 'none'};
-        //
-        // }
 
 
 
