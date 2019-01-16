@@ -521,7 +521,7 @@ class FilterForm extends React.Component {
                                             name='radioGroup'
                                             value='true'
                                             checked={interestedAfterSchoolPrograms === 'true'}
-                                            onChange={this.handleAfterSchool}
+                                            onChange={this.handleChange('interestedAfterSchoolPrograms')}
                                         />
                                     </Form.Field>
 
@@ -531,7 +531,7 @@ class FilterForm extends React.Component {
                                             name='radioGroup'
                                             value='false'
                                             checked={interestedAfterSchoolPrograms === 'false'}
-                                            onChange={this.handleAfterSchool}
+                                            onChange={this.handleChange('interestedAfterSchoolPrograms')}
                                         />
                                     </Form.Field>
                                 </Form>
@@ -553,7 +553,7 @@ class FilterForm extends React.Component {
                                             name='radioGroup'
                                             value='true'
                                             checked={interestedInTraining === 'true'}
-                                            onChange={this.handleInterestedInTraining}
+                                            onChange={this.handleChange('interestedInTraining')}
                                         />
                                     </Form.Field>
 
@@ -563,7 +563,7 @@ class FilterForm extends React.Component {
                                             name='radioGroup'
                                             value='false'
                                             checked={interestedInTraining === 'false'}
-                                            onChange={this.handleInterestedInTraining}
+                                            onChange={this.handleChange('interestedInTraining')}
                                         />
                                     </Form.Field>
 
@@ -584,7 +584,7 @@ class FilterForm extends React.Component {
                                             name='radioGroup'
                                             value='true'
                                             checked={this.state.interestedInCompletingDiploma === 'true'}
-                                            onChange={this.handleInterestedInCompletingDiploma}
+                                            onChange={this.handleChange('interestedInCompletingDiploma')}
                                         />
                                     </Form.Field>
 
@@ -594,7 +594,7 @@ class FilterForm extends React.Component {
                                             name='radioGroup'
                                             value='false'
                                             checked={this.state.interestedInCompletingDiploma === 'false'}
-                                            onChange={this.handleInterestedInCompletingDiploma}
+                                            onChange={this.handleChange('interestedInCompletingDiploma')}
                                         />
                                     </Form.Field>
 
@@ -624,7 +624,7 @@ class FilterForm extends React.Component {
                                         name='radioGroup'
                                         value='true'
                                         checked={this.state.interestedInCriminalServices === 'true'}
-                                        onChange={this.handleInterestedInCriminalServices}
+                                        onChange={this.handleChange('interestedInCriminalServices')}
                                     />
                                 </Form.Field>
 
@@ -634,7 +634,7 @@ class FilterForm extends React.Component {
                                         name='radioGroup'
                                         value='false'
                                         checked={this.state.interestedInCriminalServices === 'false'}
-                                        onChange={this.handleInterestedInCriminalServices}
+                                        onChange={this.handleChange('interestedInCriminalServices')}
                                     />
                                 </Form.Field>
 
