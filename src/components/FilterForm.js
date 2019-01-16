@@ -69,7 +69,7 @@ class FilterForm extends React.Component {
         var lastQuestion = parseInt(e.target.parentNode.id)
         var subtractOne = (lastQuestion - 1).toString();
 
-        this.setState({ questionNumber: subtractOne })
+        this.setState({ questionNumber: subtractOne, answered: true })
         // console.log(this.state.questionNumber)
     }
 
