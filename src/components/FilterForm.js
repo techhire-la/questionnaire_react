@@ -670,7 +670,7 @@ class FilterForm extends React.Component {
                                         name='radioGroup'
                                         value='true'
                                         checked={veteran === 'true'}
-                                        onChange={this.handleVeteran}
+                                        onChange={this.handleChange("veteran")}
                                     />
                                 </Form.Field>
 
@@ -680,7 +680,7 @@ class FilterForm extends React.Component {
                                         name='radioGroup'
                                         value='false'
                                         checked={veteran === 'false'}
-                                        onChange={this.handleVeteran}
+                                        onChange={this.handleChange("veteran")}
                                     />
                                 </Form.Field>
 
