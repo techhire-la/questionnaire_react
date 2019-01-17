@@ -18,9 +18,9 @@
 
 Did you run `npm install` instead of `yarn install`? Oh boy then this text block is for you.  Having decided to use yarn for this project, if npm is used to install then a `package-lock.json` is created that conflicts with the `yarn.lock` file and heroku has a bit of a spazz.  This prevents the app from launching to heroku.  So, here's what you do:
  
- * if you have not committed or pushed the change, remove the `package-lock.json` and `package.json` files.
+ * if you have not committed or pushed the change, remove the `package-lock.json` file.
  
- * if you DID commit and push changes after having used `npm install`, type `git rm package-lock.json` into the command line.  Check that `package-lock.json` and `package.json` files are removed.
+ * if you DID commit and push changes after having used `npm install`, type `git rm package-lock.json` into the command line.  Check that `package-lock.json` is removed.
  
  * delete the `node_modules` folder
  
