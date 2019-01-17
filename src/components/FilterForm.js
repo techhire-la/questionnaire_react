@@ -27,7 +27,9 @@ class FilterForm extends React.Component {
         truthyArray: [],
         filteredList: undefined,
 
-        answered: false
+        answered: false,
+        questionArray: []
+
     }
 
 
@@ -49,13 +51,12 @@ class FilterForm extends React.Component {
             // e.target.parentNode.getAttribute('id'); ||
             var addOne = (nextQuestion + 1).toString();
 
-            this.setState({ questionNumber: addOne, answered: false })
-            console.log(this.state.questionNumber)
+            this.setState({ questionNumber: addOne, answered: !this.state.answered }) //issue here
+            // console.log(this.state.questionNumber)
         }
         else {
             alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
         }
-        // debugger
 
         // let previousSibling = e.target.previousSibling.id;
         // if (this.state[previousSibling] == undefined){
@@ -63,13 +64,18 @@ class FilterForm extends React.Component {
         // }
         // console.log("AN:", this.state['inSchool'])
 
+        // console.log("answered in Next", this.state.answered)
+
     }
 
     handleBack = (e, { id }) => {
         var lastQuestion = parseInt(e.target.parentNode.id)
         var subtractOne = (lastQuestion - 1).toString();
 
-        this.setState({ questionNumber: subtractOne, answered: true })
+        this.setState({ questionNumber: subtractOne })
+        // console.log("answered in Back: ", this.state.answered, id)
+
+        //
         // console.log(this.state.questionNumber)
     }
 
@@ -81,7 +87,15 @@ class FilterForm extends React.Component {
 
 
     handleChange = input => (e, { value }) => {
-        this.setState({ [input]: value, answered: true })
+        this.setState({
+            [input]: value,
+            answered: !this.state.answered,
+            questionArray: this.state.questionArray.concat(input)
+        })
+
+        //add an array that contain the id's of the inputs and then 
+        //look for them 
+
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -213,6 +227,7 @@ class FilterForm extends React.Component {
         let hidden = { display: 'none' };
 
         //-------------------------- * * * * * --------------------------
+
         let showLocation = questionNumber == '1' ? showDiv : hidden
         let showAge = questionNumber == '2' ? showDiv : hidden
         let showEducation = questionNumber == '3' ? showDiv : hidden
@@ -275,7 +290,8 @@ class FilterForm extends React.Component {
 
             <div>
                 {/* {console.log(this.state.inSchool, this.state.levelOfEducation)} */}
-                {console.log(this.state.answered)}
+                {/* {console.log("answered ", this.state.answered)} */}
+                {console.log(this.state)}
                 <div style={showForm}>
 
                     <div className="ui filterContainer" id="questionHeight">
