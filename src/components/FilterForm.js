@@ -44,8 +44,8 @@ class FilterForm extends React.Component {
     handleNext = (e, { id }) => {
         // debugger
         // var stringId = e.target.parentNode.id;
-        let answered = this.state.answered;
-        if (answered) {
+        // let answered = this.state.answered;
+        // if (answered) {
 
             var nextQuestion = parseInt(e.target.parentNode.id)
             // e.target.parentNode.getAttribute('id'); ||
@@ -57,10 +57,10 @@ class FilterForm extends React.Component {
                 questionArray: this.state.questionArray.concat(addOne)
             }) //issue here
             // console.log(this.state.questionNumber)
-        }
-        else {
-            alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
-        }
+        // }
+        // else {
+        //     alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
+        // }
 
         // let previousSibling = e.target.previousSibling.id;
         // if (this.state[previousSibling] == undefined){
@@ -81,8 +81,17 @@ class FilterForm extends React.Component {
         var subtractOne = (lastQuestion - 1).toString();
 
         this.setState({ questionNumber: subtractOne })
+        let lastNumber = this.state.questionArray.pop(subtractOne)
+        let backArray = this.state.questionArray.slice(-1,1)
+        // if (this.state.questionNumber == lastNumber){
+        //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
+        // }
 
+        debugger
         console.log(this.state.questionArray.lastIndexOf(subtractOne))
+        console.log(typeof(subtractOne))
+        console.log(lastNumber)
+        console.log(backArray)
         // console.log("answered in Back: ", this.state.answered, id)
 
         //
