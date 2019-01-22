@@ -51,7 +51,11 @@ class FilterForm extends React.Component {
             // e.target.parentNode.getAttribute('id'); ||
             var addOne = (nextQuestion + 1).toString();
 
-            this.setState({ questionNumber: addOne, answered: !this.state.answered }) //issue here
+            this.setState({
+                questionNumber: addOne,
+                answered: !this.state.answered,
+                questionArray: this.state.questionArray.concat(addOne)
+            }) //issue here
             // console.log(this.state.questionNumber)
         }
         else {
@@ -65,6 +69,10 @@ class FilterForm extends React.Component {
         // console.log("AN:", this.state['inSchool'])
 
         // console.log("answered in Next", this.state.answered)
+        //forswads adds the question to the arra ( use keys in divs?) 
+        //handleBack checks the current question (index?) and compares 
+        //it to the array ?
+        //get the id and use it as the index of the array since it should be the same number that was concanated to the array
 
     }
 
@@ -73,6 +81,8 @@ class FilterForm extends React.Component {
         var subtractOne = (lastQuestion - 1).toString();
 
         this.setState({ questionNumber: subtractOne })
+
+        console.log(this.state.questionArray.lastIndexOf(subtractOne))
         // console.log("answered in Back: ", this.state.answered, id)
 
         //
@@ -90,7 +100,7 @@ class FilterForm extends React.Component {
         this.setState({
             [input]: value,
             answered: !this.state.answered,
-            questionArray: this.state.questionArray.concat(input)
+            // questionArray: this.state.questionArray.concat(input)
         })
 
         //add an array that contain the id's of the inputs and then 
@@ -289,9 +299,8 @@ class FilterForm extends React.Component {
         return (
 
             <div>
-                {/* {console.log(this.state.inSchool, this.state.levelOfEducation)} */}
-                {/* {console.log("answered ", this.state.answered)} */}
-                {console.log(this.state)}
+                {console.log("questionArray", this.state.questionArray)}
+                {console.log("backArray:", this.state.questionArray)}
                 <div style={showForm}>
 
                     <div className="ui filterContainer" id="questionHeight">
