@@ -55,8 +55,10 @@ class FilterForm extends React.Component {
                 questionNumber: addOne,
                 answered: !this.state.answered,
                 questionArray: this.state.questionArray.concat(addOne)
-            }) //issue here
-            // console.log(this.state.questionNumber)
+            }) 
+            
+        //issue here
+         // console.log(this.state.questionNumber)
         // }
         // else {
         //     alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
@@ -106,6 +108,11 @@ class FilterForm extends React.Component {
 
 
     handleChange = input => (e, { value }) => {
+       
+        //latest
+        let checkedObject = JSON.parse(JSON.stringify(this.state.questionArray))
+        console.log(checkedObject)
+       
         this.setState({
             [input]: value,
             answered: !this.state.answered,
