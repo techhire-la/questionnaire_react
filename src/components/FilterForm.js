@@ -112,7 +112,15 @@ class FilterForm extends React.Component {
         //latest
         let checkedObject = JSON.parse(JSON.stringify(this.state.questionArray))
         console.log(checkedObject)
+        
+        let currentQuestion = this.state.questionNumber;
+        let questionIsChecked = {}
+        questionIsChecked[currentQuestion] = true
+
+        console.log(questionIsChecked)
+
        
+        debugger
         this.setState({
             [input]: value,
             answered: !this.state.answered,
@@ -316,7 +324,6 @@ class FilterForm extends React.Component {
 
             <div>
                 {console.log("questionArray", this.state.questionArray)}
-                {console.log("backArray:", this.state.questionArray)}
                 <div style={showForm}>
 
                     <div className="ui filterContainer" id="questionHeight">
