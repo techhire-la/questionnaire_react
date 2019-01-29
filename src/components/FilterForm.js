@@ -56,7 +56,6 @@ class FilterForm extends React.Component {
             this.setState({
                 questionNumber: addOne,
                 answered: !this.state.answered,
-                // questionArray: this.state.questionArray.concat(addOne)
             }) 
             
         //issue here
@@ -79,21 +78,20 @@ class FilterForm extends React.Component {
         var subtractOne = (lastQuestion - 1).toString();
 
         this.setState({ questionNumber: subtractOne })
-        let lastNumber = this.state.questionArray.pop(subtractOne)
-        let backArray = this.state.questionArray.slice(-1,1)
+
+
+        // let lastNumber = this.state.questionArray.pop(subtractOne)
+        // let backArray = this.state.questionArray.slice(-1,1)
         // if (this.state.questionNumber == lastNumber){
         //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
         // }
 
-        debugger
-        console.log(this.state.questionArray.lastIndexOf(subtractOne))
-        console.log(typeof(subtractOne))
-        console.log(lastNumber)
-        console.log(backArray)
-        // console.log("answered in Back: ", this.state.answered, id)
+        // debugger
+        // console.log(this.state.questionArray.lastIndexOf(subtractOne))
+        // console.log(typeof(subtractOne))
+        // console.log(lastNumber)
+        // console.log(backArray)
 
-        //
-        // console.log(this.state.questionNumber)
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -105,19 +103,12 @@ class FilterForm extends React.Component {
 
     handleChange = input => (e, { value }) => {
         //latest
-        // let checkedObject = JSON.parse(JSON.stringify(this.state.questionArray))
-        // console.log(checkedObject)
-
-        const checked = true;
-        // console.log(checked)
-        
         let currentQuestion = this.state.questionNumber;
         let questionObject = this.state.questionObject;
-        questionObject[currentQuestion] = questionObject[currentQuestion]
+        questionObject[currentQuestion] = !questionObject[currentQuestion]
 
         // console.log(!questionObject[currentQuestion])
-        console.log(!undefined)
-
+        // console.log(!undefined)
        
         debugger
         this.setState({
@@ -126,8 +117,6 @@ class FilterForm extends React.Component {
             // questionArray: this.state.questionArray.concat(input)
         })
 
-        //add an array that contain the id's of the inputs and then 
-        //look for them 
 
     }
 
