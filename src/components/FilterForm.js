@@ -28,7 +28,9 @@ class FilterForm extends React.Component {
         filteredList: undefined,
 
         answered: false,
-        questionArray: []
+        questionObject: {}
+
+
 
     }
 
@@ -54,7 +56,7 @@ class FilterForm extends React.Component {
             this.setState({
                 questionNumber: addOne,
                 answered: !this.state.answered,
-                questionArray: this.state.questionArray.concat(addOne)
+                // questionArray: this.state.questionArray.concat(addOne)
             }) 
             
         //issue here
@@ -69,12 +71,6 @@ class FilterForm extends React.Component {
         //     alert("YES")
         // }
         // console.log("AN:", this.state['inSchool'])
-
-        // console.log("answered in Next", this.state.answered)
-        //forswads adds the question to the arra ( use keys in divs?) 
-        //handleBack checks the current question (index?) and compares 
-        //it to the array ?
-        //get the id and use it as the index of the array since it should be the same number that was concanated to the array
 
     }
 
@@ -108,16 +104,19 @@ class FilterForm extends React.Component {
 
 
     handleChange = input => (e, { value }) => {
-       
         //latest
-        let checkedObject = JSON.parse(JSON.stringify(this.state.questionArray))
-        console.log(checkedObject)
+        // let checkedObject = JSON.parse(JSON.stringify(this.state.questionArray))
+        // console.log(checkedObject)
+
+        const checked = true;
+        // console.log(checked)
         
         let currentQuestion = this.state.questionNumber;
-        let questionIsChecked = {}
-        questionIsChecked[currentQuestion] = true
+        let questionObject = this.state.questionObject;
+        questionObject[currentQuestion] = questionObject[currentQuestion]
 
-        console.log(questionIsChecked)
+        // console.log(!questionObject[currentQuestion])
+        console.log(!undefined)
 
        
         debugger
@@ -324,6 +323,7 @@ class FilterForm extends React.Component {
 
             <div>
                 {console.log("questionArray", this.state.questionArray)}
+                {console.log(this.state.questionObject)}
                 <div style={showForm}>
 
                     <div className="ui filterContainer" id="questionHeight">
