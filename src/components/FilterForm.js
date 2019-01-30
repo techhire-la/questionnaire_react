@@ -27,11 +27,8 @@ class FilterForm extends React.Component {
         truthyArray: [],
         filteredList: undefined,
 
-        answered: false,
+        // answered: false,
         questionObject: {}
-
-
-
     }
 
 
@@ -44,24 +41,11 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        // debugger
-        // var stringId = e.target.parentNode.id;
-        // let answered = this.state.answered;
-        // if (answered) {
-
-            // var nextQuestion = parseInt(e.target.parentNode.id)
-            // // e.target.parentNode.getAttribute('id'); ||
-            // var addOne = (nextQuestion + 1).toString();
-
-            // this.setState({
-            //     questionNumber: addOne,
-            //     answered: !this.state.answered,
-            // }) 
-            
+        // var stringId = e.target.parentNode.id;            
         let currentQuestion = this.state.questionNumber;
         let questionObject = this.state.questionObject;
         if (questionObject[currentQuestion] == undefined) {
-            alert ("No can")
+            alert ("Please answer before moving to the next question.")
         }
         else {
             var nextQuestion = parseInt(e.target.parentNode.id)
@@ -73,24 +57,6 @@ class FilterForm extends React.Component {
                 // answered: !this.state.answered,
             }) 
         }
-
-        debugger
-
-        
-            
-        //issue here
-         // console.log(this.state.questionNumber)
-        // }
-        // else {
-        //     alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
-        // }
-
-        // let previousSibling = e.target.previousSibling.id;
-        // if (this.state[previousSibling] == undefined){
-        //     alert("YES")
-        // }
-        // console.log("AN:", this.state['inSchool'])
-
     }
 
     handleBack = (e, { id }) => {
@@ -125,16 +91,12 @@ class FilterForm extends React.Component {
         //latest
         let currentQuestion = this.state.questionNumber;
         let questionObject = this.state.questionObject;
-        questionObject[currentQuestion] = !questionObject[currentQuestion]
-
-        // console.log(!questionObject[currentQuestion])
-        // console.log(!undefined)
+        const checked = true;
+        questionObject[currentQuestion] = checked;
        
-        debugger
+        // debugger
         this.setState({
             [input]: value,
-            answered: !this.state.answered,
-            // questionArray: this.state.questionArray.concat(input)
         })
 
 
@@ -331,7 +293,6 @@ class FilterForm extends React.Component {
         return (
 
             <div>
-                {console.log("questionArray", this.state.questionArray)}
                 {console.log(this.state.questionObject)}
                 <div style={showForm}>
 
