@@ -49,14 +49,34 @@ class FilterForm extends React.Component {
         // let answered = this.state.answered;
         // if (answered) {
 
+            // var nextQuestion = parseInt(e.target.parentNode.id)
+            // // e.target.parentNode.getAttribute('id'); ||
+            // var addOne = (nextQuestion + 1).toString();
+
+            // this.setState({
+            //     questionNumber: addOne,
+            //     answered: !this.state.answered,
+            // }) 
+            
+        let currentQuestion = this.state.questionNumber;
+        let questionObject = this.state.questionObject;
+        if (questionObject[currentQuestion] == undefined) {
+            alert ("No can")
+        }
+        else {
             var nextQuestion = parseInt(e.target.parentNode.id)
             // e.target.parentNode.getAttribute('id'); ||
             var addOne = (nextQuestion + 1).toString();
 
             this.setState({
                 questionNumber: addOne,
-                answered: !this.state.answered,
+                // answered: !this.state.answered,
             }) 
+        }
+
+        debugger
+
+        
             
         //issue here
          // console.log(this.state.questionNumber)
