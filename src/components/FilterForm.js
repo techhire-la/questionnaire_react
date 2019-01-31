@@ -27,7 +27,8 @@ class FilterForm extends React.Component {
         truthyArray: [],
         filteredList: undefined,
 
-        answered: false
+        // answered: false,
+        questionObject: {}
     }
 
 
@@ -40,37 +41,43 @@ class FilterForm extends React.Component {
 
 
     handleNext = (e, { id }) => {
-        // debugger
-        // var stringId = e.target.parentNode.id;
-        let answered = this.state.answered;
-        if (answered) {
-
+        // var stringId = e.target.parentNode.id;            
+        let currentQuestion = this.state.questionNumber;
+        let questionObject = this.state.questionObject;
+        if (questionObject[currentQuestion] == undefined) {
+            alert ("Please answer before moving to the next question.")
+        }
+        else {
             var nextQuestion = parseInt(e.target.parentNode.id)
             // e.target.parentNode.getAttribute('id'); ||
             var addOne = (nextQuestion + 1).toString();
 
-            this.setState({ questionNumber: addOne, answered: false })
-            console.log(this.state.questionNumber)
+            this.setState({
+                questionNumber: addOne,
+                // answered: !this.state.answered,
+            }) 
         }
-        else {
-            alert(`${"Question "}${this.state.questionNumber}${" not answered"}`)
-        }
-        // debugger
-
-        // let previousSibling = e.target.previousSibling.id;
-        // if (this.state[previousSibling] == undefined){
-        //     alert("YES")
-        // }
-        // console.log("AN:", this.state['inSchool'])
-
     }
 
     handleBack = (e, { id }) => {
         var lastQuestion = parseInt(e.target.parentNode.id)
         var subtractOne = (lastQuestion - 1).toString();
 
-        this.setState({ questionNumber: subtractOne, answered: true })
-        // console.log(this.state.questionNumber)
+        this.setState({ questionNumber: subtractOne })
+
+
+        // let lastNumber = this.state.questionArray.pop(subtractOne)
+        // let backArray = this.state.questionArray.slice(-1,1)
+        // if (this.state.questionNumber == lastNumber){
+        //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
+        // }
+
+        // debugger
+        // console.log(this.state.questionArray.lastIndexOf(subtractOne))
+        // console.log(typeof(subtractOne))
+        // console.log(lastNumber)
+        // console.log(backArray)
+
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -81,7 +88,18 @@ class FilterForm extends React.Component {
 
 
     handleChange = input => (e, { value }) => {
-        this.setState({ [input]: value, answered: true })
+        //latest
+        let currentQuestion = this.state.questionNumber;
+        let questionObject = this.state.questionObject;
+        const checked = true;
+        questionObject[currentQuestion] = checked;
+       
+        // debugger
+        this.setState({
+            [input]: value,
+        })
+
+
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -213,6 +231,7 @@ class FilterForm extends React.Component {
         let hidden = { display: 'none' };
 
         //-------------------------- * * * * * --------------------------
+
         let showLocation = questionNumber == '1' ? showDiv : hidden
         let showAge = questionNumber == '2' ? showDiv : hidden
         let showEducation = questionNumber == '3' ? showDiv : hidden
@@ -274,8 +293,7 @@ class FilterForm extends React.Component {
         return (
 
             <div>
-                {/* {console.log(this.state.inSchool, this.state.levelOfEducation)} */}
-                {console.log(this.state.answered)}
+                {console.log(this.state.questionObject)}
                 <div style={showForm}>
 
                     <div className="ui filterContainer" id="questionHeight">

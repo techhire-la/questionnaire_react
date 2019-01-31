@@ -1,2 +1,0 @@
--questions 3 and 4 are switched
--the options set for each of the questions are reversed therefore the values are not setting the state properly
