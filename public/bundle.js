@@ -70745,7 +70745,8 @@ var FilterForm = function (_React$Component) {
             truthyArray: [],
             filteredList: undefined,
 
-            answered: false
+            // answered: false,
+            questionObject: {}
 
             /////////////////////////////////////////////////////////////////////////////////////////
             /////////////////////////////////////////////////////////////////////////////////////////
@@ -70757,42 +70758,52 @@ var FilterForm = function (_React$Component) {
         }, _this.handleNext = function (e, _ref2) {
             var id = _ref2.id;
 
-            // debugger
-            // var stringId = e.target.parentNode.id;
-            var answered = _this.state.answered;
-            if (answered) {
-
+            // var stringId = e.target.parentNode.id;            
+            var currentQuestion = _this.state.questionNumber;
+            var questionObject = _this.state.questionObject;
+            if (questionObject[currentQuestion] == undefined) {
+                alert("Please answer before moving to the next question.");
+            } else {
                 var nextQuestion = parseInt(e.target.parentNode.id);
                 // e.target.parentNode.getAttribute('id'); ||
                 var addOne = (nextQuestion + 1).toString();
 
-                _this.setState({ questionNumber: addOne, answered: false });
-                console.log(_this.state.questionNumber);
-            } else {
-                alert("Question " + _this.state.questionNumber + " not answered");
+                _this.setState({
+                    questionNumber: addOne
+                    // answered: !this.state.answered,
+                });
             }
-            // debugger
-
-            // let previousSibling = e.target.previousSibling.id;
-            // if (this.state[previousSibling] == undefined){
-            //     alert("YES")
-            // }
-            // console.log("AN:", this.state['inSchool'])
         }, _this.handleBack = function (e, _ref3) {
             var id = _ref3.id;
 
             var lastQuestion = parseInt(e.target.parentNode.id);
             var subtractOne = (lastQuestion - 1).toString();
 
-            _this.setState({ questionNumber: subtractOne, answered: true });
-            // console.log(this.state.questionNumber)
+            _this.setState({ questionNumber: subtractOne });
+
+            // let lastNumber = this.state.questionArray.pop(subtractOne)
+            // let backArray = this.state.questionArray.slice(-1,1)
+            // if (this.state.questionNumber == lastNumber){
+            //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
+            // }
+
+            // debugger
+            // console.log(this.state.questionArray.lastIndexOf(subtractOne))
+            // console.log(typeof(subtractOne))
+            // console.log(lastNumber)
+            // console.log(backArray)
         }, _this.handleChange = function (input) {
             return function (e, _ref4) {
-                var _this$setState;
-
                 var value = _ref4.value;
 
-                _this.setState((_this$setState = {}, _defineProperty(_this$setState, input, value), _defineProperty(_this$setState, 'answered', true), _this$setState));
+                //latest
+                var currentQuestion = _this.state.questionNumber;
+                var questionObject = _this.state.questionObject;
+                var checked = true;
+                questionObject[currentQuestion] = checked;
+
+                // debugger
+                _this.setState(_defineProperty({}, input, value));
             };
         }, _this.handleMatch = function (catalogueAttribute, stateData) {
 
@@ -70913,6 +70924,7 @@ var FilterForm = function (_React$Component) {
             var hidden = { display: 'none' };
 
             //-------------------------- * * * * * --------------------------
+
             var showLocation = questionNumber == '1' ? showDiv : hidden;
             var showAge = questionNumber == '2' ? showDiv : hidden;
             var showEducation = questionNumber == '3' ? showDiv : hidden;
@@ -70963,7 +70975,7 @@ var FilterForm = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                console.log(this.state.answered),
+                console.log(this.state.questionObject),
                 _react2.default.createElement(
                     'div',
                     { style: showForm },
