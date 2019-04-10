@@ -23,8 +23,14 @@
   margin-bottom: 1em;
   position: static;
   max-width: 700px;
+      // max-width: 67em;
+      
+      
   min-width: 275px;
   max-height: 500px;
+      
+      // max-height: 56em;
+
   min-height: 200px;
   overflow: scroll;
   opacity: 1;
@@ -32,6 +38,30 @@
   //height: 100%;
   //overflow-y: scroll!important;
   //-webkit-overflow-scrolling: touch;
+
+  ::-webkit-scrollbar {
+    width: 20px !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey !important;
+    border-radius: 10px !important;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: red !important;
+    border-radius: 10px !important;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000 !important;
+  }
+
+
+
+
 }
 #questionHeight {
   height: 300px;
@@ -106,3 +136,53 @@
 //.ui.radio.checkbox.label {
 //  color: red;
 //}
+
+body ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/////////////////////////// SCROLL BAR ///////////////////////////
+// .filterContainer ::-webkit-scrollbar {
+//   width: 20px !important;
+// }
+
+// /* Track */
+// .filterContainer ::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 5px grey !important;
+//   border-radius: 10px !important;
+// }
+
+// /* Handle */
+// .filterContainer ::-webkit-scrollbar-thumb {
+//   background: red !important;
+//   border-radius: 10px !important;
+// }
+
+// /* Handle on hover */
+// .filterContainer ::-webkit-scrollbar-thumb:hover {
+//   background: #b30000 !important;
+// }
+
+
+body ::-webkit-scrollbar {
+  width: 10px !important;
+  margin-right: 10em;
+}
+
+/* Track */
+body ::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px grey !important;
+  box-shadow: inset 0 0px 0px grey !important;
+  border-radius: 20px !important;
+}
+
+/* Handle */
+body ::-webkit-scrollbar-thumb {
+  background: grey !important;
+  border-radius: 5px !important;
+}
+
+/* Handle on hover */
+body ::-webkit-scrollbar-thumb:hover {
+  background: grey !important;
+}
