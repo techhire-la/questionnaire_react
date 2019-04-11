@@ -90,6 +90,7 @@ class Catalogue extends React.Component {
         formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
         // formData.append('user_id', EMAIL_JS_USER_ID);
 
+        var ypiEmployeeName = document.getElementById("ypiEmployeeName").value;
         var firstname = document.getElementById("firstname").value;
         var lastname = document.getElementById("lastname").value;
         var phonenumber = document.getElementById("phonenumber").value;
@@ -112,6 +113,7 @@ class Catalogue extends React.Component {
 
 
         var dataForm = {
+            "ypiEmployeeName": ypiEmployeeName,
             "firstname": firstname,
             "lastname": lastname,
             "phonenumber": phonenumber,
@@ -205,11 +207,22 @@ class Catalogue extends React.Component {
 
                     <Form>
 
+                        < Form.Group widths = 'equal' >
+
+                            < Form.Input fluid label = 'YPI Employee Name'
+                            id = "ypiEmployeeName"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "Employee Name"
+                            name = "ypiEmployeeName" />
+
+                        </Form.Group>
+
                         <Form.Group widths='equal'>
 
-                            <Form.Input fluid label='First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
+                            <Form.Input fluid label='Client First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
 
-                            <Form.Input fluid label='Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
+                            <Form.Input fluid label='Client Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
 
 
                         </Form.Group>
@@ -217,9 +230,9 @@ class Catalogue extends React.Component {
                         <Form.Group widths='equal'>
 
 
-                            <Form.Input fluid label='Your Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
+                            <Form.Input fluid label='Client Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
 
-                            <Form.Input fluid label='Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
+                            <Form.Input fluid label='Client Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
 
 
                         </Form.Group>
