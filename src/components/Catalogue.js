@@ -91,6 +91,8 @@ class Catalogue extends React.Component {
         // formData.append('user_id', EMAIL_JS_USER_ID);
 
         var ypiEmployeeName = document.getElementById("ypiEmployeeName").value;
+        var ypiEmployeeEmail = document.getElementById("ypiEmployeeEmail").value;
+        var ypiEmployeeDept = document.getElementById("ypiEmployeeDept").value;
         var firstname = document.getElementById("firstname").value;
         var lastname = document.getElementById("lastname").value;
         var phonenumber = document.getElementById("phonenumber").value;
@@ -114,6 +116,8 @@ class Catalogue extends React.Component {
 
         var dataForm = {
             "ypiEmployeeName": ypiEmployeeName,
+            "ypiEmployeeEmail": ypiEmployeeEmail,
+            "ypiEmployeeDept": ypiEmployeeDept
             "firstname": firstname,
             "lastname": lastname,
             "phonenumber": phonenumber,
@@ -123,7 +127,8 @@ class Catalogue extends React.Component {
 
         console.log("formData: " + formData);
 
-        console.log("dataForm: " + dataForm)
+        console.log("dataForm: ")
+        console.log(dataForm);
 
         // data: {
         //     'service_id': 'default_service',
@@ -135,6 +140,7 @@ class Catalogue extends React.Component {
         //simple way /////////////////////////////////////////////////////////////
         emailjs.send("default_service", "email_blast", dataForm)
             .then(function(response) {
+                debugger
                 console.log('SUCCESS!', response.status, response.text);
                 alert("Your email has been sent")
             }, function(error) {
@@ -215,6 +221,21 @@ class Catalogue extends React.Component {
                             className = "form-control"
                             placeholder = "Employee Name"
                             name = "ypiEmployeeName" />
+
+                            < Form.Input fluid label = 'YPI Employee Email'
+                            id = "ypiEmployeeEmail"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "YPI Employee Email"
+                            name = "ypiEmployeeEmail" / >
+
+                            < Form.Input fluid label = 'YPI Employee Department'
+                            id = "ypiEmployeeDept"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "YPI Employee Department"
+                            name = "ypiEmployeeDept" / >
+
 
                         </Form.Group>
 
