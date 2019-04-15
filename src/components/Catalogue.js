@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Program from './Program';
-import { Image, Item, Responsive, Segment , Form, Button, } from 'semantic-ui-react'
+import {
+    Image,
+    Item,
+    Responsive,
+    Segment,
+    Form,
+    Button,
+    TextArea
+} from 'semantic-ui-react'
 
 import catalogueData from "../api/contacts.json";
 import $ from 'jquery';
@@ -97,6 +105,7 @@ class Catalogue extends React.Component {
         var lastname = document.getElementById("lastname").value;
         var phonenumber = document.getElementById("phonenumber").value;
         var senderemail = document.getElementById("senderemail").value;
+        var note = document.getElementById("notes").value;
         var emaillist = document.getElementById("emaillist").value;
 
         formData = {
@@ -115,13 +124,14 @@ class Catalogue extends React.Component {
 
 
         var dataForm = {
-            "ypiEmployeeName": ypiEmployeeName,
-            "ypiEmployeeEmail": ypiEmployeeEmail,
-            "ypiEmployeeDept": ypiEmployeeDept
+            "ypiemployeename": ypiEmployeeName,
+            "ypiemployeeemail": ypiEmployeeEmail,
+            "ypiemployeedept": ypiEmployeeDept,
             "firstname": firstname,
             "lastname": lastname,
             "phonenumber": phonenumber,
             "senderemail": senderemail,
+            "notes": notes,
             "emailto": emaillist
         }
 
@@ -213,50 +223,74 @@ class Catalogue extends React.Component {
 
                     <Form>
 
+                        < h2 > YPI Employee Information </h2>
+                        <hr/>
                         < Form.Group widths = 'equal' >
 
-                            < Form.Input fluid label = 'YPI Employee Name'
+                            
+                        
+
+                            < Form.Input fluid label = 'Name'
                             id = "ypiEmployeeName"
                             type = "text"
                             className = "form-control"
-                            placeholder = "Employee Name"
+                            placeholder = "First and Last"
                             name = "ypiEmployeeName" />
 
-                            < Form.Input fluid label = 'YPI Employee Email'
-                            id = "ypiEmployeeEmail"
-                            type = "text"
-                            className = "form-control"
-                            placeholder = "YPI Employee Email"
-                            name = "ypiEmployeeEmail" / >
-
-                            < Form.Input fluid label = 'YPI Employee Department'
+                            < Form.Input fluid label = 'Department'
                             id = "ypiEmployeeDept"
                             type = "text"
                             className = "form-control"
                             placeholder = "YPI Employee Department"
                             name = "ypiEmployeeDept" / >
 
+                            < Form.Input fluid label = 'Email'
+                            id = "ypiEmployeeEmail"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "YPI Employee Email"
+                            name = "ypiEmployeeEmail" / >
+
+
+                        </Form.Group>
+
+                        < h2 > Client Information</h2>  
+                        <hr/>
+                        <Form.Group widths='equal'>
+
+                            <Form.Input fluid label='First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
+
+                            <Form.Input fluid label='Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
+
 
                         </Form.Group>
 
                         <Form.Group widths='equal'>
 
-                            <Form.Input fluid label='Client First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
 
-                            <Form.Input fluid label='Client Last Name' id="lastname" type="text" className="form-control" placeholder="Last name" name="lastname"/>
+                            <Form.Input fluid label='Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
 
-
-                        </Form.Group>
-
-                        <Form.Group widths='equal'>
-
-
-                            <Form.Input fluid label='Client Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
-
-                            <Form.Input fluid label='Client Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
+                            <Form.Input fluid label='Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
 
 
                         </Form.Group>
+
+
+                        <Form.Group>
+                            <h2 className="text-header">Further Notes</h2>
+                            < TextArea 
+                                id = "notes"
+                                rows = {
+                                    2
+                                }
+                                className = "form-control"
+                                placeholder = 'Special Notes (Optional)'
+                                name = "notes"
+                                label = 'Additional Notes'
+                            / >
+                        </Form.Group >
+
+
 
                         <Form.Group widths='equal'>
 

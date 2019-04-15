@@ -27,7 +27,7 @@ render() {
         <div className="ui filterContainer">
 
             <h2>Welcome to the YPI Referral Tool</h2>
-            <hr/>
+            
 
             <p>The purpose of this app is to help you find the most relevant services for our clients and to put them in touch with the right person within those programs.</p>
 
