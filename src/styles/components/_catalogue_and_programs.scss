@@ -14,6 +14,19 @@
 
 .ui.checkbox label, .ui.checkbox+label .ui.checkbox+label:hover {
   color: black;
-  //-webkit-transition: color .1s ease;
-  //transition: color .1s ease;
+}
+
+//client further notes text box
+
+.text-area-div {
+  margin-top: 2rem;
+}
+
+.ui.form textarea {
+  margin: 6px;
+}
+
+.text-header {
+  margin: 6px;
+  font-size: 1.55rem !important;
 }

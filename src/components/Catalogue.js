@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Program from './Program';
-import { Image, Item, Responsive, Segment , Form, Button, } from 'semantic-ui-react'
+import {
+    Image,
+    Item,
+    Responsive,
+    Segment,
+    Form,
+    Button,
+    TextArea
+} from 'semantic-ui-react'
 
 import catalogueData from "../api/contacts.json";
 import $ from 'jquery';
@@ -90,10 +98,14 @@ class Catalogue extends React.Component {
         formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
         // formData.append('user_id', EMAIL_JS_USER_ID);
 
+        var ypiEmployeeName = document.getElementById("ypiEmployeeName").value;
+        var ypiEmployeeEmail = document.getElementById("ypiEmployeeEmail").value;
+        var ypiEmployeeDept = document.getElementById("ypiEmployeeDept").value;
         var firstname = document.getElementById("firstname").value;
         var lastname = document.getElementById("lastname").value;
         var phonenumber = document.getElementById("phonenumber").value;
         var senderemail = document.getElementById("senderemail").value;
+        var note = document.getElementById("notes").value;
         var emaillist = document.getElementById("emaillist").value;
 
         formData = {
@@ -112,16 +124,21 @@ class Catalogue extends React.Component {
 
 
         var dataForm = {
+            "ypiemployeename": ypiEmployeeName,
+            "ypiemployeeemail": ypiEmployeeEmail,
+            "ypiemployeedept": ypiEmployeeDept,
             "firstname": firstname,
             "lastname": lastname,
             "phonenumber": phonenumber,
             "senderemail": senderemail,
+            "notes": notes,
             "emailto": emaillist
         }
 
         console.log("formData: " + formData);
 
-        console.log("dataForm: " + dataForm)
+        console.log("dataForm: ")
+        console.log(dataForm);
 
         // data: {
         //     'service_id': 'default_service',
@@ -133,6 +150,7 @@ class Catalogue extends React.Component {
         //simple way /////////////////////////////////////////////////////////////
         emailjs.send("default_service", "email_blast", dataForm)
             .then(function(response) {
+                debugger
                 console.log('SUCCESS!', response.status, response.text);
                 alert("Your email has been sent")
             }, function(error) {
@@ -205,6 +223,39 @@ class Catalogue extends React.Component {
 
                     <Form>
 
+                        < h2 > YPI Employee Information </h2>
+                        <hr/>
+                        < Form.Group widths = 'equal' >
+
+                            
+                        
+
+                            < Form.Input fluid label = 'Name'
+                            id = "ypiEmployeeName"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "First and Last"
+                            name = "ypiEmployeeName" />
+
+                            < Form.Input fluid label = 'Department'
+                            id = "ypiEmployeeDept"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "YPI Employee Department"
+                            name = "ypiEmployeeDept" / >
+
+                            < Form.Input fluid label = 'Email'
+                            id = "ypiEmployeeEmail"
+                            type = "text"
+                            className = "form-control"
+                            placeholder = "YPI Employee Email"
+                            name = "ypiEmployeeEmail" / >
+
+
+                        </Form.Group>
+
+                        < h2 > Client Information</h2>  
+                        <hr/>
                         <Form.Group widths='equal'>
 
                             <Form.Input fluid label='First Name' id="firstname" type="text" className="form-control" placeholder="First name" name="firstname"/>
@@ -217,12 +268,30 @@ class Catalogue extends React.Component {
                         <Form.Group widths='equal'>
 
 
-                            <Form.Input fluid label='Your Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
+                            <Form.Input fluid label='Email'  id="senderemail" type="email" className="form-control" placeholder="Email" name="senderemail"/>
 
                             <Form.Input fluid label='Phone Number' id="phonenumber" type="text" className="form-control" placeholder="Phone Number" name="phonenumber"/>
 
 
                         </Form.Group>
+
+                        <div className="text-area-div">
+                            <Form.Group>
+                                <h2 className="text-header">Further Notes</h2>
+                                < TextArea 
+                                    id = "notes"
+                                    rows = {
+                                        2
+                                    }
+                                    className = "form-control"
+                                    placeholder = 'Special Notes (Optional)'
+                                    name = "notes"
+                                    label = 'Additional Notes'
+                                / >
+                            </Form.Group >
+                        </div>
+
+
 
                         <Form.Group widths='equal'>
 
