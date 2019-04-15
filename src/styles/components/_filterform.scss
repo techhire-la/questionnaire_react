@@ -22,14 +22,14 @@
   margin-top: 5em;
   margin-bottom: 1em;
   position: static;
-  max-width: 700px;
-      // max-width: 67em;
-      
+  // max-width: 700px;
+      max-width: 67em;
       
   min-width: 275px;
-  max-height: 500px;
+  // max-height: 500px;
       
       // max-height: 56em;
+      max-height: 30em;
 
   min-height: 200px;
   overflow: scroll;
@@ -173,3 +173,9 @@ body ::-webkit-scrollbar-thumb:hover {
 body ::-webkit-scrollbar-corner {
   background: rgba(0, 0, 0, 0);
 }
+
+
+    // max-width: 124rem;
+    // min-width: 275px;
+    // max-height: 79rem;
+    // min-height: 200px;

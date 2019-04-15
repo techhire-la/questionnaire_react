@@ -275,20 +275,21 @@ class Catalogue extends React.Component {
 
                         </Form.Group>
 
-
-                        <Form.Group>
-                            <h2 className="text-header">Further Notes</h2>
-                            < TextArea 
-                                id = "notes"
-                                rows = {
-                                    2
-                                }
-                                className = "form-control"
-                                placeholder = 'Special Notes (Optional)'
-                                name = "notes"
-                                label = 'Additional Notes'
-                            / >
-                        </Form.Group >
+                        <div className="text-area-div">
+                            <Form.Group>
+                                <h2 className="text-header">Further Notes</h2>
+                                < TextArea 
+                                    id = "notes"
+                                    rows = {
+                                        2
+                                    }
+                                    className = "form-control"
+                                    placeholder = 'Special Notes (Optional)'
+                                    name = "notes"
+                                    label = 'Additional Notes'
+                                / >
+                            </Form.Group >
+                        </div>
 
 
 
