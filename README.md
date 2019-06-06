@@ -27,3 +27,5 @@ Did you run `npm install` instead of `yarn install`? Oh boy then this text block
  * run `yarn install`
  
 This should resolve the issue.  
+
+Thank you!
