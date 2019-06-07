@@ -15,7 +15,8 @@
     "dev": "yarn run dev-server",
     "postinstall": "webpack -p",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod",
+    "test": "jest"
   },
   "dependencies": {
     "css-loader": "0.28.4",
@@ -45,6 +46,9 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-15": "^1.4.0",
+    "jest": "^24.8.0"
   }
 }
