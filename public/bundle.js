@@ -6278,317 +6278,316 @@ module.exports = ReactInstanceMap;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__addons_Confirm__ = __webpack_require__(554);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Confirm", function() { return __WEBPACK_IMPORTED_MODULE_0__addons_Confirm__["a"]; });
+/* unused harmony reexport Confirm */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__addons_MountNode__ = __webpack_require__(338);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MountNode", function() { return __WEBPACK_IMPORTED_MODULE_1__addons_MountNode__["a"]; });
+/* unused harmony reexport MountNode */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addons_Pagination__ = __webpack_require__(770);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Pagination", function() { return __WEBPACK_IMPORTED_MODULE_2__addons_Pagination__["a"]; });
+/* unused harmony reexport Pagination */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addons_Pagination_PaginationItem__ = __webpack_require__(348);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "PaginationItem", function() { return __WEBPACK_IMPORTED_MODULE_3__addons_Pagination_PaginationItem__["a"]; });
+/* unused harmony reexport PaginationItem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addons_Portal__ = __webpack_require__(93);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Portal", function() { return __WEBPACK_IMPORTED_MODULE_4__addons_Portal__["a"]; });
+/* unused harmony reexport Portal */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addons_Radio__ = __webpack_require__(199);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Radio", function() { return __WEBPACK_IMPORTED_MODULE_5__addons_Radio__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_5__addons_Radio__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__addons_Ref__ = __webpack_require__(138);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Ref", function() { return __WEBPACK_IMPORTED_MODULE_6__addons_Ref__["a"]; });
+/* unused harmony reexport Ref */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__addons_Responsive__ = __webpack_require__(784);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Responsive", function() { return __WEBPACK_IMPORTED_MODULE_7__addons_Responsive__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_7__addons_Responsive__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__addons_Select__ = __webpack_require__(349);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Select", function() { return __WEBPACK_IMPORTED_MODULE_8__addons_Select__["a"]; });
+/* unused harmony reexport Select */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__addons_TextArea__ = __webpack_require__(357);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TextArea", function() { return __WEBPACK_IMPORTED_MODULE_9__addons_TextArea__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_9__addons_TextArea__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__addons_TransitionablePortal__ = __webpack_require__(801);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TransitionablePortal", function() { return __WEBPACK_IMPORTED_MODULE_10__addons_TransitionablePortal__["a"]; });
+/* unused harmony reexport TransitionablePortal */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__behaviors_Visibility__ = __webpack_require__(803);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Visibility", function() { return __WEBPACK_IMPORTED_MODULE_11__behaviors_Visibility__["a"]; });
+/* unused harmony reexport Visibility */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__collections_Breadcrumb__ = __webpack_require__(805);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Breadcrumb", function() { return __WEBPACK_IMPORTED_MODULE_12__collections_Breadcrumb__["a"]; });
+/* unused harmony reexport Breadcrumb */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__collections_Breadcrumb_BreadcrumbDivider__ = __webpack_require__(362);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbDivider", function() { return __WEBPACK_IMPORTED_MODULE_13__collections_Breadcrumb_BreadcrumbDivider__["a"]; });
+/* unused harmony reexport BreadcrumbDivider */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__collections_Breadcrumb_BreadcrumbSection__ = __webpack_require__(363);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbSection", function() { return __WEBPACK_IMPORTED_MODULE_14__collections_Breadcrumb_BreadcrumbSection__["a"]; });
+/* unused harmony reexport BreadcrumbSection */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__collections_Form__ = __webpack_require__(807);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return __WEBPACK_IMPORTED_MODULE_15__collections_Form__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_15__collections_Form__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__collections_Form_FormButton__ = __webpack_require__(364);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormButton", function() { return __WEBPACK_IMPORTED_MODULE_16__collections_Form_FormButton__["a"]; });
+/* unused harmony reexport FormButton */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__collections_Form_FormCheckbox__ = __webpack_require__(365);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormCheckbox", function() { return __WEBPACK_IMPORTED_MODULE_17__collections_Form_FormCheckbox__["a"]; });
+/* unused harmony reexport FormCheckbox */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__collections_Form_FormDropdown__ = __webpack_require__(366);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormDropdown", function() { return __WEBPACK_IMPORTED_MODULE_18__collections_Form_FormDropdown__["a"]; });
+/* unused harmony reexport FormDropdown */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__collections_Form_FormField__ = __webpack_require__(49);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormField", function() { return __WEBPACK_IMPORTED_MODULE_19__collections_Form_FormField__["a"]; });
+/* unused harmony reexport FormField */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__collections_Form_FormGroup__ = __webpack_require__(367);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormGroup", function() { return __WEBPACK_IMPORTED_MODULE_20__collections_Form_FormGroup__["a"]; });
+/* unused harmony reexport FormGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__collections_Form_FormInput__ = __webpack_require__(368);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormInput", function() { return __WEBPACK_IMPORTED_MODULE_21__collections_Form_FormInput__["a"]; });
+/* unused harmony reexport FormInput */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__collections_Form_FormRadio__ = __webpack_require__(369);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormRadio", function() { return __WEBPACK_IMPORTED_MODULE_22__collections_Form_FormRadio__["a"]; });
+/* unused harmony reexport FormRadio */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__collections_Form_FormSelect__ = __webpack_require__(370);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormSelect", function() { return __WEBPACK_IMPORTED_MODULE_23__collections_Form_FormSelect__["a"]; });
+/* unused harmony reexport FormSelect */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__collections_Form_FormTextArea__ = __webpack_require__(371);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormTextArea", function() { return __WEBPACK_IMPORTED_MODULE_24__collections_Form_FormTextArea__["a"]; });
+/* unused harmony reexport FormTextArea */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__collections_Grid__ = __webpack_require__(810);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_25__collections_Grid__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_25__collections_Grid__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__collections_Grid_GridColumn__ = __webpack_require__(202);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GridColumn", function() { return __WEBPACK_IMPORTED_MODULE_26__collections_Grid_GridColumn__["a"]; });
+/* unused harmony reexport GridColumn */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__collections_Grid_GridRow__ = __webpack_require__(373);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GridRow", function() { return __WEBPACK_IMPORTED_MODULE_27__collections_Grid_GridRow__["a"]; });
+/* unused harmony reexport GridRow */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__collections_Menu__ = __webpack_require__(343);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Menu", function() { return __WEBPACK_IMPORTED_MODULE_28__collections_Menu__["a"]; });
+/* unused harmony reexport Menu */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__collections_Menu_MenuHeader__ = __webpack_require__(345);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MenuHeader", function() { return __WEBPACK_IMPORTED_MODULE_29__collections_Menu_MenuHeader__["a"]; });
+/* unused harmony reexport MenuHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__collections_Menu_MenuItem__ = __webpack_require__(198);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return __WEBPACK_IMPORTED_MODULE_30__collections_Menu_MenuItem__["a"]; });
+/* unused harmony reexport MenuItem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__collections_Menu_MenuMenu__ = __webpack_require__(347);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MenuMenu", function() { return __WEBPACK_IMPORTED_MODULE_31__collections_Menu_MenuMenu__["a"]; });
+/* unused harmony reexport MenuMenu */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__collections_Message__ = __webpack_require__(811);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Message", function() { return __WEBPACK_IMPORTED_MODULE_32__collections_Message__["a"]; });
+/* unused harmony reexport Message */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__collections_Message_MessageContent__ = __webpack_require__(374);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MessageContent", function() { return __WEBPACK_IMPORTED_MODULE_33__collections_Message_MessageContent__["a"]; });
+/* unused harmony reexport MessageContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__collections_Message_MessageHeader__ = __webpack_require__(375);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MessageHeader", function() { return __WEBPACK_IMPORTED_MODULE_34__collections_Message_MessageHeader__["a"]; });
+/* unused harmony reexport MessageHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__collections_Message_MessageItem__ = __webpack_require__(203);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MessageItem", function() { return __WEBPACK_IMPORTED_MODULE_35__collections_Message_MessageItem__["a"]; });
+/* unused harmony reexport MessageItem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__collections_Message_MessageList__ = __webpack_require__(376);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MessageList", function() { return __WEBPACK_IMPORTED_MODULE_36__collections_Message_MessageList__["a"]; });
+/* unused harmony reexport MessageList */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__collections_Table__ = __webpack_require__(813);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Table", function() { return __WEBPACK_IMPORTED_MODULE_37__collections_Table__["a"]; });
+/* unused harmony reexport Table */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__collections_Table_TableBody__ = __webpack_require__(377);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TableBody", function() { return __WEBPACK_IMPORTED_MODULE_38__collections_Table_TableBody__["a"]; });
+/* unused harmony reexport TableBody */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__collections_Table_TableCell__ = __webpack_require__(142);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TableCell", function() { return __WEBPACK_IMPORTED_MODULE_39__collections_Table_TableCell__["a"]; });
+/* unused harmony reexport TableCell */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__collections_Table_TableFooter__ = __webpack_require__(378);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TableFooter", function() { return __WEBPACK_IMPORTED_MODULE_40__collections_Table_TableFooter__["a"]; });
+/* unused harmony reexport TableFooter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__collections_Table_TableHeader__ = __webpack_require__(204);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TableHeader", function() { return __WEBPACK_IMPORTED_MODULE_41__collections_Table_TableHeader__["a"]; });
+/* unused harmony reexport TableHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__collections_Table_TableHeaderCell__ = __webpack_require__(379);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TableHeaderCell", function() { return __WEBPACK_IMPORTED_MODULE_42__collections_Table_TableHeaderCell__["a"]; });
+/* unused harmony reexport TableHeaderCell */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__collections_Table_TableRow__ = __webpack_require__(380);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TableRow", function() { return __WEBPACK_IMPORTED_MODULE_43__collections_Table_TableRow__["a"]; });
+/* unused harmony reexport TableRow */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__elements_Button_Button__ = __webpack_require__(196);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return __WEBPACK_IMPORTED_MODULE_44__elements_Button_Button__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_44__elements_Button_Button__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__elements_Button_ButtonContent__ = __webpack_require__(333);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonContent", function() { return __WEBPACK_IMPORTED_MODULE_45__elements_Button_ButtonContent__["a"]; });
+/* unused harmony reexport ButtonContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__elements_Button_ButtonGroup__ = __webpack_require__(334);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonGroup", function() { return __WEBPACK_IMPORTED_MODULE_46__elements_Button_ButtonGroup__["a"]; });
+/* unused harmony reexport ButtonGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__elements_Button_ButtonOr__ = __webpack_require__(335);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonOr", function() { return __WEBPACK_IMPORTED_MODULE_47__elements_Button_ButtonOr__["a"]; });
+/* unused harmony reexport ButtonOr */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__elements_Container__ = __webpack_require__(815);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_48__elements_Container__["a"]; });
+/* unused harmony reexport Container */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__elements_Divider__ = __webpack_require__(817);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Divider", function() { return __WEBPACK_IMPORTED_MODULE_49__elements_Divider__["a"]; });
+/* unused harmony reexport Divider */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__elements_Flag__ = __webpack_require__(353);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Flag", function() { return __WEBPACK_IMPORTED_MODULE_50__elements_Flag__["a"]; });
+/* unused harmony reexport Flag */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__elements_Header__ = __webpack_require__(819);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return __WEBPACK_IMPORTED_MODULE_51__elements_Header__["a"]; });
+/* unused harmony reexport Header */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__elements_Header_HeaderContent__ = __webpack_require__(382);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderContent", function() { return __WEBPACK_IMPORTED_MODULE_52__elements_Header_HeaderContent__["a"]; });
+/* unused harmony reexport HeaderContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__elements_Header_HeaderSubheader__ = __webpack_require__(381);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderSubheader", function() { return __WEBPACK_IMPORTED_MODULE_53__elements_Header_HeaderSubheader__["a"]; });
+/* unused harmony reexport HeaderSubheader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__elements_Icon__ = __webpack_require__(28);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return __WEBPACK_IMPORTED_MODULE_54__elements_Icon__["a"]; });
+/* unused harmony reexport Icon */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__elements_Icon_IconGroup__ = __webpack_require__(326);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "IconGroup", function() { return __WEBPACK_IMPORTED_MODULE_55__elements_Icon_IconGroup__["a"]; });
+/* unused harmony reexport IconGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__elements_Image__ = __webpack_require__(75);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Image", function() { return __WEBPACK_IMPORTED_MODULE_56__elements_Image__["a"]; });
+/* unused harmony reexport Image */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__elements_Image_ImageGroup__ = __webpack_require__(330);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ImageGroup", function() { return __WEBPACK_IMPORTED_MODULE_57__elements_Image_ImageGroup__["a"]; });
+/* unused harmony reexport ImageGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__elements_Input__ = __webpack_require__(201);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Input", function() { return __WEBPACK_IMPORTED_MODULE_58__elements_Input__["a"]; });
+/* unused harmony reexport Input */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__elements_Label__ = __webpack_require__(141);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Label", function() { return __WEBPACK_IMPORTED_MODULE_59__elements_Label__["a"]; });
+/* unused harmony reexport Label */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__elements_Label_LabelDetail__ = __webpack_require__(331);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "LabelDetail", function() { return __WEBPACK_IMPORTED_MODULE_60__elements_Label_LabelDetail__["a"]; });
+/* unused harmony reexport LabelDetail */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__elements_Label_LabelGroup__ = __webpack_require__(332);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "LabelGroup", function() { return __WEBPACK_IMPORTED_MODULE_61__elements_Label_LabelGroup__["a"]; });
+/* unused harmony reexport LabelGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__elements_List__ = __webpack_require__(821);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "List", function() { return __WEBPACK_IMPORTED_MODULE_62__elements_List__["a"]; });
+/* unused harmony reexport List */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__elements_List_ListContent__ = __webpack_require__(205);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListContent", function() { return __WEBPACK_IMPORTED_MODULE_63__elements_List_ListContent__["a"]; });
+/* unused harmony reexport ListContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__elements_List_ListDescription__ = __webpack_require__(143);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListDescription", function() { return __WEBPACK_IMPORTED_MODULE_64__elements_List_ListDescription__["a"]; });
+/* unused harmony reexport ListDescription */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__elements_List_ListHeader__ = __webpack_require__(144);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListHeader", function() { return __WEBPACK_IMPORTED_MODULE_65__elements_List_ListHeader__["a"]; });
+/* unused harmony reexport ListHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__elements_List_ListIcon__ = __webpack_require__(206);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListIcon", function() { return __WEBPACK_IMPORTED_MODULE_66__elements_List_ListIcon__["a"]; });
+/* unused harmony reexport ListIcon */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__elements_List_ListItem__ = __webpack_require__(383);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListItem", function() { return __WEBPACK_IMPORTED_MODULE_67__elements_List_ListItem__["a"]; });
+/* unused harmony reexport ListItem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__elements_List_ListList__ = __webpack_require__(384);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListList", function() { return __WEBPACK_IMPORTED_MODULE_68__elements_List_ListList__["a"]; });
+/* unused harmony reexport ListList */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__elements_Loader__ = __webpack_require__(823);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Loader", function() { return __WEBPACK_IMPORTED_MODULE_69__elements_Loader__["a"]; });
+/* unused harmony reexport Loader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__elements_Rail__ = __webpack_require__(825);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Rail", function() { return __WEBPACK_IMPORTED_MODULE_70__elements_Rail__["a"]; });
+/* unused harmony reexport Rail */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__elements_Reveal__ = __webpack_require__(827);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Reveal", function() { return __WEBPACK_IMPORTED_MODULE_71__elements_Reveal__["a"]; });
+/* unused harmony reexport Reveal */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__elements_Reveal_RevealContent__ = __webpack_require__(385);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "RevealContent", function() { return __WEBPACK_IMPORTED_MODULE_72__elements_Reveal_RevealContent__["a"]; });
+/* unused harmony reexport RevealContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__elements_Segment__ = __webpack_require__(829);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Segment", function() { return __WEBPACK_IMPORTED_MODULE_73__elements_Segment__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_73__elements_Segment__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__elements_Segment_SegmentGroup__ = __webpack_require__(387);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SegmentGroup", function() { return __WEBPACK_IMPORTED_MODULE_74__elements_Segment_SegmentGroup__["a"]; });
+/* unused harmony reexport SegmentGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__elements_Step__ = __webpack_require__(830);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Step", function() { return __WEBPACK_IMPORTED_MODULE_75__elements_Step__["a"]; });
+/* unused harmony reexport Step */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__elements_Step_StepContent__ = __webpack_require__(389);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StepContent", function() { return __WEBPACK_IMPORTED_MODULE_76__elements_Step_StepContent__["a"]; });
+/* unused harmony reexport StepContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__elements_Step_StepDescription__ = __webpack_require__(207);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StepDescription", function() { return __WEBPACK_IMPORTED_MODULE_77__elements_Step_StepDescription__["a"]; });
+/* unused harmony reexport StepDescription */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__elements_Step_StepGroup__ = __webpack_require__(390);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StepGroup", function() { return __WEBPACK_IMPORTED_MODULE_78__elements_Step_StepGroup__["a"]; });
+/* unused harmony reexport StepGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__elements_Step_StepTitle__ = __webpack_require__(208);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StepTitle", function() { return __WEBPACK_IMPORTED_MODULE_79__elements_Step_StepTitle__["a"]; });
+/* unused harmony reexport StepTitle */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__modules_Accordion_Accordion__ = __webpack_require__(832);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Accordion", function() { return __WEBPACK_IMPORTED_MODULE_80__modules_Accordion_Accordion__["a"]; });
+/* unused harmony reexport Accordion */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__modules_Accordion_AccordionAccordion__ = __webpack_require__(391);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionAccordion", function() { return __WEBPACK_IMPORTED_MODULE_81__modules_Accordion_AccordionAccordion__["a"]; });
+/* unused harmony reexport AccordionAccordion */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__modules_Accordion_AccordionContent__ = __webpack_require__(209);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionContent", function() { return __WEBPACK_IMPORTED_MODULE_82__modules_Accordion_AccordionContent__["a"]; });
+/* unused harmony reexport AccordionContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__modules_Accordion_AccordionTitle__ = __webpack_require__(210);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionTitle", function() { return __WEBPACK_IMPORTED_MODULE_83__modules_Accordion_AccordionTitle__["a"]; });
+/* unused harmony reexport AccordionTitle */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__modules_Checkbox__ = __webpack_require__(140);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Checkbox", function() { return __WEBPACK_IMPORTED_MODULE_84__modules_Checkbox__["a"]; });
+/* unused harmony reexport Checkbox */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__modules_Dimmer__ = __webpack_require__(328);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dimmer", function() { return __WEBPACK_IMPORTED_MODULE_85__modules_Dimmer__["a"]; });
+/* unused harmony reexport Dimmer */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__modules_Dimmer_DimmerDimmable__ = __webpack_require__(329);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DimmerDimmable", function() { return __WEBPACK_IMPORTED_MODULE_86__modules_Dimmer_DimmerDimmable__["a"]; });
+/* unused harmony reexport DimmerDimmable */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__modules_Dropdown__ = __webpack_require__(200);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dropdown", function() { return __WEBPACK_IMPORTED_MODULE_87__modules_Dropdown__["a"]; });
+/* unused harmony reexport Dropdown */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__modules_Dropdown_DropdownDivider__ = __webpack_require__(351);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownDivider", function() { return __WEBPACK_IMPORTED_MODULE_88__modules_Dropdown_DropdownDivider__["a"]; });
+/* unused harmony reexport DropdownDivider */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_89__modules_Dropdown_DropdownHeader__ = __webpack_require__(354);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownHeader", function() { return __WEBPACK_IMPORTED_MODULE_89__modules_Dropdown_DropdownHeader__["a"]; });
+/* unused harmony reexport DropdownHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_90__modules_Dropdown_DropdownItem__ = __webpack_require__(352);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownItem", function() { return __WEBPACK_IMPORTED_MODULE_90__modules_Dropdown_DropdownItem__["a"]; });
+/* unused harmony reexport DropdownItem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_91__modules_Dropdown_DropdownMenu__ = __webpack_require__(355);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownMenu", function() { return __WEBPACK_IMPORTED_MODULE_91__modules_Dropdown_DropdownMenu__["a"]; });
+/* unused harmony reexport DropdownMenu */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_92__modules_Dropdown_DropdownSearchInput__ = __webpack_require__(356);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownSearchInput", function() { return __WEBPACK_IMPORTED_MODULE_92__modules_Dropdown_DropdownSearchInput__["a"]; });
+/* unused harmony reexport DropdownSearchInput */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_93__modules_Embed__ = __webpack_require__(833);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Embed", function() { return __WEBPACK_IMPORTED_MODULE_93__modules_Embed__["a"]; });
+/* unused harmony reexport Embed */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_94__modules_Modal__ = __webpack_require__(336);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Modal", function() { return __WEBPACK_IMPORTED_MODULE_94__modules_Modal__["a"]; });
+/* unused harmony reexport Modal */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_95__modules_Modal_ModalActions__ = __webpack_require__(341);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ModalActions", function() { return __WEBPACK_IMPORTED_MODULE_95__modules_Modal_ModalActions__["a"]; });
+/* unused harmony reexport ModalActions */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_96__modules_Modal_ModalContent__ = __webpack_require__(340);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ModalContent", function() { return __WEBPACK_IMPORTED_MODULE_96__modules_Modal_ModalContent__["a"]; });
+/* unused harmony reexport ModalContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_97__modules_Modal_ModalDescription__ = __webpack_require__(342);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ModalDescription", function() { return __WEBPACK_IMPORTED_MODULE_97__modules_Modal_ModalDescription__["a"]; });
+/* unused harmony reexport ModalDescription */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_98__modules_Modal_ModalHeader__ = __webpack_require__(339);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ModalHeader", function() { return __WEBPACK_IMPORTED_MODULE_98__modules_Modal_ModalHeader__["a"]; });
+/* unused harmony reexport ModalHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_99__modules_Popup__ = __webpack_require__(835);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Popup", function() { return __WEBPACK_IMPORTED_MODULE_99__modules_Popup__["a"]; });
+/* unused harmony reexport Popup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_100__modules_Popup_PopupContent__ = __webpack_require__(392);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "PopupContent", function() { return __WEBPACK_IMPORTED_MODULE_100__modules_Popup_PopupContent__["a"]; });
+/* unused harmony reexport PopupContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_101__modules_Popup_PopupHeader__ = __webpack_require__(393);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "PopupHeader", function() { return __WEBPACK_IMPORTED_MODULE_101__modules_Popup_PopupHeader__["a"]; });
+/* unused harmony reexport PopupHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_102__modules_Progress__ = __webpack_require__(839);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Progress", function() { return __WEBPACK_IMPORTED_MODULE_102__modules_Progress__["a"]; });
+/* unused harmony reexport Progress */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_103__modules_Rating__ = __webpack_require__(844);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Rating", function() { return __WEBPACK_IMPORTED_MODULE_103__modules_Rating__["a"]; });
+/* unused harmony reexport Rating */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_104__modules_Rating_RatingIcon__ = __webpack_require__(394);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "RatingIcon", function() { return __WEBPACK_IMPORTED_MODULE_104__modules_Rating_RatingIcon__["a"]; });
+/* unused harmony reexport RatingIcon */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_105__modules_Search__ = __webpack_require__(847);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Search", function() { return __WEBPACK_IMPORTED_MODULE_105__modules_Search__["a"]; });
+/* unused harmony reexport Search */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_106__modules_Search_SearchCategory__ = __webpack_require__(395);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchCategory", function() { return __WEBPACK_IMPORTED_MODULE_106__modules_Search_SearchCategory__["a"]; });
+/* unused harmony reexport SearchCategory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_107__modules_Search_SearchResult__ = __webpack_require__(396);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchResult", function() { return __WEBPACK_IMPORTED_MODULE_107__modules_Search_SearchResult__["a"]; });
+/* unused harmony reexport SearchResult */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_108__modules_Search_SearchResults__ = __webpack_require__(397);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchResults", function() { return __WEBPACK_IMPORTED_MODULE_108__modules_Search_SearchResults__["a"]; });
+/* unused harmony reexport SearchResults */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_109__modules_Sidebar__ = __webpack_require__(851);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Sidebar", function() { return __WEBPACK_IMPORTED_MODULE_109__modules_Sidebar__["a"]; });
+/* unused harmony reexport Sidebar */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_110__modules_Sidebar_SidebarPushable__ = __webpack_require__(398);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarPushable", function() { return __WEBPACK_IMPORTED_MODULE_110__modules_Sidebar_SidebarPushable__["a"]; });
+/* unused harmony reexport SidebarPushable */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_111__modules_Sidebar_SidebarPusher__ = __webpack_require__(399);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarPusher", function() { return __WEBPACK_IMPORTED_MODULE_111__modules_Sidebar_SidebarPusher__["a"]; });
+/* unused harmony reexport SidebarPusher */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_112__modules_Sticky__ = __webpack_require__(853);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Sticky", function() { return __WEBPACK_IMPORTED_MODULE_112__modules_Sticky__["a"]; });
+/* unused harmony reexport Sticky */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_113__modules_Tab__ = __webpack_require__(855);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Tab", function() { return __WEBPACK_IMPORTED_MODULE_113__modules_Tab__["a"]; });
+/* unused harmony reexport Tab */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_114__modules_Tab_TabPane__ = __webpack_require__(400);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPane", function() { return __WEBPACK_IMPORTED_MODULE_114__modules_Tab_TabPane__["a"]; });
+/* unused harmony reexport TabPane */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_115__modules_Transition__ = __webpack_require__(358);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Transition", function() { return __WEBPACK_IMPORTED_MODULE_115__modules_Transition__["a"]; });
+/* unused harmony reexport Transition */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_116__modules_Transition_TransitionGroup__ = __webpack_require__(360);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TransitionGroup", function() { return __WEBPACK_IMPORTED_MODULE_116__modules_Transition_TransitionGroup__["a"]; });
+/* unused harmony reexport TransitionGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_117__views_Advertisement__ = __webpack_require__(857);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Advertisement", function() { return __WEBPACK_IMPORTED_MODULE_117__views_Advertisement__["a"]; });
+/* unused harmony reexport Advertisement */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_118__views_Card_Card__ = __webpack_require__(401);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Card", function() { return __WEBPACK_IMPORTED_MODULE_118__views_Card_Card__["a"]; });
+/* unused harmony reexport Card */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_119__views_Card_CardContent__ = __webpack_require__(402);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CardContent", function() { return __WEBPACK_IMPORTED_MODULE_119__views_Card_CardContent__["a"]; });
+/* unused harmony reexport CardContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_120__views_Card_CardDescription__ = __webpack_require__(211);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CardDescription", function() { return __WEBPACK_IMPORTED_MODULE_120__views_Card_CardDescription__["a"]; });
+/* unused harmony reexport CardDescription */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_121__views_Card_CardGroup__ = __webpack_require__(403);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CardGroup", function() { return __WEBPACK_IMPORTED_MODULE_121__views_Card_CardGroup__["a"]; });
+/* unused harmony reexport CardGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_122__views_Card_CardHeader__ = __webpack_require__(212);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CardHeader", function() { return __WEBPACK_IMPORTED_MODULE_122__views_Card_CardHeader__["a"]; });
+/* unused harmony reexport CardHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_123__views_Card_CardMeta__ = __webpack_require__(213);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CardMeta", function() { return __WEBPACK_IMPORTED_MODULE_123__views_Card_CardMeta__["a"]; });
+/* unused harmony reexport CardMeta */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_124__views_Comment__ = __webpack_require__(859);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Comment", function() { return __WEBPACK_IMPORTED_MODULE_124__views_Comment__["a"]; });
+/* unused harmony reexport Comment */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_125__views_Comment_CommentAction__ = __webpack_require__(404);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentAction", function() { return __WEBPACK_IMPORTED_MODULE_125__views_Comment_CommentAction__["a"]; });
+/* unused harmony reexport CommentAction */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_126__views_Comment_CommentActions__ = __webpack_require__(405);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentActions", function() { return __WEBPACK_IMPORTED_MODULE_126__views_Comment_CommentActions__["a"]; });
+/* unused harmony reexport CommentActions */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_127__views_Comment_CommentAuthor__ = __webpack_require__(406);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentAuthor", function() { return __WEBPACK_IMPORTED_MODULE_127__views_Comment_CommentAuthor__["a"]; });
+/* unused harmony reexport CommentAuthor */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_128__views_Comment_CommentAvatar__ = __webpack_require__(407);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentAvatar", function() { return __WEBPACK_IMPORTED_MODULE_128__views_Comment_CommentAvatar__["a"]; });
+/* unused harmony reexport CommentAvatar */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_129__views_Comment_CommentContent__ = __webpack_require__(408);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentContent", function() { return __WEBPACK_IMPORTED_MODULE_129__views_Comment_CommentContent__["a"]; });
+/* unused harmony reexport CommentContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_130__views_Comment_CommentGroup__ = __webpack_require__(409);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentGroup", function() { return __WEBPACK_IMPORTED_MODULE_130__views_Comment_CommentGroup__["a"]; });
+/* unused harmony reexport CommentGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_131__views_Comment_CommentMetadata__ = __webpack_require__(410);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentMetadata", function() { return __WEBPACK_IMPORTED_MODULE_131__views_Comment_CommentMetadata__["a"]; });
+/* unused harmony reexport CommentMetadata */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_132__views_Comment_CommentText__ = __webpack_require__(411);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CommentText", function() { return __WEBPACK_IMPORTED_MODULE_132__views_Comment_CommentText__["a"]; });
+/* unused harmony reexport CommentText */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_133__views_Feed__ = __webpack_require__(861);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Feed", function() { return __WEBPACK_IMPORTED_MODULE_133__views_Feed__["a"]; });
+/* unused harmony reexport Feed */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_134__views_Feed_FeedContent__ = __webpack_require__(214);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedContent", function() { return __WEBPACK_IMPORTED_MODULE_134__views_Feed_FeedContent__["a"]; });
+/* unused harmony reexport FeedContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_135__views_Feed_FeedDate__ = __webpack_require__(146);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedDate", function() { return __WEBPACK_IMPORTED_MODULE_135__views_Feed_FeedDate__["a"]; });
+/* unused harmony reexport FeedDate */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_136__views_Feed_FeedEvent__ = __webpack_require__(412);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedEvent", function() { return __WEBPACK_IMPORTED_MODULE_136__views_Feed_FeedEvent__["a"]; });
+/* unused harmony reexport FeedEvent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_137__views_Feed_FeedExtra__ = __webpack_require__(215);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedExtra", function() { return __WEBPACK_IMPORTED_MODULE_137__views_Feed_FeedExtra__["a"]; });
+/* unused harmony reexport FeedExtra */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_138__views_Feed_FeedLabel__ = __webpack_require__(220);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedLabel", function() { return __WEBPACK_IMPORTED_MODULE_138__views_Feed_FeedLabel__["a"]; });
+/* unused harmony reexport FeedLabel */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_139__views_Feed_FeedLike__ = __webpack_require__(217);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedLike", function() { return __WEBPACK_IMPORTED_MODULE_139__views_Feed_FeedLike__["a"]; });
+/* unused harmony reexport FeedLike */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_140__views_Feed_FeedMeta__ = __webpack_require__(216);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedMeta", function() { return __WEBPACK_IMPORTED_MODULE_140__views_Feed_FeedMeta__["a"]; });
+/* unused harmony reexport FeedMeta */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_141__views_Feed_FeedSummary__ = __webpack_require__(218);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedSummary", function() { return __WEBPACK_IMPORTED_MODULE_141__views_Feed_FeedSummary__["a"]; });
+/* unused harmony reexport FeedSummary */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_142__views_Feed_FeedUser__ = __webpack_require__(219);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FeedUser", function() { return __WEBPACK_IMPORTED_MODULE_142__views_Feed_FeedUser__["a"]; });
+/* unused harmony reexport FeedUser */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_143__views_Item__ = __webpack_require__(863);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return __WEBPACK_IMPORTED_MODULE_143__views_Item__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_143__views_Item__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_144__views_Item_ItemContent__ = __webpack_require__(414);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemContent", function() { return __WEBPACK_IMPORTED_MODULE_144__views_Item_ItemContent__["a"]; });
+/* unused harmony reexport ItemContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_145__views_Item_ItemDescription__ = __webpack_require__(222);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemDescription", function() { return __WEBPACK_IMPORTED_MODULE_145__views_Item_ItemDescription__["a"]; });
+/* unused harmony reexport ItemDescription */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_146__views_Item_ItemExtra__ = __webpack_require__(223);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemExtra", function() { return __WEBPACK_IMPORTED_MODULE_146__views_Item_ItemExtra__["a"]; });
+/* unused harmony reexport ItemExtra */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_147__views_Item_ItemGroup__ = __webpack_require__(415);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemGroup", function() { return __WEBPACK_IMPORTED_MODULE_147__views_Item_ItemGroup__["a"]; });
+/* unused harmony reexport ItemGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_148__views_Item_ItemHeader__ = __webpack_require__(221);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemHeader", function() { return __WEBPACK_IMPORTED_MODULE_148__views_Item_ItemHeader__["a"]; });
+/* unused harmony reexport ItemHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_149__views_Item_ItemImage__ = __webpack_require__(416);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemImage", function() { return __WEBPACK_IMPORTED_MODULE_149__views_Item_ItemImage__["a"]; });
+/* unused harmony reexport ItemImage */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_150__views_Item_ItemMeta__ = __webpack_require__(224);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ItemMeta", function() { return __WEBPACK_IMPORTED_MODULE_150__views_Item_ItemMeta__["a"]; });
+/* unused harmony reexport ItemMeta */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_151__views_Statistic__ = __webpack_require__(864);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Statistic", function() { return __WEBPACK_IMPORTED_MODULE_151__views_Statistic__["a"]; });
+/* unused harmony reexport Statistic */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_152__views_Statistic_StatisticGroup__ = __webpack_require__(418);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticGroup", function() { return __WEBPACK_IMPORTED_MODULE_152__views_Statistic_StatisticGroup__["a"]; });
+/* unused harmony reexport StatisticGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_153__views_Statistic_StatisticLabel__ = __webpack_require__(419);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticLabel", function() { return __WEBPACK_IMPORTED_MODULE_153__views_Statistic_StatisticLabel__["a"]; });
+/* unused harmony reexport StatisticLabel */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_154__views_Statistic_StatisticValue__ = __webpack_require__(420);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticValue", function() { return __WEBPACK_IMPORTED_MODULE_154__views_Statistic_StatisticValue__["a"]; });
+/* unused harmony reexport StatisticValue */
 // Addons
 
 
@@ -12620,35 +12619,34 @@ module.exports = getEventCharCode;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(528);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(535);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
+/* unused harmony reexport HashRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(258);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(536);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
+/* unused harmony reexport MemoryRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(538);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(540);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
+/* unused harmony reexport Prompt */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(542);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
+/* unused harmony reexport Redirect */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(259);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(165);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
+/* unused harmony reexport Router */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(544);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
+/* unused harmony reexport StaticRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(546);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__generatePath__ = __webpack_require__(548);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "generatePath", function() { return __WEBPACK_IMPORTED_MODULE_11__generatePath__["a"]; });
+/* unused harmony reexport generatePath */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__matchPath__ = __webpack_require__(549);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_12__matchPath__["a"]; });
+/* unused harmony reexport matchPath */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__withRouter__ = __webpack_require__(550);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_13__withRouter__["a"]; });
+/* unused harmony reexport withRouter */
 
 
 
@@ -31494,332 +31492,333 @@ StatisticValue.create = __WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorthan
 
 /***/ }),
 /* 421 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(50);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _Program = __webpack_require__(867);
-
-var _Program2 = _interopRequireDefault(_Program);
-
-var _semanticUiReact = __webpack_require__(80);
-
-var _contacts = __webpack_require__(422);
-
-var _contacts2 = _interopRequireDefault(_contacts);
-
-var _jquery = __webpack_require__(868);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Program__ = __webpack_require__(867);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api_contacts_json__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(868);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Catalogue = function (_React$Component) {
-    _inherits(Catalogue, _React$Component);
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-    function Catalogue() {
-        var _ref;
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-        var _temp, _this, _ret;
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-        _classCallCheck(this, Catalogue);
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Catalogue.__proto__ || Object.getPrototypeOf(Catalogue)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            programs: [],
-            emails: [],
-            willReceive: _this.props.filteredList || []
-        }, _this.componentWillMount = function () {
-
-            // console.log(catalogueData.length)
-
-            _this.setState({ programs: _contacts2.default.contacts });
-            console.log("willReceive state in Will Mount " + _this.state.willReceive);
-        }, _this.componentWillReceiveProps = function (newProps) {
-
-            _this.setState({ programs: newProps.filteredList });
-        }, _this.handleEmailList = function (e, _ref2) {
-            var value = _ref2.value;
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-            var matchIndex = undefined;
-
-            for (var i = 0; i <= _this.state.emails.length; i++) {
-
-                var array = _this.state.emails;
-
-                if (value === array[i]) {
-                    console.log("value " + value + " is being compared to array element " + array[i]);
-                    matchIndex = array.indexOf(value);
-                    console.log("Index value saved as " + matchIndex);
-                }
-            }
-
-            if (matchIndex != undefined && matchIndex > -1) {
-                array.splice(matchIndex, 1);
-                _this.setState({ emails: array });
-                console.log("State after splice: " + _this.state.emails);
-            } else {
-                array.push(value);
-                console.log("Array with new pushed value: " + array);
-                _this.setState({ emails: array });
-                console.log("State after push: " + _this.state.emails);
-            }
-        }, _this.handleEmail = function (event) {
-
-            event.preventDefault(); // prevent reload
-            console.log("handleEmail");
-
-            // debugger
-
-            var searchIDs = (0, _jquery2.default)("input[type='checkbox']:checked").map(function () {
-                return (0, _jquery2.default)(this).val();
-            }).get(); // <----
-            console.log("SEARCH ID's: " + searchIDs);
-            console.log("EmailList Value " + document.getElementById("emaillist").value);
-            document.getElementById("emaillist").value = searchIDs;
-
-            var that = document.getElementById('email');
-            console.log("that: " + that);
-
-            // var formData = new FormData(this);
-            var formData = new FormData(that);
-
-            formData.append('service_id', 'default_service');
-            formData.append('template_id', 'email_blast');
-            formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8');
-            // formData.append('user_id', EMAIL_JS_USER_ID);
-
-            var ypiEmployeeName = document.getElementById("ypiEmployeeName").value;
-            var ypiEmployeeEmail = document.getElementById("ypiEmployeeEmail").value;
-            var ypiEmployeeDept = document.getElementById("ypiEmployeeDept").value;
-            var firstname = document.getElementById("firstname").value;
-            var lastname = document.getElementById("lastname").value;
-            var phonenumber = document.getElementById("phonenumber").value;
-            var senderemail = document.getElementById("senderemail").value;
-            var note = document.getElementById("notes").value;
-            var emaillist = document.getElementById("emaillist").value;
-
-            formData = {
-                "service_id": "default_service",
-                "template_id": "email_blast",
-                "user_id": "user_NT8KduLVWnsRhOfMwJEB8" //,
-                // 'firstname': firstname,
-                // 'lastname': lastname,
-                // 'phonenumber': phonenumber,
-                // 'senderemail': senderemail,
-                // 'emaillist': emaillist
-            };
-
-            // emailjs.sendForm('contact_service', 'contact_form', this);
 
 
-            var dataForm = {
-                "ypiemployeename": ypiEmployeeName,
-                "ypiemployeeemail": ypiEmployeeEmail,
-                "ypiemployeedept": ypiEmployeeDept,
-                "firstname": firstname,
-                "lastname": lastname,
-                "phonenumber": phonenumber,
-                "senderemail": senderemail,
-                "notes": notes,
-                "emailto": emaillist
-            };
-
-            console.log("formData: " + formData);
-
-            console.log("dataForm: ");
-            console.log(dataForm);
-
-            // data: {
-            //     'service_id': 'default_service',
-            //     'template_id': 'email_blast',
-            //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
-            // },
 
 
-            //simple way /////////////////////////////////////////////////////////////
-            emailjs.send("default_service", "email_blast", dataForm).then(function (response) {
-                debugger;
-                console.log('SUCCESS!', response.status, response.text);
-                alert("Your email has been sent");
-            }, function (error) {
-                console.log(dataForm);
-                console.log('FAILED...', error);
-                alert("There was an error processing your emails");
-            });
 
-            //slightly less simple way /////////////////////////////////////////////////////////////
-            // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
-            //     console.log('SUCCESS!', response.status, response.text);
-            // }, function(error) {
-            //     console.log('FAILED...', error);
-            // });
 
-            // API way /////////////////////////////////////////////////////////////
-            // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-            //     type: 'POST',
-            //     data: formData,
-            //
-            //     contentType: false, // auto-detection
-            //     processData: false // no need to parse formData to string
-            // }).done(function() {
-            //     alert('Your mail is sent!');
-            //
-            // }).fail(function(error) {
-            //     console.log('Oops... ' + JSON.stringify(error.responseText));
-            //     alert('Oops... ' + JSON.stringify(error));
-            // });
+var Catalogue =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Catalogue, _React$Component);
 
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+  function Catalogue() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Catalogue);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    _createClass(Catalogue, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Catalogue)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-            var programs = this.state.programs;
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      programs: [],
+      emails: [],
+      willReceive: _this.props.filteredList || []
+    });
 
-            return _react2.default.createElement(
-                'div',
-                { className: 'ui filterContainer catalogue_items' },
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Group,
-                    null,
-                    programs.map(function (program, index) {
-                        return _react2.default.createElement(_Program2.default, {
-                            key: index,
-                            programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
-                            programEmail: program.email,
-                            programPhone: program.phonenumber,
-                            programAcceptReferrals: program.acceptReferrals,
-                            programDescription: program.descriptionOfProgram,
-                            programServices: program.coreServicesOffered,
-                            programPopulationServed: program.populationServed,
-                            programEligibility: program.eligibilityRequirements,
-                            programOnSite: program.servicesOnlyOfferedAtProgramSite,
-                            programLocation: program.locationOfProgram,
-                            updateEmailList: _this2.handleEmailList,
-                            count: index + 1
-                        });
-                    })
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Form,
-                    null,
-                    _react2.default.createElement(
-                        'h2',
-                        null,
-                        ' YPI Employee Information '
-                    ),
-                    _react2.default.createElement('hr', null),
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Name',
-                            id: 'ypiEmployeeName',
-                            type: 'text',
-                            className: 'form-control',
-                            placeholder: 'First and Last',
-                            name: 'ypiEmployeeName' }),
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Department',
-                            id: 'ypiEmployeeDept',
-                            type: 'text',
-                            className: 'form-control',
-                            placeholder: 'YPI Employee Department',
-                            name: 'ypiEmployeeDept' }),
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email',
-                            id: 'ypiEmployeeEmail',
-                            type: 'text',
-                            className: 'form-control',
-                            placeholder: 'YPI Employee Email',
-                            name: 'ypiEmployeeEmail' })
-                    ),
-                    _react2.default.createElement(
-                        'h2',
-                        null,
-                        ' Client Information'
-                    ),
-                    _react2.default.createElement('hr', null),
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'First Name', id: 'firstname', type: 'text', className: 'form-control', placeholder: 'First name', name: 'firstname' }),
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Last Name', id: 'lastname', type: 'text', className: 'form-control', placeholder: 'Last name', name: 'lastname' })
-                    ),
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email', id: 'senderemail', type: 'email', className: 'form-control', placeholder: 'Email', name: 'senderemail' }),
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Phone Number', id: 'phonenumber', type: 'text', className: 'form-control', placeholder: 'Phone Number', name: 'phonenumber' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'text-area-div' },
-                        _react2.default.createElement(
-                            _semanticUiReact.Form.Group,
-                            null,
-                            _react2.default.createElement(
-                                'h2',
-                                { className: 'text-header' },
-                                'Further Notes'
-                            ),
-                            _react2.default.createElement(_semanticUiReact.TextArea, {
-                                id: 'notes',
-                                rows: 2,
-                                className: 'form-control',
-                                placeholder: 'Special Notes (Optional)',
-                                name: 'notes',
-                                label: 'Additional Notes'
-                            })
-                        )
-                    ),
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Group,
-                        { widths: 'equal' },
-                        _react2.default.createElement(_semanticUiReact.Form.Input, { fluid: true, label: 'Email List', id: 'emaillist', type: 'email', className: 'form-control', placeholder: 'Email to \'CC\'', name: 'emailto', value: this.state.emails })
-                    ),
-                    _react2.default.createElement(
-                        _semanticUiReact.Button,
-                        { basic: true, color: 'black', onClick: this.handleEmail },
-                        ' Submit '
-                    )
-                )
-            );
+    _defineProperty(_assertThisInitialized(_this), "componentWillMount", function () {
+      // console.log(catalogueData.length)
+      _this.setState({
+        programs: __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts
+      });
+
+      console.log("willReceive state in Will Mount " + _this.state.willReceive);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "componentWillReceiveProps", function (newProps) {
+      _this.setState({
+        programs: newProps.filteredList
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleEmailList", function (e, _ref) {
+      var value = _ref.value;
+      var matchIndex = undefined;
+
+      for (var i = 0; i <= _this.state.emails.length; i++) {
+        var array = _this.state.emails;
+
+        if (value === array[i]) {
+          console.log("value " + value + " is being compared to array element " + array[i]);
+          matchIndex = array.indexOf(value);
+          console.log("Index value saved as " + matchIndex);
         }
-    }]);
+      }
 
-    return Catalogue;
-}(_react2.default.Component);
+      if (matchIndex != undefined && matchIndex > -1) {
+        array.splice(matchIndex, 1);
 
-exports.default = Catalogue;
+        _this.setState({
+          emails: array
+        });
 
-// (program.hasOwnProperty(altProgramName) && ( program.altProgramName !== "" || program.altProgramName !== undefined)) ? program.altProgramName : program.name
+        console.log("State after splice: " + _this.state.emails);
+      } else {
+        array.push(value);
+        console.log("Array with new pushed value: " + array);
+
+        _this.setState({
+          emails: array
+        });
+
+        console.log("State after push: " + _this.state.emails);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleEmail", function (event) {
+      event.preventDefault(); // prevent reload
+
+      console.log("handleEmail"); // debugger
+
+      var searchIDs = __WEBPACK_IMPORTED_MODULE_5_jquery___default.a("input[type='checkbox']:checked").map(function () {
+        return __WEBPACK_IMPORTED_MODULE_5_jquery___default.a(this).val();
+      }).get(); // <----
+
+      console.log("SEARCH ID's: " + searchIDs);
+      console.log("EmailList Value " + document.getElementById("emaillist").value);
+      document.getElementById("emaillist").value = searchIDs;
+      var that = document.getElementById('email');
+      console.log("that: " + that); // var formData = new FormData(this);
+
+      var formData = new FormData(that);
+      formData.append('service_id', 'default_service');
+      formData.append('template_id', 'email_blast');
+      formData.append('user_id', 'user_NT8KduLVWnsRhOfMwJEB8'); // formData.append('user_id', EMAIL_JS_USER_ID);
+
+      var ypiEmployeeName = document.getElementById("ypiEmployeeName").value;
+      var ypiEmployeeEmail = document.getElementById("ypiEmployeeEmail").value;
+      var ypiEmployeeDept = document.getElementById("ypiEmployeeDept").value;
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var phonenumber = document.getElementById("phonenumber").value;
+      var senderemail = document.getElementById("senderemail").value;
+      var note = document.getElementById("notes").value;
+      var emaillist = document.getElementById("emaillist").value;
+      formData = {
+        "service_id": "default_service",
+        "template_id": "email_blast",
+        "user_id": "user_NT8KduLVWnsRhOfMwJEB8" //,
+        // 'firstname': firstname,
+        // 'lastname': lastname,
+        // 'phonenumber': phonenumber,
+        // 'senderemail': senderemail,
+        // 'emaillist': emaillist
+
+      }; // emailjs.sendForm('contact_service', 'contact_form', this);
+
+      var dataForm = {
+        "ypiemployeename": ypiEmployeeName,
+        "ypiemployeeemail": ypiEmployeeEmail,
+        "ypiemployeedept": ypiEmployeeDept,
+        "firstname": firstname,
+        "lastname": lastname,
+        "phonenumber": phonenumber,
+        "senderemail": senderemail,
+        "notes": notes,
+        "emailto": emaillist
+      };
+      console.log("formData: " + formData);
+      console.log("dataForm: ");
+      console.log(dataForm); // data: {
+      //     'service_id': 'default_service',
+      //     'template_id': 'email_blast',
+      //     'user_id': 'user_NT8KduLVWnsRhOfMwJEB8'
+      // },
+      //simple way /////////////////////////////////////////////////////////////
+
+      emailjs.send("default_service", "email_blast", dataForm).then(function (response) {
+        debugger;
+        console.log('SUCCESS!', response.status, response.text);
+        alert("Your email has been sent");
+      }, function (error) {
+        console.log(dataForm);
+        console.log('FAILED...', error);
+        alert("There was an error processing your emails");
+      }); //slightly less simple way /////////////////////////////////////////////////////////////
+      // emailjs.sendForm("default_service", "email_blast", "#email").then(function(response) {
+      //     console.log('SUCCESS!', response.status, response.text);
+      // }, function(error) {
+      //     console.log('FAILED...', error);
+      // });
+      // API way /////////////////////////////////////////////////////////////
+      // $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+      //     type: 'POST',
+      //     data: formData,
+      //
+      //     contentType: false, // auto-detection
+      //     processData: false // no need to parse formData to string
+      // }).done(function() {
+      //     alert('Your mail is sent!');
+      //
+      // }).fail(function(error) {
+      //     console.log('Oops... ' + JSON.stringify(error.responseText));
+      //     alert('Oops... ' + JSON.stringify(error));
+      // });
+    });
+
+    return _this;
+  }
+
+  _createClass(Catalogue, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var programs = this.state.programs;
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "ui filterContainer catalogue_items"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["d" /* Item */].Group, null, programs.map(function (program, index) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Program__["a" /* default */], {
+          key: index,
+          programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
+          programEmail: program.email,
+          programPhone: program.phonenumber,
+          programAcceptReferrals: program.acceptReferrals,
+          programDescription: program.descriptionOfProgram,
+          programServices: program.coreServicesOffered,
+          programPopulationServed: program.populationServed,
+          programEligibility: program.eligibilityRequirements,
+          programOnSite: program.servicesOnlyOfferedAtProgramSite,
+          programLocation: program.locationOfProgram,
+          updateEmailList: _this2.handleEmailList,
+          count: index + 1
+        });
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, " YPI Employee Information "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("hr", null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Group, {
+        widths: "equal"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Name",
+        id: "ypiEmployeeName",
+        type: "text",
+        className: "form-control",
+        placeholder: "First and Last",
+        name: "ypiEmployeeName"
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Department",
+        id: "ypiEmployeeDept",
+        type: "text",
+        className: "form-control",
+        placeholder: "YPI Employee Department",
+        name: "ypiEmployeeDept"
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Email",
+        id: "ypiEmployeeEmail",
+        type: "text",
+        className: "form-control",
+        placeholder: "YPI Employee Email",
+        name: "ypiEmployeeEmail"
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, " Client Information"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("hr", null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Group, {
+        widths: "equal"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "First Name",
+        id: "firstname",
+        type: "text",
+        className: "form-control",
+        placeholder: "First name",
+        name: "firstname"
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Last Name",
+        id: "lastname",
+        type: "text",
+        className: "form-control",
+        placeholder: "Last name",
+        name: "lastname"
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Group, {
+        widths: "equal"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Email",
+        id: "senderemail",
+        type: "email",
+        className: "form-control",
+        placeholder: "Email",
+        name: "senderemail"
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Phone Number",
+        id: "phonenumber",
+        type: "text",
+        className: "form-control",
+        placeholder: "Phone Number",
+        name: "phonenumber"
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "text-area-div"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Group, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
+        className: "text-header"
+      }, "Further Notes"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["h" /* TextArea */], {
+        id: "notes",
+        rows: 2,
+        className: "form-control",
+        placeholder: "Special Notes (Optional)",
+        name: "notes",
+        label: "Additional Notes"
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Group, {
+        widths: "equal"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Input, {
+        fluid: true,
+        label: "Email List",
+        id: "emaillist",
+        type: "email",
+        className: "form-control",
+        placeholder: "Email to 'CC'",
+        name: "emailto",
+        value: this.state.emails
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        basic: true,
+        color: "black",
+        onClick: this.handleEmail
+      }, " Submit ")));
+    }
+  }]);
+
+  return Catalogue;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Catalogue); // (program.hasOwnProperty(altProgramName) && ( program.altProgramName !== "" || program.altProgramName !== undefined)) ? program.altProgramName : program.name
 
 /***/ }),
 /* 422 */
@@ -31829,32 +31828,26 @@ module.exports = {"contacts":[{"name":"FamilySource Center - Case Management","d
 
 /***/ }),
 /* 423 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_normalize_css_normalize_css__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_normalize_css_normalize_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_normalize_css_normalize_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_styles_scss__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__styles_styles_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__routes_AppRouter__ = __webpack_require__(527);
 
 
-var _react = __webpack_require__(1);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(50);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-__webpack_require__(525);
-
-__webpack_require__(526);
-
-var _AppRouter = __webpack_require__(527);
-
-var _AppRouter2 = _interopRequireDefault(_AppRouter);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("In APP.JS");
-
-_reactDom2.default.render(_react2.default.createElement(_AppRouter2.default, null), document.getElementById('app'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__routes_AppRouter__["a" /* default */], null), document.getElementById('app'));
 
 /***/ }),
 /* 424 */
@@ -44290,66 +44283,42 @@ module.exports = ReactDOMInvalidARIAHook;
 
 /***/ }),
 /* 527 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_NavBar__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_QuestionnaireApp__ = __webpack_require__(865);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_FilterForm__ = __webpack_require__(866);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Catalogue__ = __webpack_require__(421);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 
-var _react = __webpack_require__(1);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(50);
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _reactRouterDom = __webpack_require__(164);
-
-var _NavBar = __webpack_require__(553);
-
-var _NavBar2 = _interopRequireDefault(_NavBar);
-
-var _QuestionnaireApp = __webpack_require__(865);
-
-var _QuestionnaireApp2 = _interopRequireDefault(_QuestionnaireApp);
-
-var _FilterForm = __webpack_require__(866);
-
-var _FilterForm2 = _interopRequireDefault(_FilterForm);
-
-var _Catalogue = __webpack_require__(421);
-
-var _Catalogue2 = _interopRequireDefault(_Catalogue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import NotFoundPage from '../components/NotFoundPage';
+ // import NotFoundPage from '../components/NotFoundPage';
 //<Route component={NotFoundPage} />
 
 var AppRouter = function AppRouter() {
-    return _react2.default.createElement(
-        _reactRouterDom.BrowserRouter,
-        null,
-        _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(_NavBar2.default, null),
-            _react2.default.createElement(
-                _reactRouterDom.Switch,
-                null,
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _QuestionnaireApp2.default, exact: true }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/form', component: _FilterForm2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/catalogue', component: _Catalogue2.default })
-            )
-        )
-    );
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_NavBar__["a" /* default */], null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["e" /* Switch */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], {
+    path: "/",
+    component: __WEBPACK_IMPORTED_MODULE_4__components_QuestionnaireApp__["a" /* default */],
+    exact: true
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], {
+    path: "/form",
+    component: __WEBPACK_IMPORTED_MODULE_5__components_FilterForm__["a" /* default */]
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], {
+    path: "/catalogue",
+    component: __WEBPACK_IMPORTED_MODULE_6__components_Catalogue__["a" /* default */]
+  }))));
 };
 
-exports.default = AppRouter;
+/* harmony default export */ __webpack_exports__["a"] = (AppRouter);
 
 /***/ }),
 /* 528 */
@@ -44746,7 +44715,7 @@ HashRouter.propTypes = {
 };
 
 
-/* harmony default export */ __webpack_exports__["a"] = (HashRouter);
+/* unused harmony default export */ var _unused_webpack_default_export = (HashRouter);
 
 /***/ }),
 /* 536 */
@@ -44757,7 +44726,7 @@ HashRouter.propTypes = {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
 
 /***/ }),
 /* 537 */
@@ -44929,7 +44898,7 @@ module.exports = Array.isArray || function (arr) {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
 
 /***/ }),
 /* 541 */
@@ -45031,7 +45000,7 @@ Prompt.contextTypes = {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
 
 /***/ }),
 /* 543 */
@@ -45171,7 +45140,7 @@ Redirect.contextTypes = {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
 
 /***/ }),
 /* 545 */
@@ -45451,7 +45420,7 @@ Switch.propTypes = {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_generatePath__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_generatePath__["a" /* default */]);
 
 /***/ }),
 /* 549 */
@@ -45462,7 +45431,7 @@ Switch.propTypes = {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
 
 /***/ }),
 /* 550 */
@@ -45473,7 +45442,7 @@ Switch.propTypes = {
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
 /* 551 */
@@ -45601,73 +45570,49 @@ module.exports = hoistNonReactStatics;
 
 /***/ }),
 /* 553 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__(80);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(164);
-
-var _semanticUiReact = __webpack_require__(80);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var NavBar = function NavBar() {
-    return _react2.default.createElement(
-        'div',
-        { className: 'nav_header' },
-        _react2.default.createElement(
-            'div',
-            { className: 'header__container' },
-            _react2.default.createElement(
-                'h1',
-                { className: 'header__title' },
-                'Internal Referral Information System'
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'centerLinks' },
-                _react2.default.createElement(
-                    _reactRouterDom.NavLink,
-                    { className: 'header__subtitle', to: '/', activeClassName: 'is-active', exact: true },
-                    'Home'
-                ),
-                ' |',
-                _react2.default.createElement(
-                    _reactRouterDom.NavLink,
-                    { className: 'header__subtitle', to: '/form', activeClassName: 'is-active' },
-                    ' Questions '
-                ),
-                ' |',
-                _react2.default.createElement(
-                    _reactRouterDom.NavLink,
-                    { className: 'header__subtitle', to: '/catalogue', activeClassName: 'is-active' },
-                    ' Catalogue'
-                )
-            )
-        )
-    );
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "nav_header"
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "header__container"
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    className: "header__title"
+  }, "Internal Referral Information System"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "centerLinks"
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */], {
+    className: "header__subtitle",
+    to: "/",
+    activeClassName: "is-active",
+    exact: true
+  }, "Home"), " |", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */], {
+    className: "header__subtitle",
+    to: "/form",
+    activeClassName: "is-active"
+  }, " Questions "), " |", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */], {
+    className: "header__subtitle",
+    to: "/catalogue",
+    activeClassName: "is-active"
+  }, " Catalogue"))));
 };
 
-exports.default = NavBar;
-
-// <header>
+/* harmony default export */ __webpack_exports__["a"] = (NavBar); // <header>
 // <h1>YPI Referral Tool</h1>
 //
 // <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink> |
 //     <NavLink to="/form" activeClassName="is-active">Form</NavLink> |
 //     <NavLink to="/catalogue" activeClassName="is-active">Catalogue</NavLink>
 //</header>
-
-
 // <div className="nav_header">
 //     <div className="header__container">
 //         <h1 className="header__title">YPI internal referral information system</h1>
@@ -45684,7 +45629,7 @@ exports.default = NavBar;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Confirm__ = __webpack_require__(555);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Confirm__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -45865,7 +45810,7 @@ Confirm.propTypes = process.env.NODE_ENV !== "production" ? {
   /** A Confirm can vary in size */
   size: __WEBPACK_IMPORTED_MODULE_10_prop_types___default.a.oneOf(['fullscreen', 'large', 'mini', 'small', 'tiny'])
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Confirm);
+/* unused harmony default export */ var _unused_webpack_default_export = (Confirm);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -55699,7 +55644,7 @@ var NodeRegistry = function NodeRegistry() {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Pagination__ = __webpack_require__(771);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Pagination__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -55708,7 +55653,7 @@ var NodeRegistry = function NodeRegistry() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Pagination; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_objectSpread__ = __webpack_require__(22);
@@ -58987,7 +58932,7 @@ TextArea.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__TransitionablePortal__ = __webpack_require__(802);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__TransitionablePortal__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -58996,7 +58941,7 @@ TextArea.propTypes = process.env.NODE_ENV !== "production" ? {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransitionablePortal; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_objectSpread__ = __webpack_require__(22);
@@ -59225,7 +59170,7 @@ TransitionablePortal.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Visibility__ = __webpack_require__(804);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Visibility__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -59234,7 +59179,7 @@ TransitionablePortal.propTypes = process.env.NODE_ENV !== "production" ? {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Visibility; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_slicedToArray__ = __webpack_require__(67);
@@ -59770,7 +59715,7 @@ Visibility.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Breadcrumb__ = __webpack_require__(806);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Breadcrumb__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -59872,7 +59817,7 @@ Breadcrumb.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 Breadcrumb.Divider = __WEBPACK_IMPORTED_MODULE_7__BreadcrumbDivider__["a" /* default */];
 Breadcrumb.Section = __WEBPACK_IMPORTED_MODULE_8__BreadcrumbSection__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Breadcrumb);
+/* unused harmony default export */ var _unused_webpack_default_export = (Breadcrumb);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -60417,7 +60362,7 @@ Input.create = __WEBPACK_IMPORTED_MODULE_18__lib__["m" /* createShorthandFactory
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Message__ = __webpack_require__(812);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Message__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -60426,7 +60371,7 @@ Input.create = __WEBPACK_IMPORTED_MODULE_18__lib__["m" /* createShorthandFactory
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Message; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_classCallCheck__ = __webpack_require__(7);
@@ -60654,7 +60599,7 @@ Message.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Table__ = __webpack_require__(814);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Table__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -60855,7 +60800,7 @@ Table.Footer = __WEBPACK_IMPORTED_MODULE_9__TableFooter__["a" /* default */];
 Table.Header = __WEBPACK_IMPORTED_MODULE_10__TableHeader__["a" /* default */];
 Table.HeaderCell = __WEBPACK_IMPORTED_MODULE_11__TableHeaderCell__["a" /* default */];
 Table.Row = __WEBPACK_IMPORTED_MODULE_12__TableRow__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Table);
+/* unused harmony default export */ var _unused_webpack_default_export = (Table);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -60864,7 +60809,7 @@ Table.Row = __WEBPACK_IMPORTED_MODULE_12__TableRow__["a" /* default */];
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Container__ = __webpack_require__(816);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Container__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -60933,7 +60878,7 @@ Container.propTypes = process.env.NODE_ENV !== "production" ? {
   /** Align container text. */
   textAlign: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(__WEBPACK_IMPORTED_MODULE_4__lib__["c" /* SUI */].TEXT_ALIGNMENTS)
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Container);
+/* unused harmony default export */ var _unused_webpack_default_export = (Container);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -60942,7 +60887,7 @@ Container.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Divider__ = __webpack_require__(818);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Divider__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61027,7 +60972,7 @@ Divider.propTypes = process.env.NODE_ENV !== "production" ? {
   /** Divider can segment content vertically. */
   vertical: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Divider);
+/* unused harmony default export */ var _unused_webpack_default_export = (Divider);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61036,7 +60981,7 @@ Divider.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Header__ = __webpack_require__(820);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Header__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61181,7 +61126,7 @@ Header.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 Header.Content = __WEBPACK_IMPORTED_MODULE_9__HeaderContent__["a" /* default */];
 Header.Subheader = __WEBPACK_IMPORTED_MODULE_8__HeaderSubheader__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Header);
+/* unused harmony default export */ var _unused_webpack_default_export = (Header);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61190,7 +61135,7 @@ Header.Subheader = __WEBPACK_IMPORTED_MODULE_8__HeaderSubheader__["a" /* default
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__List__ = __webpack_require__(822);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__List__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61420,7 +61365,7 @@ List.propTypes = process.env.NODE_ENV !== "production" ? {
   /** An element inside a list can be vertically aligned. */
   verticalAlign: __WEBPACK_IMPORTED_MODULE_11_prop_types___default.a.oneOf(__WEBPACK_IMPORTED_MODULE_13__lib__["c" /* SUI */].VERTICAL_ALIGNMENTS)
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (List);
+/* unused harmony default export */ var _unused_webpack_default_export = (List);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61429,7 +61374,7 @@ List.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loader__ = __webpack_require__(824);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Loader__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61511,7 +61456,7 @@ Loader.propTypes = process.env.NODE_ENV !== "production" ? {
   /** Loaders can have different sizes. */
   size: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(__WEBPACK_IMPORTED_MODULE_4__lib__["c" /* SUI */].SIZES)
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Loader);
+/* unused harmony default export */ var _unused_webpack_default_export = (Loader);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61520,7 +61465,7 @@ Loader.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Rail__ = __webpack_require__(826);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Rail__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61604,7 +61549,7 @@ Rail.propTypes = process.env.NODE_ENV !== "production" ? {
   /** A rail can have different sizes. */
   size: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.oneOf(__WEBPACK_IMPORTED_MODULE_1_lodash_without___default.a(__WEBPACK_IMPORTED_MODULE_5__lib__["c" /* SUI */].SIZES, 'medium'))
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Rail);
+/* unused harmony default export */ var _unused_webpack_default_export = (Rail);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61613,7 +61558,7 @@ Rail.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Reveal__ = __webpack_require__(828);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Reveal__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61689,7 +61634,7 @@ Reveal.propTypes = process.env.NODE_ENV !== "production" ? {
   instant: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool
 } : {};
 Reveal.Content = __WEBPACK_IMPORTED_MODULE_5__RevealContent__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Reveal);
+/* unused harmony default export */ var _unused_webpack_default_export = (Reveal);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61708,7 +61653,7 @@ Reveal.Content = __WEBPACK_IMPORTED_MODULE_5__RevealContent__["a" /* default */]
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Step__ = __webpack_require__(388);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Step__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61817,7 +61762,7 @@ Accordion.propTypes = process.env.NODE_ENV !== "production" ? {
 Accordion.Accordion = __WEBPACK_IMPORTED_MODULE_5__AccordionAccordion__["a" /* default */];
 Accordion.Content = __WEBPACK_IMPORTED_MODULE_6__AccordionContent__["a" /* default */];
 Accordion.Title = __WEBPACK_IMPORTED_MODULE_7__AccordionTitle__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Accordion);
+/* unused harmony default export */ var _unused_webpack_default_export = (Accordion);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -61826,7 +61771,7 @@ Accordion.Title = __WEBPACK_IMPORTED_MODULE_7__AccordionTitle__["a" /* default *
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Embed__ = __webpack_require__(834);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Embed__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -61835,7 +61780,7 @@ Accordion.Title = __WEBPACK_IMPORTED_MODULE_7__AccordionTitle__["a" /* default *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Embed; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_objectSpread__ = __webpack_require__(22);
@@ -62074,7 +62019,7 @@ Embed.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Popup__ = __webpack_require__(836);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Popup__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -62084,7 +62029,7 @@ Embed.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export POSITIONS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Popup; });
+/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_objectSpread__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_objectSpread___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_objectSpread__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_extends__ = __webpack_require__(4);
@@ -62691,7 +62636,7 @@ module.exports = createAssigner;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Progress__ = __webpack_require__(840);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Progress__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -62938,7 +62883,7 @@ Progress.propTypes = process.env.NODE_ENV !== "production" ? {
   /** A progress bar can show a warning state. */
   warning: __WEBPACK_IMPORTED_MODULE_13_prop_types___default.a.bool
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Progress);
+/* unused harmony default export */ var _unused_webpack_default_export = (Progress);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -63063,7 +63008,7 @@ module.exports = clamp;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Rating__ = __webpack_require__(845);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Rating__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -63072,7 +63017,7 @@ module.exports = clamp;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Rating; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_objectSpread__ = __webpack_require__(22);
@@ -63359,7 +63304,7 @@ module.exports = times;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Search__ = __webpack_require__(848);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Search__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -63368,7 +63313,7 @@ module.exports = times;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Search; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_slicedToArray__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_slicedToArray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_slicedToArray__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_extends__ = __webpack_require__(4);
@@ -64091,7 +64036,7 @@ module.exports = partialRight;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(852);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Sidebar__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -64251,7 +64196,7 @@ Sidebar.propTypes = process.env.NODE_ENV !== "production" ? {
   /** Sidebar width. */
   width: __WEBPACK_IMPORTED_MODULE_9_prop_types___default.a.oneOf(['very thin', 'thin', 'wide', 'very wide'])
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Sidebar);
+/* unused harmony default export */ var _unused_webpack_default_export = (Sidebar);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -64260,7 +64205,7 @@ Sidebar.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sticky__ = __webpack_require__(854);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Sticky__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -64269,7 +64214,7 @@ Sidebar.propTypes = process.env.NODE_ENV !== "production" ? {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Sticky; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_classCallCheck__ = __webpack_require__(7);
@@ -64631,7 +64576,7 @@ Sticky.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Tab__ = __webpack_require__(856);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Tab__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -64890,7 +64835,7 @@ Tab.propTypes = process.env.NODE_ENV !== "production" ? {
   /** A Tab can render only active pane. */
   renderActiveOnly: __WEBPACK_IMPORTED_MODULE_12_prop_types___default.a.bool
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Tab);
+/* unused harmony default export */ var _unused_webpack_default_export = (Tab);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -64899,7 +64844,7 @@ Tab.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Advertisement__ = __webpack_require__(858);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Advertisement__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -64969,7 +64914,7 @@ Advertisement.propTypes = process.env.NODE_ENV !== "production" ? {
   /** Varies the size of the advertisement. */
   unit: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(['medium rectangle', 'large rectangle', 'vertical rectangle', 'small rectangle', 'mobile banner', 'banner', 'vertical banner', 'top banner', 'half banner', 'button', 'square button', 'small button', 'skyscraper', 'wide skyscraper', 'leaderboard', 'large leaderboard', 'mobile leaderboard', 'billboard', 'panorama', 'netboard', 'half page', 'square', 'small square']).isRequired
 } : {};
-/* harmony default export */ __webpack_exports__["a"] = (Advertisement);
+/* unused harmony default export */ var _unused_webpack_default_export = (Advertisement);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -64978,7 +64923,7 @@ Advertisement.propTypes = process.env.NODE_ENV !== "production" ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Comment__ = __webpack_require__(860);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Comment__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -65063,7 +65008,7 @@ Comment.Content = __WEBPACK_IMPORTED_MODULE_9__CommentContent__["a" /* default *
 Comment.Group = __WEBPACK_IMPORTED_MODULE_10__CommentGroup__["a" /* default */];
 Comment.Metadata = __WEBPACK_IMPORTED_MODULE_11__CommentMetadata__["a" /* default */];
 Comment.Text = __WEBPACK_IMPORTED_MODULE_12__CommentText__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Comment);
+/* unused harmony default export */ var _unused_webpack_default_export = (Comment);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -65072,7 +65017,7 @@ Comment.Text = __WEBPACK_IMPORTED_MODULE_12__CommentText__["a" /* default */];
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Feed__ = __webpack_require__(862);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Feed__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -65192,7 +65137,7 @@ Feed.Like = __WEBPACK_IMPORTED_MODULE_13__FeedLike__["a" /* default */];
 Feed.Meta = __WEBPACK_IMPORTED_MODULE_14__FeedMeta__["a" /* default */];
 Feed.Summary = __WEBPACK_IMPORTED_MODULE_15__FeedSummary__["a" /* default */];
 Feed.User = __WEBPACK_IMPORTED_MODULE_16__FeedUser__["a" /* default */];
-/* harmony default export */ __webpack_exports__["a"] = (Feed);
+/* unused harmony default export */ var _unused_webpack_default_export = (Feed);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -65211,1178 +65156,731 @@ Feed.User = __WEBPACK_IMPORTED_MODULE_16__FeedUser__["a" /* default */];
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Statistic__ = __webpack_require__(417);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Statistic__["a"]; });
+/* unused harmony reexport default */
 
 
 
 /***/ }),
 /* 865 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(50);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _semanticUiReact = __webpack_require__(80);
-
-var _reactRouterDom = __webpack_require__(164);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(164);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var QuestionnaireApp = function (_React$Component) {
-    _inherits(QuestionnaireApp, _React$Component);
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-    function QuestionnaireApp() {
-        _classCallCheck(this, QuestionnaireApp);
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-        return _possibleConstructorReturn(this, (QuestionnaireApp.__proto__ || Object.getPrototypeOf(QuestionnaireApp)).apply(this, arguments));
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var QuestionnaireApp =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(QuestionnaireApp, _React$Component);
+
+  function QuestionnaireApp() {
+    _classCallCheck(this, QuestionnaireApp);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(QuestionnaireApp).apply(this, arguments));
+  }
+
+  _createClass(QuestionnaireApp, [{
+    key: "render",
+    value: function render() {
+      // let showNew = ""
+      // let showAll = ""
+      // if(this.props.toggle){
+      //     showNew = {display: 'none' }
+      //     showAll = {display: 'block' }
+      // }else{
+      //     showNew = {display: 'block' }
+      //     showAll = {display: 'none' }
+      // }
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "ui filterContainer"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Welcome to the YPI Referral Tool"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null, "The purpose of this app is to help you find the most relevant services for our clients and to put them in touch with the right person within those programs."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */], {
+        columns: 12
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */].Row, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */].Column, {
+        width: 11
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null, "If you are uncertain which programs may benefit your client, you can answer a few questions and the app will filter relevant results. Please answer from the point of view of the client.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */].Column, {
+        className: "pushLeft",
+        centered: true,
+        width: 1
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */], {
+        to: "/form"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */], {
+        secondary: true,
+        size: "massive"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null, "Questions")))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */], {
+        columns: 12
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */].Row, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */].Column, {
+        width: 11
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null, "If you are familiar with our services and would like to view our full list of YPI programs, check out our catalogue")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Grid */].Column, {
+        className: "pushLeft",
+        width: 1
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */], {
+        to: "/catalogue"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */], {
+        secondary: true,
+        size: "massive"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null, "Catalogue")))))));
     }
+  }]);
 
-    _createClass(QuestionnaireApp, [{
-        key: 'render',
-        value: function render() {
+  return QuestionnaireApp;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-            // let showNew = ""
-            // let showAll = ""
-            // if(this.props.toggle){
-            //     showNew = {display: 'none' }
-            //     showAll = {display: 'block' }
-            // }else{
-            //     showNew = {display: 'block' }
-            //     showAll = {display: 'none' }
-            // }
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'ui filterContainer' },
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    'Welcome to the YPI Referral Tool'
-                ),
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    'The purpose of this app is to help you find the most relevant services for our clients and to put them in touch with the right person within those programs.'
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Grid,
-                    { columns: 12 },
-                    _react2.default.createElement(
-                        _semanticUiReact.Grid.Row,
-                        null,
-                        _react2.default.createElement(
-                            _semanticUiReact.Grid.Column,
-                            { width: 11 },
-                            _react2.default.createElement(
-                                'p',
-                                null,
-                                'If you are uncertain which programs may benefit your client, you can answer a few questions and the app will filter relevant results. Please answer from the point of view of the client.'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _semanticUiReact.Grid.Column,
-                            { className: 'pushLeft', centered: true, width: 1 },
-                            _react2.default.createElement(
-                                _reactRouterDom.Link,
-                                { to: '/form' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { secondary: true, size: 'massive' },
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'Questions'
-                                    )
-                                )
-                            )
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Grid,
-                    { columns: 12 },
-                    _react2.default.createElement(
-                        _semanticUiReact.Grid.Row,
-                        null,
-                        _react2.default.createElement(
-                            _semanticUiReact.Grid.Column,
-                            { width: 11 },
-                            _react2.default.createElement(
-                                'p',
-                                null,
-                                'If you are familiar with our services and would like to view our full list of YPI programs, check out our catalogue'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _semanticUiReact.Grid.Column,
-                            { className: 'pushLeft', width: 1 },
-                            _react2.default.createElement(
-                                _reactRouterDom.Link,
-                                { to: '/catalogue' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { secondary: true, size: 'massive' },
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'Catalogue'
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return QuestionnaireApp;
-}(_react2.default.Component);
-
-exports.default = QuestionnaireApp;
+/* harmony default export */ __webpack_exports__["a"] = (QuestionnaireApp);
 
 /***/ }),
 /* 866 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(50);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _Catalogue = __webpack_require__(421);
-
-var _Catalogue2 = _interopRequireDefault(_Catalogue);
-
-var _semanticUiReact = __webpack_require__(80);
-
-var _contacts = __webpack_require__(422);
-
-var _contacts2 = _interopRequireDefault(_contacts);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Catalogue__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api_contacts_json__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var FilterForm = function (_React$Component) {
-    _inherits(FilterForm, _React$Component);
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-    function FilterForm() {
-        var _ref;
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-        var _temp, _this, _ret;
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-        _classCallCheck(this, FilterForm);
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FilterForm.__proto__ || Object.getPrototypeOf(FilterForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            location: undefined,
-            clientAge: undefined,
-            inSchool: undefined,
-            levelOfEducation: undefined,
-            veteran: undefined,
-            interestedInTraining: undefined,
-            interestedAfterSchoolPrograms: undefined,
-            interestedInCriminalServices: undefined,
-            interestedInCompletingDiploma: undefined,
-
-            questionNumber: 1,
-            toggleFive: undefined,
-            locationArray: [],
-
-            truthyArray: [],
-            filteredList: undefined,
-
-            // answered: false,
-            questionObject: {}
-
-            /////////////////////////////////////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////////////////////////////
-            //// Handle Buttons /////////////////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////////////////////////////
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-        }, _this.handleNext = function (e, _ref2) {
-            var id = _ref2.id;
-
-            // var stringId = e.target.parentNode.id;            
-            var currentQuestion = _this.state.questionNumber;
-            var questionObject = _this.state.questionObject;
-            if (questionObject[currentQuestion] == undefined) {
-                alert("Please answer before moving to the next question.");
-            } else {
-                var nextQuestion = parseInt(e.target.parentNode.id);
-                // e.target.parentNode.getAttribute('id'); ||
-                var addOne = (nextQuestion + 1).toString();
-
-                _this.setState({
-                    questionNumber: addOne
-                    // answered: !this.state.answered,
-                });
-            }
-        }, _this.handleBack = function (e, _ref3) {
-            var id = _ref3.id;
-
-            var lastQuestion = parseInt(e.target.parentNode.id);
-            var subtractOne = (lastQuestion - 1).toString();
-
-            _this.setState({ questionNumber: subtractOne });
-
-            // let lastNumber = this.state.questionArray.pop(subtractOne)
-            // let backArray = this.state.questionArray.slice(-1,1)
-            // if (this.state.questionNumber == lastNumber){
-            //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
-            // }
-
-            // debugger
-            // console.log(this.state.questionArray.lastIndexOf(subtractOne))
-            // console.log(typeof(subtractOne))
-            // console.log(lastNumber)
-            // console.log(backArray)
-        }, _this.handleChange = function (input) {
-            return function (e, _ref4) {
-                var value = _ref4.value;
-
-                //latest
-                var currentQuestion = _this.state.questionNumber;
-                var questionObject = _this.state.questionObject;
-                var checked = true;
-                questionObject[currentQuestion] = checked;
-
-                // debugger
-                _this.setState(_defineProperty({}, input, value));
-            };
-        }, _this.handleMatch = function (catalogueAttribute, stateData) {
-
-            var returnVal = undefined;
-
-            if ((typeof catalogueAttribute === 'undefined' ? 'undefined' : _typeof(catalogueAttribute)) === 'object') {
-
-                for (var y = 0; y < catalogueAttribute.length; y++) {
-
-                    var stringyElement = String(catalogueAttribute[y]);
-                    var match = stringyElement.match(stateData);
-
-                    if (match != null) {
-                        return match;
-                    }
-                }
-            }
-
-            if (typeof catalogueAttribute === 'string') {
-
-                var stringyElement = String(catalogueAttribute);
-                var match = stringyElement.match(stateData);
-
-                // returnVal = match;
-                return match;
-            }
-        }, _this.submitData = function () {
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            var locationArray = [];
-            var catalogueLength = _contacts2.default.contacts.length - 1;
-            console.log(catalogueLength);
-            for (var i = 0; i <= catalogueLength; i++) {
-
-                if (_contacts2.default.contacts[i].hasOwnProperty("location") && Array.isArray(_contacts2.default.contacts[i].location)) {
-                    // console.log("IF")
-                    locationArray.push(_contacts2.default.contacts[i]);
-                    console.log(locationArray);
-                } else if (_contacts2.default.contacts[i].hasOwnProperty("location") && _contacts2.default.contacts[i].location === _this.state.location) {
-
-                    // console.log("ELSE IF")
-                    locationArray.push(_contacts2.default.contacts[i]);
-                    console.log(locationArray);
-                } else {
-                    // console.log("Else")
-                }
-            }
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////// iterate over catalogue ////////////////////////////////////////////////////////////////////////////////
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-            var formState = _this.state;
-            // var parsedArray = this.state.locationArray
-            var parsedArray = locationArray;
-            var filteredArray = [];
 
-            console.log(formState);
 
-            for (var key in formState) {
-                // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
 
-                for (var i = 0; i < parsedArray.length; i++) {
+var FilterForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(FilterForm, _React$Component);
 
-                    if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
-                        filteredArray.push(parsedArray[i]);
-                    } else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-                        // debugger
-                        filteredArray.push(parsedArray[i]);
-                    } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
-                        filteredArray.push(parsedArray[i]);
-                    }
-                }
-            }
+  function FilterForm() {
+    var _getPrototypeOf2;
 
-            _this.setState({ filteredList: filteredArray });
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+    var _this;
+
+    _classCallCheck(this, FilterForm);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    ////////// Handle Question State ////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(FilterForm)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      location: undefined,
+      clientAge: undefined,
+      inSchool: undefined,
+      levelOfEducation: undefined,
+      veteran: undefined,
+      interestedInTraining: undefined,
+      interestedAfterSchoolPrograms: undefined,
+      interestedInCriminalServices: undefined,
+      interestedInCompletingDiploma: undefined,
+      questionNumber: 1,
+      toggleFive: undefined,
+      locationArray: [],
+      truthyArray: [],
+      filteredList: undefined,
+      // answered: false,
+      questionObject: {} /////////////////////////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////
+      //// Handle Buttons /////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////
 
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    ////////// Handle Submit ////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
+    });
 
+    _defineProperty(_assertThisInitialized(_this), "handleNext", function (e, _ref) {
+      var id = _ref.id;
+      // var stringId = e.target.parentNode.id;            
+      var currentQuestion = _this.state.questionNumber;
+      var questionObject = _this.state.questionObject;
 
-    _createClass(FilterForm, [{
-        key: 'render',
-        value: function render() {
+      if (questionObject[currentQuestion] == undefined) {
+        alert("Please answer before moving to the next question.");
+      } else {
+        var nextQuestion = parseInt(e.target.parentNode.id); // e.target.parentNode.getAttribute('id'); ||
 
-            var filteredList = this.state.filteredList;
-            var truthyArray = this.state.truthyArray;
-            var zip = this.state.zip;
-            var questionNumber = this.state.questionNumber;
-            var location = this.state.location;
-            var clientAge = this.state.clientAge;
-            var levelOfEducation = this.state.levelOfEducation;
-            var inSchool = this.state.inSchool;
-            var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
-            var interestedInTraining = this.state.interestedInTraining;
-            var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
-            var interestedInCriminalServices = this.state.interestedInCriminalServices;
-            var veteran = this.state.veteran;
+        var addOne = (nextQuestion + 1).toString();
 
-            var showDiv = { display: 'block' };
-            var hidden = { display: 'none' };
+        _this.setState({
+          questionNumber: addOne // answered: !this.state.answered,
 
-            //-------------------------- * * * * * --------------------------
+        });
+      }
+    });
 
-            var showLocation = questionNumber == '1' ? showDiv : hidden;
-            var showAge = questionNumber == '2' ? showDiv : hidden;
-            var showEducation = questionNumber == '3' ? showDiv : hidden;
-            var showInSchool = questionNumber == '4' ? showDiv : hidden;
+    _defineProperty(_assertThisInitialized(_this), "handleBack", function (e, _ref2) {
+      var id = _ref2.id;
+      var lastQuestion = parseInt(e.target.parentNode.id);
+      var subtractOne = (lastQuestion - 1).toString();
 
-            var showFive = questionNumber == '5' ? showDiv : hidden;
-            var showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
-            var showB = (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'false' || inSchool === false) || (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
-            var showC = levelOfEducation === 'No Highschool / Some Highschool' && (inSchool === 'false' || inSchool === false) ? showDiv : hidden;
+      _this.setState({
+        questionNumber: subtractOne
+      }); // let lastNumber = this.state.questionArray.pop(subtractOne)
+      // let backArray = this.state.questionArray.slice(-1,1)
+      // if (this.state.questionNumber == lastNumber){
+      //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
+      // }
+      // debugger
+      // console.log(this.state.questionArray.lastIndexOf(subtractOne))
+      // console.log(typeof(subtractOne))
+      // console.log(lastNumber)
+      // console.log(backArray)
 
-            //-------------------------- * * * * * --------------------------
+    });
 
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (input) {
+      return function (e, _ref3) {
+        var value = _ref3.value;
+        //latest
+        var currentQuestion = _this.state.questionNumber;
+        var questionObject = _this.state.questionObject;
+        var checked = true;
+        questionObject[currentQuestion] = checked; // debugger
 
-            //Question 6
-            var showCriminalServices = "";
-            if (this.state.questionNumber == '6') {
-                showCriminalServices = { display: 'block' };
-            } else {
-                showCriminalServices = { display: 'none' };
-            }
+        _this.setState(_defineProperty({}, input, value));
+      };
+    });
 
-            var showVeteran = "";
-            if (this.state.questionNumber == '7' && (clientAge == "18-24" || clientAge == "25-65")) {
-                // debugger
-                showVeteran = { display: 'block' };
-            } else {
-                // debugger
-                showVeteran = { display: 'none' };
-            }
+    _defineProperty(_assertThisInitialized(_this), "handleMatch", function (catalogueAttribute, stateData) {
+      var returnVal = undefined;
 
-            // Show Questions vs Show Catalogue
-            var showForm = "";
-            if (this.state.filteredList === undefined) {
-                showForm = { display: 'block' };
-            } else {
-                showForm = { display: 'none' };
-            }
+      if (_typeof(catalogueAttribute) === 'object') {
+        for (var y = 0; y < catalogueAttribute.length; y++) {
+          var stringyElement = String(catalogueAttribute[y]);
+          var match = stringyElement.match(stateData);
 
-            var showCatalogue = "";
-            if (this.state.filteredList === undefined) {
-                showCatalogue = { display: 'none' };
-            } else {
-                showCatalogue = { display: 'block' };
-            }
-
-            var state = this.state;
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                console.log(this.state.questionObject),
-                _react2.default.createElement(
-                    'div',
-                    { style: showForm },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'ui filterContainer', id: 'questionHeight' },
-                        _react2.default.createElement(
-                            'div',
-                            { style: showLocation, id: '1', 'data-id': 'thing' },
-                            _react2.default.createElement(
-                                'h3',
-                                null,
-                                'Question 1'
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                null,
-                                'Is the participant looking for services in the LA area or San Fernando Valley?'
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Form,
-                                { id: 'location' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        className: 'fonts',
-                                        label: 'Los Angeles',
-                                        name: 'radioGroup',
-                                        value: 'Los Angeles',
-                                        checked: location === 'Los Angeles',
-                                        onChange: this.handleChange("location")
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'San Fernando Valley',
-                                        name: 'radioGroup',
-                                        value: 'San Fernando Valley',
-                                        checked: location === 'San Fernando Valley',
-                                        onChange: this.handleChange("location")
-
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
-                                ' Next '
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: showAge, id: '2' },
-                            _react2.default.createElement(
-                                'h3',
-                                null,
-                                'Question 2'
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                null,
-                                'What is the participants age?'
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Form,
-                                { id: 'clientAge' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: '0-4',
-                                        name: 'radioGroup',
-                                        value: '0-4',
-                                        checked: clientAge === '0-4',
-                                        onChange: this.handleChange("clientAge")
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: '5-10',
-                                        name: 'radioGroup',
-                                        value: '5-10',
-                                        checked: clientAge === '5-10',
-                                        onChange: this.handleChange("clientAge")
-
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: '11-13',
-                                        name: 'radioGroup',
-                                        value: '11-13',
-                                        checked: clientAge === '11-13',
-                                        onChange: this.handleChange("clientAge")
-
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: '14-18 (Highschool Age)',
-                                        name: 'radioGroup',
-                                        value: '14-18',
-                                        checked: clientAge === '14-18',
-                                        onChange: this.handleChange("clientAge")
-
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: '18-24 (College/Working Age)',
-                                        name: 'radioGroup',
-                                        value: '18-24',
-                                        checked: clientAge === '18-24',
-                                        onChange: this.handleChange("clientAge")
-
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: '25-65',
-                                        name: 'radioGroup',
-                                        value: '25-65',
-                                        checked: clientAge === '25-65',
-                                        onChange: this.handleChange("clientAge")
-
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { id: 'back_button', className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                ' Back '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
-                                ' Next '
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: showEducation, id: '3' },
-                            _react2.default.createElement(
-                                'h3',
-                                null,
-                                'Question 3'
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                null,
-                                'What is the participant\'s highest level of completed education '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Form,
-                                { id: 'levelOfEducation' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, _defineProperty({
-                                        label: 'No Highschool / Some Highschool',
-                                        name: 'radioGroup',
-                                        value: 'No Highschool / Some Highschool',
-                                        checked: this.state.levelOfEducation === 'No Highschool / Some Highschool',
-                                        onChange: this.handleLevelOfEducation
-                                    }, 'onChange', this.handleChange("levelOfEducation")))
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'Highschool/GED',
-                                        name: 'radioGroup',
-                                        value: 'Highschool/GED',
-                                        checked: this.state.levelOfEducation === 'Highschool/GED',
-                                        onChange: this.handleChange("levelOfEducation")
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'Some College',
-                                        name: 'radioGroup',
-                                        value: 'Some College',
-                                        checked: this.state.levelOfEducation === 'Some College',
-                                        onChange: this.handleChange("levelOfEducation")
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'AA',
-                                        name: 'radioGroup',
-                                        value: 'AA',
-                                        checked: this.state.levelOfEducation === 'AA',
-                                        onChange: this.handleChange("levelOfEducation")
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'BA or Higher',
-                                        name: 'radioGroup',
-                                        value: 'BA or Higher',
-                                        checked: this.state.levelOfEducation === 'BA or Higher',
-                                        onChange: this.handleChange("levelOfEducation")
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                ' Back '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
-                                ' Next '
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: showInSchool, id: '4' },
-                            _react2.default.createElement(
-                                'h3',
-                                null,
-                                'Question 4'
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                null,
-                                'Is the participant in school? '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Form,
-                                null,
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'Yes',
-                                        name: 'radioGroup',
-                                        value: 'true',
-                                        checked: this.state.inSchool === 'true',
-                                        onChange: this.handleChange("inSchool")
-
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'No',
-                                        name: 'radioGroup',
-                                        value: 'false',
-                                        checked: this.state.inSchool === 'false',
-                                        onChange: this.handleChange("inSchool")
-
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                ' Back '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
-                                ' Next '
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: showFive, id: '5' },
-                            _react2.default.createElement(
-                                'div',
-                                { style: showA },
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    'Question 5'
-                                ),
-                                _react2.default.createElement(
-                                    'h2',
-                                    null,
-                                    ' Is the participant looking for after-school program? '
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form,
-                                    null,
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Form.Field,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Radio, {
-                                            label: 'Yes',
-                                            name: 'radioGroup',
-                                            value: 'true',
-                                            checked: interestedAfterSchoolPrograms === 'true',
-                                            onChange: this.handleChange('interestedAfterSchoolPrograms')
-                                        })
-                                    ),
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Form.Field,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Radio, {
-                                            label: 'No',
-                                            name: 'radioGroup',
-                                            value: 'false',
-                                            checked: interestedAfterSchoolPrograms === 'false',
-                                            onChange: this.handleChange('interestedAfterSchoolPrograms')
-                                        })
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { style: showB, id: '5' },
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    'Question 5'
-                                ),
-                                _react2.default.createElement(
-                                    'h2',
-                                    null,
-                                    ' Is the participant interested in employment support or vocational training '
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form,
-                                    null,
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Form.Field,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Radio, {
-                                            label: 'Yes',
-                                            name: 'radioGroup',
-                                            value: 'true',
-                                            checked: interestedInTraining === 'true',
-                                            onChange: this.handleChange('interestedInTraining')
-                                        })
-                                    ),
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Form.Field,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Radio, {
-                                            label: 'No',
-                                            name: 'radioGroup',
-                                            value: 'false',
-                                            checked: interestedInTraining === 'false',
-                                            onChange: this.handleChange('interestedInTraining')
-                                        })
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { style: showC, className: 'showDiploma' },
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    'Question 5'
-                                ),
-                                _react2.default.createElement(
-                                    'h2',
-                                    null,
-                                    'Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)'
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form,
-                                    null,
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Form.Field,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Radio, {
-                                            label: 'Yes',
-                                            name: 'radioGroup',
-                                            value: 'true',
-                                            checked: this.state.interestedInCompletingDiploma === 'true',
-                                            onChange: this.handleChange('interestedInCompletingDiploma')
-                                        })
-                                    ),
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Form.Field,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Radio, {
-                                            label: 'No',
-                                            name: 'radioGroup',
-                                            value: 'false',
-                                            checked: this.state.interestedInCompletingDiploma === 'false',
-                                            onChange: this.handleChange('interestedInCompletingDiploma')
-                                        })
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                ' Back '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
-                                ' Next '
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: this.state.questionNumber == "6" ? { display: 'block' } : { display: 'none' }, id: '6' },
-                            _react2.default.createElement(
-                                'h3',
-                                null,
-                                'Question 6'
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                null,
-                                'Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Form,
-                                null,
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'Yes',
-                                        name: 'radioGroup',
-                                        value: 'true',
-                                        checked: this.state.interestedInCriminalServices === 'true',
-                                        onChange: this.handleChange('interestedInCriminalServices')
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'No',
-                                        name: 'radioGroup',
-                                        value: 'false',
-                                        checked: this.state.interestedInCriminalServices === 'false',
-                                        onChange: this.handleChange('interestedInCriminalServices')
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { style: this.state.clientAge == "18-24" || this.state.clientAge == "25-65" ? { display: 'block' } : { display: 'none' }, id: '6' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                    ' Back '
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { className: 'button-header', basic: true, color: 'black', onClick: this.handleNext },
-                                    ' Next '
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { style: this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18" ? { display: 'block' } : { display: 'none' }, id: '6' },
-                                _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                    ' Back '
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { className: 'button-header', basic: true, color: 'black', onClick: this.submitData },
-                                    ' Submit '
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: showVeteran, id: '7' },
-                            _react2.default.createElement(
-                                'h3',
-                                null,
-                                'Question 7'
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                null,
-                                'Is the participant a veteran?'
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Form,
-                                null,
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'Yes',
-                                        name: 'radioGroup',
-                                        value: 'true',
-                                        checked: veteran === 'true',
-                                        onChange: this.handleChange("veteran")
-                                    })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Form.Field,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Radio, {
-                                        label: 'No',
-                                        name: 'radioGroup',
-                                        value: 'false',
-                                        checked: veteran === 'false',
-                                        onChange: this.handleChange("veteran")
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.handleBack },
-                                ' Back '
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Button,
-                                { className: 'button-header', basic: true, color: 'black', onClick: this.submitData },
-                                ' Submit '
-                            )
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { style: showCatalogue },
-                    _react2.default.createElement(_Catalogue2.default, {
-                        filteredList: filteredList,
-                        clientAge: clientAge,
-                        levelOfEducation: levelOfEducation,
-                        zip: zip
-                    })
-                )
-            );
+          if (match != null) {
+            return match;
+          }
         }
-    }]);
+      }
 
-    return FilterForm;
-}(_react2.default.Component);
+      if (typeof catalogueAttribute === 'string') {
+        var stringyElement = String(catalogueAttribute);
+        var match = stringyElement.match(stateData); // returnVal = match;
 
-exports.default = FilterForm;
+        return match;
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "submitData", function () {
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var locationArray = [];
+      var catalogueLength = __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts.length - 1;
+      console.log(catalogueLength);
+
+      for (var i = 0; i <= catalogueLength; i++) {
+        if (__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].hasOwnProperty("location") && Array.isArray(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].location)) {
+          // console.log("IF")
+          locationArray.push(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i]);
+          console.log(locationArray);
+        } else if (__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].hasOwnProperty("location") && __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].location === _this.state.location) {
+          // console.log("ELSE IF")
+          locationArray.push(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i]);
+          console.log(locationArray);
+        } else {// console.log("Else")
+        }
+      } //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      ////////////////////////// iterate over catalogue ////////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+      var formState = _this.state; // var parsedArray = this.state.locationArray
+
+      var parsedArray = locationArray;
+      var filteredArray = [];
+      console.log(formState);
+
+      for (var key in formState) {
+        // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
+        for (var i = 0; i < parsedArray.length; i++) {
+          if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
+            filteredArray.push(parsedArray[i]);
+          } else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
+            // debugger
+            filteredArray.push(parsedArray[i]);
+          } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
+            filteredArray.push(parsedArray[i]);
+          }
+        }
+      }
+
+      _this.setState({
+        filteredList: filteredArray
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(FilterForm, [{
+    key: "render",
+    value: function render() {
+      var filteredList = this.state.filteredList;
+      var truthyArray = this.state.truthyArray;
+      var zip = this.state.zip;
+      var questionNumber = this.state.questionNumber;
+      var location = this.state.location;
+      var clientAge = this.state.clientAge;
+      var levelOfEducation = this.state.levelOfEducation;
+      var inSchool = this.state.inSchool;
+      var interestedAfterSchoolPrograms = this.state.interestedAfterSchoolPrograms;
+      var interestedInTraining = this.state.interestedInTraining;
+      var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
+      var interestedInCriminalServices = this.state.interestedInCriminalServices;
+      var veteran = this.state.veteran;
+      var showDiv = {
+        display: 'block'
+      };
+      var hidden = {
+        display: 'none'
+      }; //-------------------------- * * * * * --------------------------
+
+      var showLocation = questionNumber == '1' ? showDiv : hidden;
+      var showAge = questionNumber == '2' ? showDiv : hidden;
+      var showEducation = questionNumber == '3' ? showDiv : hidden;
+      var showInSchool = questionNumber == '4' ? showDiv : hidden;
+      var showFive = questionNumber == '5' ? showDiv : hidden;
+      var showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
+      var showB = (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'false' || inSchool === false) || (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
+      var showC = levelOfEducation === 'No Highschool / Some Highschool' && (inSchool === 'false' || inSchool === false) ? showDiv : hidden; //-------------------------- * * * * * --------------------------
+      //Question 6
+
+      var showCriminalServices = "";
+
+      if (this.state.questionNumber == '6') {
+        showCriminalServices = {
+          display: 'block'
+        };
+      } else {
+        showCriminalServices = {
+          display: 'none'
+        };
+      }
+
+      var showVeteran = "";
+
+      if (this.state.questionNumber == '7' && (clientAge == "18-24" || clientAge == "25-65")) {
+        // debugger
+        showVeteran = {
+          display: 'block'
+        };
+      } else {
+        // debugger
+        showVeteran = {
+          display: 'none'
+        };
+      } // Show Questions vs Show Catalogue
+
+
+      var showForm = "";
+
+      if (this.state.filteredList === undefined) {
+        showForm = {
+          display: 'block'
+        };
+      } else {
+        showForm = {
+          display: 'none'
+        };
+      }
+
+      var showCatalogue = "";
+
+      if (this.state.filteredList === undefined) {
+        showCatalogue = {
+          display: 'none'
+        };
+      } else {
+        showCatalogue = {
+          display: 'block'
+        };
+      }
+
+      var state = this.state;
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, console.log(this.state.questionObject), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showForm
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "ui filterContainer",
+        id: "questionHeight"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showLocation,
+        id: "1",
+        "data-id": "thing"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 1"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant looking for services in the LA area or San Fernando Valley?"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], {
+        id: "location"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        className: "fonts",
+        label: "Los Angeles",
+        name: "radioGroup",
+        value: "Los Angeles",
+        checked: location === 'Los Angeles',
+        onChange: this.handleChange("location")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "San Fernando Valley",
+        name: "radioGroup",
+        value: "San Fernando Valley",
+        checked: location === 'San Fernando Valley',
+        onChange: this.handleChange("location")
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleNext
+      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showAge,
+        id: "2"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 2"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "What is the participants age?"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], {
+        id: "clientAge"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "0-4",
+        name: "radioGroup",
+        value: "0-4",
+        checked: clientAge === '0-4',
+        onChange: this.handleChange("clientAge")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "5-10",
+        name: "radioGroup",
+        value: "5-10",
+        checked: clientAge === '5-10',
+        onChange: this.handleChange("clientAge")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "11-13",
+        name: "radioGroup",
+        value: "11-13",
+        checked: clientAge === '11-13',
+        onChange: this.handleChange("clientAge")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "14-18 (Highschool Age)",
+        name: "radioGroup",
+        value: "14-18",
+        checked: clientAge === '14-18',
+        onChange: this.handleChange("clientAge")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "18-24 (College/Working Age)",
+        name: "radioGroup",
+        value: "18-24",
+        checked: clientAge === '18-24',
+        onChange: this.handleChange("clientAge")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "25-65",
+        name: "radioGroup",
+        value: "25-65",
+        checked: clientAge === '25-65',
+        onChange: this.handleChange("clientAge")
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        id: "back_button",
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleNext
+      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showEducation,
+        id: "3"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 3"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "What is the participant's highest level of completed education "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], {
+        id: "levelOfEducation"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], _defineProperty({
+        label: "No Highschool / Some Highschool",
+        name: "radioGroup",
+        value: "No Highschool / Some Highschool",
+        checked: this.state.levelOfEducation === 'No Highschool / Some Highschool',
+        onChange: this.handleLevelOfEducation
+      }, "onChange", this.handleChange("levelOfEducation")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Highschool/GED",
+        name: "radioGroup",
+        value: "Highschool/GED",
+        checked: this.state.levelOfEducation === 'Highschool/GED',
+        onChange: this.handleChange("levelOfEducation")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Some College",
+        name: "radioGroup",
+        value: "Some College",
+        checked: this.state.levelOfEducation === 'Some College',
+        onChange: this.handleChange("levelOfEducation")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "AA",
+        name: "radioGroup",
+        value: "AA",
+        checked: this.state.levelOfEducation === 'AA',
+        onChange: this.handleChange("levelOfEducation")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "BA or Higher",
+        name: "radioGroup",
+        value: "BA or Higher",
+        checked: this.state.levelOfEducation === 'BA or Higher',
+        onChange: this.handleChange("levelOfEducation")
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleNext
+      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showInSchool,
+        id: "4"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 4"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant in school? "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Yes",
+        name: "radioGroup",
+        value: "true",
+        checked: this.state.inSchool === 'true',
+        onChange: this.handleChange("inSchool")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "No",
+        name: "radioGroup",
+        value: "false",
+        checked: this.state.inSchool === 'false',
+        onChange: this.handleChange("inSchool")
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleNext
+      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showFive,
+        id: "5"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showA
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 5"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, " Is the participant looking for after-school program? "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Yes",
+        name: "radioGroup",
+        value: "true",
+        checked: interestedAfterSchoolPrograms === 'true',
+        onChange: this.handleChange('interestedAfterSchoolPrograms')
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "No",
+        name: "radioGroup",
+        value: "false",
+        checked: interestedAfterSchoolPrograms === 'false',
+        onChange: this.handleChange('interestedAfterSchoolPrograms')
+      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showB,
+        id: "5"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 5"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, " Is the participant interested in employment support or vocational training "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Yes",
+        name: "radioGroup",
+        value: "true",
+        checked: interestedInTraining === 'true',
+        onChange: this.handleChange('interestedInTraining')
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "No",
+        name: "radioGroup",
+        value: "false",
+        checked: interestedInTraining === 'false',
+        onChange: this.handleChange('interestedInTraining')
+      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showC,
+        className: "showDiploma"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 5"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Yes",
+        name: "radioGroup",
+        value: "true",
+        checked: this.state.interestedInCompletingDiploma === 'true',
+        onChange: this.handleChange('interestedInCompletingDiploma')
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "No",
+        name: "radioGroup",
+        value: "false",
+        checked: this.state.interestedInCompletingDiploma === 'false',
+        onChange: this.handleChange('interestedInCompletingDiploma')
+      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleNext
+      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: this.state.questionNumber == "6" ? {
+          display: 'block'
+        } : {
+          display: 'none'
+        },
+        id: "6"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 6"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Yes",
+        name: "radioGroup",
+        value: "true",
+        checked: this.state.interestedInCriminalServices === 'true',
+        onChange: this.handleChange('interestedInCriminalServices')
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "No",
+        name: "radioGroup",
+        value: "false",
+        checked: this.state.interestedInCriminalServices === 'false',
+        onChange: this.handleChange('interestedInCriminalServices')
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: this.state.clientAge == "18-24" || this.state.clientAge == "25-65" ? {
+          display: 'block'
+        } : {
+          display: 'none'
+        },
+        id: "6"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleNext
+      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18" ? {
+          display: 'block'
+        } : {
+          display: 'none'
+        },
+        id: "6"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.submitData
+      }, " Submit "))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showVeteran,
+        id: "7"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant a veteran?"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "Yes",
+        name: "radioGroup",
+        value: "true",
+        checked: veteran === 'true',
+        onChange: this.handleChange("veteran")
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
+        label: "No",
+        name: "radioGroup",
+        value: "false",
+        checked: veteran === 'false',
+        onChange: this.handleChange("veteran")
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleBack
+      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.submitData
+      }, " Submit ")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        style: showCatalogue
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Catalogue__["a" /* default */], {
+        filteredList: filteredList,
+        clientAge: clientAge,
+        levelOfEducation: levelOfEducation,
+        zip: zip
+      })));
+    }
+  }]);
+
+  return FilterForm;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (FilterForm);
 
 /***/ }),
 /* 867 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__(80);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(50);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _semanticUiReact = __webpack_require__(80);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Program = function Program(props) {
-    return _react2.default.createElement(
-        'div',
-        { className: 'row' },
-        _react2.default.createElement(
-            _semanticUiReact.Responsive,
-            { as: _semanticUiReact.Segment },
-            _react2.default.createElement(
-                _semanticUiReact.Item.Content,
-                null,
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    _react2.default.createElement(
-                        _semanticUiReact.Item.Header,
-                        { as: 'a' },
-                        props.programName
-                    )
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Form,
-                    null,
-                    _react2.default.createElement(
-                        _semanticUiReact.Form.Field,
-                        null,
-                        _react2.default.createElement(_semanticUiReact.Form.Checkbox, { label: { children: props.programEmail }, value: props.programEmail, onChange: props.updateEmailList, className: 'check-box-spacing' })
-                    )
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Phone Number :'
-                    ),
-                    ' ',
-                    props.programPhone,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Accepts Referrals? : '
-                    ),
-                    props.programAcceptReferrals,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Description : '
-                    ),
-                    props.programDescription,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Services Offered : '
-                    ),
-                    props.programServices,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Population Served : '
-                    ),
-                    props.programPopulationServed,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Eligibility Requirements : '
-                    ),
-                    props.programEligibility,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Only Offered At Program Site : '
-                    ),
-                    props.programOnSite,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Extra,
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Location:'
-                    ),
-                    ' ',
-                    props.programLocation,
-                    ' '
-                )
-            )
-        ),
-        _react2.default.createElement('hr', null)
-    );
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "row"
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["f" /* Responsive */], {
+    as: __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Segment */]
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Content, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Header, {
+    as: "a"
+  }, props.programName)), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["b" /* Form */].Checkbox, {
+    label: {
+      children: props.programEmail
+    },
+    value: props.programEmail,
+    onChange: props.updateEmailList,
+    className: "check-box-spacing"
+  }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Phone Number :"), " ", props.programPhone, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Accepts Referrals? : "), props.programAcceptReferrals, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Description : "), props.programDescription, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Services Offered : "), props.programServices, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Population Served : "), props.programPopulationServed, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Eligibility Requirements : "), props.programEligibility, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Only Offered At Program Site : "), props.programOnSite, " "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Item */].Extra, null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, "Location:"), " ", props.programLocation, " "))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("hr", null));
 };
 
-exports.default = Program;
+/* harmony default export */ __webpack_exports__["a"] = (Program);
 
 /***/ }),
 /* 868 */
