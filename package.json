@@ -18,6 +18,11 @@
     "heroku-postbuild": "yarn run build:prod",
     "test": "jest"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>test/setupTests.js"
+    ]
+  },
   "dependencies": {
     "css-loader": "0.28.4",
     "emailjs": "^2.2.0",
@@ -46,9 +51,11 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-15": "^1.4.0",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "react-test-renderer": "15.6.1"
   }
 }
