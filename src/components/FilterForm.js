@@ -68,6 +68,16 @@ class FilterForm extends React.Component {
         this.setState({ questionNumber: this.state.questionNumber - 1 })
     }
 
+    handleSubmit = () => {
+        let currentQuestion = this.state.questionNumber;
+        let questionObject = this.state.questionObject;
+        if (questionObject[currentQuestion] == undefined) {
+            alert ("Please answer before moving to the next question.")
+        } else {
+            this.submitData();
+        }
+    }
+
     // Show Questions vs Show Catalogue
     showForm = () => this.state.submitted === false
     showCatalogue = () => this.state.submitted === true
@@ -601,7 +611,7 @@ class FilterForm extends React.Component {
                             {this.showNextBtn() && <Button className="button-header" basic color='black' 
                                     onClick={this.handleNext}> Next </Button>}
                             {this.showSubmitBtn() && <Button className="button-header" basic color='black' 
-                                    onClick={this.submitData}> Submit </Button>}
+                                    onClick={this.handleSubmit}> Submit </Button>}
                         </div>
                     </div>
                 </div>}
