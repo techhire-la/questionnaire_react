@@ -28,6 +28,7 @@ class FilterForm extends React.Component {
         filteredList: undefined,
 
         // answered: false,
+        submitted: false,
         questionObject: {}
     }
 
@@ -38,7 +39,33 @@ class FilterForm extends React.Component {
     /////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////
 
+    showBackBtn = () => {
+        if(this.state.questionNumber > 1){
+            return { display: 'block' };
+        } else {
+            return { display: 'none' };
+        }
+    }
 
+    showNextBtn = () => {
+        if (this.state.questionNumber < 6 || 
+            this.state.questionNumber === 6 && this.showQuestionSeven()) {
+            return { display: 'block' };
+        }
+        return { display: 'none' };
+    }
+
+    showSubmitBtn = () => {
+        if (this.state.questionNumber === 6 && !this.showQuestionSeven() || 
+            this.state.questionNumber === 7 && this.showQuestionSeven()) {
+            return { display: 'block' };
+        }
+        return { display: 'none' };
+    }
+
+    showQuestionSeven = () => {
+        return (this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ? true : false;
+    }
 
     handleNext = (e, { id }) => {
         // var stringId = e.target.parentNode.id;            
@@ -46,38 +73,13 @@ class FilterForm extends React.Component {
         let questionObject = this.state.questionObject;
         if (questionObject[currentQuestion] == undefined) {
             alert ("Please answer before moving to the next question.")
-        }
-        else {
-            var nextQuestion = parseInt(e.target.parentNode.id)
-            // e.target.parentNode.getAttribute('id'); ||
-            var addOne = (nextQuestion + 1).toString();
-
-            this.setState({
-                questionNumber: addOne,
-                // answered: !this.state.answered,
-            }) 
+        } else {
+            this.setState({ questionNumber: currentQuestion + 1 }) 
         }
     }
 
     handleBack = (e, { id }) => {
-        var lastQuestion = parseInt(e.target.parentNode.id)
-        var subtractOne = (lastQuestion - 1).toString();
-
-        this.setState({ questionNumber: subtractOne })
-
-
-        // let lastNumber = this.state.questionArray.pop(subtractOne)
-        // let backArray = this.state.questionArray.slice(-1,1)
-        // if (this.state.questionNumber == lastNumber){
-        //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
-        // }
-
-        // debugger
-        // console.log(this.state.questionArray.lastIndexOf(subtractOne))
-        // console.log(typeof(subtractOne))
-        // console.log(lastNumber)
-        // console.log(backArray)
-
+        this.setState({ questionNumber: this.state.questionNumber - 1 })
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -98,8 +100,6 @@ class FilterForm extends React.Component {
         this.setState({
             [input]: value,
         })
-
-
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -110,9 +110,6 @@ class FilterForm extends React.Component {
 
 
     handleMatch = (catalogueAttribute, stateData) => {
-
-
-
         var returnVal = undefined
 
         if (typeof (catalogueAttribute) === 'object') {
@@ -151,7 +148,7 @@ class FilterForm extends React.Component {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        
         var locationArray = []
         var catalogueLength = catalogueData.contacts.length - 1
         console.log(catalogueLength)
@@ -204,7 +201,7 @@ class FilterForm extends React.Component {
 
         }
 
-        this.setState({ filteredList: filteredArray })
+        this.setState({ filteredList: filteredArray, submitted: true })
     }
 
 
@@ -299,12 +296,9 @@ class FilterForm extends React.Component {
                     <div className="ui filterContainer" id="questionHeight">
 
                         <div style={showLocation} id="1" data-id="thing">
-
                             <h3>Question 1</h3>
                             <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
-
                             <Form id="location">
-
                                 <Form.Field>
                                     <Radio
                                         className="fonts"
@@ -315,7 +309,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("location")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='San Fernando Valley'
@@ -323,25 +316,16 @@ class FilterForm extends React.Component {
                                         value='San Fernando Valley'
                                         checked={location === 'San Fernando Valley'}
                                         onChange={this.handleChange("location")}
-
                                     />
                                 </Form.Field>
-
                             </Form>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
-
-
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button> */}
                         </div>
 
-
                         <div style={showAge} id="2">
-
                             <h3>Question 2</h3>
                             <h2>What is the participants age?</h2>
-
                             <Form id="clientAge">
-
                                 <Form.Field>
                                     <Radio
                                         label='0-4'
@@ -351,7 +335,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("clientAge")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='5-10'
@@ -359,11 +342,8 @@ class FilterForm extends React.Component {
                                         value='5-10'
                                         checked={clientAge === '5-10'}
                                         onChange={this.handleChange("clientAge")}
-
                                     />
                                 </Form.Field>
-
-
                                 <Form.Field>
                                     <Radio
                                         label='11-13'
@@ -371,12 +351,8 @@ class FilterForm extends React.Component {
                                         value='11-13'
                                         checked={clientAge === '11-13'}
                                         onChange={this.handleChange("clientAge")}
-
                                     />
                                 </Form.Field>
-
-
-
                                 <Form.Field>
                                     <Radio
                                         label='14-18 (Highschool Age)'
@@ -384,10 +360,8 @@ class FilterForm extends React.Component {
                                         value='14-18'
                                         checked={clientAge === '14-18'}
                                         onChange={this.handleChange("clientAge")}
-
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='18-24 (College/Working Age)'
@@ -398,7 +372,6 @@ class FilterForm extends React.Component {
 
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='25-65'
@@ -406,27 +379,17 @@ class FilterForm extends React.Component {
                                         value='25-65'
                                         checked={clientAge === '25-65'}
                                         onChange={this.handleChange("clientAge")}
-
                                     />
                                 </Form.Field>
-
                             </Form>
-
-
-                            <Button id="back_button" className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
+                            {/* <Button id="back_button" className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button> */}
                         </div>
 
-
-
                         <div style={showEducation} id="3">
-
                             <h3>Question 3</h3>
                             <h2>What is the participant's highest level of completed education </h2>
-
                             <Form id="levelOfEducation">
-
                                 <Form.Field>
                                     <Radio
                                         label='No Highschool / Some Highschool'
@@ -437,7 +400,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("levelOfEducation")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='Highschool/GED'
@@ -447,7 +409,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("levelOfEducation")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='Some College'
@@ -457,7 +418,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("levelOfEducation")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='AA'
@@ -467,7 +427,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("levelOfEducation")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='BA or Higher'
@@ -478,23 +437,14 @@ class FilterForm extends React.Component {
                                     />
                                 </Form.Field>
                             </Form>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
-
-
-
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button> */}
                         </div>
-
 
                         <div style={showInSchool} id="4">
                             <h3>Question 4</h3>
-
                             <h2>Is the participant in school? </h2>
-
                             <Form>
-
                                 <Form.Field>
                                     <Radio
                                         label='Yes'
@@ -505,7 +455,6 @@ class FilterForm extends React.Component {
 
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='No'
@@ -513,25 +462,17 @@ class FilterForm extends React.Component {
                                         value='false'
                                         checked={this.state.inSchool === 'false'}
                                         onChange={this.handleChange("inSchool")}
-
                                     />
                                 </Form.Field>
                             </Form>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
-
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button> */}
                         </div>
 
-
                         <div style={showFive} id="5" >
-
                             <div style={showA} >
-
                                 <h3>Question 5</h3>
                                 <h2> Is the participant looking for after-school program? </h2>
-
                                 <Form>
                                     <Form.Field>
                                         <Radio
@@ -542,7 +483,6 @@ class FilterForm extends React.Component {
                                             onChange={this.handleChange('interestedAfterSchoolPrograms')}
                                         />
                                     </Form.Field>
-
                                     <Form.Field>
                                         <Radio
                                             label='No'
@@ -553,17 +493,12 @@ class FilterForm extends React.Component {
                                         />
                                     </Form.Field>
                                 </Form>
-
                             </div>
-
-
 
                             {/* <div style={ ((inSchool === 'false' && (levelOfEducation === 'Highschool/GED' || levelOfEducation == 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher')) || (inSchool === 'true' && (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') )) ? {display: 'block'} : {display: 'none'}} id="5"> */}
                             <div style={showB} id="5">
-
                                 <h3>Question 5</h3>
                                 <h2> Is the participant interested in employment support or vocational training </h2>
-
                                 <Form>
                                     <Form.Field>
                                         <Radio
@@ -574,7 +509,6 @@ class FilterForm extends React.Component {
                                             onChange={this.handleChange('interestedInTraining')}
                                         />
                                     </Form.Field>
-
                                     <Form.Field>
                                         <Radio
                                             label='No'
@@ -584,18 +518,14 @@ class FilterForm extends React.Component {
                                             onChange={this.handleChange('interestedInTraining')}
                                         />
                                     </Form.Field>
-
                                 </Form>
-
                             </div>
 
 
                             <div style={showC} className='showDiploma'>
                                 <h3>Question 5</h3>
                                 <h2>Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)</h2>
-
                                 <Form>
-
                                     <Form.Field>
                                         <Radio
                                             label='Yes'
@@ -605,7 +535,6 @@ class FilterForm extends React.Component {
                                             onChange={this.handleChange('interestedInCompletingDiploma')}
                                         />
                                     </Form.Field>
-
                                     <Form.Field>
                                         <Radio
                                             label='No'
@@ -615,27 +544,16 @@ class FilterForm extends React.Component {
                                             onChange={this.handleChange('interestedInCompletingDiploma')}
                                         />
                                     </Form.Field>
-
                                 </Form>
-
                             </div>
-
-
-                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-
-                            <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
-
-
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button> */}
                         </div>
-
-
 
                         <div style={this.state.questionNumber == "6" ? { display: 'block' } : { display: 'none' }} id="6">
                             <h3>Question 6</h3>
                             <h2>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h2>
-
                             <Form>
-
                                 <Form.Field>
                                     <Radio
                                         label='Yes'
@@ -645,7 +563,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange('interestedInCriminalServices')}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='No'
@@ -655,33 +572,21 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange('interestedInCriminalServices')}
                                     />
                                 </Form.Field>
-
                             </Form>
-
-                            <div style={(this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ? { display: 'block' } : { display: 'none' }} id="6">
-                                <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-                                <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button>
-                            </div>
-
-                            <div style={(this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ? { display: 'block' } : { display: 'none' }} id="6">
-                                <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-                                <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button>
-                            </div>
-
-
-
+                            {/* <div style={(this.state.clientAge == "18-24" || this.state.clientAge == "25-65") ? { display: 'block' } : { display: 'none' }} id="6"> */}
+                                {/* <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                                {/* <Button className="button-header" basic color='black' onClick={this.handleNext}> Next </Button> */}
+                            {/* </div> */}
+                            {/* <div style={(this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18") ? { display: 'block' } : { display: 'none' }} id="6"> */}
+                                {/* <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                                {/* <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button> */}
+                            {/* </div> */}
                         </div>
 
-
-
-
                         <div style={showVeteran} id="7">
-
                             <h3>Question 7</h3>
-
                             <h2>Is the participant a veteran?</h2>
                             <Form>
-
                                 <Form.Field>
                                     <Radio
                                         label='Yes'
@@ -691,7 +596,6 @@ class FilterForm extends React.Component {
                                         onChange={this.handleChange("veteran")}
                                     />
                                 </Form.Field>
-
                                 <Form.Field>
                                     <Radio
                                         label='No'
@@ -703,25 +607,21 @@ class FilterForm extends React.Component {
                                 </Form.Field>
 
                             </Form>
-
-
-
-
-                            <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button>
-
-                            <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button>
-
+                            {/* <Button className="button-header" basic color='black' onClick={this.handleBack}> Back </Button> */}
+                            {/* <Button className="button-header" basic color='black' onClick={this.submitData}> Submit </Button> */}
                         </div>
-
-
+                        <div>
+                            <Button style={this.showBackBtn()} className="button-header" basic color='black' 
+                                    onClick={this.handleBack}> Back </Button>
+                            <Button style={this.showNextBtn()}className="button-header" basic color='black' 
+                                    onClick={this.handleNext}> Next </Button>
+                            <Button style={this.showSubmitBtn()} className="button-header" basic color='black' 
+                                    onClick={this.submitData}> Submit </Button>
+                        </div>
                     </div>
-
-
-
                 </div>
 
-
-
+                { this.state.submitted && 
                 <div style={showCatalogue}>
                     <Catalogue
                         filteredList={filteredList}
@@ -729,12 +629,10 @@ class FilterForm extends React.Component {
                         levelOfEducation={levelOfEducation}
                         zip={zip}
                     />
-                </div>
+                </div>}
             </div>
-
         );
     }
 }
-
 
 export default FilterForm;
