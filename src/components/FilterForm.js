@@ -76,7 +76,7 @@ class FilterForm extends React.Component {
         }
     }
 
-    // Show Questions vs Show Catalogue
+    ///// Conditional Question Rendering /////
     showForm = () => this.state.submitted === false
     showCatalogue = () => this.state.submitted === true
 
@@ -226,10 +226,10 @@ class FilterForm extends React.Component {
             <div>
                 {/* {console.log(this.state.questionObject)} */}
                 { this.showForm() && 
-                <div>
+                <div id="questionnaire-form">
                     <div className="ui filterContainer" id="questionHeight">
                         { this.showLocation() && 
-                        <div id="1" data-id="thing">
+                        <div id="q1">
                             <h3>Question 1</h3>
                             <h2>Is the participant looking for services in the LA area or San Fernando Valley?</h2>
                             <Form id="location">
@@ -256,7 +256,7 @@ class FilterForm extends React.Component {
                         </div>}
 
                         { this.showAge() && 
-                        <div id="2">
+                        <div id="q2">
                             <h3>Question 2</h3>
                             <h2>What is the participants age?</h2>
                             <Form id="clientAge">
@@ -319,7 +319,7 @@ class FilterForm extends React.Component {
                         </div>}
 
                         { this.showEducation() && 
-                        <div id="3">
+                        <div id="q3">
                             <h3>Question 3</h3>
                             <h2>What is the participant's highest level of completed education </h2>
                             <Form id="levelOfEducation">
@@ -373,7 +373,7 @@ class FilterForm extends React.Component {
                         </div>}
 
                         { this.showInSchool() && 
-                        <div id="4">
+                        <div id="q4">
                             <h3>Question 4</h3>
                             <h2>Is the participant in school? </h2>
                             <Form>
@@ -400,7 +400,7 @@ class FilterForm extends React.Component {
                         </div>}
 
                         { this.showFive() && 
-                        <div id="5" >
+                        <div id="q5" >
                             <div style={ this.showA() } >
                                 <h3>Question 5</h3>
                                 <h2> Is the participant looking for after-school program? </h2>
@@ -479,7 +479,7 @@ class FilterForm extends React.Component {
                         </div>}
 
                         { this.showCriminalServices()  && 
-                        <div id="6">
+                        <div id="q6">
                             <h3>Question 6</h3>
                             <h2>Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? </h2>
                             <Form>
@@ -505,7 +505,7 @@ class FilterForm extends React.Component {
                         </div>}
 
                         { this.showVeteran() && 
-                        <div id="7">
+                        <div id="q7">
                             <h3>Question 7</h3>
                             <h2>Is the participant a veteran?</h2>
                             <Form>
@@ -529,17 +529,18 @@ class FilterForm extends React.Component {
                                 </Form.Field>
                             </Form>
                         </div>}
+
                         <div>
                             { this.showBackBtn() && 
-                            <Button id="Back" className="button-header" basic color='black' onClick={this.handleBack}> 
+                            <Button id="back-btn" className="button-header" basic color='black' onClick={this.handleBack}> 
                                 Back 
                             </Button>}
                             { this.showNextBtn() && 
-                            <Button id="Next" className="button-header" basic color='black' onClick={this.handleNext}> 
+                            <Button id="next-btn" className="button-header" basic color='black' onClick={this.handleNext}> 
                                 Next 
                             </Button>}
                             { this.showSubmitBtn() && 
-                            <Button id="Submit" className="button-header" basic color='black' onClick={this.handleSubmit}> 
+                            <Button id="submit-btn" className="button-header" basic color='black' onClick={this.handleSubmit}> 
                                 Submit 
                             </Button>}
                         </div>
@@ -547,7 +548,7 @@ class FilterForm extends React.Component {
                 </div>}
 
                 { this.showCatalogue() && 
-                <div>
+                <div id="filtered-catalogue">
                     <Catalogue
                         filteredList={filteredList}
                         clientAge={clientAge}
