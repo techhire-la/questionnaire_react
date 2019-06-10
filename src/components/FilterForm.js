@@ -80,13 +80,13 @@ class FilterForm extends React.Component {
     showForm = () => this.state.submitted === false
     showCatalogue = () => this.state.submitted === true
 
-    showLocation = () => this.state.questionNumber == '1'
-    showAge = () => this.state.questionNumber == '2'
-    showEducation = () => this.state.questionNumber == '3'
-    showInSchool = () => this.state.questionNumber == '4'
-    showFive = () => this.state.questionNumber == '5'
-    showCriminalServices = () => this.state.questionNumber == '6'
-    showVeteran = () => this.state.questionNumber == '7' && this.askVeterenQuestion()
+    showLocation = () => this.state.questionNumber === 1
+    showAge = () => this.state.questionNumber === 2
+    showEducation = () => this.state.questionNumber === 3
+    showInSchool = () => this.state.questionNumber === 4
+    showFive = () => this.state.questionNumber === 5
+    showCriminalServices = () => this.state.questionNumber === 6
+    showVeteran = () => this.state.questionNumber === 7 && this.askVeterenQuestion()
     askVeterenQuestion = () => (this.state.clientAge == "18-24" || this.state.clientAge == "25-65");
     
     showA = () => {
