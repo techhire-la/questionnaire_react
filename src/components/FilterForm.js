@@ -52,7 +52,7 @@ class FilterForm extends React.Component {
                 this.state.questionNumber === 7 && this.askVeterenQuestion());
     }
 
-    handleNext = (e, { id }) => {   
+    handleNext = () => {   
         let currentQuestion = this.state.questionNumber;
         let questionObject = this.state.questionObject;
         if (questionObject[currentQuestion] == undefined) {
@@ -62,7 +62,7 @@ class FilterForm extends React.Component {
         }
     }
 
-    handleBack = (e, { id }) => {
+    handleBack = () => {
         this.setState({ questionNumber: this.state.questionNumber - 1 })
     }
 
