@@ -26,17 +26,11 @@ class FilterForm extends React.Component {
         truthyArray: [],
         filteredList: undefined,
 
-        // answered: false,
         submitted: false,
         questionObject: {}
     }
 
-
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    //// Handle Buttons /////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
+    ///// Handle Buttons /////
 
     showBackBtn = () => {
         return (this.state.questionNumber > 1);
@@ -111,31 +105,19 @@ class FilterForm extends React.Component {
                 ? { display: 'block' } : { display: 'none' }
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    ////////// Handle Question State ////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
+    ///// Handle Question State /////
 
     handleChange = input => (e, { value }) => {
-        //latest
         let currentQuestion = this.state.questionNumber;
         let questionObject = this.state.questionObject;
         const checked = true;
         questionObject[currentQuestion] = checked;
-       
-        // debugger
         this.setState({
             [input]: value,
         })
     }
-
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    ////////// Handle Submit ////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////
-
+    
+    ///// Handle Submit /////
 
     handleMatch = (catalogueAttribute, stateData) => {
         var returnVal = undefined
@@ -156,46 +138,30 @@ class FilterForm extends React.Component {
     };
 
     submitData = () => {
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+        ///// Parse Location /////
         var locationArray = []
         var catalogueLength = catalogueData.contacts.length - 1
         console.log(catalogueLength)
         for (var i = 0; i <= catalogueLength; i++) {
             if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)) {
-                // console.log("IF")
                 locationArray.push(catalogueData.contacts[i])
                 console.log(locationArray)
             } else if (catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location) {
-                // console.log("ELSE IF")
                 locationArray.push(catalogueData.contacts[i])
                 console.log(locationArray)
-            } else {
-                // console.log("Else")
             }
         }
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////// iterate over catalogue ////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        ///// iterate over catalogue /////
         var formState = this.state
-        // var parsedArray = this.state.locationArray
         var parsedArray = locationArray
         var filteredArray = []
         console.log(formState)
 
         for (var key in formState) {
-            // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
             for (var i = 0; i < parsedArray.length; i++) {
                 if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
                     filteredArray.push(parsedArray[i])
                 } else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-                    // debugger
                     filteredArray.push(parsedArray[i])
                 } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
                     filteredArray.push(parsedArray[i])
@@ -224,7 +190,6 @@ class FilterForm extends React.Component {
 
         return (
             <div>
-                {/* {console.log(this.state.questionObject)} */}
                 { this.showForm() && 
                 <div id="questionnaire-form">
                     <div className="ui filterContainer" id="questionHeight">
