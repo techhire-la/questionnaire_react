@@ -2,7 +2,7 @@
   "name": "ypi-catalogue",
   "version": "1.0.0",
   "engines": {
-    "yarn": "1.13.0"
+    "yarn": "1.16.0"
   },
   "main": "index.js",
   "author": "Jupiter",
