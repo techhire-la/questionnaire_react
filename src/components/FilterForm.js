@@ -47,12 +47,10 @@ class FilterForm extends React.Component {
     }
 
     handleNext = () => {   
-        let currentQuestion = this.state.questionNumber;
-        let questionObject = this.state.questionObject;
-        if (questionObject[currentQuestion] == undefined) {
+        if (this.state.questionObject[this.state.questionNumber] == undefined) {
             alert ("Please answer before moving to the next question.")
         } else {
-            this.setState({ questionNumber: currentQuestion + 1 }) 
+            this.setState({ questionNumber: this.state.questionNumber + 1 }) 
         }
     }
 
@@ -61,9 +59,7 @@ class FilterForm extends React.Component {
     }
 
     handleSubmit = () => {
-        let currentQuestion = this.state.questionNumber;
-        let questionObject = this.state.questionObject;
-        if (questionObject[currentQuestion] == undefined) {
+        if (this.state.questionObject[this.state.questionNumber] == undefined) {
             alert ("Please answer before moving to the next question.")
         } else {
             this.submitData();
@@ -108,10 +104,7 @@ class FilterForm extends React.Component {
     ///// Handle Question State /////
 
     handleChange = input => (e, { value }) => {
-        let currentQuestion = this.state.questionNumber;
-        let questionObject = this.state.questionObject;
-        const checked = true;
-        questionObject[currentQuestion] = checked;
+        this.state.questionObject[this.state.questionNumber] = true;
         this.setState({
             [input]: value,
         })
