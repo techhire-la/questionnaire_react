@@ -188,7 +188,6 @@ class Catalogue extends React.Component {
 
     render() {
 
-        var programs = this.state.programs;
 
         return (
 
@@ -198,7 +197,7 @@ class Catalogue extends React.Component {
 
                         <Item.Group>
                             {
-                                programs.map((program, index) => (
+                                this.state.programs.map((program, index) => (
                                     <Program
                                         key={index}
                                         programName={(program.altProgramName != undefined && program.altProgramName !== "" ) ? program.altProgramName : program.name}
