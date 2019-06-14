@@ -6,6 +6,24 @@ const selectRadioBtn = (wrapper, answerNum) => {
    wrapper.find('Radio').at(answerNum).simulate('change');
 }
 
+const selectAnswer = (answerNum, wrapper) => {
+   // here we are simulating clicking our radio buttons by
+   // simulating a call to the onChange() method. We don't 
+   // need to pass arguments to this simulate call because
+   // of how our radio buttons and handleChange() method are
+   // written in FilterForm.js ie: 
+   // handleChange = (key, val) => () => {...}
+   wrapper.find('Radio').at(answerNum).simulate('change');
+   // find either 'next' button or 'submit' button and click
+   if(wrapper.find('#next-btn').length === 1) {
+      wrapper.find('#next-btn').at(0).simulate('click');
+   } else if(wrapper.find('#submit-btn').length === 1) {
+      wrapper.find('#submit-btn').at(0).simulate('click');
+   } else {
+      throw "Neither next-btn nor submit-btn are present";
+   }
+}
+
 describe('FilterForm', () => {
    it('renders without crashing', () => {
       shallow(<FilterForm />);
@@ -20,14 +38,9 @@ describe('FilterForm', () => {
    it('<Catalogue /> replaces <Form /> after answers are submitted', () => {
       const wrapper = shallow(<FilterForm />);
       const nextBtn = wrapper.find('#next-btn').at(0);
-      for(let i=0; i < 5; i++) {
-         // q7 not enabled when first answer selected 
-         // each time: only five 'next' clicks
-         selectRadioBtn(wrapper, 0);
-         nextBtn.simulate('click');
-      }
-      selectRadioBtn(wrapper, 0);
-      wrapper.find('#submit-btn').at(0).simulate('click');
+      for(let i=0; i < 6; i++) {
+         selectAnswer(0, wrapper);
+      } // selected age '0-4': q7 not enabled
       expect(wrapper.find('Form')).toHaveLength(0);
       expect(wrapper.find('Catalogue')).toHaveLength(1);
    });
@@ -65,7 +78,6 @@ describe('FilterForm', () => {
    it('renders question 5 correctly if questions 3 & 4 answers are modified', () => {
       
    });
-
 
    it('renders the correct number of radio buttons for each questions', () => {
       const wrapper = shallow(<FilterForm />);
@@ -150,4 +162,3 @@ describe('FilterForm', () => {
       expect(wrapper.find('#submit-btn')).toHaveLength(1);
    });
 });
-
