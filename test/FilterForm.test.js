@@ -60,6 +60,10 @@ describe('FilterForm', () => {
       expect(wrapper.find('Catalogue')).toHaveLength(1);
    });
 
+   it('prevents advancing to the next question if selection has not been made', () => {
+      expect(false).toBe(true);
+   });
+
    it('renders question 7 only for correct age ranges', () => {
       // {'0-4', '5-10', '11-13', '14-18'}
       const disabledQ2Answers = [0, 1, 2, 3]; 
