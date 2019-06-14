@@ -2,10 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import FilterForm from '../src/components/FilterForm.js';
 
-const selectRadioBtn = (wrapper, answerNum) => {
-   wrapper.find('Radio').at(answerNum).simulate('change');
-}
-
 const selectAnswer = (answerNum, wrapper) => {
    // here we are simulating clicking our radio buttons by
    // simulating a call to the onChange() method. We don't 
@@ -88,10 +84,7 @@ describe('FilterForm', () => {
       const expectedRadioBtnCount = [2, 6, 5, 2, 6, 2, 2];
       for(let i=0; i < 7; i++) {
          expect(wrapper.find('Radio')).toHaveLength(expectedRadioBtnCount[i]);
-         if(i < 6) { // go to next question
-            selectRadioBtn(wrapper, radioBtnAnswers[i]);
-            nextBtn.simulate('click');
-         }
+         selectAnswer(radioBtnAnswers[i], wrapper);
       }
    });
 
@@ -105,10 +98,8 @@ describe('FilterForm', () => {
 
    it('renders next and back buttons for questions 2 through 5', () => {
       const wrapper = shallow(<FilterForm />);
-      const nextButton = wrapper.find('#next-btn').at(0);
       for(let i = 2; i <= 5; i++) {
-         selectRadioBtn(wrapper, 0)
-         nextButton.simulate('click');
+         selectAnswer(0, wrapper);
          // there should be exactly two buttons: { back, next }
          expect(wrapper.find('.button-header')).toHaveLength(2);
          expect(wrapper.find('#next-btn')).toHaveLength(1);
@@ -119,13 +110,10 @@ describe('FilterForm', () => {
 
    it('renders next and back buttons for question 6 if question 7 is asked', () => {
       const wrapper = shallow(<FilterForm />);
-      const nextButton = wrapper.find('#next-btn').at(0);
       // select age "25-65" for q2 to enable q7
       const radioBtnAnswers = [0, 5, 0, 0, 0, 0, 0];
       for(let i = 0; i < 5; i++) {  // answer first five questions
-         console.log()
-         selectRadioBtn(wrapper, radioBtnAnswers[i]);
-         nextButton.simulate('click');
+         selectAnswer(radioBtnAnswers[i], wrapper);
       }
       expect(wrapper.find('.button-header')).toHaveLength(2);
       expect(wrapper.find('#next-btn')).toHaveLength(1);
@@ -135,11 +123,9 @@ describe('FilterForm', () => {
 
    it('renders back and submit buttons for question 6 if question 7 is not asked', () => {
       const wrapper = shallow(<FilterForm />);
-      const nextButton = wrapper.find('#next-btn').at(0);
       // select age "0-4" for q2 to not enable q7
       for(let i = 0; i < 5; i++) {  // answer first five questions
-         selectRadioBtn(wrapper, 0);
-         nextButton.simulate('click');
+         selectAnswer(0, wrapper);
       }
       expect(wrapper.find('.button-header')).toHaveLength(2);
       expect(wrapper.find('#next-btn')).toHaveLength(0);
@@ -149,12 +135,10 @@ describe('FilterForm', () => {
 
    it('renders back and submit buttons for question 7 if it is asked', () => {
       const wrapper = shallow(<FilterForm />);
-      const nextButton = wrapper.find('#next-btn').at(0);
       // select age "25-65" for q2 to enable q7
       const radioBtnAnswers = [0, 5, 0, 0, 0, 0, 0];
       for(let i = 0; i < 6; i++) {  // answer first six questions
-         selectRadioBtn(wrapper, radioBtnAnswers[i]);
-         nextButton.simulate('click');
+         selectAnswer(radioBtnAnswers[i], wrapper);
       }
       expect(wrapper.find('.button-header')).toHaveLength(2);
       expect(wrapper.find('#next-btn')).toHaveLength(0);
