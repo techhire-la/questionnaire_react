@@ -41,11 +41,19 @@ describe('FilterForm', () => {
       expect(wrapper.find('Catalogue')).toHaveLength(1);
    });
 
-   it('renders each question', () => {
+   it('renders questions 1 through 6 correctly', () => {
       const wrapper = shallow(<FilterForm />);
       const divIDs = ['#q1', '#q2', '#q3', '#q4', '#q5', '#q6'];
-      for(let i = 0; i < divIDs.length; i++) {  // q2 - q6
-         expect(wrapper.find(divIDs[i])).toHaveLength(1);
+      for(let i = 0; i < divIDs.length; i++) {
+         for(let j = 0; j < divIDs.length; j++) {
+            if(j === i) {
+               // current question's div is rendered
+               expect(wrapper.find(divIDs[j])).toHaveLength(1);
+            } else {
+               // other questions' divs are not rendered
+               expect(wrapper.find(divIDs[j])).toHaveLength(0);
+            }
+         }
          selectAnswer(0, wrapper);
       } // selected age '0-4' for q2: q7 not enabled
       expect(wrapper.find('#q7')).toHaveLength(0);
