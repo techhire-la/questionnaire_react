@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import FilterForm from '../src/components/FilterForm.js';
-import { wrap } from 'module';
 
 const selectRadioBtn = (wrapper, answerNum) => {
    wrapper.find('Radio').at(answerNum).simulate('change');
@@ -22,6 +21,8 @@ describe('FilterForm', () => {
       const wrapper = shallow(<FilterForm />);
       const nextBtn = wrapper.find('#next-btn').at(0);
       for(let i=0; i < 5; i++) {
+         // q7 not enabled when first answer selected 
+         // each time: only five 'next' clicks
          selectRadioBtn(wrapper, 0);
          nextBtn.simulate('click');
       }
@@ -35,6 +36,36 @@ describe('FilterForm', () => {
       const wrapper = shallow(<FilterForm />);
       
    });
+
+   it('renders question 7 only for correct age ranges', () => {
+      // {'0-4', '5-10', '11-13', '14-18'}
+      const disabledQ2Answers = [0, 1, 2, 3]; 
+     
+      // {'18-24, 25-65'}
+      const disabledAQ2Answers = [4, 5]; 
+ 
+   });
+
+   it('renders question 7 correctly if question 2 answers is modified', () => {
+
+   });
+
+   it('correctly asks about after-school programs for question 5', () => {
+      
+   });
+
+   it('correctly asks about vocational programs for question 5', () => {
+      
+   });
+
+   it('correctly asks about GED programs for question 5', () => {
+      
+   });
+
+   it('renders question 5 correctly if questions 3 & 4 answers are modified', () => {
+      
+   });
+
 
    it('renders the correct number of radio buttons for each questions', () => {
       const wrapper = shallow(<FilterForm />);
@@ -117,22 +148,6 @@ describe('FilterForm', () => {
       expect(wrapper.find('#next-btn')).toHaveLength(0);
       expect(wrapper.find('#back-btn')).toHaveLength(1);
       expect(wrapper.find('#submit-btn')).toHaveLength(1);
-   });
-
-   it('renders question 7 only for correct age ranges', () => {
-      
-   });
-
-   it('correctly asks about after-school programs for question 5', () => {
-      
-   });
-
-   it('correctly asks about vocational programs for question 5', () => {
-      
-   });
-
-   it('correctly asks about GED programs for question 5', () => {
-      
    });
 });
 
