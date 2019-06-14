@@ -136,21 +136,17 @@ class FilterForm extends React.Component {
         ///// Parse Location /////
         var locationArray = []
         var catalogueLength = catalogueData.contacts.length - 1
-        console.log(catalogueLength)
         for (var i = 0; i <= catalogueLength; i++) {
             if (catalogueData.contacts[i].hasOwnProperty("location") && Array.isArray(catalogueData.contacts[i].location)) {
                 locationArray.push(catalogueData.contacts[i])
-                console.log(locationArray)
             } else if (catalogueData.contacts[i].hasOwnProperty("location") && catalogueData.contacts[i].location === this.state.location) {
                 locationArray.push(catalogueData.contacts[i])
-                console.log(locationArray)
             }
         }
         ///// iterate over catalogue /////
         var formState = this.state
         var parsedArray = locationArray
         var filteredArray = []
-        console.log(formState)
 
         for (var key in formState) {
             for (var i = 0; i < parsedArray.length; i++) {
