@@ -31704,10 +31704,9 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var programs = this.state.programs;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "ui filterContainer catalogue_items"
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["d" /* Item */].Group, null, programs.map(function (program, index) {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["d" /* Item */].Group, null, this.state.programs.map(function (program, index) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Program__["a" /* default */], {
           key: index,
           programName: program.altProgramName != undefined && program.altProgramName !== "" ? program.altProgramName : program.name,
@@ -65325,63 +65324,125 @@ function (_React$Component) {
       locationArray: [],
       truthyArray: [],
       filteredList: undefined,
-      // answered: false,
-      questionObject: {} /////////////////////////////////////////////////////////////////////////////////////////
-      /////////////////////////////////////////////////////////////////////////////////////////
-      //// Handle Buttons /////////////////////////////////////////////////////////////////////
-      /////////////////////////////////////////////////////////////////////////////////////////
-      /////////////////////////////////////////////////////////////////////////////////////////
+      submitted: false,
+      questionObject: {} ///// Handle Buttons /////
 
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleNext", function (e, _ref) {
-      var id = _ref.id;
-      // var stringId = e.target.parentNode.id;            
-      var currentQuestion = _this.state.questionNumber;
-      var questionObject = _this.state.questionObject;
+    _defineProperty(_assertThisInitialized(_this), "showBackBtn", function () {
+      return _this.state.questionNumber > 1;
+    });
 
-      if (questionObject[currentQuestion] == undefined) {
+    _defineProperty(_assertThisInitialized(_this), "showNextBtn", function () {
+      return _this.state.questionNumber < 6 || _this.state.questionNumber === 6 && _this.askVeterenQuestion();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showSubmitBtn", function () {
+      return _this.state.questionNumber === 6 && !_this.askVeterenQuestion() || _this.state.questionNumber === 7 && _this.askVeterenQuestion();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleNext", function () {
+      if (_this.state.questionObject[_this.state.questionNumber] == undefined) {
         alert("Please answer before moving to the next question.");
       } else {
-        var nextQuestion = parseInt(e.target.parentNode.id); // e.target.parentNode.getAttribute('id'); ||
-
-        var addOne = (nextQuestion + 1).toString();
-
         _this.setState({
-          questionNumber: addOne // answered: !this.state.answered,
-
+          questionNumber: _this.state.questionNumber + 1
         });
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleBack", function (e, _ref2) {
-      var id = _ref2.id;
-      var lastQuestion = parseInt(e.target.parentNode.id);
-      var subtractOne = (lastQuestion - 1).toString();
-
+    _defineProperty(_assertThisInitialized(_this), "handleBack", function () {
       _this.setState({
-        questionNumber: subtractOne
-      }); // let lastNumber = this.state.questionArray.pop(subtractOne)
-      // let backArray = this.state.questionArray.slice(-1,1)
-      // if (this.state.questionNumber == lastNumber){
-      //     this.setState({ questionArray: this.state.questionArray.pop(lastNumber)})
-      // }
-      // debugger
-      // console.log(this.state.questionArray.lastIndexOf(subtractOne))
-      // console.log(typeof(subtractOne))
-      // console.log(lastNumber)
-      // console.log(backArray)
+        questionNumber: _this.state.questionNumber - 1
+      });
+    });
 
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function () {
+      if (_this.state.questionObject[_this.state.questionNumber] == undefined) {
+        alert("Please answer before moving to the next question.");
+      } else {
+        _this.submitData();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showForm", function () {
+      return _this.state.submitted === false;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showCatalogue", function () {
+      return _this.state.submitted === true;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showLocation", function () {
+      return _this.state.questionNumber === 1;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showAge", function () {
+      return _this.state.questionNumber === 2;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showEducation", function () {
+      return _this.state.questionNumber === 3;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showInSchool", function () {
+      return _this.state.questionNumber === 4;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showFive", function () {
+      return _this.state.questionNumber === 5;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showCriminalServices", function () {
+      return _this.state.questionNumber === 6;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showVeteran", function () {
+      return _this.state.questionNumber === 7 && _this.askVeterenQuestion();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "askVeterenQuestion", function () {
+      return _this.state.clientAge == "18-24" || _this.state.clientAge == "25-65";
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showA", function () {
+      return (_this.state.levelOfEducation === 'No Highschool / Some Highschool' || _this.state.levelOfEducation === 'Some College') && (_this.state.inSchool === 'true' || _this.state.inSchool === true) ? {
+        display: 'block'
+      } : {
+        display: 'none'
+      };
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showB", function () {
+      if (_this.state.levelOfEducation === 'Highschool/GED' || _this.state.levelOfEducation === 'AA' || _this.state.levelOfEducation === 'BA or Higher') {
+        return {
+          display: 'block'
+        };
+      }
+
+      if (_this.state.levelOfEducation === 'Some College' && _this.state.inSchool === 'false') {
+        return {
+          display: 'block'
+        };
+      }
+
+      return {
+        display: 'none'
+      };
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "showC", function () {
+      return _this.state.levelOfEducation === 'No Highschool / Some Highschool' && (_this.state.inSchool === 'false' || _this.state.inSchool === false) ? {
+        display: 'block'
+      } : {
+        display: 'none'
+      };
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleChange", function (input) {
-      return function (e, _ref3) {
-        var value = _ref3.value;
-        //latest
-        var currentQuestion = _this.state.questionNumber;
-        var questionObject = _this.state.questionObject;
-        var checked = true;
-        questionObject[currentQuestion] = checked; // debugger
+      return function (e, _ref) {
+        var value = _ref.value;
+        _this.state.questionObject[_this.state.questionNumber] = true;
 
         _this.setState(_defineProperty({}, input, value));
       };
@@ -65403,50 +65464,38 @@ function (_React$Component) {
 
       if (typeof catalogueAttribute === 'string') {
         var stringyElement = String(catalogueAttribute);
-        var match = stringyElement.match(stateData); // returnVal = match;
-
+        var match = stringyElement.match(stateData);
         return match;
       }
     });
 
     _defineProperty(_assertThisInitialized(_this), "submitData", function () {
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      ////////////////////////// Parse Location ////////////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      ///// Parse Location /////
       var locationArray = [];
       var catalogueLength = __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts.length - 1;
       console.log(catalogueLength);
 
       for (var i = 0; i <= catalogueLength; i++) {
         if (__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].hasOwnProperty("location") && Array.isArray(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].location)) {
-          // console.log("IF")
           locationArray.push(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i]);
           console.log(locationArray);
         } else if (__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].hasOwnProperty("location") && __WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i].location === _this.state.location) {
-          // console.log("ELSE IF")
           locationArray.push(__WEBPACK_IMPORTED_MODULE_4__api_contacts_json___default.a.contacts[i]);
           console.log(locationArray);
-        } else {// console.log("Else")
         }
-      } //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      ////////////////////////// iterate over catalogue ////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      } ///// iterate over catalogue /////
 
 
-      var formState = _this.state; // var parsedArray = this.state.locationArray
-
+      var formState = _this.state;
       var parsedArray = locationArray;
       var filteredArray = [];
       console.log(formState);
 
       for (var key in formState) {
-        // if (formState.hasOwnProperty(key) && formState[key] === "true" && formState[key] != undefined) {
         for (var i = 0; i < parsedArray.length; i++) {
           if (formState.hasOwnProperty(key) && formState[key] == "true" && parsedArray[i].hasOwnProperty(key) && parsedArray[i][key] == formState[key] && parsedArray[i].acceptReferrals == "Yes") {
             filteredArray.push(parsedArray[i]);
           } else if (key === "clientAge" && parsedArray[i].hasOwnProperty(key) && formState[key].includes(parsedArray[i][key])) {
-            // debugger
             filteredArray.push(parsedArray[i]);
           } else if (key === "inSchool" && (Array.isArray(parsedArray[i][key]) || parsedArray[i][key] == "true")) {
             filteredArray.push(parsedArray[i]);
@@ -65455,7 +65504,8 @@ function (_React$Component) {
       }
 
       _this.setState({
-        filteredList: filteredArray
+        filteredList: filteredArray,
+        submitted: true
       });
     });
 
@@ -65478,84 +65528,14 @@ function (_React$Component) {
       var interestedInCompletingDiploma = this.state.interestedInCompletingDiploma;
       var interestedInCriminalServices = this.state.interestedInCriminalServices;
       var veteran = this.state.veteran;
-      var showDiv = {
-        display: 'block'
-      };
-      var hidden = {
-        display: 'none'
-      }; //-------------------------- * * * * * --------------------------
-
-      var showLocation = questionNumber == '1' ? showDiv : hidden;
-      var showAge = questionNumber == '2' ? showDiv : hidden;
-      var showEducation = questionNumber == '3' ? showDiv : hidden;
-      var showInSchool = questionNumber == '4' ? showDiv : hidden;
-      var showFive = questionNumber == '5' ? showDiv : hidden;
-      var showA = (levelOfEducation === 'No Highschool / Some Highschool' || levelOfEducation === 'Some College') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
-      var showB = (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'Some College' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'false' || inSchool === false) || (levelOfEducation === 'Highschool/GED' || levelOfEducation === 'AA' || levelOfEducation === 'BA or Higher') && (inSchool === 'true' || inSchool === true) ? showDiv : hidden;
-      var showC = levelOfEducation === 'No Highschool / Some Highschool' && (inSchool === 'false' || inSchool === false) ? showDiv : hidden; //-------------------------- * * * * * --------------------------
-      //Question 6
-
-      var showCriminalServices = "";
-
-      if (this.state.questionNumber == '6') {
-        showCriminalServices = {
-          display: 'block'
-        };
-      } else {
-        showCriminalServices = {
-          display: 'none'
-        };
-      }
-
-      var showVeteran = "";
-
-      if (this.state.questionNumber == '7' && (clientAge == "18-24" || clientAge == "25-65")) {
-        // debugger
-        showVeteran = {
-          display: 'block'
-        };
-      } else {
-        // debugger
-        showVeteran = {
-          display: 'none'
-        };
-      } // Show Questions vs Show Catalogue
-
-
-      var showForm = "";
-
-      if (this.state.filteredList === undefined) {
-        showForm = {
-          display: 'block'
-        };
-      } else {
-        showForm = {
-          display: 'none'
-        };
-      }
-
-      var showCatalogue = "";
-
-      if (this.state.filteredList === undefined) {
-        showCatalogue = {
-          display: 'none'
-        };
-      } else {
-        showCatalogue = {
-          display: 'block'
-        };
-      }
-
       var state = this.state;
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, console.log(this.state.questionObject), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showForm
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, this.showForm() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "questionnaire-form"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "ui filterContainer",
         id: "questionHeight"
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showLocation,
-        id: "1",
-        "data-id": "thing"
+      }, this.showLocation() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q1"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 1"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant looking for services in the LA area or San Fernando Valley?"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], {
         id: "location"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
@@ -65571,14 +65551,8 @@ function (_React$Component) {
         value: "San Fernando Valley",
         checked: location === 'San Fernando Valley',
         onChange: this.handleChange("location")
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleNext
-      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showAge,
-        id: "2"
+      })))), this.showAge() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q2"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 2"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "What is the participants age?"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], {
         id: "clientAge"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
@@ -65617,20 +65591,8 @@ function (_React$Component) {
         value: "25-65",
         checked: clientAge === '25-65',
         onChange: this.handleChange("clientAge")
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        id: "back_button",
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleNext
-      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showEducation,
-        id: "3"
+      })))), this.showEducation() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q3"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 3"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "What is the participant's highest level of completed education "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], {
         id: "levelOfEducation"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], _defineProperty({
@@ -65663,19 +65625,8 @@ function (_React$Component) {
         value: "BA or Higher",
         checked: this.state.levelOfEducation === 'BA or Higher',
         onChange: this.handleChange("levelOfEducation")
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleNext
-      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showInSchool,
-        id: "4"
+      })))), this.showInSchool() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q4"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 4"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant in school? "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
         label: "Yes",
         name: "radioGroup",
@@ -65688,21 +65639,10 @@ function (_React$Component) {
         value: "false",
         checked: this.state.inSchool === 'false',
         onChange: this.handleChange("inSchool")
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleNext
-      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showFive,
-        id: "5"
+      })))), this.showFive() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q5"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showA
+        style: this.showA()
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 5"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, " Is the participant looking for after-school program? "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
         label: "Yes",
         name: "radioGroup",
@@ -65716,7 +65656,7 @@ function (_React$Component) {
         checked: interestedAfterSchoolPrograms === 'false',
         onChange: this.handleChange('interestedAfterSchoolPrograms')
       })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showB,
+        style: this.showB(),
         id: "5"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 5"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, " Is the participant interested in employment support or vocational training "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
         label: "Yes",
@@ -65731,7 +65671,7 @@ function (_React$Component) {
         checked: interestedInTraining === 'false',
         onChange: this.handleChange('interestedInTraining')
       })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showC,
+        style: this.showC(),
         className: "showDiploma"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 5"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant interested in completing their high school diploma or equivalent (GED, HiSet)"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
         label: "Yes",
@@ -65745,23 +65685,8 @@ function (_React$Component) {
         value: "false",
         checked: this.state.interestedInCompletingDiploma === 'false',
         onChange: this.handleChange('interestedInCompletingDiploma')
-      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleNext
-      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: this.state.questionNumber == "6" ? {
-          display: 'block'
-        } : {
-          display: 'none'
-        },
-        id: "6"
+      }))))), this.showCriminalServices() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q6"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 6"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant interested in services aimed at individuals with a past juvenile or adult criminal record? "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
         label: "Yes",
         name: "radioGroup",
@@ -65774,43 +65699,8 @@ function (_React$Component) {
         value: "false",
         checked: this.state.interestedInCriminalServices === 'false',
         onChange: this.handleChange('interestedInCriminalServices')
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: this.state.clientAge == "18-24" || this.state.clientAge == "25-65" ? {
-          display: 'block'
-        } : {
-          display: 'none'
-        },
-        id: "6"
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleNext
-      }, " Next ")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: this.state.clientAge === "0-4" || this.state.clientAge === "5-10" || this.state.clientAge === "11-13" || this.state.clientAge === "14-18" ? {
-          display: 'block'
-        } : {
-          display: 'none'
-        },
-        id: "6"
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
-        className: "button-header",
-        basic: true,
-        color: "black",
-        onClick: this.submitData
-      }, " Submit "))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showVeteran,
-        id: "7"
+      })))), this.showVeteran() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "q7"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "Question 7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Is the participant a veteran?"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["b" /* Form */].Field, null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["e" /* Radio */], {
         label: "Yes",
         name: "radioGroup",
@@ -65823,18 +65713,26 @@ function (_React$Component) {
         value: "false",
         checked: veteran === 'false',
         onChange: this.handleChange("veteran")
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, this.showBackBtn() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        id: "back-btn",
         className: "button-header",
         basic: true,
         color: "black",
         onClick: this.handleBack
-      }, " Back "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+      }, "Back"), this.showNextBtn() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        id: "next-btn",
         className: "button-header",
         basic: true,
         color: "black",
-        onClick: this.submitData
-      }, " Submit ")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: showCatalogue
+        onClick: this.handleNext
+      }, "Next"), this.showSubmitBtn() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["a" /* Button */], {
+        id: "submit-btn",
+        className: "button-header",
+        basic: true,
+        color: "black",
+        onClick: this.handleSubmit
+      }, "Submit")))), this.showCatalogue() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        id: "filtered-catalogue"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Catalogue__["a" /* default */], {
         filteredList: filteredList,
         clientAge: clientAge,

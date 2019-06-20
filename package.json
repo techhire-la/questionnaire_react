@@ -2,7 +2,7 @@
   "name": "ypi-catalogue",
   "version": "1.0.0",
   "engines": {
-    "yarn": "1.16.0"
+    "yarn": "1.17.0"
   },
   "main": "index.js",
   "author": "Jupiter",
@@ -43,7 +43,14 @@
     "url-loader": "^1.1.2",
     "validator": "8.0.0",
     "webpack": "3.1.0",
-    "webpack-dev-server": "2.5.1"
+    "webpack-dev-server": "2.5.1",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "express-validator": "^5.3.1",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.15",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
