@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
+const config = require('config');
 // https://github.com/express-validator/express-validator
 // DOCUMENTATION: https://express-validator.github.io/docs/
 const {check, validationResult} = require('express-validator/check')
+
+// https://jwt.io breaks down what's going on in json webtoken
+const jwt = require("jsonwebtoken");
 
 const User = require('../../models/User')
 
@@ -65,14 +69,28 @@ router.post('/register',[
  
       await user.save();
 
+    // jwt payload we use user id
+    // also, mongoose uses an abstraction so that we can use 'id' instead of '_id'
       const payload = {
         user: {
           id: user.id
         }
       };
 
+      jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        { expiresIn: 360000 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+
+
                              
     } catch (err) {
+      console.log("are we playing catch dad?")
       console.error(err.message);
       res.status(500).send('Server error');
     }
