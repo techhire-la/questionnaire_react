@@ -16,7 +16,7 @@ const User = require('../../models/User')
 // @route Get api/users
 // @desc Test Route
 // @access Public
-router.get('/get', (req, res) => res.send('User Route'));
+// router.get('/get', (req, res) => res.send('User Route'));
 
 // @route Get api/users
 // @desc Register User
@@ -24,9 +24,9 @@ router.get('/get', (req, res) => res.send('User Route'));
 
 
 router.post('/login', [
-  check('email', 'Email is required')
+  check('email', 'Please enter a valid email')
   .isEmail(), 
-  check('password', 'Please enter your password').isLength({min : 6})], 
+  check('password', 'Password must be at least 6 characters long').isLength({min : 6})], 
   
   async (req, res) => {
     const errors = validationResult(req);
@@ -40,12 +40,29 @@ router.post('/login', [
     try {
       let user = await User.findOne({ email}); 
       if(!user) {
-          return res.status(400).json({errors: [{ msg: 'User not found'}]  });
-
+          return res.status(404).json({errors: [{ msg: 'User not found'}]  });
       }
 
+      bcrypt.compare(password, user.password); 
+      if(user) {
+        const payload = {
+          user: {
+            id: user.id
+          }
+        }; 
 
-
+        jwt.sign(
+          payload,
+          config.get('jwtSecret'),
+          { expiresIn: 360000 },
+          (err, token) => {
+            if (err) throw err;
+            res.json({ token });
+          }
+        );
+      } else {
+        return res.status(400).json({errors: [{msg: 'Password incorrect'}]})
+      }
       } catch (err) {
           console.log("are we playing catch dad?")
           console.error(err.message);
