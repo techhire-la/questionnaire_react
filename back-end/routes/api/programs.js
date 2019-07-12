@@ -10,8 +10,16 @@ const {check, validationResult} = require('express-validator/check')
 const Program = require('../../models/Program')
 
 
+router.post('/addprogram',
 
-const { name, email, password } = req.body;
+
+
+
+
+
+
+)
+// const { name, email, password } = req.body;
 
     try {
       let user = await User.findOne({ email });

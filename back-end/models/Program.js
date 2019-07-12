@@ -14,7 +14,7 @@ const ProgramSchema = new mongoose.Schema({
 
     acceptReferrals: {
         type: String,
-    }
+    },
 
     descriptionOfProgram: {
         type: String,
@@ -36,7 +36,7 @@ const ProgramSchema = new mongoose.Schema({
         type: String,
     },
 
-    servicesOnlyOfferedAtProgramSite {
+    servicesOnlyOfferedAtProgramSite : {
         type: String,
     },
 
