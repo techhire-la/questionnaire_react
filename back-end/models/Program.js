@@ -76,7 +76,6 @@ const ProgramSchema = new mongoose.Schema({
         type: String,
     },
 
-
     interestedAfterSchoolPrograms: {
         type: String,
     },
@@ -85,8 +84,11 @@ const ProgramSchema = new mongoose.Schema({
         type: String,
     },
 
-
     interestedInCompletingDiploma:{
+        type: String,
+    },
+
+    programHours: {
         type: String,
     },
 
@@ -94,7 +96,6 @@ const ProgramSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-
 
 });
 
