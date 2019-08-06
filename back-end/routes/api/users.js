@@ -70,65 +70,15 @@ router.post('/login', [
 
 
 
-// @route Get api/logout
-// @desc Logout User
-// @access Public
-
-router.post('/logout', [
-  check('email', 'Please enter a valid email')
-  .isEmail(), 
-  check('password', 'Password must be at least 6 characters long').isLength({min : 6})], 
-  
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
-    const  email = req.body.email;
-    const password = req.body.password; 
-
-    try {
-      let user = await User.findOne({ email}); 
-      if(!user) {
-          return res.status(404).json({errors: [{ msg: 'User not found'}]  });
-      }
-
-      bcrypt.compare(password, user.password); 
-      if(user) {
-        const payload = {
-          user: {
-            id: user.id
-          }
-        }; 
-
-        jwt.sign(
-          payload,
-          config.get('jwtSecret'),
-          { expiresIn: 360000 },
-          (err, token) => {
-            if (err) throw err;
-            res.json({ token });
-          }
-        );
-      } else {
-        return res.status(400).json({errors: [{msg: 'Password incorrect'}]})
-      }
-      } catch (err) {
-          console.log("are we playing catch dad?")
-          console.error(err.message);
-          res.status(500).send('Server error');
-      }
-});
-
-
 
 
     
 
 
-
-
+// @route Get api/users/register
+// @desc Test Route
+// @access Public
+// router.get('/get', (req, res) => res.send('User Route'));
 router.post('/register',[
     check('name', 'Name is required')
       .not()

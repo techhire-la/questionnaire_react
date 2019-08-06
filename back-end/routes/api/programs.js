@@ -9,54 +9,155 @@ const {check, validationResult} = require('express-validator/check')
 
 const Program = require('../../models/Program')
 
-
-router.post('/addprogram',
-
+router.get('/test', (req, res) => res.send('Program Route'));
 
 
-
-
-
-
-)
-// const { name, email, password } = req.body;
-
+router.post('/addprogram', 
+  
+  async (req, res) => {
+    console.log(req.body)
+    console.log("post program route")
+    
     try {
-      let user = await User.findOne({ email });
 
-      if (user) {
-        return res
-          .status(400)
-          .json({ errors: [{ msg: 'User already exists' }] });
-      }
+      console.log("in the try")
 
-      const avatar = gravatar.url(email, {
-        s: '200',
-        r: 'pg',
-        d: 'mm'
-      });
-
-      user = new User({
+      const { 
         name,
+        department,
+        acceptReferrals,
+        descriptionOfProgram,
+        coreServicesOffered,
+        populationServed,
+        eligibilityRequirements,
+        locationOfProgram,
+        servicesOnlyOfferedAtProgramSite,
+        contactPerson,
         email,
-        avatar,
-        password
-      });
+        phonenumber,
+        altProgramName,
+        location,
+        clientAge,
+        inSchool,
+        veteran,
+        interestedInTraining,
+        interestedAfterSchoolPrograms,
+        interestedInCriminalServices,
+        interestedInCompletingDiploma,
+        programHours 
+    } = req.body;
 
-    // BCRYPT SALT PASSWORD
-      const salt = await bcrypt.genSalt(10);
+    console.log("here")
 
-      user.password = await bcrypt.hash(password, salt);
- 
-      await user.save();
 
-    // jwt payload we use user id
-    // also, mongoose uses an abstraction so that we can use 'id' instead of '_id'
-      const payload = {
-        user: {
-          id: user.id
-        }
-      };
+    // console.log("program after first being set as a var: " + program)
+    console.log(req.body)
+
+
+      // program = new Program({
+      //   name,
+      //   department,
+      //   acceptReferrals,
+      //   descriptionOfProgram,
+      //   coreServicesOffered,
+      //   populationServed,
+      //   eligibilityRequirements,
+      //   locationOfProgram,
+      //   servicesOnlyOfferedAtProgramSite,
+      //   contactPerson,
+      //   email,
+      //   phonenumber,
+      //   altProgramName,
+      //   location,
+      //   clientAge,
+      //   inSchool,
+      //   veteran,
+      //   interestedInTraining,
+      //   interestedAfterSchoolPrograms,
+      //   interestedInCriminalServices,
+      //   interestedInCompletingDiploma,
+      //   programHours 
+      // });
+
+      console.log("program after setting the a value of the variable")
+      // console.log(program)
+      // console.log(req.body)
+      // await program.save();
+
+    }catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+
+  }
+)
+// router.post('/addprogram', 
+
+
+// )
+// // const { name, email, password } = req.body;
+
+//     try {
+
+//       const { 
+//         name,
+//         department,
+//         acceptReferrals,
+//         descriptionOfProgram,
+//         coreServicesOffered,
+//         populationServed,
+//         eligibilityRequirements,
+//         locationOfProgram,
+//         servicesOnlyOfferedAtProgramSite,
+//         contactPerson,
+//         email,
+//         phonenumber,
+//         altProgramName,
+//         location,
+//         clientAge,
+//         inSchool,
+//         veteran,
+//         interestedInTraining,
+//         interestedAfterSchoolPrograms,
+//         interestedInCriminalServices,
+//         interestedInCompletingDiploma,
+//         programHours 
+//     } = req.body;
+
+//       program = new Program({
+//         name,
+//         department,
+//         acceptReferrals,
+//         descriptionOfProgram,
+//         coreServicesOffered,
+//         populationServed,
+//         eligibilityRequirements,
+//         locationOfProgram,
+//         servicesOnlyOfferedAtProgramSite,
+//         contactPerson,
+//         email,
+//         phonenumber,
+//         altProgramName,
+//         location,
+//         clientAge,
+//         inSchool,
+//         veteran,
+//         interestedInTraining,
+//         interestedAfterSchoolPrograms,
+//         interestedInCriminalServices,
+//         interestedInCompletingDiploma,
+//         programHours 
+//       });
+
+//       await program.save();
+
+//     // jwt payload we use user id
+//     // also, mongoose uses an abstraction so that we can use 'id' instead of '_id'
+//     //   const payload = {
+//     //     user: {
+//     //       id: user.id
+//     //     }
+//     //   };
 
 
 
