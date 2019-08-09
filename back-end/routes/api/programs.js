@@ -102,7 +102,9 @@ router.post('/addprogram',
 
       console.log("in the try")
 
-      let program = await Program.findOne({'name': programFields.name})
+      // let program = await Program.findOne({'name': programFields.name})
+      let program = await Program.findOne({'name': programFields.name, 'department': programFields.department})
+
 
       console.log("After Checking if program available")
       if (program) {
