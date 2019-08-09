@@ -142,15 +142,17 @@ router.post('/addprogram',
 // @route    Get api/program/:name
 // @desc     get program to update
 // @access   Private
-router.get('/:id', auth, async (req, res) => {
+router.get('/:name', auth, async (req, res) => {
     console.log("in updateprogram")
     try {
-      const program = await Program.find(req.id).select('-password');
-      // let program = await Program.findOne({'name': req.params.name})
+      //find by id
+      // const program = await Program.find(req.id).select('-password');
+      //find by name
+      const program = await Program.findOne({'name': req.params.name})
       if (!program) {
         return res.status(404).json({ msg: 'Program not found' });
       }
-
+      console.log("program: " + program);
       res.json(program);
     } catch (err) {
       console.error(err.message);
