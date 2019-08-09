@@ -37,6 +37,8 @@ router.post('/addprogram',
       return res.status(400).json({ errors: errors.array() });
     }
 
+    console.log("Before Const set up")
+
 
     const { 
       name,
@@ -65,10 +67,10 @@ router.post('/addprogram',
 
     // Build profile object
     const programFields = {};
-    // profileFields.user = req.user.id;
+    // programFields.user = req.user.id;
     if (name) programFields.name = name;
-    if (department) profileFields.department = department;
-    if (acceptReferrals) profileFields.acceptReferrals = acceptReferrals;
+    if (department) programFields.department = department;
+    if (acceptReferrals) programFields.acceptReferrals = acceptReferrals;
     if (descriptionOfProgram) programFields.descriptionOfProgram = descriptionOfProgram;
     if (coreServicesOffered) programFields.coreServicesOffered = coreServicesOffered;
     if (populationServed) programFields.populationServed = populationServed;
@@ -89,16 +91,20 @@ router.post('/addprogram',
     if (interestedInCompletingDiploma) programFields.interestedInCompletingDiploma = interestedInCompletingDiploma;
     if (programHours) programFields.programHours = programHours;
 
+    console.log("Hopefully have defined programFields, lets see");
+    console.log(programFields)
+
     // if (skills) {
-    //   profileFields.skills = skills.split(',').map(skill => skill.trim());
+    //   programFields.skills = skills.split(',').map(skill => skill.trim());
     // }
     
     try {
 
       console.log("in the try")
 
-      let program = await Program.findOne('name': programFields.name)
+      let program = await Program.findOne({'name': programFields.name})
 
+      console.log("After Checking if program available")
       if (program) {
         return res
           .status(400)
@@ -108,8 +114,11 @@ router.post('/addprogram',
       program = new Program(
         programFields
       )
+      console.log("After new program")
 
       await program.save();
+
+      console.log("After save")
 
       // let program = await Program.findOneAndUpdate(
       //   // { user: req.user.id },
@@ -125,73 +134,6 @@ router.post('/addprogram',
 
   }
 )
-// router.post('/addprogram', 
-
-
-// )
-// // const { name, email, password } = req.body;
-
-//     try {
-
-//       const { 
-//         name,
-//         department,
-//         acceptReferrals,
-//         descriptionOfProgram,
-//         coreServicesOffered,
-//         populationServed,
-//         eligibilityRequirements,
-//         locationOfProgram,
-//         servicesOnlyOfferedAtProgramSite,
-//         contactPerson,
-//         email,
-//         phonenumber,
-//         altProgramName,
-//         location,
-//         clientAge,
-//         inSchool,
-//         veteran,
-//         interestedInTraining,
-//         interestedAfterSchoolPrograms,
-//         interestedInCriminalServices,
-//         interestedInCompletingDiploma,
-//         programHours 
-//     } = req.body;
-
-//       program = new Program({
-//         name,
-//         department,
-//         acceptReferrals,
-//         descriptionOfProgram,
-//         coreServicesOffered,
-//         populationServed,
-//         eligibilityRequirements,
-//         locationOfProgram,
-//         servicesOnlyOfferedAtProgramSite,
-//         contactPerson,
-//         email,
-//         phonenumber,
-//         altProgramName,
-//         location,
-//         clientAge,
-//         inSchool,
-//         veteran,
-//         interestedInTraining,
-//         interestedAfterSchoolPrograms,
-//         interestedInCriminalServices,
-//         interestedInCompletingDiploma,
-//         programHours 
-//       });
-
-//       await program.save();
-
-//     // jwt payload we use user id
-//     // also, mongoose uses an abstraction so that we can use 'id' instead of '_id'
-//     //   const payload = {
-//     //     user: {
-//     //       id: user.id
-//     //     }
-//     //   };
 
 
 
