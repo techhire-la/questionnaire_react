@@ -17,6 +17,7 @@ const AppRouter = () => (
                 <Route path="/" component={QuestionnaireApp} exact={true}/>
                     <Route path="/form" component={FilterForm} />
                     <Route path="/catalogue" component={Catalogue} />
+                    <Route path="/login" component={Login} />
                 </Switch>
         </div>
     </BrowserRouter>
