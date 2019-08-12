@@ -143,11 +143,11 @@ router.post('/addprogram',
 // @desc     get program to update
 // @access   Private
 router.get('/:name', auth, async (req, res) => {
-    // console.log("in updateprogram")
     try {
       //find by id
       // const program = await Program.find(req.id).select('-password');
       
+
       //find by name
       const program = await Program.findOne({'name': req.params.name})
       if (!program) {
@@ -190,9 +190,6 @@ router.get('/:name', auth, async (req, res) => {
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-
-    console.log("Before Const set up")
-
 
     const { 
       name,
@@ -246,37 +243,7 @@ router.get('/:name', auth, async (req, res) => {
     if (interestedInCompletingDiploma) programFields.interestedInCompletingDiploma = interestedInCompletingDiploma;
     if (programHours) programFields.programHours = programHours;
 
-    // console.log("UPDATED Program Fields");
-    // console.log(programFields)
-
-    console.log("*"*80)
-    console.log("Req.body._id")
-    // console.log(req.body.department)
-    console.log(req.body._id)
-    var pid = req.body._id
-    console.log("*******************************************")
-
-    if (pid.match(/^[0-9a-fA-F]{24}$/)) {
-      console.log("PID is valid")
-    }
-    console.log("*******************************************")
-
     try {
-      //find by id
-      // const program = await Program.find(req.id);
-      
-      //find by name
-      // const program = await Program.findOne({'name': req.params.name})
-
-      // var pid = Program.findById(
-      //   req.body.id
-      // )
-      // console.log("*"*80)
-      // console.log("pid: ")
-      // console.log(pid)
-      // console.log("*"*80)
-
-
 
       let program = await Program.findByIdAndUpdate(
         req.body._id,
