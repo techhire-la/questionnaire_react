@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://tutor:tutor123@iris-v5mbb.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret" : "iamasecretshhhh"
+}
