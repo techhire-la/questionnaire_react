@@ -143,10 +143,11 @@ router.post('/addprogram',
 // @desc     get program to update
 // @access   Private
 router.get('/:name', auth, async (req, res) => {
-    console.log("in updateprogram")
+    // console.log("in updateprogram")
     try {
       //find by id
       // const program = await Program.find(req.id).select('-password');
+      
       //find by name
       const program = await Program.findOne({'name': req.params.name})
       if (!program) {
@@ -165,6 +166,133 @@ router.get('/:name', auth, async (req, res) => {
     
    
 
+  router.put('/:name',  
+  [
+    auth,
+      [
+        check('name', 'Program name is required')
+          .not()
+          .isEmpty(),
+        check('department', 'Program department is required')
+          .not()
+          .isEmpty()
+      ]
+  ],
+  
+  async (req, res) => {
+    // console.log(req.body)
+    console.log("post program route")
+    console.log("req.body: ")
+    console.log(req.body)
 
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    console.log("Before Const set up")
+
+
+    const { 
+      name,
+      department,
+      acceptReferrals,
+      descriptionOfProgram,
+      coreServicesOffered,
+      populationServed,
+      eligibilityRequirements,
+      locationOfProgram,
+      servicesOnlyOfferedAtProgramSite,
+      contactPerson,
+      email,
+      phonenumber,
+      altProgramName,
+      location,
+      clientAge,
+      inSchool,
+      veteran,
+      interestedInTraining,
+      interestedAfterSchoolPrograms,
+      interestedInCriminalServices,
+      interestedInCompletingDiploma,
+      programHours 
+    } = req.body;
+
+
+    // Build profile object
+    const programFields = {};
+    // programFields.user = req.user.id;
+    if (name) programFields.name = name;
+    if (department) programFields.department = department;
+    if (acceptReferrals) programFields.acceptReferrals = acceptReferrals;
+    if (descriptionOfProgram) programFields.descriptionOfProgram = descriptionOfProgram;
+    if (coreServicesOffered) programFields.coreServicesOffered = coreServicesOffered;
+    if (populationServed) programFields.populationServed = populationServed;
+    if (eligibilityRequirements) programFields.eligibilityRequirements = eligibilityRequirements;
+    if (locationOfProgram) programFields.locationOfProgram = locationOfProgram;
+    if (servicesOnlyOfferedAtProgramSite) programFields.servicesOnlyOfferedAtProgramSite = servicesOnlyOfferedAtProgramSite;
+    if (contactPerson) programFields.contactPerson = contactPerson;
+    if (email) programFields.email = email;
+    if (phonenumber) programFields.phonenumber = phonenumber;
+    if (altProgramName) programFields.altProgramName = altProgramName;
+    if (location) programFields.location = location;
+    if (clientAge) programFields.clientAge = clientAge;
+    if (inSchool) programFields.inSchool = inSchool;
+    if (veteran) programFields.veteran = veteran;
+    if (interestedInTraining) programFields.interestedInTraining = interestedInTraining;
+    if (interestedAfterSchoolPrograms) programFields.interestedAfterSchoolPrograms = interestedAfterSchoolPrograms;
+    if (interestedInCriminalServices) programFields.interestedInCriminalServices = interestedInCriminalServices;
+    if (interestedInCompletingDiploma) programFields.interestedInCompletingDiploma = interestedInCompletingDiploma;
+    if (programHours) programFields.programHours = programHours;
+
+    // console.log("UPDATED Program Fields");
+    // console.log(programFields)
+
+    console.log("*"*80)
+    console.log("Req.body._id")
+    // console.log(req.body.department)
+    console.log(req.body._id)
+    var pid = req.body._id
+    console.log("*******************************************")
+
+    if (pid.match(/^[0-9a-fA-F]{24}$/)) {
+      console.log("PID is valid")
+    }
+    console.log("*******************************************")
+
+    try {
+      //find by id
+      // const program = await Program.find(req.id);
+      
+      //find by name
+      // const program = await Program.findOne({'name': req.params.name})
+
+      // var pid = Program.findById(
+      //   req.body.id
+      // )
+      // console.log("*"*80)
+      // console.log("pid: ")
+      // console.log(pid)
+      // console.log("*"*80)
+
+
+
+      let program = await Program.findByIdAndUpdate(
+        req.body._id,
+        { $set: programFields },
+        { new: true, upsert: true }
+      );
+
+      if (!program) {
+        return res.status(404).json({ msg: 'Program not found' });
+      }
+
+      res.json(program);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  });
 
 module.exports = router;
