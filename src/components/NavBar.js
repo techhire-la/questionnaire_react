@@ -11,7 +11,8 @@ const NavBar = () => (
         <div className="centerLinks">
             <NavLink className="header__subtitle" to="/" activeClassName="is-active" exact={true}>Home</NavLink> |
             <NavLink className="header__subtitle" to="/form" activeClassName="is-active"> Questions </NavLink> |
-            <NavLink className="header__subtitle" to="/catalogue" activeClassName="is-active"> Catalogue</NavLink>
+            <NavLink className="header__subtitle" to="/catalogue" activeClassName="is-active"> Catalogue</NavLink> |
+            <NavLink className="header__subtitle" to="/login" activeClassName="is-active"> Login </NavLink>
         </div>
 
     </div>
