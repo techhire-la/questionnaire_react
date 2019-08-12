@@ -10,7 +10,7 @@ const Program = require('../../models/Program')
 const User = require('../../models/User');
 
 
-router.get('/test', (req, res) => res.send('Program Route'));
+// router.get('/test', (req, res) => res.send('Program Route'));
 
 
 // @route    POST api/program
@@ -142,14 +142,20 @@ router.post('/addprogram',
 // @route    Get api/program/:name
 // @desc     get program to update
 // @access   Private
-router.get('/:name', auth, async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
+
+
     try {
+      
       //find by id
-      // const program = await Program.find(req.id).select('-password');
+      const program = await Program.findById(req.params.id);
       
 
-      //find by name
-      const program = await Program.findOne({'name': req.params.name})
+      // //find by name
+      // const program = await Program.findOne({'name': req.params.name})
+
+
+
       if (!program) {
         return res.status(404).json({ msg: 'Program not found' });
       }
@@ -166,7 +172,7 @@ router.get('/:name', auth, async (req, res) => {
     
    
 
-  router.put('/:name',  
+  router.put('/:id',  
   [
     auth,
       [
@@ -180,10 +186,9 @@ router.get('/:name', auth, async (req, res) => {
   ],
   
   async (req, res) => {
+
+    // console.log("req.body: ")
     // console.log(req.body)
-    console.log("post program route")
-    console.log("req.body: ")
-    console.log(req.body)
 
 
     const errors = validationResult(req);
@@ -247,6 +252,7 @@ router.get('/:name', auth, async (req, res) => {
 
       let program = await Program.findByIdAndUpdate(
         req.body._id,
+        // req.params.id,
         { $set: programFields },
         { new: true, upsert: true }
       );
@@ -262,12 +268,13 @@ router.get('/:name', auth, async (req, res) => {
     }
   });
 
-  router.delete('/:name', auth, async(req, res) => {
+  router.delete('/:id', auth, async(req, res) => {
     try {
       //find by id
-      // const program = await Program.find(req.id).select('-password');
+      const program = await Program.findById(req.params.id);
       
-      const program = await Program.findOne({'name': req.params.name})
+      //find by name
+      // const program = await Program.findOne({'name': req.params.name})
 
       if (!program) {
         return res.status(404).json({ msg: 'Program not found' });
