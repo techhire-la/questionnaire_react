@@ -157,9 +157,9 @@ router.get('/:name', auth, async (req, res) => {
       res.json(program);
     } catch (err) {
       console.error(err.message);
-      // if (err.kind === 'ObjectId') {
-      //   return res.status(404).json({ msg: 'Program not found' });
-      // }
+      if (err.kind === 'ObjectId') {
+        return res.status(404).json({ msg: 'Program not found' });
+      }
       res.status(500).send('Server Error');
     }
   });
@@ -261,5 +261,32 @@ router.get('/:name', auth, async (req, res) => {
       res.status(500).send('Server Error');
     }
   });
+
+  router.delete('/:name', auth, async(req, res) => {
+    try {
+      //find by id
+      // const program = await Program.find(req.id).select('-password');
+      
+      const program = await Program.findOne({'name': req.params.name})
+
+      if (!program) {
+        return res.status(404).json({ msg: 'Program not found' });
+      }
+
+      await program.remove();
+
+      res.json({ msg: 'Program removed' });
+  
+    }catch (err) {
+      console.error(err.message);
+      if (err.kind === 'ObjectId') {
+        return res.status(404).json({ msg: 'Program not found' });
+      }
+      // if (!program) {
+      //   return res.status(404).json({ msg: 'Program not found' });
+      // }
+      res.status(500).send('Server Error');
+    }
+  })
 
 module.exports = router;
