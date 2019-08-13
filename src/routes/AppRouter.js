@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import QuestionnaireApp from '../components/QuestionnaireApp';
 import FilterForm from '../components/FilterForm';
 import Catalogue from '../components/Catalogue';
+import Login from '../components/Login';
 // import NotFoundPage from '../components/NotFoundPage';
 //<Route component={NotFoundPage} />
 
