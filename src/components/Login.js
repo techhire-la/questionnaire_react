@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink, Redirect } from 'react-router-dom';
 import { Grid, Image, Item, Responsive, Segment , Form, Button, } from 'semantic-ui-react'
+import axios from "axios";
 
 // import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
@@ -19,7 +20,7 @@ class Login extends React.Component {
     }
 
     handleChange = e => {
-        debugger
+        // debugger
         this.setState({ [e.target.name]: e.target.value });
     }
 
@@ -38,7 +39,7 @@ class Login extends React.Component {
             })
             .catch(e => console.log(e));
         
-
+        debugger
         console.log("after the debugger")
 
     }
