@@ -15,11 +15,11 @@ const AppRouter = () => (
         <div>
             <NavBar />
             <Switch>
-                <Route path="/" component={QuestionnaireApp} exact={true}/>
+                    <Route path="/" component={QuestionnaireApp} exact={true}/>
                     <Route path="/form" component={FilterForm} />
                     <Route path="/catalogue" component={Catalogue} />
                     <Route path="/login" component={Login} />
-                </Switch>
+            </Switch>
         </div>
     </BrowserRouter>
 )
