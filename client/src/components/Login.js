@@ -25,7 +25,7 @@ class Login extends React.Component {
     }
 
     handleLogin = e => {
-
+        
         console.log("handle the login")
 
         const config = {
@@ -34,20 +34,19 @@ class Login extends React.Component {
             }
           };
         
-          const body = JSON.stringify({ email, password });
+        //   const body = JSON.stringify({ email, password });
 
-        debugger
+        // debugger
 
         let formFields = { email: this.state.email, password: this.state.password };
 
         axios
-            .post("../../../routes/api/users/login", formFields)
+            .post("../../../routes/api/auth/login", formFields)
             .then(res => {
             console.log(res.data);
             })
             .catch(e => console.log(e));
         
-        debugger
         console.log("after the debugger")
 
     }
