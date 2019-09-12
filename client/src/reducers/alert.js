@@ -2,4 +2,4 @@
 
 const initialState = []
 
-export default setAlert 
+// export default 
