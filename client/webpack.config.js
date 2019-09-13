@@ -33,7 +33,8 @@ return {
 
         },
         plugins: [
-          CSSExtract
+          CSSExtract,
+          "transform-object-rest-spread"
         ],
         devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
         devServer: {
