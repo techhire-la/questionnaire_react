@@ -33,8 +33,14 @@ return {
             }, {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader'
+            }, {
+                test: /\.js?$/,
+                exclude: /(node_modules|.cache)/,
+                loader: 'babel-loader',
+                query: {
+                    plugins: ["@babel/plugin-proposal-object-rest-spread"]
+                }
             }]
-
         },
         plugins: [
           CSSExtract,
