@@ -1,5 +1,9 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// this is supposedly the thing that'll fix the spread operator but isn't working
+// const SpreadPlugin = require("@babel/core").transform("code", {
+//     plugins: ["@babel/plugin-proposal-object-rest-spread"]
+//   });
 
 module.exports = (env) => {
 
@@ -34,7 +38,6 @@ return {
         },
         plugins: [
           CSSExtract,
-          "transform-object-rest-spread"
         ],
         devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
         devServer: {

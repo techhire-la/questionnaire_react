@@ -1,5 +1,4 @@
 import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
-
 const initialState = [];
 
 export default function(state = initialState, action) {
@@ -8,9 +7,10 @@ export default function(state = initialState, action) {
   switch (type) {
     
     case SET_ALERT:
-    /// this is breaking the code
-      return [...state, payload]
-      // return [...state, payload];
+    /// this is breaking the code, doesn't recognize spread operator
+      // return [...state, payload]
+    //temporary solution
+      return state.concat(payload)
     /////////
 
     case REMOVE_ALERT:
