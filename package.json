@@ -27,7 +27,7 @@
     "css-loader": "0.28.4",
     "emailjs": "^2.2.0",
     "emailjs-com": "^2.2.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "extract-text-webpack-plugin": "3.0.0",
     "jquery": "^3.4.1",
     "live-server": "^1.2.1",
